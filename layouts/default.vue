@@ -1,92 +1,95 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+  <v-app>
+    <h-navigation-drawer v-model="drawer" />
+    <v-app-bar app dense>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Air Guard</v-toolbar-title>
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <a-switch
+        v-model="keepAlive"
+        class="mr-4"
+        label="Keep Alive"
+        hide-details
+      />
+      <a-switch v-model="fluid" hide-details />
     </v-app-bar>
     <v-main>
-      <v-container>
-        <Nuxt />
+      <v-container :fluid="fluid">
+        <Nuxt
+          :keep-alive="keepAlive"
+          :keep-alive-props="{ include: keepAlivePages }"
+        />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
+import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
+import HNavigationDrawer from '~/components/organisms/HNavigationDrawer.vue'
 export default {
+  /******************************************************************
+   * NAME
+   ******************************************************************/
   name: 'DefaultLayout',
+  /******************************************************************
+   * COMPONENTS
+   ******************************************************************/
+  components: { ASwitch, HNavigationDrawer },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
   data() {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
+      fluid: false,
+      keepAlive: false,
     }
+  },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
+  computed: {
+    keepAlivePages() {
+      // return []
+      if (this.$route.path.includes('/customers')) {
+        return ['CustomersIndex']
+      } else if (this.$route.path.includes('/sites')) {
+        return ['SitesIndex']
+      } else {
+        return []
+      }
+    },
   },
 }
 </script>
+
+<style>
+.firebase-emulator-warning {
+  display: none;
+}
+
+/* 入力コンポーネントのalign用css */
+.right-input input {
+  text-align: right;
+  padding-right: 8px;
+}
+
+.center-input input {
+  text-align: center;
+}
+
+/* v-calendar */
+.v-calendar-weekly__head > .v-calendar-weekly__head-weekday:nth-child(7) {
+  background-color: #fce4ec;
+}
+.v-calendar-weekly__week > .v-calendar-weekly__day:nth-child(7) {
+  background-color: #fce4ec;
+}
+.v-calendar-weekly__head > .v-calendar-weekly__head-weekday:nth-child(6) {
+  background-color: #e3f2fd;
+}
+.v-calendar-weekly__week > .v-calendar-weekly__day:nth-child(6) {
+  background-color: #e3f2fd;
+}
+</style>

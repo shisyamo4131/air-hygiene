@@ -1,4 +1,4 @@
-# nuxt-default-project
+# air-hygiene
 
 This is the default project that uses Nuxt and Firebase.  
 Frequently used packages are pre-installed.  

@@ -1,0 +1,14 @@
+[
+  { "code": "11", "name": "kg", "abbr": "kg", "deletable": false },
+  { "code": "21", "name": "袋[45ℓ]", "abbr": "45L", "deletable": false },
+  { "code": "22", "name": "袋[70ℓ]", "abbr": "70L", "deletable": false },
+  { "code": "23", "name": "袋[90ℓ]", "abbr": "90L", "deletable": false },
+  { "code": "51", "name": "ヶ", "abbr": "ヶ", "deletable": false },
+  { "code": "52", "name": "本", "abbr": "本", "deletable": false },
+  { "code": "53", "name": "枚", "abbr": "枚", "deletable": false },
+  { "code": "61", "name": "㎥", "abbr": "㎥", "deletable": false },
+  { "code": "81", "name": "回", "abbr": "回", "deletable": false },
+  { "code": "82", "name": "人", "abbr": "人", "deletable": false },
+  { "code": "83", "name": "台", "abbr": "台", "deletable": false },
+  { "code": "91", "name": "式", "abbr": "式", "deletable": false }
+]

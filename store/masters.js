@@ -22,18 +22,33 @@ import { collection, getDocs, onSnapshot } from 'firebase/firestore'
  * STATE
  ******************************************************************/
 export const state = () => ({
-  // Customers: [],
+  Customers: [],
+  Sites: [],
+  Items: [],
+  Units: [],
   listeners: {
-    // Customers: null,
+    Customers: null,
+    Sites: null,
+    Items: null,
+    Units: null,
   },
 })
 /******************************************************************
  * GETTERS
  ******************************************************************/
 export const getters = {
-  // Customer: (state) => (payload) => {
-  //   return state.Customers.find(({ docId }) => docId === payload)
-  // },
+  Customer: (state) => (payload) => {
+    return state.Customers.find(({ docId }) => docId === payload)
+  },
+  Site: (state) => (payload) => {
+    return state.Sites.find(({ docId }) => docId === payload)
+  },
+  Item: (state) => (payload) => {
+    return state.Items.find(({ docId }) => docId === payload)
+  },
+  Unit: (state) => (payload) => {
+    return state.Units.find(({ docId }) => docId === payload)
+  },
 }
 /******************************************************************
  * MUTATIONS
@@ -97,7 +112,9 @@ export const actions = {
         const colRef = collection(this.$firestore, key)
         promises.push(getDocs(colRef))
       })
+      console.log('before Promise.all')
       const snapshots = await Promise.all(promises)
+      console.log('after Promise.all')
       Object.keys(state.listeners).forEach((key, index) => {
         snapshots[index].docs.forEach((doc) => {
           commit('addMaster', { collection: key, data: doc.data() })

@@ -1,0 +1,245 @@
+[
+  {
+    "code": "1011",
+    "name": "普通ごみ",
+    "nameKana": "フツウゴミ",
+    "abbr": "普通ごみ",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "1021",
+    "name": "道路・公園ごみ",
+    "nameKana": "ドウロコウエンゴミ",
+    "abbr": "道公ごみ",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "1031",
+    "name": "しさ・ふさ",
+    "nameKana": "シサフサ",
+    "abbr": "しさ",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "1041",
+    "name": "汚でい",
+    "nameKana": "オデイ",
+    "abbr": "汚でい",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "1051",
+    "name": "動物死体",
+    "nameKana": "ドウブツシタイ",
+    "abbr": "動物死体",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "1061",
+    "name": "医療系廃棄物",
+    "nameKana": "イリョウケイハイキブツ",
+    "abbr": "医療系",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "1071",
+    "name": "廃家電",
+    "nameKana": "ハイカデン",
+    "abbr": "廃家電",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2011",
+    "name": "燃え殻",
+    "nameKana": "モエガラ",
+    "abbr": "燃え殻",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2021",
+    "name": "汚泥",
+    "nameKana": "オデイ",
+    "abbr": "汚泥",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2031",
+    "name": "廃油",
+    "nameKana": "ハイユ",
+    "abbr": "廃油",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2041",
+    "name": "廃酸",
+    "nameKana": "ハイサン",
+    "abbr": "廃酸",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2051",
+    "name": "廃アルカリ",
+    "nameKana": "ハイアルカリ",
+    "abbr": "廃アル",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2061",
+    "name": "廃プラスチック類",
+    "nameKana": "ハイプラスチックルイ",
+    "abbr": "廃プラ",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2071",
+    "name": "ゴムくず",
+    "nameKana": "ゴムクズ",
+    "abbr": "ゴムくず",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2081",
+    "name": "金属くず",
+    "nameKana": "キンゾククズ",
+    "abbr": "金属くず",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2091",
+    "name": "ガラス・コンクリート・陶磁器くず",
+    "nameKana": "ガラスコンクリートトウジキクズ",
+    "abbr": "ガラス",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2101",
+    "name": "鉱さい",
+    "nameKana": "コウサイ",
+    "abbr": "鉱さい",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2111",
+    "name": "がれき類",
+    "nameKana": "ガレキルイ",
+    "abbr": "がれき",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2121",
+    "name": "ばいじん",
+    "nameKana": "バイジン",
+    "abbr": "ばいじん",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2131",
+    "name": "紙くず",
+    "nameKana": "カミクズ",
+    "abbr": "紙くず",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2141",
+    "name": "木くず",
+    "nameKana": "キクズ",
+    "abbr": "木くず",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2151",
+    "name": "繊維くず",
+    "nameKana": "センイクズ",
+    "abbr": "繊維くず",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2161",
+    "name": "動植物性残さ",
+    "nameKana": "ドウショクブツセイザンサ",
+    "abbr": "動植物",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2171",
+    "name": "動物系固形不要物",
+    "nameKana": "ドウブツケイコケイフヨウブツ",
+    "abbr": "動物固形",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2181",
+    "name": "動物のふん尿",
+    "nameKana": "ドウブツノフンニョウ",
+    "abbr": "ふん尿",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2191",
+    "name": "動物の死体",
+    "nameKana": "ドウブツノシタイ",
+    "abbr": "動物死体",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "2201",
+    "name": "その他の産業廃棄物",
+    "nameKana": "ソノタノサンギョウハイキブツ",
+    "abbr": "その他",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  }
+]

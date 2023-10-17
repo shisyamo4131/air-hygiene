@@ -1,0 +1,46 @@
+[
+  {
+    "name": "TOP",
+    "icon": "mdi-home",
+    "to": "/",
+    "lists": []
+  },
+  {
+    "name": "マスタ管理",
+    "icon": "mdi-cube",
+    "lists": [
+      { "name": "取引先", "to": "/customers", "icon": "mdi-domain" },
+      { "name": "排出場所", "to": "/sites", "icon": "mdi-domain" },
+      { "name": "回収品目", "to": "/items", "icon": "mdi-domain" },
+      { "name": "単位", "to": "/units", "icon": "mdi-domain" }
+    ]
+  },
+  {
+    "name": "許可管理",
+    "icon": "mdi-wrench-cog",
+    "lists": [
+      { "name": "一般廃棄物", "to": "/municipal-permissions" },
+      { "name": "産業廃棄物", "to": "/industrial-permissions" }
+    ]
+  },
+  {
+    "name": "管理",
+    "icon": "mdi-wrench-cog",
+    "lists": [
+      { "name": "自動採番", "to": "/administrators/autonumbers" },
+      { "name": "初期化処理", "to": "/administrators/initialize" },
+      {
+        "name": "コレクション初期化",
+        "to": "/administrators/initialize-collection"
+      }
+    ]
+  },
+  {
+    "name": "開発",
+    "icon": "mdi-wrench-cog",
+    "lists": [
+      { "name": "コンポーネントテスト", "to": "/developments/sandbox" },
+      { "name": "Inputs", "to": "/developments/input-test" }
+    ]
+  }
+]

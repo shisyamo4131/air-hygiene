@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 // Uncomment if you want to use per-page permission settings.
-// import { pagePermissions } from './plugins/pagePermissions.js'
+import { pagePermissions } from './plugins/pagePermissions.js'
 
 // Loads an env file for the specified environment.
 const environment = process.env.NODE_ENV || 'dev'
@@ -20,8 +20,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-default-project',
-    title: 'nuxt-default-project',
+    titleTemplate: '%s - air-hygiene',
+    title: 'air-hygiene',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -40,6 +40,9 @@ export default {
     './plugins/dayjs.js',
     './plugins/firebase.js',
     './plugins/firebase.auth.js',
+    './plugins/constants.js',
+    './plugins/air-utils.js',
+    './plugins/models.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -97,18 +100,18 @@ export default {
   build: {},
 
   // Uncomment if you want to use per-page permission settings.
-  // router: {
-  //   middleware: ['authenticated'],
-  //   /* extends route to add meta. */
-  //   extendRoutes(routes) {
-  //     routes.forEach((route) => {
-  //       const meta = pagePermissions[route.name] || []
-  //       route.meta = {
-  //         requiredPermissions: meta,
-  //       }
-  //     })
-  //   },
-  // },
+  router: {
+    middleware: ['authenticated'],
+    /* extends route to add meta. */
+    extendRoutes(routes) {
+      routes.forEach((route) => {
+        const meta = pagePermissions[route.name] || []
+        route.meta = {
+          requiredPermissions: meta,
+        }
+      })
+    },
+  },
 
   // Set parameters to connect firebase from .env.
   publicRuntimeConfig: {
