@@ -1,15 +1,15 @@
 <template>
   <air-template-default>
     <v-container>
-      <test-component :items="items" show-actions> </test-component>
+      <h-data-table-item-unit-prices :items="items" />
     </v-container>
   </air-template-default>
 </template>
 
 <script>
-import TestComponent from '~/components/molecules/tables/HDataTableItemUnitPrices.vue'
+import HDataTableItemUnitPrices from '~/components/molecules/tables/HDataTableItemUnitPrices.vue'
 export default {
-  components: { TestComponent },
+  components: { HDataTableItemUnitPrices },
   data() {
     return {
       items: [],

@@ -23,10 +23,10 @@ export default (context) => {
           isEmailVerified: user.emailVerified,
           roles: idTokenResult.claims.roles || [],
         })
-        await context.store.dispatch('masters/subscribe')
+        // await context.store.dispatch('masters/subscribe')
       } else {
         context.store.commit('auth/setUser', null)
-        await context.store.dispatch('masters/unsubscribe')
+        // await context.store.dispatch('masters/unsubscribe')
       }
       resolve()
     })
