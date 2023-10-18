@@ -5,9 +5,6 @@
  * ##### subscribe
  * 各種マスタデータのリアルタイムリスナーをセットします。
  * 全てのマスタデータへのリスナーがセットされるとpromiseを返します。
- * ###### NOTE
- * onSnapshotによる読み込みの前にコンポーネントからの参照が発生するとエラーになる。
- * Read件数が倍増してしまうが、一旦、getDocsで全件を読み込み、その後にリスナーをセットする。
  *
  * ##### unsubscribe
  * 各種マスタデータのリアルタイムリスナーを解除し、Vuexで管理している
@@ -16,7 +13,7 @@
  *
  * @author shisyamo4131
  */
-import { collection, getDocs, onSnapshot } from 'firebase/firestore'
+import { collection, onSnapshot } from 'firebase/firestore'
 
 /******************************************************************
  * STATE
@@ -105,41 +102,33 @@ export const mutations = {
  * ACTIONS
  ******************************************************************/
 export const actions = {
-  async subscribe({ state, commit }) {
+  subscribe({ state, commit }) {
     try {
-      const promises = []
-      Object.keys(state.listeners).forEach((key) => {
-        const colRef = collection(this.$firestore, key)
-        promises.push(getDocs(colRef))
-      })
-      const snapshots = await Promise.all(promises)
-      Object.keys(state.listeners).forEach((key, index) => {
-        snapshots[index].docs.forEach((doc) => {
-          commit('addMaster', { collection: key, data: doc.data() })
-        })
-      })
-      Object.keys(state.listeners).forEach((key) => {
-        const colRef = collection(this.$firestore, key)
-        const listener = onSnapshot(colRef, (snapshot) => {
-          snapshot.docChanges().forEach((change) => {
-            if (change.type === 'added')
-              commit('addMaster', {
-                collection: key,
-                data: change.doc.data(),
-              })
-            if (change.type === 'modified')
-              commit('addMaster', {
-                collection: key,
-                data: change.doc.data(),
-              })
-            if (change.type === 'removed')
-              commit('removeMaster', {
-                collection: key,
-                data: change.doc.data(),
-              })
+      return new Promise((resolve, reject) => {
+        Object.keys(state.listeners).forEach((key) => {
+          const colRef = collection(this.$firestore, key)
+          const listener = onSnapshot(colRef, (snapshot) => {
+            snapshot.docChanges().forEach((change) => {
+              if (change.type === 'added')
+                commit('addMaster', {
+                  collection: key,
+                  data: change.doc.data(),
+                })
+              if (change.type === 'modified')
+                commit('addMaster', {
+                  collection: key,
+                  data: change.doc.data(),
+                })
+              if (change.type === 'removed')
+                commit('removeMaster', {
+                  collection: key,
+                  data: change.doc.data(),
+                })
+            })
           })
+          commit('addListener', { collection: key, listener })
+          resolve()
         })
-        commit('addListener', { collection: key, listener })
       })
     } catch (err) {
       // eslint-disable-next-line

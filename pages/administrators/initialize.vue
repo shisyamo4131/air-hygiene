@@ -26,45 +26,21 @@
  * サブコレクションについてはCloud Functionsで対応。
  */
 import { collection, deleteDoc, doc, getDocs, setDoc } from 'firebase/firestore'
+import setting from '~/assets/setting.json'
 export default {
+  /******************************************************************
+   * DATA
+   ******************************************************************/
   data() {
     return {
-      collections: [
-        {
-          text: 'Customers',
-          value: 'Customers',
-          isAutonumber: true,
-          autonumberFields: {
-            field: 'code',
-            length: 5,
-          },
-        },
-        {
-          text: 'Sites',
-          value: 'Sites',
-          isAutonumber: true,
-          autonumberFields: {
-            field: 'code',
-            length: 8,
-          },
-        },
-        {
-          text: 'Items',
-          value: 'Items',
-          isAutonumber: false,
-          autonumberFields: {},
-        },
-        {
-          text: 'Items',
-          value: 'Units',
-          isAutonumber: false,
-          autonumberFields: {},
-        },
-      ],
-      systemCollections: ['Autonumbers', 'admin_users', 'developper_users'],
+      collections: setting.collections,
+      systemCollections: setting.systemCollections,
       loading: false,
     }
   },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
   computed: {
     administratorUids() {
       return [this.$auth.currentUser.uid]
@@ -73,6 +49,9 @@ export default {
       return [this.$auth.currentUser.uid]
     },
   },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
   methods: {
     async initialize() {
       try {
@@ -106,11 +85,11 @@ export default {
     async initAutonumbers() {
       const promises = []
       this.collections.forEach((collection) => {
-        if (collection.isAutonumber) {
+        if (collection.autonumber.condition) {
           const model = this.$Autonumber()
           model.initialize({
-            ...collection.autonumberFields,
-            collectionName: collection.value,
+            ...collection.autonumber,
+            collectionName: collection.name,
           })
           promises.push(model.create())
         }
@@ -120,7 +99,7 @@ export default {
     async deleteCollections() {
       const promises = []
       this.collections.forEach((collection) => {
-        promises.push(this.deleteAllDocuments(collection.value))
+        promises.push(this.deleteAllDocuments(collection.name))
       })
       this.systemCollections.forEach((collection) => {
         promises.push(this.deleteAllDocuments(collection))
@@ -128,13 +107,20 @@ export default {
       await Promise.all(promises)
     },
     async deleteAllDocuments(path) {
-      const colRef = collection(this.$firestore, path)
-      const snapshot = await getDocs(colRef)
-      if (snapshot.empty) return
-      const promises = snapshot.docs.map((doc) => {
-        return deleteDoc(doc.ref)
-      })
-      await Promise.all(promises)
+      /* eslint-disable */
+      try {
+        const colRef = collection(this.$firestore, path)
+        const snapshot = await getDocs(colRef)
+        if (snapshot.empty) return
+        const promises = snapshot.docs.map((doc) => {
+          return deleteDoc(doc.ref)
+        })
+        await Promise.all(promises)
+      } catch (err) {
+        console.error(err)
+        alert(err.message)
+      }
+      /* eslint-enable */
     },
   },
 }

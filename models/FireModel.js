@@ -66,7 +66,8 @@ export default class FireModel {
     this.initialize()
     Object.defineProperties(this, {
       tokenMap: {
-        enumerable: true,
+        // enumerable: true,
+        enumerable: !!this.#tokenFields.length,
         get() {
           if (!this.#tokenFields.length) return null
           const arr = []
