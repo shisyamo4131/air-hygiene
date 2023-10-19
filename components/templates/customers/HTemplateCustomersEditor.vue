@@ -4,6 +4,7 @@
  */
 import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import Mixin from '~/components/templates/mixins/HTemplateMixinsEditor.vue'
+
 export default {
   /******************************************************************
    * COMPONENTS
@@ -46,14 +47,30 @@ export default {
 <template>
   <air-template-edit
     label="取引先編集"
-    edit-mode="REGIST"
+    :edit-mode="editMode"
     :loading="loading"
     @click:submit="onClickSubmit($event)"
     @click:back="onClickBack"
   >
+    <template #itembar-items> </template>
     <template #default="{ editMode }">
       <v-card-text>
         <h-input-customer v-bind.sync="editModel" :edit-mode="editMode" />
+        <air-dialog-confirm-delete
+          v-if="editMode !== 'REGIST'"
+          @click:delete="onClickDelete"
+        >
+          <template #activator="{ attrs, on }">
+            <v-btn
+              v-bind="attrs"
+              color="error"
+              :disabled="loading"
+              small
+              v-on="on"
+              >削除する</v-btn
+            >
+          </template>
+        </air-dialog-confirm-delete>
       </v-card-text>
     </template>
   </air-template-edit>

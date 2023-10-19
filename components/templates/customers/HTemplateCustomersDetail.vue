@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-09-26
  * @author shisyamo4131
  */
 export default {
@@ -23,9 +22,10 @@ export default {
    ******************************************************************/
   computed: {
     sites() {
-      return this.$store.state.masters.Sites.filter(
-        ({ customer }) => customer.docId === this.model.docId
-      )
+      return []
+      // return this.$store.state.masters.Sites.filter(
+      //   ({ customer }) => customer.docId === this.model.docId
+      // )
     },
   },
 }

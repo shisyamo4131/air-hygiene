@@ -9,11 +9,19 @@ import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
+import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ATextField, HTextFieldZipcode, ASelect, ANumeric, ATextarea },
+  components: {
+    ATextField,
+    HTextFieldZipcode,
+    ASelect,
+    ANumeric,
+    ATextarea,
+    ARadioGroup,
+  },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -41,7 +49,16 @@ export default {
     depositDay: { type: String, default: '', required: false },
     rounding: { type: String, default: '', required: false },
     condition: { type: String, default: '', required: false },
+    dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
+  },
+  /******************************************************************
+   * WATCH
+   ******************************************************************/
+  watch: {
+    condition(v) {
+      if (v === 'active') this.$emit('update:dateExpired', '')
+    },
   },
 }
 </script>
@@ -95,18 +112,24 @@ export default {
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
-    <a-text-field
-      label="電話番号"
-      :value="tel"
-      input-type="tel"
-      @input="$emit('update:tel', $event)"
-    />
-    <a-text-field
-      label="FAX番号"
-      :value="fax"
-      input-type="tel"
-      @input="$emit('update:fax', $event)"
-    />
+    <v-row dense>
+      <v-col cols="12" sm="6">
+        <a-text-field
+          label="電話番号"
+          :value="tel"
+          input-type="tel"
+          @input="$emit('update:tel', $event)"
+        />
+      </v-col>
+      <v-col cols="12" sm="6">
+        <a-text-field
+          label="FAX番号"
+          :value="fax"
+          input-type="tel"
+          @input="$emit('update:fax', $event)"
+        />
+      </v-col>
+    </v-row>
     <a-text-field
       label="URL"
       :value="url"
@@ -132,41 +155,67 @@ export default {
       persistent-hint
       @input="$emit('update:honor', $event)"
     />
-    <a-select
-      label="締日"
-      :value="deadline"
-      :items="$DEADLINE_ARRAY"
-      required
-      @input="$emit('update:deadline', $event)"
-    />
-    <a-numeric
-      label="入金日"
-      :value="depositMonth"
-      required
-      suffix="ヶ月後"
-      @input="$emit('update:depositMonth', $event)"
-    />
-    <a-select
-      label="入金日"
-      :value="depositDay"
-      :items="$DEADLINE_ARRAY"
-      required
-      @input="$emit('update:depositDay', $event)"
-    />
-    <a-select
-      label="端数処理"
-      :value="rounding"
-      :items="$ROUNDING_ARRAY"
-      required
-      @input="$emit('update:rounding', $event)"
-    />
-    <a-select
-      label="状態"
+    <v-row dense>
+      <v-col cols="12" sm="6" md="3">
+        <a-select
+          label="締日"
+          :value="deadline"
+          :items="$DEADLINE_ARRAY"
+          required
+          @input="$emit('update:deadline', $event)"
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="3">
+        <a-numeric
+          label="入金日"
+          :value="depositMonth"
+          required
+          suffix="ヶ月後"
+          @input="$emit('update:depositMonth', $event)"
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="3">
+        <a-select
+          label="入金日"
+          :value="depositDay"
+          :items="$DEADLINE_ARRAY"
+          required
+          @input="$emit('update:depositDay', $event)"
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="3">
+        <a-select
+          label="端数処理"
+          :value="rounding"
+          :items="$ROUNDING_ARRAY"
+          required
+          @input="$emit('update:rounding', $event)"
+        />
+      </v-col>
+    </v-row>
+    <a-radio-group
+      class="mt-0"
       :value="condition"
-      :items="$CUSTOMER_CONDITION_ARRAY"
-      required
-      @input="$emit('update:condition', $event)"
-    />
+      row
+      @change="$emit('update:condition', $event)"
+    >
+      <v-radio
+        v-for="(item, index) of $CUSTOMER_CONDITION_ARRAY"
+        :key="index"
+        :label="item.text"
+        :value="item.value"
+      />
+    </a-radio-group>
+    <v-expand-transition>
+      <a-text-field
+        v-show="condition === 'expired'"
+        label="契約満了日"
+        :value="dateExpired"
+        :required="condition === 'expired'"
+        input-type="date"
+        @input="$emit('update:dateExpired', $event)"
+      />
+    </v-expand-transition>
     <a-textarea
       label="備考"
       :value="remarks"

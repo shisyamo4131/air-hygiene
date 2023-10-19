@@ -15,10 +15,11 @@ export default {
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  asyncData({ store, route }) {
+  async asyncData({ app, route }) {
     const docId = route.params.docId
-    const model = store.getters['masters/Customer'](docId)
-    return { model }
+    const model = app.$Customer()
+    await model.fetch(docId)
+    return { docId, model }
   },
 }
 </script>

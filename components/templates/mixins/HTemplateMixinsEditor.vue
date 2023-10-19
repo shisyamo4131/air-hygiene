@@ -8,6 +8,11 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
+    editMode: {
+      type: String,
+      validator: (v) => ['REGIST', 'UPDATE', 'DELETE'].includes(v),
+      required: true,
+    },
     model: { type: Object, default: undefined, required: false },
   },
   /******************************************************************
@@ -40,7 +45,7 @@ export default {
         if (mode === 'UPDATE') {
           await this.beforeUpdate()
           await this.editModel.update()
-          this.afterUpdate()
+          await this.afterUpdate()
         }
         if (mode === 'DELETE') {
           await this.beforeDelete()

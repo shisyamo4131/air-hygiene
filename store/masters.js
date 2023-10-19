@@ -13,19 +13,23 @@
  *
  * @author shisyamo4131
  */
+/* eslint-disable */
+
 import { collection, onSnapshot } from 'firebase/firestore'
+
+const MODULE_NAME = '[Vuex masters.js]'
 
 /******************************************************************
  * STATE
  ******************************************************************/
 export const state = () => ({
-  Customers: [],
-  Sites: [],
+  // Customers: [],
+  // Sites: [],
   Items: [],
   Units: [],
   listeners: {
-    Customers: null,
-    Sites: null,
+    // Customers: null,
+    // Sites: null,
     Items: null,
     Units: null,
   },
@@ -34,12 +38,12 @@ export const state = () => ({
  * GETTERS
  ******************************************************************/
 export const getters = {
-  Customer: (state) => (payload) => {
-    return state.Customers.find(({ docId }) => docId === payload)
-  },
-  Site: (state) => (payload) => {
-    return state.Sites.find(({ docId }) => docId === payload)
-  },
+  // Customer: (state) => (payload) => {
+  //   return state.Customers.find(({ docId }) => docId === payload)
+  // },
+  // Site: (state) => (payload) => {
+  //   return state.Sites.find(({ docId }) => docId === payload)
+  // },
   Item: (state) => (payload) => {
     return state.Items.find(({ docId }) => docId === payload)
   },
@@ -65,37 +69,33 @@ export const mutations = {
     if (index !== -1) items.splice(index, 1)
   },
   addListener(state, { collection, listener }) {
-    /* eslint-disable */
     if (!collection || !listener) {
-      console.error(
-        `[Vuex] Parameter 'collection' and 'listeners' must be specified.`
+      throw new Error(
+        `[Vuex masters.js] Parameter 'collection' and 'listeners' must be specified.`
       )
-      return
     }
     if (!(collection in state.listeners)) {
-      console.error(`[Vuex] The ${collection} collection does not exist.`)
-      return
+      throw new Error(
+        `[Vuex masters.js] The ${collection} collection does not exist.`
+      )
     }
     state.listeners[collection] = listener
-    /* eslint-enable */
   },
   removeListener(state, collection) {
-    /* eslint-disable */
     if (!collection) {
-      console.error(`[Vuex] Parameter 'collection' must be specified.`)
-      return
+      throw new Error(
+        `[Vuex masters.js] Parameter 'collection' must be specified.`
+      )
     }
     if (!(collection in state.listeners)) {
-      console.error(`[Vuex] The ${collection} collection does not exist.`)
-      return
-    }
-    if (state.listeners[collection]) {
-      state.listeners[collection]()
+      throw new Error(
+        `[Vuex masters.js] The ${collection} collection does not exist.`
+      )
     }
     Object.keys(state.listeners).forEach((key) => {
+      if (state.listeners[key]) state.listeners[key]()
       state[key].splice(0)
     })
-    /* eslint-enable */
   },
 }
 /******************************************************************
@@ -103,52 +103,55 @@ export const mutations = {
  ******************************************************************/
 export const actions = {
   subscribe({ state, commit }) {
-    try {
-      return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
+      try {
         Object.keys(state.listeners).forEach((key) => {
           const colRef = collection(this.$firestore, key)
           const listener = onSnapshot(colRef, (snapshot) => {
             snapshot.docChanges().forEach((change) => {
-              if (change.type === 'added')
-                commit('addMaster', {
-                  collection: key,
-                  data: change.doc.data(),
-                })
-              if (change.type === 'modified')
-                commit('addMaster', {
-                  collection: key,
-                  data: change.doc.data(),
-                })
-              if (change.type === 'removed')
-                commit('removeMaster', {
-                  collection: key,
-                  data: change.doc.data(),
-                })
+              const type = change.type
+              const data = change.doc.data()
+              if (type === 'added')
+                commit('addMaster', { collection: key, data })
+              if (type === 'modified')
+                commit('addMaster', { collection: key, data })
+              if (type === 'removed')
+                commit('removeMaster', { collection: key, data })
             })
           })
+          console.info(
+            `${MODULE_NAME} %sコレクションに対するリアルタイムリスナーをセットしました。`,
+            key
+          )
           commit('addListener', { collection: key, listener })
-          resolve()
         })
-      })
-    } catch (err) {
-      // eslint-disable-next-line
-      console.error(err)
-      alert(err.message)
-    }
+        resolve()
+      } catch (err) {
+        sendError(err)
+        reject(err.message)
+      }
+    })
   },
   unsubscribe({ state, commit }) {
+    const MESSAGE = '%sコレクションに対するリアルタイムリスナーを解除しました。'
     return new Promise((resolve, reject) => {
       try {
         Object.keys(state.listeners).forEach((key) => {
           commit('removeListener', key)
+          console.info(`${MODULE_NAME} ${MESSAGE}`, key)
         })
         resolve()
       } catch (err) {
-        // eslint-disable-next-line
-        console.error(err)
-        alert(err.message)
+        sendError(err)
         reject(err)
       }
     })
   },
+}
+/* eslint-enable */
+
+function sendError(err) {
+  // eslint-disable-next-line
+  console.error(err)
+  alert(err.message)
 }

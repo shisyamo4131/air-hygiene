@@ -43,7 +43,7 @@ export default {
     return {
       drawer: false,
       fluid: false,
-      keepAlive: false,
+      keepAlive: true,
     }
   },
   /******************************************************************
@@ -51,14 +51,15 @@ export default {
    ******************************************************************/
   computed: {
     keepAlivePages() {
-      // return []
-      if (this.$route.path.includes('/customers')) {
-        return ['CustomersIndex']
-      } else if (this.$route.path.includes('/sites')) {
-        return ['SitesIndex']
-      } else {
-        return []
-      }
+      const result = ['CustomersIndex', 'SiteIndex']
+      // if (this.$route.path.includes('/customers')) {
+      //   return ['CustomersIndex']
+      // } else if (this.$route.path.includes('/sites')) {
+      //   return ['SitesIndex']
+      // } else {
+      //   return []
+      // }
+      return result
     },
   },
 }

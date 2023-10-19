@@ -1,9 +1,8 @@
 <script>
 /**
- * @create 2023-09-26
  * @author shisyamo4131
  */
-import HTemplateCustomersRegist from '~/components/templates/customers/HTemplateCustomersRegist.vue'
+import HTemplateCustomersEditor from '~/components/templates/customers/HTemplateCustomersEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,12 +11,20 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCustomersRegist },
+  components: { HTemplateCustomersEditor },
+  /******************************************************************
+   * ASYNCDATA
+   ******************************************************************/
+  asyncData({ app, route }) {
+    const docId = route.params.docId
+    const model = app.$Customer()
+    return { docId, model }
+  },
 }
 </script>
 
 <template>
-  <h-template-customers-regist edit-mode="REGIST" />
+  <h-template-customers-editor edit-mode="REGIST" :model="model" />
 </template>
 
 <style></style>

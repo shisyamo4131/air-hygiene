@@ -1,12 +1,19 @@
 const { getDatabase } = require('firebase-admin/database')
+const { logger } = require('firebase-functions/v2')
 const database = getDatabase()
-const indexPath = 'Indexes'
+const indexPath = ''
 /**
- * 指定されたコレクションのインデックス用データをRealtime Databaseに記録します。
+ * ### createIndex
+ * Realtime Databaseにインデックス用データを作成します。
  * データツリーのkeyはdata.docIdが使用されます。
- * @param {string} collection
- * @param {object} data
- * @param {array} fields
+ * #### fields
+ * 引数fieldsは以下の仕様に合わせた配列である必要があります。
+ * ```
+ * { name, value }
+ * ```
+ * @param {string} collection Firestoreにおけるコレクション名
+ * @param {object} data トリガーで取得したドキュメントのデータオブジェクト
+ * @param {array} fields インデックスとして記録するデータのフィールド名を含む配列
  */
 const createIndex = async (collection, data, fields) => {
   /* ネストされたプロパティを取得する可能性を考慮 */
@@ -25,16 +32,21 @@ const createIndex = async (collection, data, fields) => {
   }, {})
   const dbRef = database.ref(`${indexPath}/${collection}/${data.docId}`)
   await dbRef.set(json)
+  logger.info(`[database.js] The index was successfully created.`)
+  logger.info({ collection, data: json })
 }
 
 /**
- * 指定されたコレクションのインデックス用データをRealtime Databaseから削除します。
- * @param {string} collection
- * @param {string} docId
+ * ### deleteIndex
+ * Realtime Databaseからインデックス用データを削除します。
+ * @param {string} collection Firestoreにおけるコレクション名
+ * @param {string} docId 削除対象のドキュメントID
  */
 const deleteIndex = async (collection, docId) => {
   const dbRef = database.ref(`${indexPath}/${collection}/${docId}`)
   await dbRef.remove()
+  logger.info(`[database.js] The index was successfully deleted.`)
+  logger.info({ collection, docId })
 }
 
 exports.createIndex = createIndex

@@ -34,6 +34,7 @@ export default class Customer extends FireModel {
     this.depositDay = '99'
     this.rounding = 'round'
     this.condition = 'active'
+    this.dateExpired = ''
     this.remarks = ''
     super.initialize(item)
   }

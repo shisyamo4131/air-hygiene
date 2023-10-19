@@ -56,10 +56,12 @@ export default {
     async initialize() {
       try {
         this.loading = true
+        await this.$store.dispatch('masters/unsubscribe')
         await this.deleteCollections()
         await this.initAdministratorRoles()
         await this.initDeveloperRoles()
         await this.initAutonumbers()
+        await this.$store.dispatch('masters/subscribe')
       } catch (err) {
         // eslint-disable-next-line
         console.error(err)
