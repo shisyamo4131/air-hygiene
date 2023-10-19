@@ -1,7 +1,7 @@
 <template>
   <air-template-default>
     <v-container>
-      <h-crud-item-unit-prices v-model="value" />
+      <!-- <h-crud-item-unit-prices v-model="value" /> -->
       <!-- <h-data-table-item-unit-prices :items="value" show-actions /> -->
       <!-- <a-data-table show-actions :items="[{ value: 'aaa' }]" @click:edit="test">
         <template #edit-icon="{ attrs, on }">
@@ -16,12 +16,12 @@
 <script>
 // import ADataTable from '~/components/atoms/tables/ADataTable.vue'
 // import HDataTableItemUnitPrices from '~/components/molecules/tables/HDataTableItemUnitPrices.vue'
-import HCrudItemUnitPrices from '~/components/organisms/HCrudItemUnitPrices.vue'
+// import HCrudItemUnitPrices from '~/components/organisms/HCrudItemUnitPrices.vue'
 export default {
   components: {
     // ADataTable,
     // HDataTableItemUnitPrices,
-    HCrudItemUnitPrices,
+    // HCrudItemUnitPrices,
   },
   data() {
     return {

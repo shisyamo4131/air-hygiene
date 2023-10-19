@@ -2,11 +2,16 @@
 import HAutocompleteItem from './HAutocompleteItem.vue'
 import HAutocompleteUnit from './HAutocompleteUnit.vue'
 import HNumericUnitPrice from './HNumericUnitPrice.vue'
+import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: { HAutocompleteItem, HAutocompleteUnit, HNumericUnitPrice },
+  /******************************************************************
+   * MIXINS
+   ******************************************************************/
+  mixins: [Mixin],
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -24,6 +29,7 @@ export default {
       label="回収品目"
       :value="itemId"
       required
+      :disabled="editMode !== 'REGIST'"
       @input="$emit('update:itemId', $event)"
     />
     <v-row dense>
@@ -32,6 +38,7 @@ export default {
           label="単位"
           :value="unitId"
           required
+          :disabled="editMode !== 'REGIST'"
           @input="$emit('update:unitId', $event)"
         />
       </v-col>

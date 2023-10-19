@@ -44,6 +44,7 @@ import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
 import HInputMunicipalContract from '~/components/molecules/inputs/HInputMunicipalContract.vue'
 import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
+import HInputItemUnitPrice from '~/components/molecules/inputs/HInputItemUnitPrice.vue'
 import HRadioGroupEditModel from '~/components/molecules/inputs/HRadioGroupEditModel.vue'
 export default {
   /******************************************************************
@@ -56,6 +57,7 @@ export default {
     HInputMunicipalPermission,
     ASelect,
     HRadioGroupEditModel,
+    HInputItemUnitPrice,
   },
   /******************************************************************
    * DATA
@@ -64,7 +66,13 @@ export default {
     return {
       editMode: 'REGIST',
       model: {},
-      models: ['Customer', 'Site', 'Permission', 'HInputMunicipalContract'],
+      models: [
+        'Customer',
+        'Site',
+        'Permission',
+        'HInputMunicipalContract',
+        'ItemUnitPrice',
+      ],
       selectedModel: '',
     }
   },

@@ -6,7 +6,7 @@ import Unit from '../models/Unit'
 import Customer from '../models/Customer'
 import Site from '../models/Site'
 import MunicipalContract from '../models/MunicipalContract'
-import UnitPrice from '../models/UnitPrice'
+import SiteUnitPrice from '../models/SiteUnitPrice'
 import ItemUnitPrice from '../models/ItemUnitPrice'
 
 export default (context, inject) => {
@@ -18,6 +18,6 @@ export default (context, inject) => {
   inject('Customer', () => new Customer(context))
   inject('Site', () => new Site(context))
   inject('MunicipalContract', (docId) => new MunicipalContract(context, docId))
-  inject('UnitPrice', (docId) => new UnitPrice(context, docId))
+  inject('SiteUnitPrice', (docId) => new SiteUnitPrice(context, docId))
   inject('ItemUnitPrice', (item) => new ItemUnitPrice(item))
 }

@@ -1,4 +1,5 @@
 <script>
+import { collection, onSnapshot } from 'firebase/firestore'
 /**
  * @author shisyamo4131
  */
@@ -19,13 +20,41 @@ export default {
     const docId = route.params.docId
     const model = app.$Site()
     await model.fetch(docId)
-    return { docId, model }
+    const listeners = {
+      siteUnitPrices: null,
+    }
+    const siteUnitPrices = []
+    listeners.siteUnitPrices = onSnapshot(
+      collection(app.$firestore, `Sites/${docId}/SiteUnitPrices`),
+      (snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          const item = change.doc.data()
+          const index = siteUnitPrices.findIndex(
+            ({ docId }) => docId === item.docId
+          )
+          if (change.type === 'added') siteUnitPrices.push(item)
+          if (change.type === 'modified') siteUnitPrices.splice(index, 1, item)
+          if (change.type === 'removed') siteUnitPrices.splice(index, 1)
+        })
+      }
+    )
+    return { docId, model, siteUnitPrices, listeners }
   },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
   data() {
     return {
       municipalContracts: [],
-      unitPrices: [],
     }
+  },
+  /******************************************************************
+   * DESTROYED
+   ******************************************************************/
+  destroyed() {
+    Object.keys(this.listeners).forEach((key) => {
+      if (this.listeners[key]) this.listeners[key]()
+    })
   },
 }
 </script>
@@ -34,7 +63,7 @@ export default {
   <h-template-sites-detail
     :model="model"
     :municipal-contracts="municipalContracts"
-    :unit-prices="unitPrices"
+    :site-unit-prices="siteUnitPrices"
   />
 </template>
 

@@ -3,7 +3,7 @@
  * @author shisyamo4131
  */
 import HCardCrudMunicipalContract from '~/components/molecules/cards/HCardCrudMunicipalContract.vue'
-import HCardCrudUnitPrice from '~/components/molecules/cards/HCardCrudUnitPrice.vue'
+import HCrudSiteUnitPrice from '~/components/organisms/HCrudSiteUnitPrice.vue'
 import HSimpleTableSite from '~/components/molecules/tables/HSimpleTableSite.vue'
 export default {
   /******************************************************************
@@ -12,7 +12,7 @@ export default {
   components: {
     HCardCrudMunicipalContract,
     HSimpleTableSite,
-    HCardCrudUnitPrice,
+    HCrudSiteUnitPrice,
   },
   /******************************************************************
    * PROPS
@@ -20,7 +20,7 @@ export default {
   props: {
     model: { type: Object, required: true },
     municipalContracts: { type: Array, required: true },
-    unitPrices: { type: Array, required: true },
+    siteUnitPrices: { type: Array, required: true },
   },
   /******************************************************************
    * DATA
@@ -47,7 +47,7 @@ export default {
       return result
     },
     sortedUnitPrices() {
-      const result = this.unitPrices
+      const result = this.siteUnitPrices
         .map((item) => item)
         .sort((a, b) => {
           if (a.date < b.date) return 1
@@ -154,7 +154,7 @@ export default {
       <v-container fluid>
         <v-timeline align-top :dense="$vuetify.breakpoint.mobile">
           <v-timeline-item>
-            <h-card-crud-unit-price
+            <h-crud-site-unit-price
               outlined
               :site-id="model.docId"
               edit-mode="REGIST"
@@ -164,7 +164,7 @@ export default {
             v-for="(contract, index) of sortedUnitPrices"
             :key="index"
           >
-            <h-card-crud-unit-price
+            <h-crud-site-unit-price
               outlined
               :site-id="model.docId"
               :model="contract"

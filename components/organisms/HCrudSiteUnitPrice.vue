@@ -1,25 +1,18 @@
 <script>
-import ACardFormInput from '../../atoms/cards/ACardFormInput.vue'
-import HInputUnitPrices from '../inputs/HInputUnitPrices.vue'
-// import HSimpleTableMunicipalContract from '../tables/HSimpleTableMunicipalContract.vue'
+import HInputSiteUnitPrices from '../molecules/inputs/HInputSiteUnitPrices.vue'
+import HDataTableItemUnitPrices from '../molecules/tables/HDataTableItemUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputUnitPrices,
-    // HSimpleTableMunicipalContract,
-    ACardFormInput,
+    HInputSiteUnitPrices,
+    HDataTableItemUnitPrices,
   },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
-    editMode: {
-      type: String,
-      validator: (v) => ['REGIST', 'UPDATE', 'DELETE'].includes(v),
-      required: true,
-    },
     model: { type: Object, default: null, required: false },
     siteId: { type: String, required: true },
   },
@@ -28,17 +21,34 @@ export default {
    ******************************************************************/
   data() {
     return {
-      isPriceEditing: false,
+      editModel: this.$SiteUnitPrice(this.siteId),
       onboarding: 0,
     }
+  },
+  /******************************************************************
+   * WATCH
+   ******************************************************************/
+  watch: {
+    onboarding(v) {
+      if (v === 0) {
+        this.editModel.initialize(this.model)
+        this.$refs.form.resetValidation()
+      }
+    },
+    model: {
+      handler(v) {
+        this.editModel.initialize(v)
+      },
+      immediate: true,
+    },
   },
   /******************************************************************
    * METHODS
    ******************************************************************/
   methods: {
-    onSubmitted() {
+    async onClickSubmit() {
+      await this.editModel.create()
       this.onboarding = 0
-      this.$refs.form.initialize()
     },
   },
 }
@@ -56,7 +66,12 @@ export default {
           </v-card-actions>
         </v-card>
         <v-card v-else outlined>
-          <!-- <h-simple-table-municipal-contract v-bind="model" /> -->
+          <v-card-title>{{ model.date }}</v-card-title>
+          <h-data-table-item-unit-prices
+            :items="model.prices"
+            hide-default-footer
+            :items-per-page="-1"
+          />
           <v-card-actions>
             <v-btn block color="primary" text @click="onboarding = 1">
               契約内容を編集する
@@ -65,24 +80,15 @@ export default {
         </v-card>
       </v-window-item>
       <v-window-item>
-        <a-card-form-input
+        <air-card-form-input
           ref="form"
-          :args="[siteId]"
-          collection="UnitPrice"
-          :edit-mode="editMode"
-          :hide-actions="isPriceEditing"
-          :model="model"
           @click:cancel="onboarding = 0"
-          @submitted="onSubmitted"
+          @click:submit="onClickSubmit"
         >
-          <template #default="{ attrs, on }">
-            <h-input-unit-prices
-              v-bind="attrs"
-              :is-editing.sync="isPriceEditing"
-              v-on="on"
-            />
-          </template>
-        </a-card-form-input>
+          <v-card-text>
+            <h-input-site-unit-prices v-bind.sync="editModel" />
+          </v-card-text>
+        </air-card-form-input>
       </v-window-item>
     </v-window>
   </v-card>
