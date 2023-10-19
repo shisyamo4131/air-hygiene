@@ -1,6 +1,9 @@
 <script>
 import ADataTable from '~/components/atoms/tables/ADataTable.vue'
 export default {
+  /******************************************************************
+   * COMPONENTS
+   ******************************************************************/
   components: { ADataTable },
   /******************************************************************
    * DATA
