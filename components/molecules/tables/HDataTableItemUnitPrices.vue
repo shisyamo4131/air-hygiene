@@ -20,14 +20,19 @@ export default {
 </script>
 
 <template>
-  <a-data-table v-bind="$attrs" :headers="headers" v-on="$listeners">
+  <a-data-table
+    v-bind="$attrs"
+    item-key="key"
+    :headers="headers"
+    v-on="$listeners"
+  >
     <template #[`item.itemId`]="{ item }">
-      {{ $store.getters['masters/Item'](item.itemId).abbr }}
+      {{ $store.getters['masters/Item'](item.itemId)?.abbr || 'undefined' }}
     </template>
     <template #[`item.price`]="{ item }">
       {{
-        `${item.price.toFixed(2)}円/${
-          $store.getters['masters/Unit'](item.unitId).name
+        `${(item?.price || 0).toFixed(2)}円/${
+          $store.getters['masters/Unit'](item.unitId)?.name || 'undefined'
         }`
       }}
     </template>
