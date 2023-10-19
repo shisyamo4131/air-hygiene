@@ -5,6 +5,7 @@
 import HCardCrudMunicipalContract from '~/components/molecules/cards/HCardCrudMunicipalContract.vue'
 import HCrudSiteUnitPrice from '~/components/organisms/HCrudSiteUnitPrice.vue'
 import HSimpleTableSite from '~/components/molecules/tables/HSimpleTableSite.vue'
+import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -13,6 +14,7 @@ export default {
     HCardCrudMunicipalContract,
     HSimpleTableSite,
     HCrudSiteUnitPrice,
+    HDashboardSite,
   },
   /******************************************************************
    * PROPS
@@ -99,7 +101,8 @@ export default {
       </v-btn-toggle>
     </template>
     <template #tab-0>
-      <v-container fluid>
+      <h-dashboard-site :doc-id="model.docId" />
+      <!-- <v-container fluid>
         <v-row>
           <v-col cols="12">
             <v-card outlined>
@@ -108,7 +111,7 @@ export default {
             </v-card>
           </v-col>
         </v-row>
-      </v-container>
+      </v-container> -->
     </template>
     <template #tab-1>
       <v-container fluid>

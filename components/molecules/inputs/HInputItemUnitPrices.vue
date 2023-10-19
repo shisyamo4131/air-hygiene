@@ -49,15 +49,7 @@ export default {
       const result = this.value.filter((_, i) => i !== index)
       this.$emit('input', result)
     },
-    validate() {
-      const result = !this.value.some(({ key }) => key === this.editModel.key)
-      if (!result) {
-        alert('既に登録されている品目と単位の組み合わせです。')
-      }
-      return result
-    },
     submit() {
-      if (!this.validate()) return
       const result = this.value.map((item) => item)
       const data = { ...this.editModel }
       if (this.editIndex === -1) {
@@ -96,11 +88,15 @@ export default {
           </template>
           <air-card-form-input
             ref="form"
+            outlined
             @click:cancel="editor = false"
             @click:submit="submit"
           >
             <v-card-text>
-              <h-input-item-unit-price v-bind.sync="editModel" />
+              <h-input-item-unit-price
+                v-bind.sync="editModel"
+                :edit-mode="editIndex === -1 ? 'REGIST' : 'UPDATE'"
+              />
             </v-card-text>
           </air-card-form-input>
         </v-dialog>

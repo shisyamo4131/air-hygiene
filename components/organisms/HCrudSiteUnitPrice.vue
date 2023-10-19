@@ -92,7 +92,7 @@ export default {
         <v-card v-if="!model?.docId || ''" outlined>
           <v-card-actions>
             <v-btn block color="primary" text @click="onboarding = 1">
-              新しい契約を追加する
+              新しい回収単価を追加する
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -105,7 +105,7 @@ export default {
           />
           <v-card-actions>
             <v-btn block color="primary" text @click="onboarding = 1">
-              契約内容を編集する
+              回収単価を編集する
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -121,7 +121,7 @@ export default {
             <a-switch
               v-if="editMode !== 'REGIST'"
               v-model="isDelete"
-              label="この契約を削除する"
+              label="この回収単価を削除する"
             />
           </v-card-text>
         </air-card-form-input>
