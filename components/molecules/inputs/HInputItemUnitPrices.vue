@@ -2,8 +2,8 @@
 /**
  * @author shisyamo4131
  */
-import HInputItemUnitPrice from '../molecules/inputs/HInputItemUnitPrice.vue'
-import HDataTableItemUnitPrices from '../molecules/tables/HDataTableItemUnitPrices.vue'
+import HDataTableItemUnitPrices from '../tables/HDataTableItemUnitPrices.vue'
+import HInputItemUnitPrice from './HInputItemUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -82,8 +82,10 @@ export default {
     @click:delete="onClickDelete($event)"
   >
     <template #top>
-      <v-toolbar dense flat>
-        <v-toolbar-title>品目別請求単価</v-toolbar-title>
+      <v-toolbar color="accent" class="rounded" dense flat>
+        <v-toolbar-title class="text-subtitle-1"
+          >品目別請求単価</v-toolbar-title
+        >
         <v-divider inset vertical class="mx-4" />
         <v-spacer />
         <v-dialog v-model="editor" persistent max-width="360">

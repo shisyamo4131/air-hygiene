@@ -44,7 +44,7 @@ export default {
       </v-col>
       <v-col cols="12" sm="6">
         <h-numeric-unit-price
-          label="単価"
+          label="単価（税抜）"
           :value="price"
           required
           :unit-id="unitId"

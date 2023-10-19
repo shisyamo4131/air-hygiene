@@ -4,14 +4,14 @@
  */
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import HCrudItemUnitPrices from '~/components/organisms/HCrudItemUnitPrices.vue'
+import HInputItemUnitPrices from '~/components/molecules/inputs/HInputItemUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     ATextField,
-    HCrudItemUnitPrices,
+    HInputItemUnitPrices,
   },
   /******************************************************************
    * MIXINS
@@ -36,7 +36,7 @@ export default {
       input-type="date"
       @input="$emit('update:date', $event)"
     />
-    <h-crud-item-unit-prices
+    <h-input-item-unit-prices
       :value="prices"
       :edit-mode="editMode"
       @input="$emit('update:prices', $event)"
