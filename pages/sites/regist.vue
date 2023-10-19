@@ -1,9 +1,8 @@
 <script>
 /**
- * @create 2023-09-29
  * @author shisyamo4131
  */
-import HTemplateSitesRegist from '~/components/templates/sites/HTemplateSitesRegist.vue'
+import HTemplateSitesEditor from '~/components/templates/sites/HTemplateSitesEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,12 +11,20 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateSitesRegist },
+  components: { HTemplateSitesEditor },
+  /******************************************************************
+   * ASYNCDATA
+   ******************************************************************/
+  asyncData({ app, route }) {
+    const docId = route.params.docId
+    const model = app.$Site()
+    return { docId, model }
+  },
 }
 </script>
 
 <template>
-  <h-template-sites-regist edit-mode="REGIST" />
+  <h-template-sites-editor edit-mode="REGIST" :model="model" />
 </template>
 
 <style></style>

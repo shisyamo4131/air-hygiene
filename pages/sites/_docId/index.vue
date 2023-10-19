@@ -15,12 +15,17 @@ export default {
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  asyncData({ store, route }) {
+  async asyncData({ app, route }) {
     const docId = route.params.docId
-    const model = store.getters['masters/Site'](docId)
-    const municipalContracts = []
-    const unitPrices = []
-    return { model, municipalContracts, unitPrices }
+    const model = app.$Site()
+    await model.fetch(docId)
+    return { docId, model }
+  },
+  data() {
+    return {
+      municipalContracts: [],
+      unitPrices: [],
+    }
   },
 }
 </script>

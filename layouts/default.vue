@@ -51,7 +51,7 @@ export default {
    ******************************************************************/
   computed: {
     keepAlivePages() {
-      const result = ['CustomersIndex', 'SiteIndex']
+      const result = ['CustomersIndex', 'SitesIndex']
       // if (this.$route.path.includes('/customers')) {
       //   return ['CustomersIndex']
       // } else if (this.$route.path.includes('/sites')) {

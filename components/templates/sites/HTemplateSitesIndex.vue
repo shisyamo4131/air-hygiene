@@ -51,6 +51,14 @@ export default {
     cols() {
       return { cols: 12, sm: 6, md: 4 }
     },
+    itemsPerPageOptions() {
+      return [
+        { text: '6件', value: 6 },
+        { text: '12件', value: 12 },
+        { text: '18件', value: 18 },
+        { text: '全て', value: -1 },
+      ]
+    },
   },
 }
 </script>
@@ -60,6 +68,8 @@ export default {
     v-bind="$attrs"
     :data-table-props="{ customFilter, sortBy: 'code', sortDesc: true }"
     :items="items"
+    :items-per-page="12"
+    :items-per-page-options="itemsPerPageOptions"
     label="排出場所一覧"
     show-itembar
     v-on="$listeners"
@@ -93,7 +103,7 @@ export default {
           >
             <h-card-index-site
               outlined
-              :model="item"
+              v-bind="item"
               :to="`/sites/${item.docId}`"
             />
           </v-col>

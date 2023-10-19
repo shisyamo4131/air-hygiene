@@ -80,16 +80,13 @@ export default {
      * data.searchの値が変更される都度、fetchData()を呼び出してデータ取得を試みます。
      * 連続した入力の最中はデータ取得を行わないように、0.5秒のデバウンスを持ちます。
      *
+     * ##### NOTE
      * a-autocompleteはmultipleが設定されていない場合、既に読み込まれたデータ（items）から
      * itemが選択されるとsearch-inputが一度初期化され、直後に選択されたitemの値に更新されます。
      * ※itemがobjectの場合、itemTextで指定されたプロパティ値に更新されます。
      * この動きにより、itemsからitemを選択した直後に再度、データの取得処理が実行されてしまいます。
-     *
-     * これを回避するため、以下の条件に該当する場合はデータ取得を行わないようにしています。
-     * 1. multipleがfalse
-     * 2. valueに値が設定されている
-     *
-     * multipleが設定されている場合、itemsからitemを選択した直後、search-inputは
+     * 様々なケースに対応しなければならないため、この回避を行っていません。
+     * multipleが設定されている場合は、itemsからitemを選択した直後、search-inputは
      * 空文字列になります。
      * => 日本語入力の場合、入力した値の変換前（確定前）にitemを選択した場合に、
      *    入力した値が残ってしまうため、v-autocompleteの既定動作を上書きしています。
@@ -99,8 +96,6 @@ export default {
       this.isSearching = false
       clearTimeout(this.timerId)
       if (!v) return
-      /* !!this.value は {} も trueになる => 修正が必要かも？ */
-      if (!this.multiple && !!this.value) return
       this.isSearching = true
       this.timerId = setTimeout(() => {
         this.fetchData()

@@ -1,23 +1,19 @@
 <template>
   <air-template-default>
     <v-container>
-      {{ items }}
+      <h-autocomplete-customer v-model="value" />
     </v-container>
   </air-template-default>
 </template>
 
 <script>
-import { collection, getDocs, query } from 'firebase/firestore'
+import HAutocompleteCustomer from '~/components/molecules/inputs/HAutocompleteCustomer.vue'
 export default {
-  async asyncData({ app }) {
-    const colRef = collection(app.$firestore, 'Sites')
-    const q = query(colRef)
-    const snapshot = await getDocs(q)
-    const items = snapshot.docs.map((doc) => doc.data())
-    return { items }
-  },
+  components: { HAutocompleteCustomer },
   data() {
-    return {}
+    return {
+      value: '',
+    }
   },
 }
 </script>
