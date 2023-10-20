@@ -61,6 +61,7 @@ export default class SiteUnitPrice extends FireModel {
       limit(1)
     )
     const listener = onSnapshot(q, (snapshot) => {
+      if (snapshot.empty) return
       this.initialize(snapshot.docs[0].data())
     })
     return listener

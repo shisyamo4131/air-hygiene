@@ -60,6 +60,9 @@ export default {
       <v-col cols="12" sm="6" md="4">
         <v-card outlined>
           <v-list-item>
+            <v-list-item-avatar>
+              <v-icon class="blue">mdi-currency-jpy</v-icon>
+            </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title>回収単価</v-list-item-title>
               <v-list-item-subtitle>
