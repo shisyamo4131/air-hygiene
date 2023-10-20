@@ -2,19 +2,19 @@
 /**
  * @author shisyamo4131
  */
-import HCrudSiteMunicipalContract from '~/components/organisms/HCrudSiteMunicipalContract.vue'
 import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
 import HDetailSite from '~/components/organisms/HDetailSite.vue'
+import HTimelineSiteMunicipalContracts from '~/components/organisms/HTimelineSiteMunicipalContracts.vue'
 import HTimelineSiteUnitPrices from '~/components/organisms/HTimelineSiteUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HCrudSiteMunicipalContract,
     HDashboardSite,
     HDetailSite,
     HTimelineSiteUnitPrices,
+    HTimelineSiteMunicipalContracts,
   },
   /******************************************************************
    * PROPS
@@ -22,8 +22,6 @@ export default {
   props: {
     /* requires this.$Site() */
     model: { type: Object, required: true },
-    municipalContracts: { type: Array, required: true },
-    siteUnitPrices: { type: Array, required: true },
   },
   /******************************************************************
    * DATA
@@ -38,28 +36,7 @@ export default {
   /******************************************************************
    * COMPUTED
    ******************************************************************/
-  computed: {
-    sortedMunicipalContracts() {
-      const result = this.municipalContracts
-        .map((item) => item)
-        .sort((a, b) => {
-          if (a.date < b.date) return 1
-          if (a.date > b.date) return -1
-          return 0
-        })
-      return result
-    },
-    sortedUnitPrices() {
-      const result = this.siteUnitPrices
-        .map((item) => item)
-        .sort((a, b) => {
-          if (a.date < b.date) return 1
-          if (a.date > b.date) return -1
-          return 0
-        })
-      return result
-    },
-  },
+  computed: {},
   /******************************************************************
    * MOUNTED
    ******************************************************************/
@@ -115,26 +92,7 @@ export default {
       <v-container fluid>
         <v-window v-model="wasteDivTab">
           <v-window-item>
-            <v-timeline align-top :dense="$vuetify.breakpoint.mobile">
-              <v-timeline-item>
-                <h-crud-site-municipal-contract
-                  outlined
-                  :site-id="model.docId"
-                  edit-mode="REGIST"
-                />
-              </v-timeline-item>
-              <v-timeline-item
-                v-for="(contract, index) of sortedMunicipalContracts"
-                :key="index"
-              >
-                <h-crud-site-municipal-contract
-                  outlined
-                  :site-id="model.docId"
-                  :model="contract"
-                  edit-mode="UPDATE"
-                />
-              </v-timeline-item>
-            </v-timeline>
+            <h-timeline-site-municipal-contracts :model="model" />
           </v-window-item>
           <v-window-item> aaa </v-window-item>
         </v-window>
