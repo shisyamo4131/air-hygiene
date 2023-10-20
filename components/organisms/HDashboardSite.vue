@@ -9,7 +9,8 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    docId: { type: String, required: true },
+    /* requireds this.$Site() */
+    model: { type: Object, required: true },
   },
   /******************************************************************
    * DATA
@@ -17,18 +18,14 @@ export default {
   data() {
     return {
       today: this.$dayjs().format('YYYY-MM-DD'),
-      model: this.$Site(),
-      unitPrice: this.$SiteUnitPrice(this.docId),
-      listeners: {
-        unitPrice: null,
-      },
+      unitPrice: this.$SiteUnitPrice(this.model.docId),
+      listeners: { unitPrice: null },
     }
   },
   /******************************************************************
    * MOUNTED
    ******************************************************************/
   mounted() {
-    this.model.fetch(this.docId)
     this.listeners.unitPrice = this.unitPrice.fetchLatestSync(this.today)
   },
   /******************************************************************
@@ -43,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <v-container fluid>
+  <div>
     <v-row>
       <v-col cols="12">
         <v-card outlined>
@@ -78,7 +75,7 @@ export default {
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <style></style>

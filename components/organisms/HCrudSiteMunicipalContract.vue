@@ -1,15 +1,13 @@
 <script>
-import ASwitch from '../atoms/inputs/ASwitch.vue'
-import HInputSiteUnitPrices from '../molecules/inputs/HInputSiteUnitPrices.vue'
-import HDataTableItemUnitPrices from '../molecules/tables/HDataTableItemUnitPrices.vue'
+import HInputMunicipalContract from '../molecules/inputs/HInputMunicipalContract.vue'
+import HSimpleTableMunicipalContract from '../molecules/tables/HSimpleTableMunicipalContract.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputSiteUnitPrices,
-    HDataTableItemUnitPrices,
-    ASwitch,
+    HInputMunicipalContract,
+    HSimpleTableMunicipalContract,
   },
   /******************************************************************
    * PROPS
@@ -23,7 +21,7 @@ export default {
    ******************************************************************/
   data() {
     return {
-      editModel: this.$SiteUnitPrice(this.siteId),
+      editModel: this.$SiteMunicipalContract(this.siteId),
       isDelete: false,
       onboarding: 0,
     }
@@ -62,10 +60,6 @@ export default {
    ******************************************************************/
   methods: {
     validate() {
-      if (!this.editModel.prices.length) {
-        alert('少なくとも1つ以上の単価を登録してください。')
-        return false
-      }
       return true
     },
     async submit(mode) {
@@ -95,26 +89,15 @@ export default {
         <v-card v-if="!model?.docId || ''" outlined>
           <v-card-actions>
             <v-btn block color="primary" text @click="onboarding = 1">
-              新しい回収単価を追加する
+              新しい契約を追加する
             </v-btn>
           </v-card-actions>
         </v-card>
         <v-card v-else outlined>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>
-                {{ $dayjs(model.date).format('YYYY年MM月DD日') }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <h-data-table-item-unit-prices
-            :items="model.prices"
-            hide-default-footer
-            :items-per-page="-1"
-          />
+          <h-simple-table-municipal-contract v-bind="model" />
           <v-card-actions>
             <v-btn block color="primary" text @click="onboarding = 1">
-              回収単価を編集する
+              契約内容を編集する
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -126,11 +109,11 @@ export default {
           @click:submit="onClickSubmit"
         >
           <v-card-text>
-            <h-input-site-unit-prices v-bind.sync="editModel" />
+            <h-input-municipal-contract v-bind.sync="editModel" />
             <a-switch
               v-if="editMode !== 'REGIST'"
               v-model="isDelete"
-              label="この回収単価を削除する"
+              label="この契約を削除する"
             />
           </v-card-text>
         </air-card-form-input>

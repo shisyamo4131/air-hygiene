@@ -2,24 +2,25 @@
 /**
  * @author shisyamo4131
  */
-import HCardCrudMunicipalContract from '~/components/molecules/cards/HCardCrudMunicipalContract.vue'
-import HCrudSiteUnitPrice from '~/components/organisms/HCrudSiteUnitPrice.vue'
-import HSimpleTableSite from '~/components/molecules/tables/HSimpleTableSite.vue'
+import HCrudSiteMunicipalContract from '~/components/organisms/HCrudSiteMunicipalContract.vue'
 import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
+import HDetailSite from '~/components/organisms/HDetailSite.vue'
+import HTimelineSiteUnitPrices from '~/components/organisms/HTimelineSiteUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HCardCrudMunicipalContract,
-    HSimpleTableSite,
-    HCrudSiteUnitPrice,
+    HCrudSiteMunicipalContract,
     HDashboardSite,
+    HDetailSite,
+    HTimelineSiteUnitPrices,
   },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
+    /* requires this.$Site() */
     model: { type: Object, required: true },
     municipalContracts: { type: Array, required: true },
     siteUnitPrices: { type: Array, required: true },
@@ -101,27 +102,13 @@ export default {
       </v-btn-toggle>
     </template>
     <template #tab-0>
-      <h-dashboard-site :doc-id="model.docId" />
-      <!-- <v-container fluid>
-        <v-row>
-          <v-col cols="12">
-            <v-card outlined>
-              <v-card-title>{{ model.name }}</v-card-title>
-              <v-card-subtitle>{{ model.customer.abbr }}</v-card-subtitle>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container> -->
+      <v-container fluid>
+        <h-dashboard-site :model="model" />
+      </v-container>
     </template>
     <template #tab-1>
       <v-container fluid>
-        <v-card outlined>
-          <h-simple-table-site v-bind="model" />
-          <v-divider v-if="model.remarks" />
-          <v-card-text v-if="model.remarks">
-            {{ model.remarks }}
-          </v-card-text>
-        </v-card>
+        <h-detail-site :model="model" />
       </v-container>
     </template>
     <template #tab-2>
@@ -130,7 +117,7 @@ export default {
           <v-window-item>
             <v-timeline align-top :dense="$vuetify.breakpoint.mobile">
               <v-timeline-item>
-                <h-card-crud-municipal-contract
+                <h-crud-site-municipal-contract
                   outlined
                   :site-id="model.docId"
                   edit-mode="REGIST"
@@ -140,7 +127,7 @@ export default {
                 v-for="(contract, index) of sortedMunicipalContracts"
                 :key="index"
               >
-                <h-card-crud-municipal-contract
+                <h-crud-site-municipal-contract
                   outlined
                   :site-id="model.docId"
                   :model="contract"
@@ -155,26 +142,7 @@ export default {
     </template>
     <template #tab-3>
       <v-container fluid>
-        <v-timeline align-top :dense="$vuetify.breakpoint.mobile">
-          <v-timeline-item>
-            <h-crud-site-unit-price
-              outlined
-              :site-id="model.docId"
-              edit-mode="REGIST"
-            />
-          </v-timeline-item>
-          <v-timeline-item
-            v-for="(contract, index) of sortedUnitPrices"
-            :key="index"
-          >
-            <h-crud-site-unit-price
-              outlined
-              :site-id="model.docId"
-              :model="contract"
-              edit-mode="UPDATE"
-            />
-          </v-timeline-item>
-        </v-timeline>
+        <h-timeline-site-unit-prices :model="model" />
       </v-container>
     </template>
   </air-template-tabs>

@@ -1,15 +1,15 @@
 /**
- * MunicipalContract
+ * SiteMunicipalContract
  * @create 2023-10-07
  * @author shisyamo4131
  */
 import FireModel from './FireModel'
 
-export default class MunicipalContract extends FireModel {
+export default class SiteMunicipalContract extends FireModel {
   constructor(context, docId) {
     super(
       context.app.$firestore,
-      `Sites/${docId}/MunicipalContracts`,
+      `Sites/${docId}/SiteMunicipalContracts`,
       context.app.$auth
     )
     Object.defineProperties(this, {
