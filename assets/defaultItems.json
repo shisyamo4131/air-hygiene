@@ -9,6 +9,15 @@
     "deletable": false
   },
   {
+    "code": "1015",
+    "name": "普通ごみ（資源－段ボール）",
+    "nameKana": "ダンボール",
+    "abbr": "段ボ",
+    "wasteDiv": "municipal",
+    "remarks": "",
+    "deletable": true
+  },
+  {
     "code": "1021",
     "name": "道路・公園ごみ",
     "nameKana": "ドウロコウエンゴミ",
@@ -117,6 +126,24 @@
     "deletable": false
   },
   {
+    "code": "2062",
+    "name": "混載ごみ（廃プラスチック類）",
+    "nameKana": "コンサイゴミ",
+    "abbr": "混載ごみ",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": true
+  },
+  {
+    "code": "2063",
+    "name": "発泡スチロール",
+    "nameKana": "ハッポウスチロール",
+    "abbr": "発泡",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": true
+  },
+  {
     "code": "2071",
     "name": "ゴムくず",
     "nameKana": "ゴムクズ",
@@ -135,6 +162,24 @@
     "deletable": false
   },
   {
+    "code": "2082",
+    "name": "一斗缶",
+    "nameKana": "イットカン",
+    "abbr": "一斗缶",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": true
+  },
+  {
+    "code": "2083",
+    "name": "傘",
+    "nameKana": "カサ",
+    "abbr": "傘",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": true
+  },
+  {
     "code": "2091",
     "name": "ガラス・コンクリート・陶磁器くず",
     "nameKana": "ガラスコンクリートトウジキクズ",
@@ -142,6 +187,15 @@
     "wasteDiv": "industrial",
     "remarks": "",
     "deletable": false
+  },
+  {
+    "code": "2092",
+    "name": "蛍光灯",
+    "nameKana": "ケイコウトウ",
+    "abbr": "蛍光灯",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": true
   },
   {
     "code": "2101",
@@ -239,6 +293,60 @@
     "nameKana": "ソノタノサンギョウハイキブツ",
     "abbr": "その他",
     "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "3011",
+    "name": "粗大ごみ",
+    "nameKana": "ソダイゴミ",
+    "abbr": "粗大ごみ",
+    "wasteDiv": "industrial",
+    "remarks": "",
+    "deletable": true
+  },
+  {
+    "code": "5001",
+    "name": "作業費",
+    "nameKana": "サギョウヒ",
+    "abbr": "作業費",
+    "wasteDiv": "other",
+    "remarks": "",
+    "deletable": true
+  },
+  {
+    "code": "5002",
+    "name": "車両費",
+    "nameKana": "シャリョウヒ",
+    "abbr": "車両費",
+    "wasteDiv": "other",
+    "remarks": "",
+    "deletable": true
+  },
+  {
+    "code": "5003",
+    "name": "特別回収",
+    "nameKana": "トクベツカイシュウ",
+    "abbr": "特別回収",
+    "wasteDiv": "other",
+    "remarks": "",
+    "deletable": true
+  },
+  {
+    "code": "9997",
+    "name": "金額調整",
+    "nameKana": "キンガクチョウセイ",
+    "abbr": "金額調整",
+    "wasteDiv": "other",
+    "remarks": "",
+    "deletable": false
+  },
+  {
+    "code": "9999",
+    "name": "月極定額",
+    "nameKana": "ツキギメテイガク",
+    "abbr": "月極定額",
+    "wasteDiv": "other",
     "remarks": "",
     "deletable": false
   }

@@ -43,16 +43,19 @@
 <script>
 import {
   collection,
+  deleteDoc,
   doc,
   getDocs,
   limit,
   orderBy,
   query,
   updateDoc,
+  where,
 } from 'firebase/firestore'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import defaultCustomers from '~/assets/defaultCustomers.json'
 import defaultSites from '~/assets/defaultSites.json'
+import defaultSiteUnitPrices from '~/assets/defaultSiteUnitPrices.json'
 import defaultItems from '~/assets/defaultItems.json'
 import defaultUnits from '~/assets/defaultUnits.json'
 export default {
@@ -141,14 +144,27 @@ export default {
     async initSites() {
       this.progress.value = 0
       this.progress.max = defaultSites.length
-      for (const item of defaultSites) {
+      for (const item of defaultSites.filter(
+        ({ code }) => code <= '00000012'
+      )) {
+        // for (const item of defaultSites) {
         const model = this.$Site()
-        item.customer = this.$store.state.masters.Customers.find(
-          ({ code }) => code === item.customer
-        )
-        const exist = this.$store.state.masters.Sites.find(
-          ({ code }) => code === item.code
-        )
+        const getCustomer = async (code) => {
+          const colRef = collection(this.$firestore, 'Customers')
+          const q = query(colRef, where('code', '==', code))
+          const snapshot = await getDocs(q)
+          if (snapshot.empty) return undefined
+          return snapshot.docs[0].data()
+        }
+        item.customer = await getCustomer(item.customer)
+        const getSite = async (code) => {
+          const colRef = collection(this.$firestore, 'Sites')
+          const q = query(colRef, where('code', '==', code))
+          const snapshot = await getDocs(q)
+          if (snapshot.empty) return undefined
+          return snapshot.docs[0].data()
+        }
+        const exist = await getSite(item.code)
         if (!exist) {
           model.initialize(item)
           await model.create()
@@ -156,7 +172,87 @@ export default {
           model.initialize({ ...exist, ...item })
           await model.update()
         }
+        await this.initSiteUnitPrices(model)
         this.progress.value = this.progress.value + 1
+      }
+    },
+    async initSiteUnitPrices(siteModel) {
+      // pre. 既存の回収単価を全て削除
+      const colRef = collection(
+        this.$firestore,
+        `Sites/${siteModel.docId}/SiteUnitPrices`
+      )
+      const snapshot = await getDocs(colRef)
+      if (!snapshot.empty) {
+        const promises = []
+        snapshot.docs.forEach((doc) => {
+          promises.push(deleteDoc(doc.ref))
+        })
+        await Promise.all(promises)
+      }
+      const items = defaultSiteUnitPrices.filter(
+        ({ code }) => code === siteModel.code
+      )
+      for (const item of items) {
+        // 0. item、unitのdocIdを取得
+        const itemId =
+          this.$store.state.masters.Items.find(
+            ({ code }) => code === item.itemCode
+          )?.docId || undefined
+        const unitId =
+          this.$store.state.masters.Units.find(
+            ({ code }) => code === item.unitCode
+          )?.docId || undefined
+        if (!itemId || !unitId) {
+          // eslint-disable-next-line
+          console.log(item)
+          throw new Error('no item or unit.')
+        }
+        // 1. 直前締日の翌日（以下、基準日）を取得
+        const getBaseDate = (date, deadline) => {
+          if (deadline === '99') {
+            return this.$dayjs(date).startOf('month')
+          } else {
+            return this.dayjs(`${date.substr(0, 8)}${deadline}`)
+              .subtract(1, 'month')
+              .add(1, 'day')
+          }
+        }
+        const baseDate = getBaseDate(item.date, siteModel.customer.deadline)
+        // 2. 基準日が起算日の契約単価を取得
+        const siteUnitPriceModel = this.$SiteUnitPrice(siteModel.docId)
+        await siteUnitPriceModel.fetchLatest(baseDate.format('YYYY-MM-DD'))
+        // 3-1. 契約単価が存在しなれば作成
+        if (!siteUnitPriceModel.docId) {
+          siteUnitPriceModel.initialize({
+            date: baseDate.format('YYYY-MM-DD'),
+            prices: [{ itemId, unitId, price: parseInt(item.price) }],
+          })
+          await siteUnitPriceModel.create()
+        }
+        // 3-2. 契約単価が存在した場合
+        else {
+          const isExist = siteUnitPriceModel.prices.some(
+            ({ key }) => key === `${itemId}-${unitId}`
+          )
+          // 3-2-1. 同一keyの単価が登録されていなければ当該契約に登録
+          if (!isExist) {
+            siteUnitPriceModel.prices.push({
+              itemId,
+              unitId,
+              price: parseInt(item.price),
+            })
+            await siteUnitPriceModel.update()
+          }
+          // 3-2-2. 同一keyの単価が登録されていれば、直前締日翌日の1ヶ月後を起算日にして契約を作成
+          else {
+            siteUnitPriceModel.initialize({
+              date: baseDate.add(1, 'month').format('YYYY-MM-DD'),
+              prices: [{ itemId, unitId, price: item.price }],
+            })
+            await siteUnitPriceModel.create()
+          }
+        }
       }
     },
     async initItems() {

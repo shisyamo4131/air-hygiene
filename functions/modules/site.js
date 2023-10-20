@@ -10,7 +10,7 @@ const {
 const { deleteCollections, syncData } = require('./firestore')
 
 /* Define subcollections */
-const subcollections = ['MunicipalContracts']
+const subcollections = ['SiteUnitPrices']
 
 exports.updated = onDocumentUpdated('Sites/{siteId}', async (event) => {
   const data = event.data.after.data()

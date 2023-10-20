@@ -1,0 +1,10019 @@
+[
+  {
+    "code": "00000001",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "10"
+  },
+  {
+    "code": "00000001",
+    "date": "2022-04-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000001",
+    "date": "2022-04-09",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "60"
+  },
+  {
+    "code": "00000001",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000001",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000001",
+    "date": "2023-10-14",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000002",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000002",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000002",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000002",
+    "date": "2022-04-07",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000002",
+    "date": "2022-04-14",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000002",
+    "date": "2022-04-30",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000003",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000003",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000003",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000003",
+    "date": "2022-06-27",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000003",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000004",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000004",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000004",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000004",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000004",
+    "date": "2022-05-08",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000004",
+    "date": "2022-10-30",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000006",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000006",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000006",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000007",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000007",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000007",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000007",
+    "date": "2022-04-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000007",
+    "date": "2023-05-15",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000007",
+    "date": "2023-06-24",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000007",
+    "date": "2023-08-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-04-03",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-04-11",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-04-15",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000008",
+    "date": "2022-05-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000009",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000009",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000009",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000009",
+    "date": "2022-05-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000009",
+    "date": "2023-06-05",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000010",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000010",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000010",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000010",
+    "date": "2022-04-03",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000010",
+    "date": "2022-05-15",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000012",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000012",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000012",
+    "date": "2022-04-09",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000012",
+    "date": "2022-04-11",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000012",
+    "date": "2023-01-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000012",
+    "date": "2023-03-02",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000012",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000012",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000015",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000015",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000015",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000015",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000015",
+    "date": "2022-06-26",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000019",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000019",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000019",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000019",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000019",
+    "date": "2022-04-09",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000020",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000020",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000020",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000020",
+    "date": "2022-04-11",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000020",
+    "date": "2022-05-29",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000020",
+    "date": "2023-02-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000020",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000020",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000025",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000025",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000025",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000026",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000026",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000026",
+    "date": "2022-04-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000026",
+    "date": "2022-04-08",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000026",
+    "date": "2022-04-25",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000026",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000026",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000026",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000030",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000030",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000030",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000031",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000031",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000031",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000032",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000032",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000032",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000032",
+    "date": "2022-04-02",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000032",
+    "date": "2022-06-04",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000032",
+    "date": "2022-10-25",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000032",
+    "date": "2023-02-17",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "250"
+  },
+  {
+    "code": "00000032",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000032",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000033",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000033",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000033",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000033",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000033",
+    "date": "2022-04-13",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000033",
+    "date": "2022-07-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000036",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000036",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000036",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000036",
+    "date": "2022-09-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000036",
+    "date": "2022-09-19",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000036",
+    "date": "2023-03-11",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000036",
+    "date": "2023-08-13",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000036",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000036",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000036",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000037",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000037",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000037",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000037",
+    "date": "2023-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000037",
+    "date": "2023-09-25",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000039",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000039",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000039",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000040",
+    "date": "2022-04-12",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000040",
+    "date": "2022-04-13",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000040",
+    "date": "2022-04-14",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000040",
+    "date": "2022-04-14",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000040",
+    "date": "2022-04-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000040",
+    "date": "2022-07-17",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000044",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000044",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000044",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000044",
+    "date": "2022-04-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000044",
+    "date": "2023-07-26",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000044",
+    "date": "2023-07-26",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000044",
+    "date": "2023-07-27",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000044",
+    "date": "2023-07-31",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000044",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000044",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000045",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000045",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000045",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000045",
+    "date": "2022-07-13",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000046",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000046",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000046",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000046",
+    "date": "2022-09-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000048",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000048",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000048",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000048",
+    "date": "2022-04-04",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000048",
+    "date": "2022-04-16",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000048",
+    "date": "2022-11-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000048",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000048",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000049",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000049",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000049",
+    "date": "2022-04-15",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000049",
+    "date": "2022-10-21",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000051",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000051",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000051",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000052",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000052",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000052",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000052",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000053",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000053",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000053",
+    "date": "2022-04-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000053",
+    "date": "2023-01-15",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000053",
+    "date": "2023-06-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000055",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000055",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000055",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000055",
+    "date": "2022-04-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000055",
+    "date": "2022-04-15",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000055",
+    "date": "2022-12-09",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000058",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000058",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000058",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000058",
+    "date": "2022-05-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000059",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000059",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000059",
+    "date": "2022-04-25",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000059",
+    "date": "2022-05-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000059",
+    "date": "2022-09-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000061",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000061",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000061",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000061",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000061",
+    "date": "2022-04-14",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000062",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000062",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000062",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000062",
+    "date": "2022-04-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000062",
+    "date": "2022-04-06",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000062",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000062",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000063",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000063",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000063",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000066",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000066",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000066",
+    "date": "2022-04-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000066",
+    "date": "2022-04-18",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000067",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000067",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000067",
+    "date": "2022-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000067",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000067",
+    "date": "2022-04-23",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000067",
+    "date": "2022-10-08",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000069",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000069",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000069",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000069",
+    "date": "2022-04-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000069",
+    "date": "2022-10-21",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000069",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000069",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000072",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000072",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000072",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "80"
+  },
+  {
+    "code": "00000072",
+    "date": "2022-04-19",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000072",
+    "date": "2022-04-26",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "200"
+  },
+  {
+    "code": "00000072",
+    "date": "2022-06-12",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000073",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000073",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000073",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000073",
+    "date": "2022-06-02",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000073",
+    "date": "2022-06-11",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000073",
+    "date": "2023-08-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000073",
+    "date": "2023-08-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000073",
+    "date": "2023-08-06",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000073",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "33"
+  },
+  {
+    "code": "00000073",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "33"
+  },
+  {
+    "code": "00000074",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000074",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000074",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000074",
+    "date": "2022-09-22",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000074",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000074",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000075",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000075",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000075",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000075",
+    "date": "2022-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000076",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000076",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000076",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000076",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000076",
+    "date": "2022-04-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000076",
+    "date": "2022-06-05",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000077",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000077",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000077",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000077",
+    "date": "2022-07-30",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000077",
+    "date": "2022-11-22",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000077",
+    "date": "2022-11-22",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000078",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000078",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000078",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000078",
+    "date": "2023-08-15",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000079",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000079",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000079",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000079",
+    "date": "2022-04-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000079",
+    "date": "2022-05-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000079",
+    "date": "2023-07-13",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000082",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000082",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000082",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000082",
+    "date": "2022-07-16",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000083",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000083",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000083",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000083",
+    "date": "2022-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000084",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000084",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000084",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000084",
+    "date": "2022-05-05",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000084",
+    "date": "2022-05-09",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000085",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000085",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000085",
+    "date": "2022-04-08",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000086",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000086",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000086",
+    "date": "2022-04-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000086",
+    "date": "2022-06-02",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000086",
+    "date": "2022-06-02",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "250"
+  },
+  {
+    "code": "00000086",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000086",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000087",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000087",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000087",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000087",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000087",
+    "date": "2022-04-07",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000087",
+    "date": "2022-06-17",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000087",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000087",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000091",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000091",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000091",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000091",
+    "date": "2022-04-06",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000091",
+    "date": "2022-04-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000091",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000091",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000092",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000092",
+    "date": "2022-04-09",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000092",
+    "date": "2022-08-17",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000093",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000093",
+    "date": "2022-05-28",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000095",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000095",
+    "date": "2022-04-08",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000095",
+    "date": "2022-04-19",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000097",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000098",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000098",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000098",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000098",
+    "date": "2022-04-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000098",
+    "date": "2022-04-06",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000099",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000099",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000099",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000099",
+    "date": "2022-04-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000099",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000099",
+    "date": "2022-07-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000101",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000101",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000101",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000101",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000101",
+    "date": "2022-04-21",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000104",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000104",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000104",
+    "date": "2022-04-14",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000105",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000105",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000105",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000105",
+    "date": "2022-12-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000107",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000107",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000107",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000107",
+    "date": "2022-06-09",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000108",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000108",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000108",
+    "date": "2022-04-07",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000108",
+    "date": "2022-05-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000108",
+    "date": "2022-06-17",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000110",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000110",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000110",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000110",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000110",
+    "date": "2022-04-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000113",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000113",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000113",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "80"
+  },
+  {
+    "code": "00000113",
+    "date": "2022-04-07",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "200"
+  },
+  {
+    "code": "00000113",
+    "date": "2022-05-31",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000113",
+    "date": "2022-10-12",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000114",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000114",
+    "date": "2022-04-11",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000114",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000114",
+    "date": "2023-10-16",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000116",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000116",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000116",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000116",
+    "date": "2022-12-26",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000116",
+    "date": "2023-01-17",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000119",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000119",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000119",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000119",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000119",
+    "date": "2022-04-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000122",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000122",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000122",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000122",
+    "date": "2022-04-05",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000122",
+    "date": "2023-01-26",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000122",
+    "date": "2023-01-26",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000122",
+    "date": "2023-02-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000122",
+    "date": "2023-02-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000122",
+    "date": "2023-02-22",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000124",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000124",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000124",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000124",
+    "date": "2022-04-24",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000124",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000124",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000128",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000128",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000128",
+    "date": "2022-04-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000128",
+    "date": "2022-05-14",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000128",
+    "date": "2022-09-17",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000130",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000130",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000130",
+    "date": "2022-08-12",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000132",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000132",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000132",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000132",
+    "date": "2022-04-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000132",
+    "date": "2022-08-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000132",
+    "date": "2022-08-31",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000132",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000132",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000134",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000134",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000134",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000134",
+    "date": "2022-04-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000134",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000135",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000135",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000135",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000135",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000135",
+    "date": "2022-04-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000135",
+    "date": "2022-12-09",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000138",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000138",
+    "date": "2022-04-08",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000138",
+    "date": "2022-04-15",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000139",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000139",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000139",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000139",
+    "date": "2022-04-26",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000139",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000139",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000140",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000140",
+    "date": "2022-04-08",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000140",
+    "date": "2022-04-12",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000140",
+    "date": "2022-06-24",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000142",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000142",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000142",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000142",
+    "date": "2022-04-02",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000142",
+    "date": "2022-04-29",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000143",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000143",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000143",
+    "date": "2022-05-23",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000143",
+    "date": "2023-01-17",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000144",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000144",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000144",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000144",
+    "date": "2022-04-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000144",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000144",
+    "date": "2023-10-14",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000146",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000146",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000146",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000146",
+    "date": "2022-04-02",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000147",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000147",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000147",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000147",
+    "date": "2022-04-13",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000147",
+    "date": "2022-06-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000148",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000148",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000148",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000148",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000148",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000148",
+    "date": "2022-04-06",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000148",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000148",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000149",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000149",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000149",
+    "date": "2022-04-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000150",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000150",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000150",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000150",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000150",
+    "date": "2022-04-05",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000150",
+    "date": "2022-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000151",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000151",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000151",
+    "date": "2022-04-06",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000151",
+    "date": "2022-07-19",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000152",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000152",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000152",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000152",
+    "date": "2022-04-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000152",
+    "date": "2022-04-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000155",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000155",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000155",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000155",
+    "date": "2022-05-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000158",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000158",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000158",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000158",
+    "date": "2022-04-27",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000158",
+    "date": "2022-06-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000159",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000159",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000159",
+    "date": "2022-04-09",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000160",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000160",
+    "date": "2022-04-06",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000160",
+    "date": "2022-04-30",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000160",
+    "date": "2022-05-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000160",
+    "date": "2023-04-27",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000160",
+    "date": "2023-05-11",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000160",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000160",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000163",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000163",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000163",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000163",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000163",
+    "date": "2023-01-07",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000163",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000163",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000165",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000165",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000165",
+    "date": "2022-06-14",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000166",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000166",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000166",
+    "date": "2022-04-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000167",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000167",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000167",
+    "date": "2022-04-26",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000167",
+    "date": "2022-04-30",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000167",
+    "date": "2022-11-19",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "200"
+  },
+  {
+    "code": "00000168",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000168",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000168",
+    "date": "2022-04-10",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000168",
+    "date": "2022-07-13",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000168",
+    "date": "2022-07-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000168",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000168",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000169",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000169",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000169",
+    "date": "2022-04-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000169",
+    "date": "2022-04-27",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000169",
+    "date": "2022-05-01",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000171",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000171",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000171",
+    "date": "2022-04-14",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000171",
+    "date": "2022-05-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000171",
+    "date": "2023-01-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000173",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000173",
+    "date": "2022-06-26",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000173",
+    "date": "2022-09-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000176",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000176",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000176",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000176",
+    "date": "2022-04-27",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000176",
+    "date": "2022-05-08",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000176",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000176",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000177",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000177",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000177",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000177",
+    "date": "2022-04-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000178",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000178",
+    "date": "2022-04-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000178",
+    "date": "2022-04-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000178",
+    "date": "2023-03-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000183",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000183",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000183",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000183",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000183",
+    "date": "2022-04-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000183",
+    "date": "2023-01-07",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000185",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000185",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000187",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000187",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000187",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000187",
+    "date": "2022-08-15",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000188",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000188",
+    "date": "2022-04-09",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000189",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000189",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000189",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000189",
+    "date": "2022-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000189",
+    "date": "2022-04-19",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000189",
+    "date": "2022-06-15",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000189",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000189",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000191",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000191",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000191",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-04-09",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-04-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000192",
+    "date": "2022-12-26",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000192",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000192",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000196",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000196",
+    "date": "2023-03-11",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000196",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "33"
+  },
+  {
+    "code": "00000197",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000197",
+    "date": "2022-08-08",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000197",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "33"
+  },
+  {
+    "code": "00000199",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000199",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000199",
+    "date": "2022-04-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000199",
+    "date": "2022-06-09",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000199",
+    "date": "2022-06-27",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000199",
+    "date": "2023-02-27",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000199",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000201",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000201",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000201",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000201",
+    "date": "2022-05-20",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000201",
+    "date": "2023-06-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000201",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000201",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000202",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000202",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000202",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000202",
+    "date": "2022-04-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000202",
+    "date": "2022-05-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000204",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000204",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000204",
+    "date": "2022-04-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000204",
+    "date": "2022-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000204",
+    "date": "2022-07-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000205",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000205",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000205",
+    "date": "2022-04-11",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000206",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000206",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000206",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000206",
+    "date": "2022-04-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000206",
+    "date": "2022-06-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000206",
+    "date": "2023-07-26",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000206",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000206",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000209",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000209",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000209",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000209",
+    "date": "2022-04-09",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000209",
+    "date": "2022-05-19",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000209",
+    "date": "2022-08-30",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000209",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000209",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000211",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000211",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000211",
+    "date": "2022-04-05",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000211",
+    "date": "2022-04-13",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000211",
+    "date": "2022-05-23",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000212",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000212",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000212",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000212",
+    "date": "2022-04-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000212",
+    "date": "2022-11-15",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000213",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000213",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000213",
+    "date": "2022-04-06",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000213",
+    "date": "2022-11-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000214",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000214",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000215",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000215",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000215",
+    "date": "2022-04-22",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000216",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000216",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000216",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000216",
+    "date": "2022-04-09",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000216",
+    "date": "2022-05-12",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000216",
+    "date": "2022-11-04",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000216",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000216",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000216",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000220",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000220",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000220",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000220",
+    "date": "2022-04-18",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000220",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000220",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000222",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000222",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000222",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000222",
+    "date": "2022-11-21",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000223",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000223",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000223",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000223",
+    "date": "2022-04-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000223",
+    "date": "2022-07-13",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000223",
+    "date": "2022-08-26",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000225",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000225",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000225",
+    "date": "2022-12-26",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000227",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "21",
+    "price": "275"
+  },
+  {
+    "code": "00000227",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000227",
+    "date": "2022-04-23",
+    "itemCode": "2062",
+    "unitCode": "21",
+    "price": "275"
+  },
+  {
+    "code": "00000227",
+    "date": "2022-05-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000227",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "21",
+    "price": "300"
+  },
+  {
+    "code": "00000227",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000227",
+    "date": "2023-10-07",
+    "itemCode": "2062",
+    "unitCode": "21",
+    "price": "300"
+  },
+  {
+    "code": "00000228",
+    "date": "2022-04-13",
+    "itemCode": "1011",
+    "unitCode": "21",
+    "price": "275"
+  },
+  {
+    "code": "00000228",
+    "date": "2022-11-21",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000228",
+    "date": "2022-12-26",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000228",
+    "date": "2023-07-03",
+    "itemCode": "2062",
+    "unitCode": "21",
+    "price": "275"
+  },
+  {
+    "code": "00000228",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "21",
+    "price": "300"
+  },
+  {
+    "code": "00000230",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000230",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000230",
+    "date": "2022-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000230",
+    "date": "2022-04-08",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-09-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-09-21",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000231",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000232",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000232",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000232",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000232",
+    "date": "2022-08-02",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000232",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000232",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000233",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000233",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000233",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000233",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000233",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000234",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000234",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000234",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000234",
+    "date": "2022-04-19",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000234",
+    "date": "2022-09-26",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000234",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000234",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000235",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000235",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000235",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000235",
+    "date": "2022-04-05",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000235",
+    "date": "2022-07-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000235",
+    "date": "2023-03-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000236",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000236",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000236",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000236",
+    "date": "2022-08-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000237",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000237",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000237",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000237",
+    "date": "2022-04-22",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000237",
+    "date": "2022-08-28",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000237",
+    "date": "2023-06-07",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000237",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000237",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000238",
+    "date": "2022-04-05",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000238",
+    "date": "2022-04-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000238",
+    "date": "2022-04-08",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000239",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000239",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000239",
+    "date": "2022-05-13",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-04-03",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-06-01",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-07-01",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000240",
+    "date": "2022-11-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000240",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000241",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000241",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000241",
+    "date": "2022-04-11",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000243",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000243",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000243",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000243",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000243",
+    "date": "2022-10-13",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000244",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000244",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000244",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000244",
+    "date": "2022-04-03",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000244",
+    "date": "2022-04-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000244",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000244",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000245",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000245",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000245",
+    "date": "2022-04-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000245",
+    "date": "2022-04-15",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000245",
+    "date": "2022-04-19",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000245",
+    "date": "2023-03-13",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000245",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000245",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000247",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000247",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000247",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000247",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000247",
+    "date": "2022-04-27",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000247",
+    "date": "2022-09-07",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000247",
+    "date": "2023-04-08",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000249",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000249",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000249",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000249",
+    "date": "2022-04-03",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000249",
+    "date": "2022-05-09",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000249",
+    "date": "2022-10-09",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000249",
+    "date": "2023-03-18",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000249",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000249",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000250",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000250",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000250",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000250",
+    "date": "2022-04-25",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000250",
+    "date": "2022-07-24",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000250",
+    "date": "2022-10-31",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000251",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000251",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000251",
+    "date": "2022-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000251",
+    "date": "2022-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000251",
+    "date": "2022-04-08",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000251",
+    "date": "2022-05-08",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000252",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000252",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000252",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000252",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000252",
+    "date": "2022-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000252",
+    "date": "2022-06-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000254",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000254",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000254",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000254",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000254",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000254",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000255",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "33"
+  },
+  {
+    "code": "00000255",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000255",
+    "date": "2022-04-02",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000255",
+    "date": "2022-05-06",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000255",
+    "date": "2022-10-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000255",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "35"
+  },
+  {
+    "code": "00000256",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000256",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000256",
+    "date": "2022-04-18",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000256",
+    "date": "2022-07-27",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000256",
+    "date": "2023-01-18",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000256",
+    "date": "2023-08-28",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000256",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000257",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000257",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000257",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000257",
+    "date": "2022-04-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000257",
+    "date": "2022-04-25",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000257",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000257",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000259",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000259",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000259",
+    "date": "2022-05-12",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000259",
+    "date": "2022-06-24",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000259",
+    "date": "2022-07-23",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000259",
+    "date": "2022-10-07",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000259",
+    "date": "2023-02-25",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000259",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000259",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000260",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000260",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000260",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000260",
+    "date": "2022-05-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000261",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000261",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000261",
+    "date": "2022-04-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000261",
+    "date": "2022-05-21",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000261",
+    "date": "2023-09-23",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000265",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000265",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000265",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000265",
+    "date": "2022-04-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000265",
+    "date": "2022-04-19",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000267",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000267",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000267",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000267",
+    "date": "2022-04-03",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000267",
+    "date": "2022-10-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000268",
+    "date": "2022-04-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000268",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000268",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000268",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000268",
+    "date": "2023-10-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000268",
+    "date": "2023-10-09",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000269",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000269",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000269",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000269",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000269",
+    "date": "2022-04-17",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000269",
+    "date": "2022-06-13",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000270",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000270",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000270",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000270",
+    "date": "2023-04-19",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000270",
+    "date": "2023-10-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000270",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000271",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000271",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000271",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000271",
+    "date": "2022-04-02",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000271",
+    "date": "2022-04-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000271",
+    "date": "2022-04-27",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000271",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000271",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000276",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000276",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000276",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000276",
+    "date": "2022-04-11",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000276",
+    "date": "2022-04-11",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000276",
+    "date": "2022-08-27",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000276",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000276",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000277",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000277",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000277",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000277",
+    "date": "2022-04-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000277",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000277",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000278",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000278",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000278",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000278",
+    "date": "2022-08-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000278",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000278",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000279",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000279",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000279",
+    "date": "2022-04-12",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000279",
+    "date": "2022-08-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000279",
+    "date": "2023-09-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000279",
+    "date": "2023-09-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000279",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000279",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000279",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000280",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000280",
+    "date": "2022-04-05",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000280",
+    "date": "2022-06-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000280",
+    "date": "2023-03-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000281",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000281",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000281",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000281",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000281",
+    "date": "2022-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000281",
+    "date": "2022-09-10",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000281",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000281",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000285",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000285",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000285",
+    "date": "2022-04-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000285",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000285",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000285",
+    "date": "2022-06-19",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000286",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000286",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000286",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000286",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000286",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000287",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000287",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000287",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000287",
+    "date": "2022-04-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000287",
+    "date": "2022-04-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000287",
+    "date": "2022-07-16",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000289",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000289",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000289",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000289",
+    "date": "2022-06-20",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000290",
+    "date": "2022-04-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000290",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000290",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000290",
+    "date": "2022-05-25",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000291",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000291",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000291",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000291",
+    "date": "2022-04-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000291",
+    "date": "2023-02-14",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000291",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000291",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000292",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000292",
+    "date": "2022-04-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000292",
+    "date": "2022-04-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000293",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000293",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000293",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000293",
+    "date": "2022-05-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000293",
+    "date": "2022-12-20",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000293",
+    "date": "2023-10-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000294",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000294",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000294",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000294",
+    "date": "2022-04-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000294",
+    "date": "2022-08-28",
+    "itemCode": "2091",
+    "unitCode": "52",
+    "price": "200"
+  },
+  {
+    "code": "00000294",
+    "date": "2022-11-27",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000294",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000294",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000295",
+    "date": "2022-04-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000295",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000295",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000295",
+    "date": "2022-04-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000295",
+    "date": "2023-02-14",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000295",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000295",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000296",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000296",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000296",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000296",
+    "date": "2022-04-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000296",
+    "date": "2022-11-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000296",
+    "date": "2023-05-13",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000296",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000296",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000297",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000297",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000297",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000297",
+    "date": "2022-06-19",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000297",
+    "date": "2023-06-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000298",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000298",
+    "date": "2022-04-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000298",
+    "date": "2022-04-08",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000298",
+    "date": "2022-06-07",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000298",
+    "date": "2022-12-30",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000298",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000298",
+    "date": "2023-10-15",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000299",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000299",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000299",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000300",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000300",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000300",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "80"
+  },
+  {
+    "code": "00000300",
+    "date": "2022-04-30",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000300",
+    "date": "2022-05-12",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000300",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000300",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000301",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000301",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000301",
+    "date": "2022-04-08",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000301",
+    "date": "2022-05-06",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000301",
+    "date": "2023-07-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000301",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000301",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000302",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000302",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000302",
+    "date": "2022-04-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000302",
+    "date": "2022-05-15",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000302",
+    "date": "2023-01-26",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000302",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000302",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000303",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000303",
+    "date": "2022-04-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000303",
+    "date": "2022-04-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000303",
+    "date": "2022-04-17",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000303",
+    "date": "2022-12-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000304",
+    "date": "2022-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000304",
+    "date": "2022-04-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000304",
+    "date": "2022-04-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000304",
+    "date": "2023-03-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000304",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000304",
+    "date": "2023-10-14",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000305",
+    "date": "2022-04-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000305",
+    "date": "2022-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000305",
+    "date": "2022-04-08",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000305",
+    "date": "2022-05-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000306",
+    "date": "2022-05-25",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000306",
+    "date": "2022-05-25",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000306",
+    "date": "2022-05-25",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000306",
+    "date": "2022-05-26",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000306",
+    "date": "2022-05-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000307",
+    "date": "2022-05-16",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000307",
+    "date": "2022-05-16",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000307",
+    "date": "2022-05-16",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000307",
+    "date": "2022-05-23",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000307",
+    "date": "2022-05-31",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000307",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000307",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000308",
+    "date": "2022-05-23",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000308",
+    "date": "2022-05-23",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000308",
+    "date": "2022-05-23",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "80"
+  },
+  {
+    "code": "00000308",
+    "date": "2022-05-23",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000308",
+    "date": "2023-08-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000308",
+    "date": "2023-08-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000309",
+    "date": "2022-06-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000309",
+    "date": "2022-06-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000309",
+    "date": "2022-06-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000309",
+    "date": "2022-06-24",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000309",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000309",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000310",
+    "date": "2022-06-17",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000310",
+    "date": "2022-06-17",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000310",
+    "date": "2022-07-18",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000310",
+    "date": "2022-09-26",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000310",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000310",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000311",
+    "date": "2022-07-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000311",
+    "date": "2022-07-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000311",
+    "date": "2022-07-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000311",
+    "date": "2022-07-12",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000311",
+    "date": "2022-09-14",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "0"
+  },
+  {
+    "code": "00000312",
+    "date": "2022-07-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000312",
+    "date": "2022-07-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000312",
+    "date": "2022-07-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000312",
+    "date": "2022-07-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000312",
+    "date": "2022-08-23",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000312",
+    "date": "2022-11-24",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000313",
+    "date": "2022-06-21",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000313",
+    "date": "2022-06-21",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000313",
+    "date": "2022-06-24",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000313",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000313",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000314",
+    "date": "2022-07-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000314",
+    "date": "2022-07-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000314",
+    "date": "2022-07-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000315",
+    "date": "2022-07-29",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000315",
+    "date": "2022-07-29",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000315",
+    "date": "2022-07-29",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "0"
+  },
+  {
+    "code": "00000315",
+    "date": "2022-07-29",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "0"
+  },
+  {
+    "code": "00000319",
+    "date": "2022-10-04",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000319",
+    "date": "2022-10-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000319",
+    "date": "2022-10-11",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000319",
+    "date": "2022-12-26",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000319",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000319",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000320",
+    "date": "2022-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000320",
+    "date": "2022-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000320",
+    "date": "2022-10-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000320",
+    "date": "2022-10-17",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000320",
+    "date": "2023-06-12",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000320",
+    "date": "2023-08-02",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000320",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000320",
+    "date": "2023-10-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000321",
+    "date": "2022-12-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000321",
+    "date": "2022-12-13",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000321",
+    "date": "2022-12-13",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000321",
+    "date": "2022-12-20",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000321",
+    "date": "2023-10-05",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000322",
+    "date": "2022-11-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000322",
+    "date": "2022-11-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000322",
+    "date": "2022-11-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000322",
+    "date": "2022-11-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000322",
+    "date": "2022-11-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000322",
+    "date": "2023-08-24",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000322",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000322",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000323",
+    "date": "2022-12-21",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000323",
+    "date": "2022-12-21",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000323",
+    "date": "2022-12-22",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000323",
+    "date": "2022-12-25",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000324",
+    "date": "2022-12-15",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000324",
+    "date": "2022-12-17",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000324",
+    "date": "2023-03-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000324",
+    "date": "2023-07-12",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000324",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000325",
+    "date": "2022-12-08",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000325",
+    "date": "2022-12-08",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000325",
+    "date": "2022-12-09",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000325",
+    "date": "2022-12-26",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000325",
+    "date": "2023-01-09",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000325",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000325",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000326",
+    "date": "2022-12-23",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000326",
+    "date": "2022-12-23",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000326",
+    "date": "2022-12-23",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000326",
+    "date": "2023-05-07",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000326",
+    "date": "2023-05-12",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000326",
+    "date": "2023-05-20",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000326",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000326",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000327",
+    "date": "2023-01-18",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000327",
+    "date": "2023-01-18",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000327",
+    "date": "2023-01-18",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000327",
+    "date": "2023-01-18",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000327",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000327",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000328",
+    "date": "2023-01-19",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000328",
+    "date": "2023-01-19",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000328",
+    "date": "2023-01-19",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000328",
+    "date": "2023-01-19",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000328",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000328",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000329",
+    "date": "2023-03-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000329",
+    "date": "2023-03-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000329",
+    "date": "2023-03-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000329",
+    "date": "2023-03-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000329",
+    "date": "2023-03-03",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000330",
+    "date": "2023-03-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000330",
+    "date": "2023-03-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000330",
+    "date": "2023-03-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000330",
+    "date": "2023-03-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000330",
+    "date": "2023-04-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000330",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000331",
+    "date": "2023-03-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000331",
+    "date": "2023-03-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000331",
+    "date": "2023-03-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000331",
+    "date": "2023-03-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000331",
+    "date": "2023-03-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000331",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-03-10",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-03-10",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-03-10",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-03-10",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-04-16",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000332",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000333",
+    "date": "2023-04-07",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000333",
+    "date": "2023-04-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000333",
+    "date": "2023-04-07",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000333",
+    "date": "2023-05-31",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000333",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000334",
+    "date": "2023-04-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000334",
+    "date": "2023-04-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000334",
+    "date": "2023-04-10",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000334",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000334",
+    "date": "2023-10-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-04-19",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-04-19",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-04-19",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-04-19",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-06-04",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-09-17",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000335",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000336",
+    "date": "2023-04-23",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000336",
+    "date": "2023-04-24",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000336",
+    "date": "2023-04-24",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000336",
+    "date": "2023-05-17",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000336",
+    "date": "2023-07-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000336",
+    "date": "2023-10-07",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-04-29",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-04-29",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-05-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-05-01",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-07-15",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-09-05",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000337",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-07-17",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-07-17",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-07-17",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-07-18",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000338",
+    "date": "2023-10-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000339",
+    "date": "2023-07-29",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000339",
+    "date": "2023-07-29",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000339",
+    "date": "2023-07-29",
+    "itemCode": "2083",
+    "unitCode": "52",
+    "price": "100"
+  },
+  {
+    "code": "00000339",
+    "date": "2023-08-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000339",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000339",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000340",
+    "date": "2023-08-10",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000340",
+    "date": "2023-08-10",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000340",
+    "date": "2023-08-10",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000341",
+    "date": "2023-08-11",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000341",
+    "date": "2023-08-11",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000341",
+    "date": "2023-08-11",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000341",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000341",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000341",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000342",
+    "date": "2023-08-23",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000342",
+    "date": "2023-08-23",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000342",
+    "date": "2023-08-25",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000342",
+    "date": "2023-08-25",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000342",
+    "date": "2023-08-29",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000343",
+    "date": "2023-08-12",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000343",
+    "date": "2023-08-12",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000343",
+    "date": "2023-08-12",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000343",
+    "date": "2023-08-22",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000344",
+    "date": "2023-08-20",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000344",
+    "date": "2023-08-20",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000344",
+    "date": "2023-08-20",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000344",
+    "date": "2023-08-20",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000345",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000345",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000345",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000345",
+    "date": "2023-09-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000345",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000345",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-09-15",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-09-25",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000346",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-09-09",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000347",
+    "date": "2023-10-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000348",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000348",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000348",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000348",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000348",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000349",
+    "date": "2023-09-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000349",
+    "date": "2023-09-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000349",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000349",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000349",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000349",
+    "date": "2023-10-03",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000350",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000350",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000350",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000350",
+    "date": "2023-09-11",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000350",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000350",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000351",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000351",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000351",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000351",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000351",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000352",
+    "date": "2023-09-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000352",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000352",
+    "date": "2023-09-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000352",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000352",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000354",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000354",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000354",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000354",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000354",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000355",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000355",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000355",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000355",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000355",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-09-08",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-09-20",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000356",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-09-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-09-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-09-07",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000357",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000358",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000358",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000358",
+    "date": "2023-09-05",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000358",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000359",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000359",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000359",
+    "date": "2023-09-04",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000359",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000359",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000360",
+    "date": "2023-09-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000360",
+    "date": "2023-09-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000360",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000360",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000360",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-09-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-09-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-09-08",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-09-14",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000361",
+    "date": "2023-10-03",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000362",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000362",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000362",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000362",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000362",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000363",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000363",
+    "date": "2023-09-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000363",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000363",
+    "date": "2023-09-09",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000363",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000363",
+    "date": "2023-10-07",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000364",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000364",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000364",
+    "date": "2023-09-28",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000364",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000365",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000365",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000365",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000365",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000365",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000366",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000366",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000366",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000366",
+    "date": "2023-09-25",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000366",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000366",
+    "date": "2023-10-09",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-09-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-09-04",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-09-04",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-09-30",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000367",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-09-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-09-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-09-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-09-11",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-09-13",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000368",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000369",
+    "date": "2023-09-16",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000369",
+    "date": "2023-09-17",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000369",
+    "date": "2023-09-17",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000369",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000369",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000370",
+    "date": "2023-09-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000370",
+    "date": "2023-09-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000370",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000370",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000370",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000371",
+    "date": "2023-09-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000371",
+    "date": "2023-09-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000371",
+    "date": "2023-09-02",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "75"
+  },
+  {
+    "code": "00000371",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000371",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "34"
+  },
+  {
+    "code": "00000372",
+    "date": "2023-09-09",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "30"
+  },
+  {
+    "code": "00000372",
+    "date": "2023-09-09",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000372",
+    "date": "2023-09-28",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000373",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000374",
+    "date": "2023-10-06",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000374",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000374",
+    "date": "2023-10-13",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000375",
+    "date": "2023-10-06",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000375",
+    "date": "2023-10-06",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000375",
+    "date": "2023-10-06",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000375",
+    "date": "2023-10-09",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000376",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000376",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000376",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000376",
+    "date": "2023-10-01",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000376",
+    "date": "2023-10-16",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000377",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000377",
+    "date": "2023-10-01",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000377",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000377",
+    "date": "2023-10-14",
+    "itemCode": "2082",
+    "unitCode": "51",
+    "price": "100"
+  },
+  {
+    "code": "00000378",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000378",
+    "date": "2023-10-02",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000378",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000379",
+    "date": "2023-10-01",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000379",
+    "date": "2023-10-01",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "80"
+  },
+  {
+    "code": "00000379",
+    "date": "2023-10-02",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000380",
+    "date": "2023-10-03",
+    "itemCode": "1011",
+    "unitCode": "11",
+    "price": "32"
+  },
+  {
+    "code": "00000380",
+    "date": "2023-10-03",
+    "itemCode": "2062",
+    "unitCode": "11",
+    "price": "70"
+  },
+  {
+    "code": "00000380",
+    "date": "2023-10-04",
+    "itemCode": "2063",
+    "unitCode": "51",
+    "price": "150"
+  },
+  {
+    "code": "00000380",
+    "date": "2023-10-05",
+    "itemCode": "1015",
+    "unitCode": "11",
+    "price": "32"
+  }
+]
