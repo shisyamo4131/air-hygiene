@@ -12,6 +12,8 @@
             v-model="selectedItem"
             label="初期化対象"
             :items="items"
+            item-text="name"
+            item-value="name"
             required
             return-object
           />
@@ -58,27 +60,17 @@ import defaultSites from '~/assets/defaultSites.json'
 import defaultSiteUnitPrices from '~/assets/defaultSiteUnitPrices.json'
 import defaultItems from '~/assets/defaultItems.json'
 import defaultUnits from '~/assets/defaultUnits.json'
+import setting from '~/assets/setting.json'
 export default {
   components: { ASelect },
   data() {
     return {
+      cache: {
+        Customers: [],
+        Sites: [],
+      },
       formVerified: false,
-      items: [
-        {
-          text: '取引先',
-          value: 'Customers',
-          isAutonumber: true,
-          field: 'code',
-        },
-        {
-          text: '排出場所',
-          value: 'Sites',
-          isAutonumber: true,
-          field: 'code',
-        },
-        { text: '回収品目', value: 'Items', isAutonumber: false, field: '' },
-        { text: '単位', value: 'Units', isAutonumber: false, field: '' },
-      ],
+      items: setting.collections,
       loading: false,
       selectedItem: null,
       progress: {
@@ -98,14 +90,14 @@ export default {
       try {
         this.loading = true
         if (!this.selectedItem) return
-        if (this.selectedItem.isAutonumber) {
-          await this.toggleAutonumberCondition(this.selectedItem.value, false)
+        if (this.selectedItem.autonumber.condition) {
+          await this.toggleAutonumberCondition(this.selectedItem.name, false)
         }
-        await this[`init${this.selectedItem.value}`]()
-        if (this.selectedItem.isAutonumber) {
+        await this[`init${this.selectedItem.name}`]()
+        if (this.selectedItem.autonumber.condition) {
           await this.updateAutonumber(
-            this.selectedItem.value,
-            this.selectedItem.field
+            this.selectedItem.name,
+            this.selectedItem.autonumber.field
           )
         }
       } catch (err) {
@@ -113,24 +105,26 @@ export default {
         console.error(err)
         alert(err.message)
       } finally {
-        if (this.selectedItem.isAutonumber) {
-          await this.toggleAutonumberCondition(this.selectedItem.value, true)
+        if (this.selectedItem.autonumber.condition) {
+          await this.toggleAutonumberCondition(this.selectedItem.name, true)
         }
         this.loading = false
       }
     },
     async initCustomers() {
+      this.cache.Customers.splice(0)
       const colRef = collection(this.$firestore, 'Customers')
       const snapshot = await getDocs(colRef)
-      const existCustomers = snapshot.docs.map((doc) => doc.data())
-      const getCustomer = (code) => {
-        return existCustomers.find((item) => item.code === code)
+      if (!snapshot.empty) {
+        snapshot.docs.forEach((doc) => {
+          this.cache.Customers.push(doc.data())
+        })
       }
       this.progress.value = 0
       this.progress.max = defaultCustomers.length
       for (const item of defaultCustomers) {
         const model = this.$Customer()
-        const exist = getCustomer(item.code)
+        const exist = await this.getCustomer(item.code)
         if (!exist) {
           model.initialize(item)
           await model.create()
@@ -144,32 +138,26 @@ export default {
     async initSites() {
       this.progress.value = 0
       this.progress.max = defaultSites.length
-      for (const item of defaultSites.filter(
-        ({ code }) => code <= '00000012'
-      )) {
-        // for (const item of defaultSites) {
+      const items = defaultSites.map((item) => {
+        return { ...item }
+      })
+      for (const item of items) {
         const model = this.$Site()
-        const getCustomer = async (code) => {
-          const colRef = collection(this.$firestore, 'Customers')
-          const q = query(colRef, where('code', '==', code))
-          const snapshot = await getDocs(q)
-          if (snapshot.empty) return undefined
-          return snapshot.docs[0].data()
+        const [customer, site] = await Promise.all([
+          this.getCustomer(item.customer),
+          this.getSite(item.code),
+        ])
+        if (!customer) {
+          // eslint-disable-next-line
+          console.log(item)
+          throw new Error('Customer is not exist specified by Site.')
         }
-        item.customer = await getCustomer(item.customer)
-        const getSite = async (code) => {
-          const colRef = collection(this.$firestore, 'Sites')
-          const q = query(colRef, where('code', '==', code))
-          const snapshot = await getDocs(q)
-          if (snapshot.empty) return undefined
-          return snapshot.docs[0].data()
-        }
-        const exist = await getSite(item.code)
-        if (!exist) {
+        item.customer = customer
+        if (!site) {
           model.initialize(item)
           await model.create()
         } else {
-          model.initialize({ ...exist, ...item })
+          model.initialize({ ...site, ...item })
           await model.update()
         }
         await this.initSiteUnitPrices(model)
@@ -178,10 +166,8 @@ export default {
     },
     async initSiteUnitPrices(siteModel) {
       // pre. 既存の回収単価を全て削除
-      const colRef = collection(
-        this.$firestore,
-        `Sites/${siteModel.docId}/SiteUnitPrices`
-      )
+      const path = `Sites/${siteModel.docId}/SiteUnitPrices`
+      const colRef = collection(this.$firestore, path)
       const snapshot = await getDocs(colRef)
       if (!snapshot.empty) {
         const promises = []
@@ -193,16 +179,14 @@ export default {
       const items = defaultSiteUnitPrices.filter(
         ({ code }) => code === siteModel.code
       )
+      const siteUnitPrices = []
       for (const item of items) {
         // 0. item、unitのdocIdを取得
-        const itemId =
-          this.$store.state.masters.Items.find(
-            ({ code }) => code === item.itemCode
-          )?.docId || undefined
-        const unitId =
-          this.$store.state.masters.Units.find(
-            ({ code }) => code === item.unitCode
-          )?.docId || undefined
+        const itemId = this.getItem(item.itemCode)?.docId || undefined
+        const unitId = this.getUnit(item.unitCode)?.docId || undefined
+        const key = `${itemId}-${unitId}`
+        const price = parseInt(item.price)
+        const unitPrice = { key, itemId, unitId, price }
         if (!itemId || !unitId) {
           // eslint-disable-next-line
           console.log(item)
@@ -210,50 +194,82 @@ export default {
         }
         // 1. 直前締日の翌日（以下、基準日）を取得
         const getBaseDate = (date, deadline) => {
-          if (deadline === '99') {
-            return this.$dayjs(date).startOf('month')
-          } else {
-            return this.dayjs(`${date.substr(0, 8)}${deadline}`)
-              .subtract(1, 'month')
-              .add(1, 'day')
+          try {
+            if (deadline === '99') {
+              return this.$dayjs(date).startOf('month')
+            } else {
+              return this.$dayjs(`${date.substr(0, 8)}${deadline}`)
+                .subtract(1, 'month')
+                .add(1, 'day')
+            }
+          } catch (err) {
+            // eslint-disable-next-line
+            console.log({ err, date, deadline })
+            alert(err)
           }
         }
         const baseDate = getBaseDate(item.date, siteModel.customer.deadline)
-        // 2. 基準日が起算日の契約単価を取得
-        const siteUnitPriceModel = this.$SiteUnitPrice(siteModel.docId)
-        await siteUnitPriceModel.fetchLatest(baseDate.format('YYYY-MM-DD'))
+        // 2. 起算日が基準日以前の契約単価を取得
+        const latestSiteUnitPrice = siteUnitPrices.find(
+          ({ date }) => date <= baseDate.format('YYYY-MM-DD')
+        )
         // 3-1. 契約単価が存在しなれば作成
-        if (!siteUnitPriceModel.docId) {
-          siteUnitPriceModel.initialize({
+        if (!latestSiteUnitPrice) {
+          siteUnitPrices.push({
             date: baseDate.format('YYYY-MM-DD'),
-            prices: [{ itemId, unitId, price: parseInt(item.price) }],
+            prices: [unitPrice],
           })
-          await siteUnitPriceModel.create()
         }
         // 3-2. 契約単価が存在した場合
         else {
-          const isExist = siteUnitPriceModel.prices.some(
+          const isUnitPriceExist = latestSiteUnitPrice.prices.some(
             ({ key }) => key === `${itemId}-${unitId}`
           )
           // 3-2-1. 同一keyの単価が登録されていなければ当該契約に登録
-          if (!isExist) {
-            siteUnitPriceModel.prices.push({
-              itemId,
-              unitId,
-              price: parseInt(item.price),
-            })
-            await siteUnitPriceModel.update()
+          if (!isUnitPriceExist) {
+            latestSiteUnitPrice.prices.push(unitPrice)
           }
           // 3-2-2. 同一keyの単価が登録されていれば、直前締日翌日の1ヶ月後を起算日にして契約を作成
           else {
-            siteUnitPriceModel.initialize({
-              date: baseDate.add(1, 'month').format('YYYY-MM-DD'),
-              prices: [{ itemId, unitId, price: item.price }],
+            siteUnitPrices.push({
+              date: baseDate.format('YYYY-MM-DD'),
+              prices: [
+                // ...latestSiteUnitPrice.prices.filter(
+                //   ({ key }) => key !== unitPrice.key
+                // ),
+                unitPrice,
+              ],
             })
-            await siteUnitPriceModel.create()
           }
         }
+        siteUnitPrices.sort((a, b) => {
+          if (a.date < b.date) return 1
+          if (a.date > b.date) return -1
+          return 0
+        })
       }
+      siteUnitPrices.sort((a, b) => {
+        if (a.date < b.date) return -1
+        if (a.date > b.date) return 1
+        return 0
+      })
+      siteUnitPrices.forEach((item, index, arr) => {
+        if (index !== 0) {
+          item.prices = [
+            ...arr[index - 1].prices.filter((price) => {
+              return !item.prices.map(({ key }) => key).includes(price.key)
+            }),
+            ...item.prices,
+          ]
+        }
+      })
+      await Promise.all(
+        siteUnitPrices.map((item) => {
+          const siteUnitPriceModel = this.$SiteUnitPrice(siteModel.docId)
+          siteUnitPriceModel.initialize(item)
+          return siteUnitPriceModel.create()
+        })
+      )
     },
     async initItems() {
       const colRef = collection(this.$firestore, 'Items')
@@ -311,6 +327,54 @@ export default {
       const current = snapshot.docs[0].data()[field]
       const docRef = doc(this.$firestore, `Autonumbers/${colName}`)
       await updateDoc(docRef, { current: parseInt(current) })
+    },
+    async getCustomer(code) {
+      try {
+        let result = this.cache.Customers.find((item) => item.code === code)
+        if (!result) {
+          const colRef = collection(this.$firestore, 'Customers')
+          const q = query(colRef, where('code', '==', code))
+          const snapshot = await getDocs(q)
+          if (snapshot.empty) return undefined
+          result = snapshot.docs[0].data()
+          this.cache.Customers.push(result)
+        }
+        return result
+      } catch (err) {
+        // eslint-disable-next-line
+        console.error(err)
+        alert(err.message)
+      }
+    },
+    async getSite(code) {
+      try {
+        let result = this.cache.Sites.find((item) => item.code === code)
+        if (!result) {
+          const colRef = collection(this.$firestore, 'Sites')
+          const q = query(colRef, where('code', '==', code))
+          const snapshot = await getDocs(q)
+          if (snapshot.empty) return undefined
+          result = snapshot.docs[0].data()
+          this.cache.Sites.push(result)
+        }
+        return result
+      } catch (err) {
+        // eslint-disable-next-line
+        console.error(err)
+        alert(err.message)
+      }
+    },
+    getItem(code) {
+      const result = this.$store.state.masters.Items.find(
+        (item) => item.code === code
+      )
+      return result
+    },
+    getUnit(code) {
+      const result = this.$store.state.masters.Units.find(
+        (item) => item.code === code
+      )
+      return result
     },
   },
 }
