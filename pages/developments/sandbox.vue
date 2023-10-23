@@ -1,16 +1,16 @@
 <template>
   <air-template-default>
     <v-container>
-      <h-data-table-site-collection-results :site-id="siteId" />
+      <h-data-table-collection-results :site-id="siteId" />
     </v-container>
   </air-template-default>
 </template>
 
 <script>
-import HDataTableSiteCollectionResults from '~/components/molecules/tables/HDataTableSiteCollectionResults.vue'
+import HDataTableCollectionResults from '~/components/molecules/tables/HDataTableCollectionResults.vue'
 export default {
   components: {
-    HDataTableSiteCollectionResults,
+    HDataTableCollectionResults,
   },
   data() {
     return {

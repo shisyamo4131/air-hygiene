@@ -29,6 +29,7 @@ export default {
       items: [],
       lazyYearMonth: this.$dayjs().format('YYYY-MM'),
       listener: null,
+      selectedCollectItemId: null,
     }
   },
   /******************************************************************
@@ -43,6 +44,12 @@ export default {
         this.lazyYearMonth = v
         this.$emit('update:yearMonth', v)
       },
+    },
+    internalItems() {
+      return this.items.filter(({ collectItemId }) => {
+        if (!this.selectedCollectItemId) return true
+        return collectItemId === this.selectedCollectItemId
+      })
     },
   },
   /******************************************************************
@@ -112,7 +119,12 @@ export default {
 </script>
 
 <template>
-  <v-data-table :headers="headers" :items="items">
+  <v-data-table
+    :headers="headers"
+    :sort-by="['date', 'collectItemId']"
+    sort-desc
+    :items="internalItems"
+  >
     <template #top>
       <v-toolbar dense>
         <h-text-field-year-month v-model="internalYearMonth" hide-details />
