@@ -9,7 +9,7 @@ export default class ItemUnitPrice {
       key: {
         enumerable: true,
         get() {
-          return `${this.itemId}-${this.unitId}`
+          return `${this.collectItemId}-${this.unitId}`
         },
         set(v) {},
       },
@@ -17,7 +17,7 @@ export default class ItemUnitPrice {
   }
 
   initialize(item) {
-    this.itemId = item?.itemId || ''
+    this.collectItemId = item?.collectItemId || ''
     this.unitId = item?.unitId || ''
     this.price = item?.price || null
   }

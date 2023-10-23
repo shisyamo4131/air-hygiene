@@ -1,23 +1,22 @@
 <script>
 /**
- * @create 2023-10-03
  * @author shisyamo4131
  */
-import HTemplateItemsRegist from '~/components/templates/items/HTemplateItemsRegist.vue'
+import HTemplateCollectItemsRegist from '~/components/templates/collectItems/HTemplateCollectItemsRegist.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'ItemsRegist',
+  name: 'CollectItemsRegist',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateItemsRegist },
+  components: { HTemplateCollectItemsRegist },
 }
 </script>
 
 <template>
-  <h-template-items-regist edit-mode="REGIST" />
+  <h-template-collect-items-regist edit-mode="REGIST" />
 </template>
 
 <style></style>

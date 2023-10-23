@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-10-03
  * @author shisyamo4131
  */
 export default {
@@ -42,7 +41,7 @@ export default {
    ******************************************************************/
   methods: {
     onClickDetail(item) {
-      this.$router.push(`/items/${item.docId}/edit`)
+      this.$router.push(`/collect-items/${item.docId}/edit`)
     },
   },
 }
@@ -57,7 +56,7 @@ export default {
     :data-table-props="{ sortBy: 'code' }"
   >
     <template #append-label>
-      <v-btn icon @click="$router.push(`/items/regist`)">
+      <v-btn icon @click="$router.push(`/collect-items/regist`)">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </template>

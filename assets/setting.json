@@ -9,7 +9,7 @@
       "autonumber": { "condition": true, "field": "code", "length": 8 }
     },
     {
-      "name": "Items",
+      "name": "CollectItems",
       "autonumber": { "condition": false }
     },
     {

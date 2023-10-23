@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-10-03
  * @author shisyamo4131
  */
 import ATextField from '~/components/atoms/inputs/ATextField.vue'

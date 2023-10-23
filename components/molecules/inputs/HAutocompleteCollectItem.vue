@@ -34,7 +34,7 @@ export default {
    ***************************************************************************/
   computed: {
     items() {
-      return this.$store.state.masters.Items.map((item) => item).sort(
+      return this.$store.state.masters.CollectItems.map((item) => item).sort(
         (a, b) => {
           if (a.code < b.code) return -1
           if (a.code > b.code) return 1

@@ -1,15 +1,14 @@
 <script>
 /**
- * @create 2023-10-03
  * @author shisyamo4131
  */
-import HInputItem from '~/components/molecules/inputs/HInputItem.vue'
+import HInputCollectItem from '~/components/molecules/inputs/HInputCollectItem.vue'
 import Mixin from '~/components/templates/mixins/HTemplateMixinsEditor.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HInputItem },
+  components: { HInputCollectItem },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -23,7 +22,7 @@ export default {
    ******************************************************************/
   data() {
     return {
-      editModel: this.$Item(),
+      editModel: this.$CollectItem(),
     }
   },
   /******************************************************************
@@ -32,7 +31,7 @@ export default {
   methods: {
     afterSubmit() {
       return new Promise((resolve) => {
-        this.$router.replace(`/items/${this.editModel.docId}`)
+        this.$router.replace(`/collect-items/${this.editModel.docId}`)
         resolve()
       })
     },
@@ -50,7 +49,7 @@ export default {
   >
     <template #default="{ editMode }">
       <v-card-text>
-        <h-input-item v-bind.sync="editModel" :edit-mode="editMode" />
+        <h-input-collect-item v-bind.sync="editModel" :edit-mode="editMode" />
       </v-card-text>
     </template>
   </air-template-edit>

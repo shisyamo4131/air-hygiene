@@ -1,5 +1,5 @@
 <script>
-import HAutocompleteItem from './HAutocompleteItem.vue'
+import HAutocompleteCollectItem from './HAutocompleteCollectItem.vue'
 import HAutocompleteUnit from './HAutocompleteUnit.vue'
 import HNumericUnitPrice from './HNumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
@@ -7,7 +7,11 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HAutocompleteItem, HAutocompleteUnit, HNumericUnitPrice },
+  components: {
+    HAutocompleteCollectItem,
+    HAutocompleteUnit,
+    HNumericUnitPrice,
+  },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -16,7 +20,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    itemId: { type: String, default: '', required: false },
+    collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
     price: { type: Number, default: null, required: false },
   },
@@ -25,12 +29,12 @@ export default {
 
 <template>
   <div>
-    <h-autocomplete-item
+    <h-autocomplete-collect-item
       label="回収品目"
-      :value="itemId"
+      :value="collectItemId"
       required
       :disabled="editMode !== 'REGIST'"
-      @input="$emit('update:itemId', $event)"
+      @input="$emit('update:collectItemId', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6">

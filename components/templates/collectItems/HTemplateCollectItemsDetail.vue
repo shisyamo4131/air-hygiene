@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-10-03
  * @author shisyamo4131
  */
 export default {
@@ -40,12 +39,12 @@ export default {
     :tabs-props="{ grow: true }"
   >
     <template #prepend-label>
-      <v-btn icon @click="$router.push(`/items`)">
+      <v-btn icon @click="$router.push(`/collect-items`)">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
     </template>
     <template #append-label>
-      <v-btn icon @click="$router.push(`/items/${model.docId}/edit`)">
+      <v-btn icon @click="$router.push(`/collect-items/${model.docId}/edit`)">
         <v-icon>mdi-pencil</v-icon>
       </v-btn>
     </template>

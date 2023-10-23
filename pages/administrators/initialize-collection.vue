@@ -58,7 +58,7 @@ import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import defaultCustomers from '~/assets/defaultCustomers.json'
 import defaultSites from '~/assets/defaultSites.json'
 import defaultSiteUnitPrices from '~/assets/defaultSiteUnitPrices.json'
-import defaultItems from '~/assets/defaultItems.json'
+import defaultCollectItems from '~/assets/defaultCollectItems.json'
 import defaultUnits from '~/assets/defaultUnits.json'
 import setting from '~/assets/setting.json'
 export default {
@@ -182,12 +182,12 @@ export default {
       const siteUnitPrices = []
       for (const item of items) {
         // 0. item、unitのdocIdを取得
-        const itemId = this.getItem(item.itemCode)?.docId || undefined
+        const collectItemId = this.getItem(item.itemCode)?.docId || undefined
         const unitId = this.getUnit(item.unitCode)?.docId || undefined
-        const key = `${itemId}-${unitId}`
+        const key = `${collectItemId}-${unitId}`
         const price = parseInt(item.price)
-        const unitPrice = { key, itemId, unitId, price }
-        if (!itemId || !unitId) {
+        const unitPrice = { key, collectItemId, unitId, price }
+        if (!collectItemId || !unitId) {
           // eslint-disable-next-line
           console.log(item)
           throw new Error('no item or unit.')
@@ -223,7 +223,7 @@ export default {
         // 3-2. 契約単価が存在した場合
         else {
           const isUnitPriceExist = latestSiteUnitPrice.prices.some(
-            ({ key }) => key === `${itemId}-${unitId}`
+            ({ key }) => key === `${collectItemId}-${unitId}`
           )
           // 3-2-1. 同一keyの単価が登録されていなければ当該契約に登録
           if (!isUnitPriceExist) {
@@ -272,16 +272,16 @@ export default {
       )
     },
     async initItems() {
-      const colRef = collection(this.$firestore, 'Items')
+      const colRef = collection(this.$firestore, 'CollectItems')
       const snapshot = await getDocs(colRef)
       const existItems = snapshot.docs.map((doc) => doc.data())
       const getItem = (code) => {
         return existItems.find((item) => item.code === code)
       }
       this.progress.value = 0
-      this.progress.max = defaultItems.length
-      for (const item of defaultItems) {
-        const model = this.$Item()
+      this.progress.max = defaultCollectItems.length
+      for (const item of defaultCollectItems) {
+        const model = this.$CollectItem()
         const exist = getItem(item.code)
         if (!exist) {
           model.initialize(item)
