@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateCollectItemsRegist from '~/components/templates/collectItems/HTemplateCollectItemsRegist.vue'
+import HTemplateCollectItemsEditor from '~/components/templates/collectItems/HTemplateCollectItemsEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,12 +11,20 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCollectItemsRegist },
+  components: { HTemplateCollectItemsEditor },
+  /******************************************************************
+   * ASYNCDATA
+   ******************************************************************/
+  asyncData({ app, route }) {
+    const docId = route.params.docId
+    const model = app.$CollectItem()
+    return { docId, model }
+  },
 }
 </script>
 
 <template>
-  <h-template-collect-items-regist edit-mode="REGIST" />
+  <h-template-collect-items-editor edit-mode="REGIST" />
 </template>
 
 <style></style>

@@ -21,7 +21,7 @@ export default {
     const docId = route.params.docId
     const docRef = doc(app.$firestore, `Units/${docId}`)
     const snapshot = await getDoc(docRef)
-    const model = app.$Item()
+    const model = app.$CollectItem()
     model.initialize(snapshot.data())
     return { model }
   },

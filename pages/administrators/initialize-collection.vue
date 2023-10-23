@@ -271,7 +271,7 @@ export default {
         })
       )
     },
-    async initItems() {
+    async initCollectItems() {
       const colRef = collection(this.$firestore, 'CollectItems')
       const snapshot = await getDocs(colRef)
       const existItems = snapshot.docs.map((doc) => doc.data())

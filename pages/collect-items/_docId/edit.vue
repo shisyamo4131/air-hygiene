@@ -2,8 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateCollectItemsEdit from '~/components/templates/collectItems/HTemplateCollectItemsEdit.vue'
+import HTemplateCollectItemsEditor from '~/components/templates/collectItems/HTemplateCollectItemsEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,23 +11,21 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCollectItemsEdit },
+  components: { HTemplateCollectItemsEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `CollectItems/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$Item()
-    model.initialize(snapshot.data())
-    return { model }
+    const model = app.$CollectItem()
+    await model.fetch(docId)
+    return { docId, model }
   },
 }
 </script>
 
 <template>
-  <h-template-collect-items-edit :model="model" />
+  <h-template-collect-items-editor edit-mode="UPDATE" :model="model" />
 </template>
 
 <style></style>
