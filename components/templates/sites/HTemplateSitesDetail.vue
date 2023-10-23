@@ -58,7 +58,7 @@ export default {
     :overflow="tab === 2 ? 'scroll' : 'auto'"
     :tab.sync="tab"
     :tabs="tabs"
-    :tabs-props="{ grow: true }"
+    :tabs-props="{ fixedTabs: true }"
     :show-itembar="tab === 2"
   >
     <template #prepend-label>
