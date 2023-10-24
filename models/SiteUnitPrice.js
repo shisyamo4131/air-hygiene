@@ -28,6 +28,20 @@ export default class SiteUnitPrice extends FireModel {
         },
         set(v) {},
       },
+      collectItemIds: {
+        enumerable: true,
+        get() {
+          return this.prices.map(({ collectItemId }) => collectItemId)
+        },
+        set(v) {},
+      },
+      unitIds: {
+        enumerable: true,
+        get() {
+          return this.prices.map(({ unitId }) => unitId)
+        },
+        set(v) {},
+      },
     })
   }
 

@@ -9,8 +9,18 @@ export default class CollectItem extends FireModel {
     super(context.app.$firestore, `CollectItems`, context.app.$auth)
     this.tokenFields = ['name', 'nameKana', 'abbr']
     this.hasMany = [
-      { collection: 'collectionResults', field: 'item.docId', condition: '==' },
-      // 排出場所の契約単価についても設定が必要になるはず。
+      {
+        collection: 'SiteUnitPrices',
+        field: 'collectItemIds',
+        condition: 'array-contains',
+        type: 'subcollection',
+      },
+      {
+        collection: 'CollectionResults',
+        field: 'item.docId',
+        condition: '==',
+        type: 'collection',
+      },
     ]
   }
 

@@ -6,7 +6,6 @@ import FireModel from './FireModel'
 export default class Customer extends FireModel {
   constructor(context) {
     super(context.app.$firestore, 'CollectionResult', context.app.$auth)
-    this.hasMany = []
     this.tokenFields = []
     Object.defineProperties(this, {
       year: {

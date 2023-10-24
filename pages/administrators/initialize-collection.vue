@@ -365,7 +365,7 @@ export default {
       }
     },
     getItem(code) {
-      const result = this.$store.state.masters.Items.find(
+      const result = this.$store.state.masters.CollectItems.find(
         (item) => item.code === code
       )
       return result

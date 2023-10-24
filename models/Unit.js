@@ -11,7 +11,12 @@ export default class Unit extends FireModel {
     super(context.app.$firestore, 'Units', context.app.$auth)
     this.tokenFields = ['abbr', 'abbrKana']
     this.hasMany = [
-      { collection: 'collectionResults', field: 'unit.docId', condition: '==' },
+      {
+        collection: 'collectionResults',
+        field: 'unit.docId',
+        condition: '==',
+        type: 'collection',
+      },
       // 排出場所の契約単価についても設定が必要になるはず。
     ]
   }

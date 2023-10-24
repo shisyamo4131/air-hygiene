@@ -8,7 +8,12 @@ export default class Customer extends FireModel {
   constructor(context) {
     super(context.app.$firestore, 'Customers', context.app.$auth)
     this.hasMany = [
-      { collection: 'Sites', field: 'customer.docId', condition: '==' },
+      {
+        collection: 'Sites',
+        field: 'customer.docId',
+        condition: '==',
+        type: 'collection',
+      },
     ]
     this.tokenFields = ['abbr', 'abbrKana']
   }

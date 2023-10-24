@@ -31,7 +31,9 @@ export default {
         .map((item) => {
           return {
             ...item,
-            item: this.$store.getters['masters/Item'](item.collectItemId),
+            item: this.$store.getters['masters/CollectItem'](
+              item.collectItemId
+            ),
             unit: this.$store.getters['masters/Unit'](item.unitId),
           }
         })
