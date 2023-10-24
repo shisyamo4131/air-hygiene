@@ -5,8 +5,10 @@
  */
 import { collection, onSnapshot } from 'firebase/firestore'
 import HInputAutonumber from '~/components/molecules/inputs/HInputAutonumber.vue'
+import HBtnSubmit from '~/components/molecules/btns/HBtnSubmit.vue'
+import HBtnCancel from '~/components/molecules/btns/HBtnCancel.vue'
 export default {
-  components: { HInputAutonumber },
+  components: { HInputAutonumber, HBtnSubmit, HBtnCancel },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -123,17 +125,12 @@ export default {
             </v-form>
           </v-card-text>
           <v-card-actions class="justify-space-between">
-            <v-btn :disabled="loading" icon @click="editor = false"
-              ><v-icon>mdi-cancel</v-icon></v-btn
-            >
-            <v-btn
-              color="primary"
+            <h-btn-cancel :disabled="loading" @click="editor = false" />
+            <h-btn-submit
               :disabled="loading"
               :loading="loading"
-              icon
               @click="onClickSubmit"
-              ><v-icon>mdi-check</v-icon></v-btn
-            >
+            />
           </v-card-actions>
         </v-card>
       </v-dialog>

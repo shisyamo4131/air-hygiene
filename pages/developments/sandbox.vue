@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h-btn-submit small />
+    <h-template-collection-results-index />
   </div>
 </template>
 
 <script>
-import HBtnSubmit from '~/components/molecules/btns/HBtnSubmit.vue'
+import HTemplateCollectionResultsIndex from '~/components/templates/collectionResults/HTemplateCollectionResultsIndex.vue'
 export default {
-  components: { HBtnSubmit },
+  components: { HTemplateCollectionResultsIndex },
 }
 </script>
 

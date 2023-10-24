@@ -1,12 +1,20 @@
 <script>
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
+import HBtnCancel from '~/components/molecules/btns/HBtnCancel.vue'
+import HBtnSubmit from '~/components/molecules/btns/HBtnSubmit.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
 import HDataTableCollectionResults from '~/components/molecules/tables/HDataTableCollectionResults.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HInputCollectionResult, HDataTableCollectionResults, ASwitch },
+  components: {
+    HInputCollectionResult,
+    HDataTableCollectionResults,
+    ASwitch,
+    HBtnSubmit,
+    HBtnCancel,
+  },
   /******************************************************************
    * DATA
    ******************************************************************/
@@ -59,6 +67,7 @@ export default {
       this.initialize()
     },
     onClickEdit(item) {
+      this.$refs.form.resetValidation()
       this.editMode = 'UPDATE'
       this.editModel.initialize(item)
     },
@@ -76,23 +85,20 @@ export default {
               <h-input-collection-result v-bind.sync="editModel" />
             </v-form>
             <v-toolbar dense>
+              <h-btn-cancel :disabled="loading" @click="onClickCancel" />
               <v-spacer />
               <a-switch
                 v-if="editMode !== 'REGIST'"
                 v-model="isDelete"
+                class="mr-4"
                 label="この回収実績を削除する"
                 hide-details
               />
-              <v-btn icon :disabled="loading" @click="onClickCancel"
-                ><v-icon>mdi-cancel</v-icon></v-btn
-              >
-              <v-btn
-                icon
+              <h-btn-submit
                 :disabled="loading"
                 :loading="loading"
                 @click="onClickSubmit"
-                ><v-icon>mdi-check</v-icon></v-btn
-              >
+              />
             </v-toolbar>
           </v-col>
           <v-col cols="12">
