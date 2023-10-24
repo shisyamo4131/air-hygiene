@@ -5,7 +5,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore'
 import FireModel from './FireModel'
 
 export default class CollectItem extends FireModel {
-  constructor(context, docId) {
+  constructor(context) {
     super(context.app.$firestore, `CollectItems`, context.app.$auth)
     this.tokenFields = ['name', 'nameKana', 'abbr']
     this.hasMany = [
