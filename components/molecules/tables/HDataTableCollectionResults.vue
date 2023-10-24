@@ -11,6 +11,8 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
+    hideDefaultFooter: { type: Boolean, default: true, required: false },
+    itemsPerPage: { type: Number, default: -1, required: false },
     siteId: { type: String, default: '', required: false },
     yearMonth: { type: String, default: '', required: false },
   },
@@ -120,10 +122,12 @@ export default {
 
 <template>
   <v-data-table
+    v-bind="{ ...$props, ...$attrs }"
     :headers="headers"
     :sort-by="['date', 'collectItemId']"
     sort-desc
     :items="internalItems"
+    v-on="$listeners"
   >
     <template #top>
       <v-toolbar dense>
