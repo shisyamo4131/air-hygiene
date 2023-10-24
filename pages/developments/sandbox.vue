@@ -1,21 +1,13 @@
 <template>
-  <h-template-collection-results-index />
+  <div>
+    <h-btn-submit />
+  </div>
 </template>
 
 <script>
-import HTemplateCollectionResultsIndex from '~/components/templates/collectionResults/HTemplateCollectionResultsIndex.vue'
+import HBtnSubmit from '~/components/molecules/btns/HBtnSubmit.vue'
 export default {
-  components: {
-    HTemplateCollectionResultsIndex,
-  },
-  data() {
-    return {
-      siteId: '0LmWoOEHUHVc9HqVzDCc',
-      yearMonth: '2023-12',
-      value: '',
-    }
-  },
-  methods: {},
+  components: { HBtnSubmit },
 }
 </script>
 
