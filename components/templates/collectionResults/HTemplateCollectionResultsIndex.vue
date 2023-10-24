@@ -9,6 +9,12 @@
             </v-form>
             <v-toolbar dense>
               <v-spacer />
+              <a-switch
+                v-if="editMode !== 'REGIST'"
+                v-model="isDelete"
+                label="この回収実績を削除する"
+                hide-details
+              />
               <v-btn icon :disabled="loading" @click="onClickCancel"
                 ><v-icon>mdi-cancel</v-icon></v-btn
               >
@@ -36,14 +42,16 @@
 </template>
 
 <script>
+import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
 import HDataTableCollectionResults from '~/components/molecules/tables/HDataTableCollectionResults.vue'
 export default {
-  components: { HInputCollectionResult, HDataTableCollectionResults },
+  components: { HInputCollectionResult, HDataTableCollectionResults, ASwitch },
   data() {
     return {
       editMode: 'REGIST',
       editModel: this.$CollectionResult(),
+      isDelete: false,
       loading: false,
     }
   },
@@ -64,12 +72,13 @@ export default {
       }
       return result
     },
-    async onClickSubmit() {
+    async submit(mode) {
       try {
         this.loading = true
         if (!this.validate()) return
-        if (this.editMode === 'REGIST') await this.editModel.create()
-        if (this.editMode === 'UPDATE') await this.editModel.update()
+        if (mode === 'REGIST') await this.editModel.create()
+        if (mode === 'UPDATE') await this.editModel.update()
+        if (mode === 'DELETE') await this.editModel.delete()
         this.initialize()
       } catch (err) {
         // eslint-disable-next-line
@@ -78,6 +87,10 @@ export default {
       } finally {
         this.loading = false
       }
+    },
+    async onClickSubmit() {
+      if (this.isDelete) await this.submit('DELETE')
+      if (!this.isDelete) await this.submit(this.editMode)
     },
     onClickCancel() {
       this.initialize()

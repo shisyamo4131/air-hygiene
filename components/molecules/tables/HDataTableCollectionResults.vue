@@ -147,7 +147,12 @@ export default {
       <v-toolbar dense>
         <h-text-field-year-month v-model="internalYearMonth" hide-details />
         <v-spacer />
-        <h-autocomplete-collect-item hide-details label="回収品目" />
+        <h-autocomplete-collect-item
+          v-model="selectedCollectItemId"
+          hide-details
+          label="回収品目"
+          clearable
+        />
       </v-toolbar>
     </template>
     <template #[`item.collectItemId`]="{ item }">

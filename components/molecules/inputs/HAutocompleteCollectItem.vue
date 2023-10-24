@@ -57,6 +57,7 @@ export default {
 <template>
   <a-autocomplete
     v-bind="$attrs"
+    auto-select-first
     :items="items"
     :item-text="itemText"
     item-value="docId"
