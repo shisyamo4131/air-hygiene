@@ -1,23 +1,30 @@
 <script>
 /**
- * @create 2023-10-06
  * @author shisyamo4131
  */
-import HTemplateUnitsRegist from '~/components/templates/units/HTemplateUnitsRegist.vue'
+import HTemplateUnitsEditor from '~/components/templates/units/HTemplateUnitsEditor.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'UnitsRegist',
+  name: 'UnitsEditor',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateUnitsRegist },
+  components: { HTemplateUnitsEditor },
+  /******************************************************************
+   * ASYNCDATA
+   ******************************************************************/
+  asyncData({ app, route }) {
+    const docId = route.params.docId
+    const model = app.$Unit()
+    return { docId, model }
+  },
 }
 </script>
 
 <template>
-  <h-template-units-regist edit-mode="REGIST" />
+  <h-template-units-editor edit-mode="REGIST" :model="model" />
 </template>
 
 <style></style>

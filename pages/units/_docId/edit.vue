@@ -1,35 +1,31 @@
 <script>
 /**
- * @create 2023-10-06
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateUnitsEdit from '~/components/templates/units/HTemplateUnitsEdit.vue'
+import HTemplateUnitsEditor from '~/components/templates/units/HTemplateUnitsEditor.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'UnitsEdit',
+  name: 'UnitsEditor',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateUnitsEdit },
+  components: { HTemplateUnitsEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `Units/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$CollectItem()
-    model.initialize(snapshot.data())
-    return { model }
+    const model = app.$Unit()
+    await model.fetch(docId)
+    return { docId, model }
   },
 }
 </script>
 
 <template>
-  <h-template-units-edit :model="model" />
+  <h-template-units-editor edit-mode="UPDATE" :model="model" />
 </template>
 
 <style></style>
