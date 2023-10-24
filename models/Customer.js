@@ -1,6 +1,5 @@
 /**
- * Customer
- * @create 2023-09-25
+ * ### Customer
  * @author shisyamo4131
  */
 import FireModel from './FireModel'
