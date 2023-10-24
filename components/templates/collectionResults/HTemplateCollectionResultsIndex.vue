@@ -1,52 +1,15 @@
-<template>
-  <air-template-default>
-    <template #default="{ height }">
-      <v-container fluid>
-        <v-row>
-          <v-col cols="12">
-            <v-form ref="form" :disabled="loading">
-              <h-input-collection-result v-bind.sync="editModel" />
-            </v-form>
-            <v-toolbar dense>
-              <v-spacer />
-              <a-switch
-                v-if="editMode !== 'REGIST'"
-                v-model="isDelete"
-                label="この回収実績を削除する"
-                hide-details
-              />
-              <v-btn icon :disabled="loading" @click="onClickCancel"
-                ><v-icon>mdi-cancel</v-icon></v-btn
-              >
-              <v-btn
-                icon
-                :disabled="loading"
-                :loading="loading"
-                @click="onClickSubmit"
-                ><v-icon>mdi-check</v-icon></v-btn
-              >
-            </v-toolbar>
-          </v-col>
-          <v-col cols="12">
-            <h-data-table-collection-results
-              :site-id="editModel.siteId"
-              :height="height - 514"
-              show-actions
-              @click:edit="onClickEdit($event)"
-            />
-          </v-col>
-        </v-row>
-      </v-container>
-    </template>
-  </air-template-default>
-</template>
-
 <script>
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
 import HDataTableCollectionResults from '~/components/molecules/tables/HDataTableCollectionResults.vue'
 export default {
+  /******************************************************************
+   * COMPONENTS
+   ******************************************************************/
   components: { HInputCollectionResult, HDataTableCollectionResults, ASwitch },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
   data() {
     return {
       editMode: 'REGIST',
@@ -55,9 +18,9 @@ export default {
       loading: false,
     }
   },
-  mounted() {
-    this.editModel.siteId = '7gnxO7e2mGX8T02jS5cw'
-  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
   methods: {
     initialize() {
       const { date, siteId } = { ...this.editModel }
@@ -102,5 +65,48 @@ export default {
   },
 }
 </script>
+
+<template>
+  <air-template-default>
+    <template #default="{ height }">
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12">
+            <v-form ref="form" :disabled="loading">
+              <h-input-collection-result v-bind.sync="editModel" />
+            </v-form>
+            <v-toolbar dense>
+              <v-spacer />
+              <a-switch
+                v-if="editMode !== 'REGIST'"
+                v-model="isDelete"
+                label="この回収実績を削除する"
+                hide-details
+              />
+              <v-btn icon :disabled="loading" @click="onClickCancel"
+                ><v-icon>mdi-cancel</v-icon></v-btn
+              >
+              <v-btn
+                icon
+                :disabled="loading"
+                :loading="loading"
+                @click="onClickSubmit"
+                ><v-icon>mdi-check</v-icon></v-btn
+              >
+            </v-toolbar>
+          </v-col>
+          <v-col cols="12">
+            <h-data-table-collection-results
+              :site-id="editModel.siteId"
+              :height="height - 514"
+              show-actions
+              @click:edit="onClickEdit($event)"
+            />
+          </v-col>
+        </v-row>
+      </v-container>
+    </template>
+  </air-template-default>
+</template>
 
 <style></style>
