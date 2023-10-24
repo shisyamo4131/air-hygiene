@@ -1,6 +1,4 @@
 /**
- * Site
- * @create 2023-09-29
  * @author shisyamo4131
  */
 import FireModel from './FireModel'
@@ -9,6 +7,14 @@ export default class Site extends FireModel {
   constructor(context) {
     super(context.app.$firestore, `Sites`, context.app.$auth)
     this.tokenFields = ['abbr', 'abbrKana']
+    this.hasMany = [
+      {
+        collection: 'CollectionResults',
+        field: 'siteId',
+        condition: '==',
+        type: 'collection',
+      },
+    ]
   }
 
   initialize(item) {
