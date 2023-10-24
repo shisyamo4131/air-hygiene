@@ -5,7 +5,7 @@ import FireModel from './FireModel'
 
 export default class Customer extends FireModel {
   constructor(context) {
-    super(context.app.$firestore, 'CollectionResult', context.app.$auth)
+    super(context.app.$firestore, 'CollectionResults', context.app.$auth)
     this.tokenFields = []
     Object.defineProperties(this, {
       year: {
@@ -32,6 +32,16 @@ export default class Customer extends FireModel {
         },
         set(v) {},
       },
+      sales: {
+        enumerable: true,
+        get() {
+          if (!this.amount || !this.unitPrice) return 0
+          const amount = this.amount * 100
+          const unitPrice = this.unitPrice * 100
+          return (amount * unitPrice) / 10000
+        },
+        set(v) {},
+      },
     })
   }
 
@@ -39,6 +49,7 @@ export default class Customer extends FireModel {
     this.date = ''
     this.siteId = ''
     this.collectItemId = ''
+    this.amount = null
     this.unitId = ''
     this.unitPrice = null
     this.remarks = ''

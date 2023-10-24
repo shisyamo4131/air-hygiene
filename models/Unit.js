@@ -12,7 +12,7 @@ export default class Unit extends FireModel {
     this.tokenFields = ['abbr', 'abbrKana']
     this.hasMany = [
       {
-        collection: 'collectionResults',
+        collection: 'CollectionResults',
         field: 'unit.docId',
         condition: '==',
         type: 'collection',

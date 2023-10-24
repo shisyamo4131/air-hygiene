@@ -9,6 +9,7 @@ import HNumericUnitPrice from './HNumericUnitPrice.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -20,6 +21,7 @@ export default {
     HAutocompleteCollectItem,
     HAutocompleteUnit,
     HNumericUnitPrice,
+    ANumeric,
   },
   /******************************************************************
    * MIXINS
@@ -33,6 +35,7 @@ export default {
     siteId: { type: String, default: '', required: false },
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
+    amount: { type: Number, default: null, required: false },
     unitPrice: { type: Number, default: null, required: false },
     remarks: { type: String, default: '', required: false },
   },
@@ -58,25 +61,42 @@ export default {
       required
       @input="$emit('update:siteId', $event)"
     />
-    <h-autocomplete-collect-item
-      label="回収品目"
-      :value="collectItemId"
-      required
-      @input="$emit('update:collectItemId', $event)"
-    />
-    <h-autocomplete-unit
-      label="単位"
-      :value="unitId"
-      required
-      @input="$emit('update:unitId', $event)"
-    />
-    <h-numeric-unit-price
-      label="単価（税抜）"
-      :value="unitPrice"
-      required
-      :unit-id="unitId"
-      @input="$emit('update:unitPrice', $event)"
-    />
+    <v-row dense>
+      <v-col>
+        <h-autocomplete-collect-item
+          label="回収品目"
+          :value="collectItemId"
+          required
+          @input="$emit('update:collectItemId', $event)"
+        />
+      </v-col>
+      <v-col>
+        <a-numeric
+          label="数量"
+          :value="amount"
+          required
+          :decimal-places="2"
+          @input="$emit('update:amount', $event)"
+        />
+      </v-col>
+      <v-col>
+        <h-autocomplete-unit
+          label="単位"
+          :value="unitId"
+          required
+          @input="$emit('update:unitId', $event)"
+        />
+      </v-col>
+      <v-col>
+        <h-numeric-unit-price
+          label="単価（税抜）"
+          :value="unitPrice"
+          required
+          :unit-id="unitId"
+          @input="$emit('update:unitPrice', $event)"
+        />
+      </v-col>
+    </v-row>
     <a-textarea
       label="備考"
       :value="remarks"

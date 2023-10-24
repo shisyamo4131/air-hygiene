@@ -1,16 +1,12 @@
 <template>
-  <air-template-default>
-    <v-container>
-      <h-data-table-collection-results :site-id="siteId" />
-    </v-container>
-  </air-template-default>
+  <h-template-collection-results-index />
 </template>
 
 <script>
-import HDataTableCollectionResults from '~/components/molecules/tables/HDataTableCollectionResults.vue'
+import HTemplateCollectionResultsIndex from '~/components/templates/collectionResults/HTemplateCollectionResultsIndex.vue'
 export default {
   components: {
-    HDataTableCollectionResults,
+    HTemplateCollectionResultsIndex,
   },
   data() {
     return {

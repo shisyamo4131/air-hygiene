@@ -14,6 +14,7 @@ export default {
     hideDefaultFooter: { type: Boolean, default: true, required: false },
     itemsPerPage: { type: Number, default: -1, required: false },
     siteId: { type: String, default: '', required: false },
+    showActions: { type: Boolean, default: false, required: false },
     yearMonth: { type: String, default: '', required: false },
   },
   /******************************************************************
@@ -24,9 +25,9 @@ export default {
       headers: [
         { text: '回収日', value: 'date' },
         { text: '回収品目', value: 'collectItemId' },
-        { text: '回収量', value: 'amount' },
-        { text: '回収単位', value: 'unitId' },
-        { text: '請求単価', value: 'unitPrice' },
+        { text: '回収量', value: 'amount', sortable: false, align: 'right' },
+        { text: '単価', value: 'unitPrice', sortable: false, align: 'right' },
+        { text: '金額', value: 'sales', sortable: false, align: 'right' },
       ],
       items: [],
       lazyYearMonth: this.$dayjs().format('YYYY-MM'),
@@ -38,6 +39,18 @@ export default {
    * COMPUTED
    ******************************************************************/
   computed: {
+    internalHeaders() {
+      const result = this.headers.map((item) => item)
+      if (this.showActions) {
+        result.push({
+          text: 'actions',
+          value: 'actions',
+          sortable: false,
+          align: 'right',
+        })
+      }
+      return result
+    },
     internalYearMonth: {
       get() {
         return this.lazyYearMonth
@@ -123,7 +136,8 @@ export default {
 <template>
   <v-data-table
     v-bind="{ ...$props, ...$attrs }"
-    :headers="headers"
+    fixed-header
+    :headers="internalHeaders"
     :sort-by="['date', 'collectItemId']"
     sort-desc
     :items="internalItems"
@@ -135,6 +149,30 @@ export default {
         <v-spacer />
         <h-autocomplete-collect-item hide-details label="回収品目" />
       </v-toolbar>
+    </template>
+    <template #[`item.collectItemId`]="{ item }">
+      {{
+        $store.getters['masters/CollectItem'](item.collectItemId)?.abbr ||
+        'undefined'
+      }}
+    </template>
+    <template #[`item.amount`]="{ item }">
+      {{
+        `${(item?.amount || 0).toFixed(2)} ${
+          $store.getters['masters/Unit'](item.unitId)?.abbr || 'undefined'
+        }`
+      }}
+    </template>
+    <template #[`item.unitPrice`]="{ item }">
+      {{ `${(item.unitPrice || 0).toFixed(2)} 円` }}
+    </template>
+    <template #[`item.sales`]="{ item }">
+      {{ `${(item.sales || 0).toFixed(2)} 円` }}
+    </template>
+    <template #[`item.actions`]="{ item }">
+      <v-btn color="primary" small @click="$emit('click:edit', item)"
+        >編集</v-btn
+      >
     </template>
   </v-data-table>
 </template>
