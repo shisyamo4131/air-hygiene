@@ -5,8 +5,10 @@ export default {
    ******************************************************************/
   props: {
     color: { type: String, default: 'primary', required: false },
+    fab: { type: Boolean, default: false, required: false },
     icon: { type: String, default: 'mdi-check', required: false },
     label: { type: String, default: '確定', required: false },
+    small: { type: Boolean, default: false, required: false },
   },
   /******************************************************************
    * COMPUTED
@@ -20,12 +22,18 @@ export default {
 </script>
 
 <template>
-  <v-btn v-bind="$attrs" :color="color" :icon="isMobile" v-on="$listeners">
+  <v-btn
+    v-bind="$attrs"
+    :fab="isMobile || fab"
+    :small="isMobile || small"
+    :color="color"
+    v-on="$listeners"
+  >
     <v-icon v-if="isMobile">{{ icon }}</v-icon>
-    <span v-else
-      ><v-icon left>{{ icon }}</v-icon
-      >{{ label }}</span
-    >
+    <span v-else>
+      <v-icon left>{{ icon }}</v-icon
+      >{{ label }}
+    </span>
   </v-btn>
 </template>
 

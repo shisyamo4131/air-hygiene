@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h-btn-submit />
+    <h-btn-submit small />
   </div>
 </template>
 
