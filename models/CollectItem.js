@@ -34,6 +34,11 @@ export default class CollectItem extends FireModel {
     }
   }
 
+  async create() {
+    if (!this.code) throw new Error('CODEが必要です。')
+    await super.create(this.code)
+  }
+
   async beforeUpdate() {
     const colRef = collection(this.firestore, 'CollectItems')
     const q = query(colRef, where('code', '==', this.code))

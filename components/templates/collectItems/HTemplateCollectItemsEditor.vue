@@ -64,7 +64,7 @@ export default {
             <v-btn
               v-bind="attrs"
               color="error"
-              :disabled="loading"
+              :disabled="loading || !editModel.deletable"
               small
               v-on="on"
               >削除する</v-btn
