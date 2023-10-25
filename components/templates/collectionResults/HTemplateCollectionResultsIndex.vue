@@ -104,7 +104,7 @@ export default {
           <v-col cols="12">
             <h-data-table-collection-results
               :site-id="editModel.siteId"
-              :height="height - 514"
+              :height="height - 580"
               show-actions
               @click:edit="onClickEdit($event)"
             />

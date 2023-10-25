@@ -37,29 +37,72 @@ export default {
     unitId: { type: String, default: '', required: false },
     amount: { type: Number, default: null, required: false },
     unitPrice: { type: Number, default: null, required: false },
+    convertedWeight: { type: Number, default: null, required: false },
     remarks: { type: String, default: '', required: false },
+  },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
+  computed: {
+    collectItem() {
+      if (!this.collectItemId) return undefined
+      return this.$store.getters['masters/CollectItem'](this.collectItemId)
+    },
+    unit() {
+      if (!this.unitId) return undefined
+      return this.$store.getters['masters/Unit'](this.unitId)
+    },
+    requiredConvert() {
+      if (!this.collectItem) return false
+      const wasteDiv = this.collectItem.wasteDiv
+      return ['municipal', 'industrial'].includes(wasteDiv)
+    },
   },
   /******************************************************************
    * WATCH
    ******************************************************************/
-  watch: {},
+  watch: {
+    collectItemId(v) {
+      this.$emit('update:convertedWeight', null)
+      this.copyAmountToWeight()
+    },
+    unitId(v) {
+      this.$emit('update:convertedWeight', null)
+      this.copyAmountToWeight()
+    },
+    amount(v) {
+      this.copyAmountToWeight()
+    },
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    copyAmountToWeight() {
+      if (!this.requiredConvert) {
+        this.$emit('update:convertedWeight', null)
+      } else if ((this.unit?.code || undefined) === '11') {
+        this.$emit('update:convertedWeight', this.amount)
+      }
+    },
+  },
 }
 </script>
 
 <template>
   <div>
+    <h-autocomplete-site
+      label="排出場所"
+      :value="siteId"
+      required
+      @input="$emit('update:siteId', $event)"
+    />
     <a-text-field
       label="回収日"
       :value="date"
       required
       input-type="date"
       @input="$emit('update:date', $event)"
-    />
-    <h-autocomplete-site
-      label="排出場所"
-      :value="siteId"
-      required
-      @input="$emit('update:siteId', $event)"
     />
     <v-row dense>
       <v-col>
@@ -97,6 +140,15 @@ export default {
         />
       </v-col>
     </v-row>
+    <a-numeric
+      label="換算重量"
+      :disabled="!requiredConvert"
+      :value="convertedWeight"
+      :required="requiredConvert"
+      decimal-places="2"
+      suffix="kg"
+      @input="$emit('update:convertedWeight', $event)"
+    />
     <a-textarea
       label="備考"
       :value="remarks"

@@ -52,6 +52,7 @@ export default class Customer extends FireModel {
     this.amount = null
     this.unitId = ''
     this.unitPrice = null
+    this.convertedWeight = null
     this.remarks = ''
     super.initialize(item)
   }
