@@ -16,6 +16,12 @@
     ]
   },
   {
+    "name": "回収実績管理",
+    "icon": "mdi-cube",
+    "to": "/collection-results",
+    "lists": []
+  },
+  {
     "name": "許可管理",
     "icon": "mdi-wrench-cog",
     "lists": [

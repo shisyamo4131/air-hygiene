@@ -7,14 +7,15 @@
  * 配列が空の場合はすべて許可される。
  */
 export const pagePermissions = {
+  'collection-results': [],
   customers: [],
   'customers-id': [],
   'customers-id-edit': [],
   'customers-regist': [],
-  items: [],
-  'items-id': [],
-  'items-id-edit': [],
-  'items-regist': [],
+  'collect-items': [],
+  'collect-items-id': [],
+  'collect-items-id-edit': [],
+  'collect-items-regist': [],
   'industrial-permissions': [],
   'industrial-permissions-id': [],
   'industrial-permissions-id-edit': [],

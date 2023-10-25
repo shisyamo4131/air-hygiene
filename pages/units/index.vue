@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-10-13
  * @author shisyamo4131
  */
 import HTemplateUnitsIndex from '~/components/templates/units/HTemplateUnitsIndex.vue'
