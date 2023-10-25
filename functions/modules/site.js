@@ -1,6 +1,6 @@
 /**
- * Sites（Firestore）
- * @create 2023-10-12
+ * ### 同期先
+ * - CollectionResults
  * @author shisyamo4131
  */
 const {
@@ -14,7 +14,7 @@ const subcollections = ['SiteUnitPrices']
 
 exports.updated = onDocumentUpdated('Sites/{siteId}', async (event) => {
   const data = event.data.after.data()
-  const promises = [syncData(`Sites`, 'site', data)]
+  const promises = [syncData(`CollectionResults`, 'site', data)]
   await Promise.all(promises)
 })
 

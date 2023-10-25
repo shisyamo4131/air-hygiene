@@ -1,6 +1,6 @@
 /**
- * Customers（Firestore）
- * @create 2023-10-12
+ * ### 同期先
+ * - Sites
  * @author shisyamo4131
  */
 const {
