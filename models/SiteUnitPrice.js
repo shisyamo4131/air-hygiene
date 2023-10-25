@@ -80,4 +80,12 @@ export default class SiteUnitPrice extends FireModel {
     })
     return listener
   }
+
+  async fetchUnitPrice(date, key) {
+    await this.fetchLatest(date)
+    if (!this.docId) return null
+    const itemUnitPrice = this.prices.find((item) => item.key === key)
+    if (!itemUnitPrice) return null
+    return itemUnitPrice.price
+  }
 }

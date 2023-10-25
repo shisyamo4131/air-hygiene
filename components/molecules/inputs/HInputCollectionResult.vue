@@ -89,6 +89,20 @@ export default {
         this.$airCalcDeadlineDate(this.date, deadline)
       )
     },
+    async setUnitPrice() {
+      if (!this.site) return
+      if (!this.date) return
+      if (!this.collectItemId) return
+      if (!this.unitId) return
+      if (this.collectionResultDiv !== 'root') return
+      const wasteDiv = this.collectItem.wasteDiv
+      const isWaste = ['municipal', 'industrial'].includes(wasteDiv)
+      if (!isWaste) return
+      const siteUnitPriceModel = this.$SiteUnitPrice(this.site.docId)
+      const key = `${this.collectItemId}-${this.unitId}`
+      const result = await siteUnitPriceModel.fetchUnitPrice(this.date, key)
+      this.$emit('update:unitPrice', result)
+    },
   },
 }
 </script>
@@ -123,7 +137,10 @@ export default {
       label="回収品目"
       :value="collectItemId"
       required
-      @change="copyAmountToWeight"
+      @change="
+        copyAmountToWeight()
+        setUnitPrice()
+      "
       @input="$emit('update:collectItemId', $event)"
     />
     <v-row dense>
