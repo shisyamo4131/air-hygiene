@@ -109,7 +109,7 @@ export default {
           <v-col cols="12" lg="8">
             <h-data-table-collection-results
               :site-id="editModel.site?.docId || undefined"
-              :height="height - 72"
+              :height="height - 24"
               show-actions
               :selected-item="editModel"
               @click:edit="onClickEdit($event)"

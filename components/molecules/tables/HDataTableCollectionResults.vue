@@ -11,6 +11,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
+    height: { type: [String, Number], default: undefined, required: false },
     hideDefaultFooter: { type: Boolean, default: true, required: false },
     itemsPerPage: { type: Number, default: -1, required: false },
     siteId: { type: String, default: '', required: false },
@@ -67,6 +68,10 @@ export default {
         if (!this.selectedCollectItemId) return true
         return collectItemId === this.selectedCollectItemId
       })
+    },
+    internalHeight() {
+      if (!this.height) return
+      return parseInt(this.height) - 48
     },
   },
   /******************************************************************
@@ -140,6 +145,7 @@ export default {
     v-bind="{ ...$props, ...$attrs }"
     fixed-header
     :headers="internalHeaders"
+    :height="internalHeight"
     :sort-by="['date', 'collectItemId']"
     sort-desc
     :items="internalItems"
