@@ -14,7 +14,6 @@ export default {
       validator: (v) => ['REGIST', 'UPDATE', 'DELETE'].includes(v),
       required: false,
     },
-    loading: { type: Boolean, default: false, required: false },
   },
 }
 </script>

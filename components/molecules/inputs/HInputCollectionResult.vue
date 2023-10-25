@@ -47,6 +47,19 @@ export default {
     remarks: { type: String, default: '', required: false },
   },
   /******************************************************************
+   * DATA
+   ******************************************************************/
+  data() {
+    return {
+      loading: {
+        unitPrice: false,
+      },
+      loaded: {
+        unitPrice: false,
+      },
+    }
+  },
+  /******************************************************************
    * COMPUTED
    ******************************************************************/
   computed: {
@@ -100,8 +113,18 @@ export default {
       if (!isWaste) return
       const siteUnitPriceModel = this.$SiteUnitPrice(this.site.docId)
       const key = `${this.collectItemId}-${this.unitId}`
-      const result = await siteUnitPriceModel.fetchUnitPrice(this.date, key)
-      this.$emit('update:unitPrice', result)
+      try {
+        this.loading.unitPrice = true
+        const result = await siteUnitPriceModel.fetchUnitPrice(this.date, key)
+        this.$emit('update:unitPrice', result)
+        if (result) this.loaded.unitPrice = true
+      } catch (err) {
+        // eslint-disable-next-line
+        console.error(err)
+        alert(err.message)
+      } finally {
+        this.loading.unitPrice = false
+      }
     },
   },
 }
@@ -169,6 +192,7 @@ export default {
           :value="unitPrice"
           required
           :unit-id="unitId"
+          :loading="loading.unitPrice"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>
@@ -193,6 +217,9 @@ export default {
       :value="remarks"
       @input="$emit('update:remarks', $event)"
     />
+    <v-snackbar v-model="loaded.unitPrice" color="info" outlined centered>
+      単価を読み込みました。
+    </v-snackbar>
   </div>
 </template>
 
