@@ -132,14 +132,6 @@ export default {
 
 <template>
   <div>
-    <h-text-field-date
-      label="回収日"
-      :value="date"
-      required
-      input-type="date"
-      @change="setDeadline"
-      @input="$emit('update:date', $event)"
-    />
     <h-autocomplete-site
       label="排出場所"
       :value="site"
@@ -147,6 +139,14 @@ export default {
       return-object
       @change="setDeadline"
       @input="$emit('update:site', $event)"
+    />
+    <h-text-field-date
+      label="回収日"
+      :value="date"
+      required
+      input-type="date"
+      @change="setDeadline"
+      @input="$emit('update:date', $event)"
     />
     <a-autocomplete
       label="実績区分"
