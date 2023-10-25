@@ -7,9 +7,9 @@ import HAutocompleteCollectItem from './HAutocompleteCollectItem.vue'
 import HAutocompleteUnit from './HAutocompleteUnit.vue'
 import HNumericUnitPrice from './HNumericUnitPrice.vue'
 import HNumericConvertedWeight from './HNumericConvertedWeight.vue'
+import HTextFieldDate from './HTextFieldDate.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
@@ -17,7 +17,6 @@ export default {
    * COMPONENTS
    ******************************************************************/
   components: {
-    ATextField,
     ATextarea,
     HAutocompleteSite,
     HAutocompleteCollectItem,
@@ -26,6 +25,7 @@ export default {
     ANumeric,
     AAutocomplete,
     HNumericConvertedWeight,
+    HTextFieldDate,
   },
   /******************************************************************
    * MIXINS
@@ -82,20 +82,12 @@ export default {
       this.$emit('update:convertedWeight', amount)
     },
     setDeadline() {
-      this.$emit('update:dateDeadline', '')
       if (!this.date || !this.site) return
-      if (this.date !== this.$dayjs(this.date).format('YYYY-MM-DD')) return
       const deadline = this.site.customer.deadline
-      if (deadline === '99') {
-        this.$emit(
-          'update:dateDeadline',
-          this.$dayjs(this.date).endOf('month').format('YYYY-MM-DD')
-        )
-      } else {
-        const result = this.$dayjs(`${this.date.substr(0, 8)}${deadline}`)
-        if (this.date > result.format('YYYY-MM-DD')) result.add(1, 'month')
-        this.$emit('update:dateDeadline', result.format('YYYY-MM-DD'))
-      }
+      this.$emit(
+        'update:dateDeadline',
+        this.$airCalcDeadlineDate(this.date, deadline)
+      )
     },
   },
 }
@@ -103,7 +95,7 @@ export default {
 
 <template>
   <div>
-    <a-text-field
+    <h-text-field-date
       label="回収日"
       :value="date"
       required
@@ -172,7 +164,7 @@ export default {
         />
       </v-col>
     </v-row>
-    <a-text-field
+    <h-text-field-date
       label="請求締日"
       :value="dateDeadline"
       required

@@ -1,6 +1,27 @@
 import { onChildAdded, onChildChanged, onChildRemoved } from 'firebase/database'
 import { collection, onSnapshot, query, where } from 'firebase/firestore'
 
+const airCalcDeadlineDate = (context, date, deadline) => {
+  if (!date) {
+    // eslint-disable-next-line
+    console.error(`[air-util.js] Missing parameter date.`)
+    return ''
+  }
+  let result = context.app.$dayjs(date)
+  if (date !== result.format('YYYY-MM-DD')) {
+    // eslint-disable-next-line
+    console.error(`[air-util.js] Invalid date.`)
+    return ''
+  }
+  if (deadline === '99') {
+    result = context.app.$dayjs(date).endOf('month')
+  } else {
+    result = context.app.$dayjs(`${date.substr(0, 8)}${deadline}`)
+  }
+  if (date > result.format('YYYY-MM-DD')) result = result.add(1, 'month')
+  return result.format('YYYY-MM-DD')
+}
+
 /**
  * onChildAdded、onChildChanged、onChildRemovedを利用した
  * Realtime Databaseへのsubscribeを行います。
@@ -92,6 +113,9 @@ const airSubscribeFirestoreByTokenMap = (firestore, search, colName) => {
 }
 
 export default (context, inject) => {
+  inject('airCalcDeadlineDate', (date, deadline) =>
+    airCalcDeadlineDate(context, date, deadline)
+  )
   inject('airSubscribeDatabase', (query) => airSubscribeDatabase(query))
   inject('airSubscribeFirestore', (query) => airSubscribeFirestore(query))
   inject('airSubscribeFirestoreByTokenMap', (search, colName) =>

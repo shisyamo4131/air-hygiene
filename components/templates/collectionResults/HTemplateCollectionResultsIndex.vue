@@ -80,7 +80,7 @@ export default {
 </script>
 
 <template>
-  <air-template-default>
+  <air-template-default label="回収実績管理">
     <template #default="{ height }">
       <v-container fluid>
         <v-row>

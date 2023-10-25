@@ -1,13 +1,18 @@
 <template>
   <div>
-    <h-template-collection-results-index />
+    <h-text-field-date v-model="value" />
   </div>
 </template>
 
 <script>
-import HTemplateCollectionResultsIndex from '~/components/templates/collectionResults/HTemplateCollectionResultsIndex.vue'
+import HTextFieldDate from '~/components/molecules/inputs/HTextFieldDate.vue'
 export default {
-  components: { HTemplateCollectionResultsIndex },
+  components: { HTextFieldDate },
+  data() {
+    return {
+      value: '2023-10-01',
+    }
+  },
 }
 </script>
 
