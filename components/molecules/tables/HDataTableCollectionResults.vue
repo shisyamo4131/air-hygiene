@@ -16,6 +16,7 @@ export default {
     siteId: { type: String, default: '', required: false },
     showActions: { type: Boolean, default: false, required: false },
     yearMonth: { type: String, default: '', required: false },
+    selectedItem: { type: Object, default: null, required: false },
   },
   /******************************************************************
    * DATA
@@ -154,6 +155,16 @@ export default {
           clearable
         />
       </v-toolbar>
+    </template>
+    <template #[`item.date`]="{ item }">
+      <v-icon
+        v-if="selectedItem && selectedItem.docId === item.docId"
+        color="primary"
+        left
+        small
+        >mdi-check</v-icon
+      >
+      {{ item.date }}
     </template>
     <template #[`item.collectItemId`]="{ item }">
       {{

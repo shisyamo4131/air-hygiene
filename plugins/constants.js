@@ -11,13 +11,19 @@ const CITY_ARRAY = (prefCode) => {
 const CITY = cities.reduce((acc, city) => {
   return { ...acc, [city.code]: city.name }
 }, {})
-// const CITY = () => {
-//   const result = {}
-//   cities.forEach((city) => {
-//     result[city.code] = city.name
-//   })
-//   return result
-// }
+
+/* 実績区分 */
+const COLLECTION_RESULT_DIV = {
+  root: '1: ルート',
+  spot: '2: スポット',
+  monthly: '9: 月極',
+}
+
+const COLLECTION_RESULT_DIV_ARRAY = [
+  { value: 'root', text: '1: ルート' },
+  { value: 'spot', text: '2: スポット' },
+  { value: 'monthly', text: '9: 月極' },
+]
 
 /* 取引先状態 */
 const CUSTOMER_CONDITION = {
@@ -189,6 +195,8 @@ const WASTE_DIV_ARRAY = [
 export default (context, inject) => {
   inject('CITY_ARRAY', (prefCode) => CITY_ARRAY(prefCode))
   inject('CITY', CITY)
+  inject('COLLECTION_RESULT_DIV', COLLECTION_RESULT_DIV)
+  inject('COLLECTION_RESULT_DIV_ARRAY', COLLECTION_RESULT_DIV_ARRAY)
   inject('CUSTOMER_CONDITION', CUSTOMER_CONDITION)
   inject('CUSTOMER_CONDITION_ARRAY', CUSTOMER_CONDITION_ARRAY)
   inject('DEADLINE', DEADLINE)

@@ -6,10 +6,12 @@ import HAutocompleteSite from './HAutocompleteSite.vue'
 import HAutocompleteCollectItem from './HAutocompleteCollectItem.vue'
 import HAutocompleteUnit from './HAutocompleteUnit.vue'
 import HNumericUnitPrice from './HNumericUnitPrice.vue'
+import HNumericConvertedWeight from './HNumericConvertedWeight.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
+import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -22,6 +24,8 @@ export default {
     HAutocompleteUnit,
     HNumericUnitPrice,
     ANumeric,
+    AAutocomplete,
+    HNumericConvertedWeight,
   },
   /******************************************************************
    * MIXINS
@@ -33,6 +37,7 @@ export default {
   props: {
     date: { type: String, default: '', required: false },
     siteId: { type: String, default: '', required: false },
+    collectionResultDiv: { type: String, default: '', required: false },
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
     amount: { type: Number, default: null, required: false },
@@ -91,12 +96,6 @@ export default {
 
 <template>
   <div>
-    <h-autocomplete-site
-      label="排出場所"
-      :value="siteId"
-      required
-      @input="$emit('update:siteId', $event)"
-    />
     <a-text-field
       label="回収日"
       :value="date"
@@ -104,25 +103,38 @@ export default {
       input-type="date"
       @input="$emit('update:date', $event)"
     />
+    <h-autocomplete-site
+      label="排出場所"
+      :value="siteId"
+      required
+      @input="$emit('update:siteId', $event)"
+    />
+    <a-autocomplete
+      label="実績区分"
+      auto-select-first
+      :value="collectionResultDiv"
+      :items="$COLLECTION_RESULT_DIV_ARRAY"
+      required
+      @input="$emit('update:collectionResultDiv', $event)"
+    />
+    <h-autocomplete-collect-item
+      label="回収品目"
+      :value="collectItemId"
+      required
+      @input="$emit('update:collectItemId', $event)"
+    />
     <v-row dense>
-      <v-col>
-        <h-autocomplete-collect-item
-          label="回収品目"
-          :value="collectItemId"
-          required
-          @input="$emit('update:collectItemId', $event)"
-        />
-      </v-col>
-      <v-col>
+      <v-col cols="6">
         <a-numeric
           label="数量"
+          class="right-input"
           :value="amount"
           required
           :decimal-places="2"
           @input="$emit('update:amount', $event)"
         />
       </v-col>
-      <v-col>
+      <v-col cols="6">
         <h-autocomplete-unit
           label="単位"
           :value="unitId"
@@ -130,7 +142,7 @@ export default {
           @input="$emit('update:unitId', $event)"
         />
       </v-col>
-      <v-col>
+      <v-col cols="6">
         <h-numeric-unit-price
           label="単価（税抜）"
           :value="unitPrice"
@@ -139,16 +151,15 @@ export default {
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>
+      <v-col cols="6">
+        <h-numeric-converted-weight
+          :disabled="!requiredConvert"
+          :value="convertedWeight"
+          :required="requiredConvert"
+          @input="$emit('update:convertedWeight', $event)"
+        />
+      </v-col>
     </v-row>
-    <a-numeric
-      label="換算重量"
-      :disabled="!requiredConvert"
-      :value="convertedWeight"
-      :required="requiredConvert"
-      decimal-places="2"
-      suffix="kg"
-      @input="$emit('update:convertedWeight', $event)"
-    />
     <a-textarea
       label="備考"
       :value="remarks"

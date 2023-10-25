@@ -1,4 +1,7 @@
 <script>
+/**
+ * @author shisyamo4131
+ */
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import HBtnCancel from '~/components/molecules/btns/HBtnCancel.vue'
 import HBtnSubmit from '~/components/molecules/btns/HBtnSubmit.vue'
@@ -35,6 +38,7 @@ export default {
       this.editModel.initialize({ date, siteId })
       this.$refs.form.resetValidation()
       this.editMode = 'REGIST'
+      this.isDelete = false
     },
     validate() {
       const result = this.$refs.form.validate()
@@ -80,20 +84,21 @@ export default {
     <template #default="{ height }">
       <v-container fluid>
         <v-row>
-          <v-col cols="12">
+          <v-col cols="12" lg="4">
             <v-form ref="form" :disabled="loading">
               <h-input-collection-result v-bind.sync="editModel" />
             </v-form>
+            <v-expand-transition>
+              <a-switch
+                v-show="editMode !== 'REGIST'"
+                v-model="isDelete"
+                class="mt-0"
+                label="この回収実績を削除する"
+              />
+            </v-expand-transition>
             <v-toolbar dense>
               <h-btn-cancel :disabled="loading" @click="onClickCancel" />
               <v-spacer />
-              <a-switch
-                v-if="editMode !== 'REGIST'"
-                v-model="isDelete"
-                class="mr-4"
-                label="この回収実績を削除する"
-                hide-details
-              />
               <h-btn-submit
                 :disabled="loading"
                 :loading="loading"
@@ -101,11 +106,12 @@ export default {
               />
             </v-toolbar>
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" lg="8">
             <h-data-table-collection-results
               :site-id="editModel.siteId"
-              :height="height - 580"
+              :height="height - 72"
               show-actions
+              :selected-item="editModel"
               @click:edit="onClickEdit($event)"
             />
           </v-col>

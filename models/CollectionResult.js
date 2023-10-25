@@ -48,6 +48,7 @@ export default class Customer extends FireModel {
   initialize(item) {
     this.date = ''
     this.siteId = ''
+    this.collectionResultDiv = ''
     this.collectItemId = ''
     this.amount = null
     this.unitId = ''
