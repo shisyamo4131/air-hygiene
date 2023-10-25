@@ -66,17 +66,7 @@ export default {
   /******************************************************************
    * WATCH
    ******************************************************************/
-  watch: {
-    collectItemId(v) {
-      this.copyAmountToWeight()
-    },
-    unitId(v) {
-      this.copyAmountToWeight()
-    },
-    amount(v) {
-      this.copyAmountToWeight()
-    },
-  },
+  watch: {},
   /******************************************************************
    * METHODS
    ******************************************************************/
@@ -121,6 +111,7 @@ export default {
       label="回収品目"
       :value="collectItemId"
       required
+      @change="copyAmountToWeight"
       @input="$emit('update:collectItemId', $event)"
     />
     <v-row dense>
@@ -139,6 +130,7 @@ export default {
           label="単位"
           :value="unitId"
           required
+          @change="copyAmountToWeight"
           @input="$emit('update:unitId', $event)"
         />
       </v-col>

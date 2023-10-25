@@ -15,6 +15,10 @@
     {
       "name": "Units",
       "autonumber": { "condition": false }
+    },
+    {
+      "name": "CollectionResults",
+      "autonumber": { "condition": false }
     }
   ],
   "systemCollections": ["Autonumbers", "admin_users", "developper_users"]
