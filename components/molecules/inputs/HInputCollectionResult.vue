@@ -43,6 +43,7 @@ export default {
     amount: { type: Number, default: null, required: false },
     unitPrice: { type: Number, default: null, required: false },
     convertedWeight: { type: Number, default: null, required: false },
+    dateDeadline: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
   },
   /******************************************************************
@@ -80,6 +81,22 @@ export default {
         (this.unit?.code || undefined) === '11' ? this.amount : null
       this.$emit('update:convertedWeight', amount)
     },
+    setDeadline() {
+      this.$emit('update:dateDeadline', '')
+      if (!this.date || !this.site) return
+      if (this.date !== this.$dayjs(this.date).format('YYYY-MM-DD')) return
+      const deadline = this.site.customer.deadline
+      if (deadline === '99') {
+        this.$emit(
+          'update:dateDeadline',
+          this.$dayjs(this.date).endOf('month').format('YYYY-MM-DD')
+        )
+      } else {
+        const result = this.$dayjs(`${this.date.substr(0, 8)}${deadline}`)
+        if (this.date > result.format('YYYY-MM-DD')) result.add(1, 'month')
+        this.$emit('update:dateDeadline', result.format('YYYY-MM-DD'))
+      }
+    },
   },
 }
 </script>
@@ -91,6 +108,7 @@ export default {
       :value="date"
       required
       input-type="date"
+      @change="setDeadline"
       @input="$emit('update:date', $event)"
     />
     <h-autocomplete-site
@@ -98,6 +116,7 @@ export default {
       :value="site"
       required
       return-object
+      @change="setDeadline"
       @input="$emit('update:site', $event)"
     />
     <a-autocomplete
@@ -153,6 +172,13 @@ export default {
         />
       </v-col>
     </v-row>
+    <a-text-field
+      label="請求締日"
+      :value="dateDeadline"
+      required
+      input-type="date"
+      @input="$emit('update:dateDeadline', $event)"
+    />
     <a-textarea
       label="備考"
       :value="remarks"
