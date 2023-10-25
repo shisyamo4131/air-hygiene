@@ -10,7 +10,7 @@ export default class Site extends FireModel {
     this.hasMany = [
       {
         collection: 'CollectionResults',
-        field: 'siteId',
+        field: 'site.docId',
         condition: '==',
         type: 'collection',
       },
