@@ -48,7 +48,7 @@ export default class Customer extends FireModel {
 
   initialize(item) {
     this.date = ''
-    this.siteId = ''
+    this.site = null
     this.collectionResultDiv = ''
     this.collectItemId = ''
     this.amount = null
@@ -88,7 +88,7 @@ export default class Customer extends FireModel {
     const q = query(
       colRef,
       where('date', '==', this.date),
-      where('siteId', '==', this.siteId),
+      where('site.docId', '==', this.site.docId),
       where('collectItemId', '==', this.collectItemId),
       where('unitId', '==', this.unitId),
       limit(1)

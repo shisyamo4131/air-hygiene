@@ -8,6 +8,21 @@ export default {
    * COMPONENTS
    ***************************************************************************/
   components: { HAutocompleteApi },
+  /***************************************************************************
+   * PROPS
+   ***************************************************************************/
+  props: {
+    filter: {
+      type: Function,
+      default: (item, queryText, itemText) => {
+        if (item.code.includes(queryText)) return true
+        if (item.name.includes(queryText)) return true
+        if (item.abbr.includes(queryText)) return true
+        if (item.abbrKana.includes(queryText)) return true
+        return false
+      },
+    },
+  },
 }
 </script>
 
@@ -15,6 +30,7 @@ export default {
   <h-autocomplete-api
     v-bind="$attrs"
     collection="Sites"
+    :filter="filter"
     item-text="abbr"
     v-on="$listeners"
   >

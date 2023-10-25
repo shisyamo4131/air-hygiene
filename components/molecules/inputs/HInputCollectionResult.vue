@@ -36,7 +36,7 @@ export default {
    ******************************************************************/
   props: {
     date: { type: String, default: '', required: false },
-    siteId: { type: String, default: '', required: false },
+    site: { type: Object, default: null, required: false },
     collectionResultDiv: { type: String, default: '', required: false },
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
@@ -95,9 +95,10 @@ export default {
     />
     <h-autocomplete-site
       label="排出場所"
-      :value="siteId"
+      :value="site"
       required
-      @input="$emit('update:siteId', $event)"
+      return-object
+      @input="$emit('update:site', $event)"
     />
     <a-autocomplete
       label="実績区分"

@@ -103,7 +103,7 @@ export default {
       const colRef = collection(this.$firestore, 'CollectionResults')
       const q = query(
         colRef,
-        where('siteId', '==', this.siteId),
+        where('site.docId', '==', this.siteId),
         where('yearMonth', '==', this.internalYearMonth)
       )
       this.listener = onSnapshot(q, (snapshot) => {

@@ -34,8 +34,8 @@ export default {
    ******************************************************************/
   methods: {
     initialize() {
-      const { date, siteId } = { ...this.editModel }
-      this.editModel.initialize({ date, siteId })
+      const { date, site } = { ...this.editModel }
+      this.editModel.initialize({ date, site })
       this.$refs.form.resetValidation()
       this.editMode = 'REGIST'
       this.isDelete = false
@@ -74,12 +74,6 @@ export default {
       this.$refs.form.resetValidation()
       this.editMode = 'UPDATE'
       this.editModel.initialize(item)
-      // HInputCollectionResultのwatchが反応してしまうため、
-      // 単価と換算重量は再度セットする。
-      // this.$nextTick(() => {
-      //   this.editModel.unitPrice = item.unitPrice
-      //   this.editModel.convertedWeight = item.convertedWeight
-      // })
     },
   },
 }
@@ -114,7 +108,7 @@ export default {
           </v-col>
           <v-col cols="12" lg="8">
             <h-data-table-collection-results
-              :site-id="editModel.siteId"
+              :site-id="editModel.site?.docId || undefined"
               :height="height - 72"
               show-actions
               :selected-item="editModel"
