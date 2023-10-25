@@ -74,6 +74,12 @@ export default {
       this.$refs.form.resetValidation()
       this.editMode = 'UPDATE'
       this.editModel.initialize(item)
+      // HInputCollectionResultのwatchが反応してしまうため、
+      // 単価と換算重量は再度セットする。
+      this.$nextTick(() => {
+        this.editModel.unitPrice = item.unitPrice
+        this.editModel.convertedWeight = item.convertedWeight
+      })
     },
   },
 }

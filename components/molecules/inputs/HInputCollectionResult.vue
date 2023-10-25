@@ -68,11 +68,9 @@ export default {
    ******************************************************************/
   watch: {
     collectItemId(v) {
-      this.$emit('update:convertedWeight', null)
       this.copyAmountToWeight()
     },
     unitId(v) {
-      this.$emit('update:convertedWeight', null)
       this.copyAmountToWeight()
     },
     amount(v) {
@@ -86,9 +84,11 @@ export default {
     copyAmountToWeight() {
       if (!this.requiredConvert) {
         this.$emit('update:convertedWeight', null)
-      } else if ((this.unit?.code || undefined) === '11') {
-        this.$emit('update:convertedWeight', this.amount)
+        return
       }
+      const amount =
+        (this.unit?.code || undefined) === '11' ? this.amount : null
+      this.$emit('update:convertedWeight', amount)
     },
   },
 }
@@ -153,7 +153,7 @@ export default {
       </v-col>
       <v-col cols="6">
         <h-numeric-converted-weight
-          :disabled="!requiredConvert"
+          :disabled="!requiredConvert || (unit?.code || undefined) === '11'"
           :value="convertedWeight"
           :required="requiredConvert"
           @input="$emit('update:convertedWeight', $event)"
