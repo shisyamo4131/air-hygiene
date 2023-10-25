@@ -25,6 +25,7 @@ export default {
     return {
       headers: [
         { text: '回収日', value: 'date' },
+        { text: '区分', value: 'collectionResultDiv' },
         { text: '回収品目', value: 'collectItemId' },
         { text: '回収量', value: 'amount', sortable: false, align: 'right' },
         { text: '単価', value: 'unitPrice', sortable: false, align: 'right' },
@@ -157,12 +158,13 @@ export default {
       </v-toolbar>
     </template>
     <template #[`item.date`]="{ item }">
-      <v-icon
+      <v-chip
         v-if="selectedItem && selectedItem.docId === item.docId"
-        color="primary"
+        class="mr-2"
+        color="info"
         left
-        small
-        >mdi-check</v-icon
+        x-small
+        >編集中</v-chip
       >
       {{ item.date }}
     </template>
@@ -171,6 +173,9 @@ export default {
         $store.getters['masters/CollectItem'](item.collectItemId)?.abbr ||
         'undefined'
       }}
+    </template>
+    <template #[`item.collectionResultDiv`]="{ item }">
+      {{ $COLLECTION_RESULT_DIV[item.collectionResultDiv] }}
     </template>
     <template #[`item.amount`]="{ item }">
       {{

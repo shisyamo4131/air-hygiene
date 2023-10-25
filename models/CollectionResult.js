@@ -1,6 +1,7 @@
 /**
  * @author shisyamo4131
  */
+import { collection, getDocs, limit, query, where } from 'firebase/firestore'
 import FireModel from './FireModel'
 
 export default class Customer extends FireModel {
@@ -56,5 +57,44 @@ export default class Customer extends FireModel {
     this.convertedWeight = null
     this.remarks = ''
     super.initialize(item)
+  }
+
+  async beforeCreate() {
+    // ルート回収はitem、unitの重複不可
+    if (this.collectionResultDiv === 'root') {
+      const duplicatedRootResult = await this.duplicatedRootResult()
+      if (duplicatedRootResult) {
+        throw new Error(
+          `${this.date}の指定された品目、単位でのルート回収実績が既に存在します。`
+        )
+      }
+    }
+  }
+
+  async beforeUpdate() {
+    // ルート回収はitem、unitの重複不可
+    if (this.collectionResultDiv === 'root') {
+      const duplicatedRootResult = await this.duplicatedRootResult()
+      if (duplicatedRootResult && duplicatedRootResult.docId !== this.docId) {
+        throw new Error(
+          `${this.date}の指定された品目、単位でのルート回収実績が既に存在します。`
+        )
+      }
+    }
+  }
+
+  async duplicatedRootResult() {
+    const colRef = collection(this.firestore, this.collection)
+    const q = query(
+      colRef,
+      where('date', '==', this.date),
+      where('siteId', '==', this.siteId),
+      where('collectItemId', '==', this.collectItemId),
+      where('unitId', '==', this.unitId),
+      limit(1)
+    )
+    const snapshot = await getDocs(q)
+    if (snapshot.empty) return undefined
+    return snapshot.docs[0].data()
   }
 }
