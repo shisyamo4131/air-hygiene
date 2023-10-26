@@ -135,6 +135,7 @@ export default {
             <v-form ref="form" :disabled="loading.submit">
               <h-input-collection-result
                 v-bind.sync="editModel"
+                :loading-unit-price="loading.unitPrice"
                 @change:date="onChangeDate"
                 @change:site="onChangeSite"
                 @change:collectItemId="onChangeCollectItemId"

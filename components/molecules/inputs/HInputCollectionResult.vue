@@ -45,6 +45,7 @@ export default {
     convertedWeight: { type: Number, default: null, required: false },
     dateDeadline: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
+    loadingUnitPrice: { type: Boolean, default: false, required: false },
   },
   /******************************************************************
    * DATA
@@ -143,6 +144,7 @@ export default {
           :value="unitPrice"
           required
           :unit-id="unitId"
+          :loading="loadingUnitPrice"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>
