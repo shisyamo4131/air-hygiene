@@ -1,4 +1,10 @@
 <script>
+/**
+ * ### HTextFieldDate
+ * 日付選択入力用コンポーネント
+ * #### NOTE
+ * - 日付選択中のvalidationが煩わしいため、DatePickerが起動している間はprops.requiredを無視します。
+ */
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import ADatePicker from '~/components/atoms/pickers/ADatePicker.vue'
 export default {
@@ -11,6 +17,7 @@ export default {
    ******************************************************************/
   props: {
     calendarIcon: { type: String, default: 'mdi-calendar', required: false },
+    required: { type: Boolean, default: false, required: false },
     value: {
       type: String,
       default: '',
@@ -34,6 +41,7 @@ export default {
     return {
       menu: false,
       pickerDate: '',
+      internalRequired: false,
     }
   },
   /******************************************************************
@@ -41,7 +49,18 @@ export default {
    ******************************************************************/
   watch: {
     menu(v) {
-      if (v) this.pickerDate = this.value
+      if (v) {
+        this.pickerDate = this.value
+        this.internalRequired = false
+      } else {
+        this.internalRequired = this.required
+      }
+    },
+    required: {
+      handler(v) {
+        this.internalRequired = v
+      },
+      immediate: true,
     },
   },
   /******************************************************************
@@ -65,6 +84,7 @@ export default {
     v-bind="$attrs"
     readonly
     :value="value"
+    :required="internalRequired"
     @click.stop="menu = true"
     v-on="$listeners"
   >
