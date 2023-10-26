@@ -26,7 +26,13 @@ export default {
       editMode: 'REGIST',
       editModel: this.$CollectionResult(),
       isDelete: false,
-      loading: false,
+      loading: {
+        submit: false,
+        unitPrice: false,
+      },
+      loaded: {
+        unitPrice: false,
+      },
     }
   },
   /******************************************************************
@@ -48,7 +54,7 @@ export default {
     },
     async submit(mode) {
       try {
-        this.loading = true
+        this.loading.submit = true
         if (!this.validate()) return
         if (mode === 'REGIST') await this.editModel.create()
         if (mode === 'UPDATE') await this.editModel.update()
@@ -59,7 +65,7 @@ export default {
         console.error(err)
         alert(err.message)
       } finally {
-        this.loading = false
+        this.loading.submit = false
       }
     },
     async onClickSubmit() {
@@ -81,15 +87,27 @@ export default {
       this.editModel.setDateDeadline()
     },
     async onChangeCollectItemId() {
-      await this.editModel.setUnitPrice()
+      await this.setUnitPrice()
       this.copyAmountToConvertedWeight()
     },
     async onChangeUnitId() {
-      await this.editModel.setUnitPrice()
+      await this.setUnitPrice()
       this.copyAmountToConvertedWeight()
     },
     onChangeAmount() {
       this.copyAmountToConvertedWeight()
+    },
+    async setUnitPrice() {
+      try {
+        this.loading.unitPrice = true
+        this.loaded.unitPrice = await this.editModel.setUnitPrice()
+      } catch (err) {
+        // eslint-disable-next-line
+        console.error(err)
+        alert(err.message)
+      } finally {
+        this.loading.unitPrice = false
+      }
     },
     copyAmountToConvertedWeight() {
       this.editModel.convertedWeight = null
@@ -114,7 +132,7 @@ export default {
       <v-container fluid>
         <v-row>
           <v-col cols="12" lg="4">
-            <v-form ref="form" :disabled="loading">
+            <v-form ref="form" :disabled="loading.submit">
               <h-input-collection-result
                 v-bind.sync="editModel"
                 @change:date="onChangeDate"
@@ -133,11 +151,14 @@ export default {
               />
             </v-expand-transition>
             <v-toolbar dense>
-              <h-btn-cancel :disabled="loading" @click="onClickCancel" />
+              <h-btn-cancel
+                :disabled="loading.submit || loading.unitPrice"
+                @click="onClickCancel"
+              />
               <v-spacer />
               <h-btn-submit
-                :disabled="loading"
-                :loading="loading"
+                :disabled="loading.submit || loading.unitPrice"
+                :loading="loading.submit"
                 @click="onClickSubmit"
               />
             </v-toolbar>
@@ -153,6 +174,9 @@ export default {
           </v-col>
         </v-row>
       </v-container>
+      <v-snackbar v-model="loaded.unitPrice" color="info" outlined centered>
+        選択された排出場所の設定単価を取得しました。
+      </v-snackbar>
     </template>
   </air-template-default>
 </template>

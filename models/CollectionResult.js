@@ -127,17 +127,24 @@ export default class Customer extends FireModel {
 
   /**
    * Get unit-price and set it to 'unitPrice'.
-   * @returns
+   * @returns boolean
    */
   async setUnitPrice() {
     /* eslint-disable */
+    // Ignore if collectionResultDiv is not 'root'.
+    if (this.collectionResultDiv !== 'root') {
+      console.warn(
+        `[CollectionResult.js] Ignore cause collectionResultDiv is not 'root'.`
+      )
+      return false
+    }
     // Ensure that date and site properties are set.
     if (!this.date || !this.site) {
       console.warn(
         `[CollectionResult.js] The date or site property is not set.`
       )
       console.table({ date: this.date, site: this.site })
-      return
+      return false
     }
     // Ensure that collectItemId and unitId properties are set.
     if (!this.collectItemId || !this.unitId) {
@@ -145,7 +152,7 @@ export default class Customer extends FireModel {
         `[CollectionResult.js] A collectItemId and unitId are required to set the unitPrice.`
       )
       console.table({ collectItemId: this.collectItemId, unitId: this.unitId })
-      return
+      return false
     }
     // Get CollectItem from Vuex.
     const store = this.#context.store
@@ -156,14 +163,20 @@ export default class Customer extends FireModel {
         `[CollectionResult.js] The specified collection item ID does not exist.`
       )
       console.table({ collectItemId: this.collectItemId })
-      return
+      return false
     }
     // Get price from SiteUnitPrice model and set it to unitPrice property.
     const app = this.#context.app
     const siteUnitPriceModel = app.$SiteUnitPrice(this.site.docId)
     const key = `${this.collectItemId}-${this.unitId}`
     try {
-      this.unitPrice = await siteUnitPriceModel.fetchUnitPrice(this.date, key)
+      const fetchedPrice = await siteUnitPriceModel.fetchUnitPrice(
+        this.date,
+        key
+      )
+      this.unitPrice = fetchedPrice
+      if (!fetchedPrice && fetchedPrice !== 0) return false
+      return true
     } catch (err) {
       console.error(err)
       alert(err.message)
