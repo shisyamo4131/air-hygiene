@@ -50,31 +50,25 @@ export default {
    * DATA
    ******************************************************************/
   data() {
-    return {
-      loading: {
-        unitPrice: false,
-      },
-      loaded: {
-        unitPrice: false,
-      },
-    }
+    return {}
   },
   /******************************************************************
    * COMPUTED
    ******************************************************************/
   computed: {
-    collectItem() {
-      if (!this.collectItemId) return undefined
-      return this.$store.getters['masters/CollectItem'](this.collectItemId)
-    },
-    unit() {
-      if (!this.unitId) return undefined
-      return this.$store.getters['masters/Unit'](this.unitId)
-    },
     requiredConvert() {
-      if (!this.collectItem) return false
-      const wasteDiv = this.collectItem.wasteDiv
-      return ['municipal', 'industrial'].includes(wasteDiv)
+      if (!this.collectItemId) return false
+      const collectItem = this.$store.getters['masters/CollectItem'](
+        this.collectItemId
+      )
+      if (!collectItem) return false
+      return ['municipal', 'industrial'].includes(collectItem.wasteDiv)
+    },
+    disabledConvertedWeight() {
+      if (!this.unitId) return false
+      const unit = this.$store.getters['masters/Unit'](this.unitId)
+      if (!unit) return false
+      return unit.code === '11'
     },
   },
   /******************************************************************
@@ -84,49 +78,7 @@ export default {
   /******************************************************************
    * METHODS
    ******************************************************************/
-  methods: {
-    copyAmountToWeight() {
-      if (!this.requiredConvert) {
-        this.$emit('update:convertedWeight', null)
-        return
-      }
-      const amount =
-        (this.unit?.code || undefined) === '11' ? this.amount : null
-      this.$emit('update:convertedWeight', amount)
-    },
-    setDeadline() {
-      if (!this.date || !this.site) return
-      const deadline = this.site.customer.deadline
-      this.$emit(
-        'update:dateDeadline',
-        this.$airCalcDeadlineDate(this.date, deadline)
-      )
-    },
-    async setUnitPrice() {
-      if (!this.site) return
-      if (!this.date) return
-      if (!this.collectItemId) return
-      if (!this.unitId) return
-      if (this.collectionResultDiv !== 'root') return
-      const wasteDiv = this.collectItem.wasteDiv
-      const isWaste = ['municipal', 'industrial'].includes(wasteDiv)
-      if (!isWaste) return
-      const siteUnitPriceModel = this.$SiteUnitPrice(this.site.docId)
-      const key = `${this.collectItemId}-${this.unitId}`
-      try {
-        this.loading.unitPrice = true
-        const result = await siteUnitPriceModel.fetchUnitPrice(this.date, key)
-        this.$emit('update:unitPrice', result)
-        if (result) this.loaded.unitPrice = true
-      } catch (err) {
-        // eslint-disable-next-line
-        console.error(err)
-        alert(err.message)
-      } finally {
-        this.loading.unitPrice = false
-      }
-    },
-  },
+  methods: {},
 }
 </script>
 
@@ -137,7 +89,8 @@ export default {
       :value="site"
       required
       return-object
-      @change="setDeadline"
+      clearable
+      @change="$emit('change:site', $event)"
       @input="$emit('update:site', $event)"
     />
     <h-text-field-date
@@ -145,7 +98,7 @@ export default {
       :value="date"
       required
       input-type="date"
-      @change="setDeadline"
+      @change="$emit('change:date', $event)"
       @input="$emit('update:date', $event)"
     />
     <a-autocomplete
@@ -160,10 +113,7 @@ export default {
       label="回収品目"
       :value="collectItemId"
       required
-      @change="
-        copyAmountToWeight()
-        setUnitPrice()
-      "
+      @change="$emit('change:collectItemId', $event)"
       @input="$emit('update:collectItemId', $event)"
     />
     <v-row dense>
@@ -174,6 +124,7 @@ export default {
           :value="amount"
           required
           :decimal-places="2"
+          @change="$emit('change:amount', $event)"
           @input="$emit('update:amount', $event)"
         />
       </v-col>
@@ -182,7 +133,7 @@ export default {
           label="単位"
           :value="unitId"
           required
-          @change="copyAmountToWeight"
+          @change="$emit('change:unitId', $event)"
           @input="$emit('update:unitId', $event)"
         />
       </v-col>
@@ -192,13 +143,12 @@ export default {
           :value="unitPrice"
           required
           :unit-id="unitId"
-          :loading="loading.unitPrice"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>
       <v-col cols="6">
         <h-numeric-converted-weight
-          :disabled="!requiredConvert || (unit?.code || undefined) === '11'"
+          :disabled="disabledConvertedWeight"
           :value="convertedWeight"
           :required="requiredConvert"
           @input="$emit('update:convertedWeight', $event)"
@@ -217,9 +167,6 @@ export default {
       :value="remarks"
       @input="$emit('update:remarks', $event)"
     />
-    <v-snackbar v-model="loaded.unitPrice" color="info" outlined centered>
-      単価を読み込みました。
-    </v-snackbar>
   </div>
 </template>
 

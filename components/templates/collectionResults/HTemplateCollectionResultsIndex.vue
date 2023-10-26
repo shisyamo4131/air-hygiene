@@ -36,15 +36,14 @@ export default {
     initialize() {
       const { date, site } = { ...this.editModel }
       this.editModel.initialize({ date, site })
+      this.editModel.setDateDeadline()
       this.$refs.form.resetValidation()
       this.editMode = 'REGIST'
       this.isDelete = false
     },
     validate() {
       const result = this.$refs.form.validate()
-      if (!result) {
-        alert('入力に不備があります')
-      }
+      if (!result) alert('入力に不備があります')
       return result
     },
     async submit(mode) {
@@ -75,6 +74,36 @@ export default {
       this.editMode = 'UPDATE'
       this.editModel.initialize(item)
     },
+    onChangeDate() {
+      this.editModel.setDateDeadline()
+    },
+    onChangeSite() {
+      this.editModel.setDateDeadline()
+    },
+    async onChangeCollectItemId() {
+      await this.editModel.setUnitPrice()
+      this.copyAmountToConvertedWeight()
+    },
+    async onChangeUnitId() {
+      await this.editModel.setUnitPrice()
+      this.copyAmountToConvertedWeight()
+    },
+    onChangeAmount() {
+      this.copyAmountToConvertedWeight()
+    },
+    copyAmountToConvertedWeight() {
+      this.editModel.convertedWeight = null
+      if (!this.editModel.collectItemId) return
+      const collectItem = this.$store.getters['masters/CollectItem'](
+        this.editModel.collectItemId
+      )
+      if (!collectItem) return
+      if (!['municipal', 'industrial'].includes(collectItem.wasteDiv)) return
+      if (!this.editModel.unitId) return
+      const unit = this.$store.getters['masters/Unit'](this.editModel.unitId)
+      if (!unit || unit.code !== '11') return
+      this.editModel.convertedWeight = this.editModel.amount
+    },
   },
 }
 </script>
@@ -86,7 +115,14 @@ export default {
         <v-row>
           <v-col cols="12" lg="4">
             <v-form ref="form" :disabled="loading">
-              <h-input-collection-result v-bind.sync="editModel" />
+              <h-input-collection-result
+                v-bind.sync="editModel"
+                @change:date="onChangeDate"
+                @change:site="onChangeSite"
+                @change:collectItemId="onChangeCollectItemId"
+                @change:unitId="onChangeUnitId"
+                @change:amount="onChangeAmount"
+              />
             </v-form>
             <v-expand-transition>
               <a-switch
