@@ -126,7 +126,7 @@ export default {
   },
 
   // For transition.
-  transition: {
+  pageTransition: {
     name: 'slide-x-transition',
     mode: 'out-in',
     duration: 300,
