@@ -1,11 +1,21 @@
 <script>
 /**
+ * ### HTemplateSiteDetail
+ * 排出場所詳細ページです。
+ *
+ * #### PROPERTIES
+ * | name           | type    | required  | remarks       |
+ * | :---           | :---    | :---:     | :---          |
+ * | model          | Object  | true      | this.$Site()  |
+ * | siteUnitPrices | Array   | true      |               |
+ *
  * @author shisyamo4131
  */
+import HCrudSiteUnitPrices from '~/components/organisms/HCrudSiteUnitPrices.vue'
 import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
 import HDetailSite from '~/components/organisms/HDetailSite.vue'
 import HTimelineSiteMunicipalContracts from '~/components/organisms/HTimelineSiteMunicipalContracts.vue'
-import HTimelineSiteUnitPrices from '~/components/organisms/HTimelineSiteUnitPrices.vue'
+// import HTimelineSiteUnitPrices from '~/components/organisms/HTimelineSiteUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -13,8 +23,9 @@ export default {
   components: {
     HDashboardSite,
     HDetailSite,
-    HTimelineSiteUnitPrices,
+    // HTimelineSiteUnitPrices,
     HTimelineSiteMunicipalContracts,
+    HCrudSiteUnitPrices,
   },
   /******************************************************************
    * PROPS
@@ -22,6 +33,7 @@ export default {
   props: {
     /* requires this.$Site() */
     model: { type: Object, required: true },
+    siteUnitPrices: { type: Array, required: true },
   },
   /******************************************************************
    * DATA
@@ -33,10 +45,6 @@ export default {
       wasteDivTab: 0,
     }
   },
-  /******************************************************************
-   * COMPUTED
-   ******************************************************************/
-  computed: {},
   /******************************************************************
    * MOUNTED
    ******************************************************************/
@@ -78,16 +86,19 @@ export default {
         <v-btn> 産業廃棄物 </v-btn>
       </v-btn-toggle>
     </template>
+    <!-- TAB:0 DASHBOARD -->
     <template #tab-0>
       <v-container fluid>
         <h-dashboard-site :model="model" />
       </v-container>
     </template>
+    <!-- TAB:1 SITE-INFORMATION -->
     <template #tab-1>
       <v-container fluid>
         <h-detail-site :model="model" />
       </v-container>
     </template>
+    <!-- TAB:2 -->
     <template #tab-2>
       <v-container fluid>
         <v-window v-model="wasteDivTab">
@@ -98,9 +109,13 @@ export default {
         </v-window>
       </v-container>
     </template>
+    <!-- TAB3: SITE-UNIT-PRICES -->
     <template #tab-3>
       <v-container fluid>
-        <h-timeline-site-unit-prices :model="model" />
+        <h-crud-site-unit-prices
+          :site-id="model.docId"
+          :items="siteUnitPrices"
+        />
       </v-container>
     </template>
   </air-template-tabs>

@@ -2,9 +2,12 @@
 /**
  * @author shisyamo4131
  */
-import HDataTableItemUnitPrices from '../molecules/tables/HDataTableItemUnitPrices.vue'
+import HDataTableSiteUnitPriceDetails from '../molecules/tables/HDataTableSiteUnitPriceDetails.vue'
 export default {
-  components: { HDataTableItemUnitPrices },
+  /******************************************************************
+   * COMPONENTS
+   ******************************************************************/
+  components: { HDataTableSiteUnitPriceDetails },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -26,7 +29,10 @@ export default {
    * MOUNTED
    ******************************************************************/
   mounted() {
-    this.listeners.unitPrice = this.unitPrice.fetchLatestSync(this.today)
+    this.listeners.unitPrice = this.unitPrice.fetchLatestSync(
+      this.model.docId,
+      this.today
+    )
   },
   /******************************************************************
    * DESTROYED
@@ -67,8 +73,8 @@ export default {
               </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
-          <h-data-table-item-unit-prices
-            :items="unitPrice?.prices || []"
+          <h-data-table-site-unit-price-details
+            :items="unitPrice?.details || []"
             hide-default-footer
             :items-per-page="-1"
           />

@@ -1,5 +1,10 @@
 <script>
 /**
+ * ### AAutocomplete
+ *
+ * プロジェクトで使用するAutocompleteコンポーネントです。
+ * air-autocomplete-2コンポーネントを継承し、以下のように外観を定義しています。
+ *
  * @author shisyamo4131
  */
 export default {

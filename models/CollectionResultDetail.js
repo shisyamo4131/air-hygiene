@@ -8,29 +8,32 @@
  * | name     | type    | remarks       |
  * | :---     | :---    | :---          |
  * | context  | object  | nuxt.context  |
- * | siteId   | string  |               |
- * | date     | string  |               |
  *
- * #### PROPERTIES
+ * #### PROPERTIES (read and write)
  *
- * | name           | type    | required | remarks                     |
- * | :---           | :---    | :---:    | :---                        |
- * | key            | string  | -        | ${collectItemId}-${unitId}  |
- * | collectItemId  | string  | true     |                             |
- * | unitId         | string  | true     |                             |
- * | amount         | number  | true     |                             |
- * | unitPrice      | number  | true     |                             |
- * | price          | number  | true     | amount * unitPrice          |
+ * | name           | type    | required | remarks            |
+ * | :---           | :---    | :---:    | :---               |
+ * | siteId         | string  |          |                    |
+ * | date           | string  |          |                    |
+ * | collectItemId  | string  | true     |                    |
+ * | unitId         | string  | true     |                    |
+ * | amount         | number  | true     |                    |
+ * | unitPrice      | number  | true     |                    |
+ * | price          | number  | true     | amount * unitPrice |
+ *
+ * #### PROPERTIES (read-only)
+ *
+ * | name           | type    | remarks                     |
+ * | :---           | :---    | :---                        |
+ * | id             | string  | ${collectItemId}-${unitId}  |
  *
  * @author shisyamo4131
  */
 
 export default class CollectionResultDetail {
   #context
-  constructor(context, siteId, date) {
+  constructor(context) {
     this.#context = context
-    this.siteId = siteId
-    this.date = date
     this.initialize()
     Object.defineProperties(this, {
       id: {
@@ -75,6 +78,8 @@ export default class CollectionResultDetail {
   }
 
   initialize(item) {
+    this.siteId = ''
+    this.date = ''
     this.collectItemId = ''
     this.unitId = ''
     this.amount = null
@@ -110,11 +115,11 @@ export default class CollectionResultDetail {
     // Get price from SiteUnitPrice model and set it to unitPrice property.
     const app = this.#context.app
     const siteUnitPriceModel = app.$SiteUnitPrice(this.siteId)
-    const key = `${this.collectItemId}-${this.unitId}`
+    const id = `${this.collectItemId}-${this.unitId}`
     try {
       const fetchedPrice = await siteUnitPriceModel.fetchUnitPrice(
         this.date,
-        key
+        id
       )
       this.unitPrice = fetchedPrice
       if (!fetchedPrice && fetchedPrice !== 0) return false

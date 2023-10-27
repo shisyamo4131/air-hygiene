@@ -138,9 +138,11 @@ export default {
     async initSites() {
       this.progress.value = 0
       this.progress.max = defaultSites.length
-      const items = defaultSites.map((item) => {
-        return { ...item }
-      })
+      const items = defaultSites
+        .map((item) => {
+          return { ...item }
+        })
+        .filter((_, index) => index < 10)
       for (const item of items) {
         const model = this.$Site()
         const [customer, site] = await Promise.all([
@@ -166,9 +168,10 @@ export default {
     },
     async initSiteUnitPrices(siteModel) {
       // pre. 既存の回収単価を全て削除
-      const path = `Sites/${siteModel.docId}/SiteUnitPrices`
+      const path = `SiteUnitPrices`
       const colRef = collection(this.$firestore, path)
-      const snapshot = await getDocs(colRef)
+      const q = query(colRef, where('siteId', '==', siteModel.docId))
+      const snapshot = await getDocs(q)
       if (!snapshot.empty) {
         const promises = []
         snapshot.docs.forEach((doc) => {
@@ -184,9 +187,9 @@ export default {
         // 0. item、unitのdocIdを取得
         const collectItemId = this.getItem(item.itemCode)?.docId || undefined
         const unitId = this.getUnit(item.unitCode)?.docId || undefined
-        const key = `${collectItemId}-${unitId}`
+        const id = `${collectItemId}-${unitId}`
         const price = parseInt(item.price)
-        const unitPrice = { key, collectItemId, unitId, price }
+        const unitPrice = { id, collectItemId, unitId, price }
         if (!collectItemId || !unitId) {
           // eslint-disable-next-line
           console.log(item)
@@ -216,29 +219,26 @@ export default {
         // 3-1. 契約単価が存在しなれば作成
         if (!latestSiteUnitPrice) {
           siteUnitPrices.push({
+            siteId: siteModel.docId,
             date: baseDate.format('YYYY-MM-DD'),
-            prices: [unitPrice],
+            details: [unitPrice],
           })
         }
         // 3-2. 契約単価が存在した場合
         else {
-          const isUnitPriceExist = latestSiteUnitPrice.prices.some(
-            ({ key }) => key === `${collectItemId}-${unitId}`
+          const isUnitPriceExist = latestSiteUnitPrice.details.some(
+            ({ id }) => id === `${collectItemId}-${unitId}`
           )
-          // 3-2-1. 同一keyの単価が登録されていなければ当該契約に登録
+          // 3-2-1. 同一idの単価が登録されていなければ当該契約に登録
           if (!isUnitPriceExist) {
-            latestSiteUnitPrice.prices.push(unitPrice)
+            latestSiteUnitPrice.details.push(unitPrice)
           }
-          // 3-2-2. 同一keyの単価が登録されていれば、直前締日翌日の1ヶ月後を起算日にして契約を作成
+          // 3-2-2. 同一idの単価が登録されていれば、直前締日翌日の1ヶ月後を起算日にして契約を作成
           else {
             siteUnitPrices.push({
+              siteId: siteModel.docId,
               date: baseDate.format('YYYY-MM-DD'),
-              prices: [
-                // ...latestSiteUnitPrice.prices.filter(
-                //   ({ key }) => key !== unitPrice.key
-                // ),
-                unitPrice,
-              ],
+              details: [unitPrice],
             })
           }
         }
@@ -255,11 +255,11 @@ export default {
       })
       siteUnitPrices.forEach((item, index, arr) => {
         if (index !== 0) {
-          item.prices = [
-            ...arr[index - 1].prices.filter((price) => {
-              return !item.prices.map(({ key }) => key).includes(price.key)
+          item.details = [
+            ...arr[index - 1].details.filter((price) => {
+              return !item.details.map(({ id }) => id).includes(price.id)
             }),
-            ...item.prices,
+            ...item.details,
           ]
         }
       })

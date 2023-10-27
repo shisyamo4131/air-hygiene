@@ -2,13 +2,18 @@
 /**
  * @author shisyamo4131
  */
-import HDataTableItemUnitPrices from '../tables/HDataTableItemUnitPrices.vue'
-import HInputItemUnitPrice from './HInputItemUnitPrice.vue'
+import HDataTableSiteUnitPriceDetails from '../tables/HDataTableSiteUnitPriceDetails.vue'
+import HInputSiteUnitPriceDetail from './HInputSiteUnitPriceDetail.vue'
+import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HDataTableItemUnitPrices, HInputItemUnitPrice },
+  components: { HDataTableSiteUnitPriceDetails, HInputSiteUnitPriceDetail },
+  /******************************************************************
+   * MIXINS
+   ******************************************************************/
+  mixins: [Mixin],
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -22,7 +27,7 @@ export default {
     return {
       editor: false,
       editIndex: -1,
-      editModel: this.$ItemUnitPrice(),
+      editModel: this.$SiteUnitPriceDetail(),
     }
   },
   /******************************************************************
@@ -65,7 +70,7 @@ export default {
 </script>
 
 <template>
-  <h-data-table-item-unit-prices
+  <h-data-table-site-unit-price-details
     :items="value"
     hide-default-footer
     :items-per-page="-1"
@@ -93,7 +98,7 @@ export default {
             @click:submit="submit"
           >
             <v-card-text>
-              <h-input-item-unit-price
+              <h-input-site-unit-price-detail
                 v-bind.sync="editModel"
                 :edit-mode="editIndex === -1 ? 'REGIST' : 'UPDATE'"
               />
@@ -102,7 +107,7 @@ export default {
         </v-dialog>
       </v-toolbar>
     </template>
-  </h-data-table-item-unit-prices>
+  </h-data-table-site-unit-price-details>
 </template>
 
 <style></style>

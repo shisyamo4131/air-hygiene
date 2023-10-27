@@ -44,7 +44,7 @@ import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
 import HInputMunicipalContract from '~/components/molecules/inputs/HInputMunicipalContract.vue'
 import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
-import HInputItemUnitPrice from '~/components/molecules/inputs/HInputItemUnitPrice.vue'
+import HInputSiteUnitPriceDetail from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
 import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
 import HRadioGroupEditModel from '~/components/molecules/inputs/HRadioGroupEditModel.vue'
@@ -59,7 +59,7 @@ export default {
     HInputMunicipalPermission,
     ASelect,
     HRadioGroupEditModel,
-    HInputItemUnitPrice,
+    HInputSiteUnitPriceDetail,
     HInputCollectionResult,
     HInputCollectionResultDetail,
   },

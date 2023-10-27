@@ -2,16 +2,16 @@
 /**
  * @author shisyamo4131
  */
+import HInputSiteUnitPriceDetails from './HInputSiteUnitPriceDetails.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import HInputItemUnitPrices from '~/components/molecules/inputs/HInputItemUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     ATextField,
-    HInputItemUnitPrices,
+    HInputSiteUnitPriceDetails,
   },
   /******************************************************************
    * MIXINS
@@ -21,8 +21,9 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
+    site: { type: Object, default: null, required: false },
     date: { type: String, default: '', required: false },
-    prices: { type: Array, default: () => [], required: false },
+    details: { type: Array, default: () => [], required: false },
   },
 }
 </script>
@@ -36,10 +37,10 @@ export default {
       input-type="date"
       @input="$emit('update:date', $event)"
     />
-    <h-input-item-unit-prices
-      :value="prices"
+    <h-input-site-unit-price-details
+      :value="details"
       :edit-mode="editMode"
-      @input="$emit('update:prices', $event)"
+      @input="$emit('update:details', $event)"
     />
   </div>
 </template>

@@ -32,7 +32,7 @@ export default {
     return {
       editor: false,
       editIndex: -1,
-      editModel: this.$CollectionResultDetail(this.siteId, this.date),
+      editModel: this.$CollectionResultDetail(),
       loading: {
         unitPrice: false,
       },

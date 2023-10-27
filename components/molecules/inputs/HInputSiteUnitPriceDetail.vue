@@ -22,7 +22,7 @@ export default {
   props: {
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
-    price: { type: Number, default: null, required: false },
+    unitPrice: { type: Number, default: null, required: false },
   },
 }
 </script>
@@ -49,10 +49,10 @@ export default {
       <v-col cols="12" sm="6">
         <h-numeric-unit-price
           label="単価（税抜）"
-          :value="price"
+          :value="unitPrice"
           required
           :unit-id="unitId"
-          @input="$emit('update:price', $event)"
+          @input="$emit('update:unitPrice', $event)"
         />
       </v-col>
     </v-row>

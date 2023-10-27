@@ -1,7 +1,32 @@
 /**
- * SiteUnitPrice
+ * ### SiteUnitPrice
+ *
+ * A data-model of SiteUnitPrice.
+ *
+ * #### CONSTRUCTOR
+ *
+ * | name     | type    | remarks                   |
+ * | :---     | :---    | :---                      |
+ * | context  | object  | nuxt.context              |
+ *
+ * #### PROPERTIES (read and write)
+ *
+ * | name           | type    | required | remarks  |
+ * | :---           | :---    | :---:    | :---     |
+ * | siteId         | String  | true     |          |
+ * | date           | String  | true     |          |
+ * | details        | Array   | true     |          |
+ *
+ * #### PROPERTIES (read-only)
+ *
+ * | name           | type    | remarks   |
+ * | :---           | :---    | :---      |
+ * | collectItemIds | Array   |           |
+ * | unitIds        | Array   |           |
+ *
  * @author shisyamo4131
  */
+
 import {
   collection,
   getDocs,
@@ -14,31 +39,22 @@ import {
 import FireModel from './FireModel'
 
 export default class SiteUnitPrice extends FireModel {
-  constructor(context, docId) {
-    if (!docId) throw new Error('Missing docId.')
+  constructor(context) {
     const firestore = context.app.$firestore
-    const path = `Sites/${docId}/SiteUnitPrices`
     const auth = context.app.$auth
-    super(firestore, path, auth)
+    super(firestore, 'SiteUnitPrices', auth)
     Object.defineProperties(this, {
-      siteId: {
-        enumerable: true,
-        get() {
-          return this.docId
-        },
-        set(v) {},
-      },
       collectItemIds: {
         enumerable: true,
         get() {
-          return this.prices.map(({ collectItemId }) => collectItemId)
+          return this.details.map(({ collectItemId }) => collectItemId)
         },
         set(v) {},
       },
       unitIds: {
         enumerable: true,
         get() {
-          return this.prices.map(({ unitId }) => unitId)
+          return this.details.map(({ unitId }) => unitId)
         },
         set(v) {},
       },
@@ -46,16 +62,18 @@ export default class SiteUnitPrice extends FireModel {
   }
 
   initialize(item) {
+    this.siteId = ''
     this.date = ''
-    this.prices = []
+    this.details = []
     super.initialize(item)
   }
 
-  async fetchLatest(date) {
+  async fetchLatest(siteId, date) {
     this.initialize()
     const colRef = collection(this.firestore, this.collection)
     const q = query(
       colRef,
+      where('siteId', '==', siteId),
       where('date', '<=', date),
       orderBy('date', 'desc'),
       limit(1)
@@ -65,11 +83,12 @@ export default class SiteUnitPrice extends FireModel {
     this.initialize(snapshot.docs[0].data())
   }
 
-  fetchLatestSync(date) {
+  fetchLatestSync(siteId, date) {
     this.initialize()
     const colRef = collection(this.firestore, this.collection)
     const q = query(
       colRef,
+      where('siteId', '==', siteId),
       where('date', '<=', date),
       orderBy('date', 'desc'),
       limit(1)
@@ -79,13 +98,5 @@ export default class SiteUnitPrice extends FireModel {
       this.initialize(snapshot.docs[0].data())
     })
     return listener
-  }
-
-  async fetchUnitPrice(date, key) {
-    await this.fetchLatest(date)
-    if (!this.docId) return null
-    const itemUnitPrice = this.prices.find((item) => item.key === key)
-    if (!itemUnitPrice) return null
-    return itemUnitPrice.price
   }
 }

@@ -9,6 +9,10 @@
       "autonumber": { "condition": true, "field": "code", "length": 8 }
     },
     {
+      "name": "SiteUnitPrices",
+      "autonumber": { "condition": false }
+    },
+    {
       "name": "CollectItems",
       "autonumber": { "condition": false }
     },
