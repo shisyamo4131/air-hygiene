@@ -13,13 +13,13 @@ const CITY = cities.reduce((acc, city) => {
 }, {})
 
 /* 実績区分 */
-const COLLECTION_RESULT_DIV = {
+const COLLECTION_RESULT_TYPE = {
   root: '1: ルート',
   spot: '2: スポット',
   monthly: '9: 月極',
 }
 
-const COLLECTION_RESULT_DIV_ARRAY = [
+const COLLECTION_RESULT_TYPE_ARRAY = [
   { value: 'root', text: '1: ルート' },
   { value: 'spot', text: '2: スポット' },
   { value: 'monthly', text: '9: 月極' },
@@ -195,8 +195,8 @@ const WASTE_DIV_ARRAY = [
 export default (context, inject) => {
   inject('CITY_ARRAY', (prefCode) => CITY_ARRAY(prefCode))
   inject('CITY', CITY)
-  inject('COLLECTION_RESULT_DIV', COLLECTION_RESULT_DIV)
-  inject('COLLECTION_RESULT_DIV_ARRAY', COLLECTION_RESULT_DIV_ARRAY)
+  inject('COLLECTION_RESULT_TYPE', COLLECTION_RESULT_TYPE)
+  inject('COLLECTION_RESULT_TYPE_ARRAY', COLLECTION_RESULT_TYPE_ARRAY)
   inject('CUSTOMER_CONDITION', CUSTOMER_CONDITION)
   inject('CUSTOMER_CONDITION_ARRAY', CUSTOMER_CONDITION_ARRAY)
   inject('DEADLINE', DEADLINE)

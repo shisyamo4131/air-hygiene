@@ -26,10 +26,7 @@ export default {
     return {
       headers: [
         { text: '回収日', value: 'date' },
-        { text: '区分', value: 'collectionResultDiv' },
-        { text: '回収品目', value: 'collectItemId' },
-        { text: '回収量', value: 'amount', sortable: false, align: 'right' },
-        { text: '単価', value: 'unitPrice', sortable: false, align: 'right' },
+        { text: '区分', value: 'resultType' },
         { text: '金額', value: 'sales', sortable: false, align: 'right' },
       ],
       items: [],
@@ -64,14 +61,17 @@ export default {
       },
     },
     internalItems() {
-      return this.items.filter(({ collectItemId }) => {
+      return this.items.filter((item) => {
         if (!this.selectedCollectItemId) return true
-        return collectItemId === this.selectedCollectItemId
+        return item.details.some(
+          ({ collectItemId }) => collectItemId === this.selectedCollectItemId
+        )
       })
     },
     internalHeight() {
       if (!this.height) return
-      return parseInt(this.height) - 48
+      const decrease = this.$vuetify.breakpoint.mobile ? 56 : 64
+      return parseInt(this.height) - decrease
     },
   },
   /******************************************************************
@@ -146,13 +146,13 @@ export default {
     fixed-header
     :headers="internalHeaders"
     :height="internalHeight"
-    :sort-by="['date', 'collectItemId']"
+    :sort-by="['date']"
     sort-desc
     :items="internalItems"
     v-on="$listeners"
   >
     <template #top>
-      <v-toolbar dense>
+      <v-toolbar flat>
         <h-text-field-year-month v-model="internalYearMonth" hide-details />
         <v-spacer />
         <h-autocomplete-collect-item
@@ -174,24 +174,8 @@ export default {
       >
       {{ item.date }}
     </template>
-    <template #[`item.collectItemId`]="{ item }">
-      {{
-        $store.getters['masters/CollectItem'](item.collectItemId)?.abbr ||
-        'undefined'
-      }}
-    </template>
-    <template #[`item.collectionResultDiv`]="{ item }">
-      {{ $COLLECTION_RESULT_DIV[item.collectionResultDiv] }}
-    </template>
-    <template #[`item.amount`]="{ item }">
-      {{
-        `${(item?.amount || 0).toFixed(2)} ${
-          $store.getters['masters/Unit'](item.unitId)?.abbr || 'undefined'
-        }`
-      }}
-    </template>
-    <template #[`item.unitPrice`]="{ item }">
-      {{ `${(item.unitPrice || 0).toFixed(2)} 円` }}
+    <template #[`item.resultType`]="{ item }">
+      {{ $COLLECTION_RESULT_TYPE[item.resultType] }}
     </template>
     <template #[`item.sales`]="{ item }">
       {{ `${(item.sales || 0).toFixed(2)} 円` }}

@@ -13,8 +13,8 @@ export default class Unit extends FireModel {
     this.hasMany = [
       {
         collection: 'CollectionResults',
-        field: 'unit.docId',
-        condition: '==',
+        field: 'unitIds',
+        condition: 'array-contains',
         type: 'collection',
       },
       // 排出場所の契約単価についても設定が必要になるはず。

@@ -17,8 +17,8 @@ export default class CollectItem extends FireModel {
       },
       {
         collection: 'CollectionResults',
-        field: 'item.docId',
-        condition: '==',
+        field: 'collectItemIds',
+        condition: 'array-contains',
         type: 'collection',
       },
     ]

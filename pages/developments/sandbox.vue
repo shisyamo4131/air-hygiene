@@ -1,16 +1,26 @@
 <template>
   <div>
-    <h-text-field-date v-model="value" />
+    <h-input-collection-result-details
+      v-model="value"
+      :site-id="siteId"
+      :date="date"
+    />
   </div>
 </template>
 
 <script>
-import HTextFieldDate from '~/components/molecules/inputs/HTextFieldDate.vue'
+import HInputCollectionResultDetails from '~/components/molecules/inputs/HInputCollectionResultDetails.vue'
 export default {
-  components: { HTextFieldDate },
+  components: {
+    HInputCollectionResultDetails,
+  },
   data() {
     return {
-      value: '2023-10-01',
+      siteId: '0hDaxOWY8tcp1hRQlcGN',
+      date: '2023-10-01',
+      value: [],
+      editModel: this.$CollectionResultDetail(),
+      item: '',
     }
   },
 }

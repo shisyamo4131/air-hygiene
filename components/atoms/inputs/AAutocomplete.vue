@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-09-27
  * @author shisyamo4131
  */
 export default {
@@ -24,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <air-autocomplete v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
+  <air-autocomplete-2 v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
     <template v-if="label" #label>
       <span>{{ label }}</span>
       <span v-if="required" class="red--text">*</span>
@@ -38,7 +37,7 @@ export default {
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </air-autocomplete>
+  </air-autocomplete-2>
 </template>
 
 <style></style>

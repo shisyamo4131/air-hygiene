@@ -9,6 +9,7 @@ import SiteMunicipalContract from '../models/SiteMunicipalContract'
 import SiteUnitPrice from '../models/SiteUnitPrice'
 import ItemUnitPrice from '../models/ItemUnitPrice'
 import CollectionResult from '../models/CollectionResult'
+import CollectionResultDetail from '../models/CollectionResultDetail'
 
 export default (context, inject) => {
   inject('Autonumber', () => new Autonumber(context))
@@ -25,4 +26,8 @@ export default (context, inject) => {
   inject('SiteUnitPrice', (docId) => new SiteUnitPrice(context, docId))
   inject('ItemUnitPrice', (item) => new ItemUnitPrice(item))
   inject('CollectionResult', () => new CollectionResult(context))
+  inject(
+    'CollectionResultDetail',
+    (siteId, date) => new CollectionResultDetail(context, siteId, date)
+  )
 }

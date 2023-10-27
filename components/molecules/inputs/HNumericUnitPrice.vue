@@ -13,6 +13,8 @@ export default {
    ******************************************************************/
   props: {
     unitId: { type: String, default: '', required: false },
+    disabled: { type: Boolean, default: false, required: false },
+    loading: { type: Boolean, default: false, required: false },
   },
   /******************************************************************
    * COMPUTED
@@ -33,9 +35,18 @@ export default {
     v-bind="$attrs"
     class="right-input"
     decimal-places="2"
+    :disabled="disabled || loading"
     :suffix="suffix"
     v-on="$listeners"
-  />
+  >
+    <template v-if="loading" #append>
+      <v-progress-circular
+        indeterminate
+        color="primary"
+        size="24"
+      ></v-progress-circular>
+    </template>
+  </a-numeric>
 </template>
 
 <style></style>

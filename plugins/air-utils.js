@@ -1,6 +1,17 @@
 import { onChildAdded, onChildChanged, onChildRemoved } from 'firebase/database'
 import { collection, onSnapshot, query, where } from 'firebase/firestore'
 
+/**
+ * Ensure that date is validate.
+ * @param {*} context
+ * @param {*} date
+ * @returns boolean
+ */
+const airIsDate = (context, date) => {
+  const converted = context.app.$dayjs(date).format('YYYY-MM-DD')
+  return converted === date
+}
+
 const airCalcDeadlineDate = (context, date, deadline) => {
   if (!date) {
     // eslint-disable-next-line
@@ -113,6 +124,7 @@ const airSubscribeFirestoreByTokenMap = (firestore, search, colName) => {
 }
 
 export default (context, inject) => {
+  inject('airIsDate', (date) => airIsDate(context, date))
   inject('airCalcDeadlineDate', (date, deadline) =>
     airCalcDeadlineDate(context, date, deadline)
   )
