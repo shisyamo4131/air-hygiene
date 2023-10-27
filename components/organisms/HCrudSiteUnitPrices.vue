@@ -134,6 +134,7 @@ export default {
             </template>
             <air-card-form-input
               ref="form"
+              :disabled="loading"
               outlined
               @click:cancel="onClickCancel"
               @click:submit="onClickSubmit"
