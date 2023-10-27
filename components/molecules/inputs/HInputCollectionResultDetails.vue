@@ -4,6 +4,7 @@
  */
 import HDataTableCollectionResultDetails from '../tables/HDataTableCollectionResultDetails.vue'
 import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
+import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -13,13 +14,16 @@ export default {
     HInputCollectionResultDetail,
   },
   /******************************************************************
+   * MIXINS
+   ******************************************************************/
+  mixins: [Mixin],
+  /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
     siteId: { type: String, default: '', required: false },
     date: { type: String, default: '', required: false },
     value: { type: Array, default: () => [], required: false },
-    disabled: { type: Boolean, default: false, required: false },
   },
   /******************************************************************
    * DATA
@@ -124,6 +128,8 @@ export default {
     hide-default-footer
     :items-per-page="-1"
     show-actions
+    :disable-edit="disabled"
+    :disable-delete="disabled"
     @click:edit="onClickEdit($event)"
     @click:delete="onClickDelete($event)"
   >

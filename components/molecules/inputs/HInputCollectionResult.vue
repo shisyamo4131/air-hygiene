@@ -89,6 +89,7 @@ export default {
       :value="details"
       :site-id="site?.docId || undefined"
       :date="date || undefined"
+      :disabled="disabled"
       @input="$emit('update:details', $event)"
     />
     <a-numeric
