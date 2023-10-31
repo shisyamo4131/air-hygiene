@@ -181,15 +181,15 @@ const SITE_CONDITION_ARRAY = [
 
 /* 廃棄物区分 */
 const WASTE_DIV = {
-  municipal: '一般廃棄物',
-  industrial: '産業廃棄物',
-  other: 'その他',
+  municipal: '1: 一般廃棄物',
+  industrial: '2: 産業廃棄物',
+  other: '9: その他',
 }
 
 const WASTE_DIV_ARRAY = [
-  { value: 'municipal', text: '一般廃棄物' },
-  { value: 'industrial', text: '産業廃棄物' },
-  { value: 'other', text: 'その他' },
+  { value: 'municipal', text: '1: 一般廃棄物' },
+  { value: 'industrial', text: '2: 産業廃棄物' },
+  { value: 'other', text: '9: その他' },
 ]
 
 export default (context, inject) => {

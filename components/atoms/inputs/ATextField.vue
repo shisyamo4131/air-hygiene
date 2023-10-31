@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-09-25
  * @author shisyamo4131
  */
 export default {
@@ -12,6 +11,7 @@ export default {
     label: { type: String, default: undefined, required: false },
     outlined: { type: Boolean, default: true, required: false },
     required: { type: Boolean, default: false, required: false },
+    validateOnBlur: { type: Boolean, default: true, required: false },
   },
   /******************************************************************
    * DATA
@@ -27,6 +27,8 @@ export default {
 <template>
   <air-text-field
     v-bind="{ ...$props, ...$attrs }"
+    required-error="必須入力"
+    katakana-error="カタカナで入力"
     :katakana-rule="katakanaRule"
     v-on="$listeners"
   >

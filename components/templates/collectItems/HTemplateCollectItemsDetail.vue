@@ -1,8 +1,10 @@
 <script>
+import HSimpleTableCollectItem from '~/components/atoms/tables/HSimpleTableCollectItem.vue'
 /**
  * @author shisyamo4131
  */
 export default {
+  components: { HSimpleTableCollectItem },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -14,7 +16,7 @@ export default {
    ******************************************************************/
   data() {
     return {
-      tabs: ['Dashboard', '登録情報'],
+      tabs: ['登録情報'],
     }
   },
   /******************************************************************
@@ -51,43 +53,7 @@ export default {
     <template #tab-0>
       <v-container>
         <v-card outlined>
-          <v-card-title>現場情報？</v-card-title>
-        </v-card>
-      </v-container>
-    </template>
-    <template #tab-1>
-      <v-container>
-        <v-card outlined>
-          <v-simple-table>
-            <tbody>
-              <tr>
-                <td>CODE</td>
-                <td>{{ model.code }}</td>
-              </tr>
-              <tr>
-                <td>回収品目名</td>
-                <td>{{ model.name }}</td>
-              </tr>
-              <tr>
-                <td>回収品目名カナ</td>
-                <td>{{ model.nameKana }}</td>
-              </tr>
-              <tr>
-                <td>略称</td>
-                <td>{{ model.abbr }}</td>
-              </tr>
-              <tr>
-                <td>廃棄物区分</td>
-                <td>
-                  {{ $WASTE_DIV[model.wasteDiv] }}
-                </td>
-              </tr>
-            </tbody>
-          </v-simple-table>
-          <v-divider />
-          <v-card-text>
-            {{ model.remarks }}
-          </v-card-text>
+          <h-simple-table-collect-item v-bind="model" />
         </v-card>
       </v-container>
     </template>

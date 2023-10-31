@@ -1,18 +1,19 @@
 <template>
   <div>
-    <h-data-table-collection-result-details :items="items" />
+    <h-text-field-collect-item-code v-model="value" required />
+    {{ value }}
   </div>
 </template>
 
 <script>
-import HDataTableCollectionResultDetails from '~/components/atoms/tables/HDataTableCollectionResultDetails.vue'
+import HTextFieldCollectItemCode from '~/components/atoms/inputs/HTextFieldCollectItemCode.vue'
 export default {
-  components: { HDataTableCollectionResultDetails },
+  components: { HTextFieldCollectItemCode },
   data() {
     return {
       siteId: '0hDaxOWY8tcp1hRQlcGN',
       date: '2023-10-01',
-      value: [],
+      value: null,
       editModel: this.$CollectionResultDetail(),
       item: '',
       headers: [

@@ -1,8 +1,27 @@
 /**
+ * ### CollectItem
+ *
+ * A data model of CollectItem.
+ *
+ * #### PROPERTIES
+ *
+ * | name      | type    | default | required | remarks                                |
+ * | --------- | ------- | ------- | -------- | -------------------------------------- |
+ * | code      | string  | ''      | true     | 4 digits.                              |
+ * | name      | string  | ''      | true     |                                        |
+ * | nameKana  | string  | ''      | true     |                                        |
+ * | abbr      | string  | ''      | true     | 4 digits.                              |
+ * | wasteDiv  | string  | ''      | true     | [ 'municipal', 'industrial', 'other' ] |
+ * | remarks   | string  | ''      | false    |                                        |
+ * | deletable | boolean | true    | true     | If true, can be deleted.               |
+ *
  * @author shisyamo4131
  */
-import { collection, getDocs, query, where } from 'firebase/firestore'
+import { doc, getDoc } from 'firebase/firestore'
 import FireModel from './FireModel'
+
+const MISSING_CODE = 'CODE is required.'
+const DUPLICATE_CODE = 'CODE already used.'
 
 export default class CollectItem extends FireModel {
   constructor(context) {
@@ -36,25 +55,21 @@ export default class CollectItem extends FireModel {
   }
 
   async beforeCreate() {
-    const colRef = collection(this.firestore, 'CollectItems')
-    const q = query(colRef, where('code', '==', this.code))
-    const snapshot = await getDocs(q)
-    if (!snapshot.empty) {
-      throw new Error('既に使用されているCODEです。')
-    }
+    if (!this.code) throw new Error(MISSING_CODE)
+    const docRef = doc(this.firestore, `CollectItems/${this.code}`)
+    const snapshot = await getDoc(docRef)
+    if (snapshot.exists()) throw new Error(DUPLICATE_CODE)
   }
 
-  // async create() {
-  //   if (!this.code) throw new Error('CODEが必要です。')
-  //   await super.create(this.code)
-  // }
+  async create() {
+    await super.create(this.code)
+  }
 
   async beforeUpdate() {
-    const colRef = collection(this.firestore, 'CollectItems')
-    const q = query(colRef, where('code', '==', this.code))
-    const snapshot = await getDocs(q)
-    if (!snapshot.empty && snapshot.docs[0].data().docId !== this.docId) {
-      throw new Error('既に使用されているCODEです。')
-    }
+    if (!this.code) throw new Error(MISSING_CODE)
+    const docRef = doc(this.firestore, `CollectItems/${this.code}`)
+    const snapshot = await getDoc(docRef)
+    if (snapshot.exists() && snapshot.data().docId !== this.code)
+      throw new Error(DUPLICATE_CODE)
   }
 }

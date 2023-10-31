@@ -2,15 +2,25 @@
 /**
  * @author shisyamo4131
  */
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
+import HTextFieldCollectItemCode from '~/components/atoms/inputs/HTextFieldCollectItemCode.vue'
+import HTextFieldCollectItemName from '~/components/atoms/inputs/HTextFieldCollectItemName.vue'
+import HTextFieldCollectItemNameKana from '~/components/atoms/inputs/HTextFieldCollectItemNameKana.vue'
+import HTextFieldCollectItemAbbr from '~/components/atoms/inputs/HTextFieldCollectItemAbbr.vue'
+import HAutocompleteWasteDiv from '~/components/atoms/inputs/HAutocompleteWasteDiv.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ATextField, ASelect, ATextarea },
+  components: {
+    ATextarea,
+    HTextFieldCollectItemCode,
+    HTextFieldCollectItemName,
+    HTextFieldCollectItemNameKana,
+    HTextFieldCollectItemAbbr,
+    HAutocompleteWasteDiv,
+  },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -27,56 +37,34 @@ export default {
     remarks: { type: String, default: '', required: false },
     deletable: { type: Boolean, default: true, required: false },
   },
-  /******************************************************************
-   * WATCH
-   ******************************************************************/
-  watch: {},
-  /******************************************************************
-   * METHODS
-   ******************************************************************/
-  methods: {},
 }
 </script>
 
 <template>
   <div>
-    <a-text-field
-      label="CODE"
+    <h-text-field-collect-item-code
       :value="code"
-      counter
-      hint="4桁で入力"
-      maxlength="4"
-      :rules="[(v) => !v || v.length === 4 || '4桁で入力してください。']"
       required
       :disabled="editMode === 'UPDATE' && !deletable"
       @input="$emit('update:code', $event)"
     />
-    <a-text-field
-      label="回収品目名"
+    <h-text-field-collect-item-name
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <a-text-field
-      label="回収品目名カナ"
+    <h-text-field-collect-item-name-kana
       :value="nameKana"
       required
-      input-type="katakana"
       @input="$emit('update:nameKana', $event)"
     />
-    <a-text-field
-      label="略称"
+    <h-text-field-collect-item-abbr
       :value="abbr"
       required
-      maxlength="4"
-      counter
-      hint="4文字以内"
       @input="$emit('update:abbr', $event)"
     />
-    <a-select
-      label="廃棄物区分"
+    <h-autocomplete-waste-div
       :value="wasteDiv"
-      :items="$WASTE_DIV_ARRAY"
       required
       :disabled="editMode === 'UPDATE' && !deletable"
       @input="$emit('update:wasteDiv', $event)"

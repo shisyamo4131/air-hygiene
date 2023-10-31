@@ -1,48 +1,47 @@
 <script>
 /**
-  ### ADataTable
-
-  A data table component that adds the following functionality to v-data-table
-
-  ‐ Added buttons to trigger registering, editing, and deleting data.
-  - Changed the height property to be the height of the entire component.
-
-  #### PROPERTIES
-
-  | name              | type           | default                                                                | required | remarks | 
-  | ----------------- | -------------- | ---------------------------------------------------------------------- | :------: | ------- | 
-  | actionColumn      | object         | { text: 'actions', value: 'actions', align: 'right', sortable: false } | false    |         | 
-  | deleteIcon        | string         | mdi-trash-can                                                          | false    |         | 
-  | disableDelete     | boolean        | false                                                                  | false    |         | 
-  | disableEdit       | boolean        | false                                                                  | false    |         | 
-  | disableRegist     | boolean        | false                                                                  | false    |         | 
-  | editIcon          | string         | mdi-pencil                                                             | false    |         | 
-  | headers           | array          | []                                                                     | false    |         | 
-  | height            | number, string | undefined                                                              | false    |         | 
-  | hideDefaultFooter | boolean        | false                                                                  | false    |         | 
-  | items             | array          | []                                                                     | false    |         | 
-  | label             | string         | undefined                                                              | false    |         | 
-  | registIcon        | string         | mdi-plus                                                               | false    |         | 
-  | showActions       | boolean        | false                                                                  | false    |         | 
-  | showToolbar       | boolean        | false                                                                  | false    |         | 
-  
-  #### SLOTS
-
-  | name        | remarks                                              | 
-  | ----------- | ---------------------------------------------------- | 
-  | delete-icon | for delete icon.                                     | 
-  | edit-icon   | for edit icon.                                       | 
-  | regist-icon | for regist icon.  This slot is included in top slot. | 
-
-  #### EVENTS
-
-  | name         | params | remarks                            | 
-  | ------------ | ------ | ---------------------------------- | 
-  | click:delete | item   | emits when delete icon is clicked. | 
-  | click:edit   | item   | emits when edit icon is clicked.   | 
-  | click:regist |        | emits when regist icon is clicked. | 
-
-  @author shisyamo4131
+ * ### ADataTable
+ *
+ * A data table component that adds the following functionality to v-data-table.
+ * ‐ Added buttons to trigger registering, editing, and deleting data.
+ * - Changed the height property to be the height of the entire component.
+ *
+ * #### PROPERTIES
+ *
+ * | name              | type           | default                                                                | required | remarks |
+ * | ----------------- | -------------- | ---------------------------------------------------------------------- | :------: | ------- |
+ * | actionColumn      | object         | { text: 'actions', value: 'actions', align: 'right', sortable: false } | false    |         |
+ * | deleteIcon        | string         | mdi-trash-can                                                          | false    |         |
+ * | disableDelete     | boolean        | false                                                                  | false    |         |
+ * | disableEdit       | boolean        | false                                                                  | false    |         |
+ * | disableRegist     | boolean        | false                                                                  | false    |         |
+ * | editIcon          | string         | mdi-pencil                                                             | false    |         |
+ * | headers           | array          | []                                                                     | false    |         |
+ * | height            | number, string | undefined                                                              | false    |         |
+ * | hideDefaultFooter | boolean        | false                                                                  | false    |         |
+ * | items             | array          | []                                                                     | false    |         |
+ * | label             | string         | undefined                                                              | false    |         |
+ * | registIcon        | string         | mdi-plus                                                               | false    |         |
+ * | showActions       | boolean        | false                                                                  | false    |         |
+ * | showToolbar       | boolean        | false                                                                  | false    |         |
+ *
+ * #### SLOTS
+ *
+ * | name        | remarks                                              |
+ * | ----------- | ---------------------------------------------------- |
+ * | delete-icon | for delete icon.                                     |
+ * | edit-icon   | for edit icon.                                       |
+ * | regist-icon | for regist icon.  This slot is included in top slot. |
+ *
+ * #### EVENTS
+ *
+ * | name         | params | remarks                            |
+ * | ------------ | ------ | ---------------------------------- |
+ * | click:delete | item   | emits when delete icon is clicked. |
+ * | click:edit   | item   | emits when edit icon is clicked.   |
+ * | click:regist |        | emits when regist icon is clicked. |
+ *
+ * @author shisyamo4131
  */
 export default {
   /******************************************************************

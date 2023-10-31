@@ -41,7 +41,7 @@ export default {
    ******************************************************************/
   methods: {
     onClickDetail(item) {
-      this.$router.push(`/collect-items/${item.docId}/edit`)
+      this.$router.push(`/collect-items/${item.docId}`)
     },
   },
 }
