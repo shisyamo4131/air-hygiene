@@ -1,40 +1,32 @@
 <script>
 /**
+ * ### HTextFieldSiteAbbrKana
+ *
+ * A component for abbreviation-kana of Site.
+ *
  * @author shisyamo4131
  */
+import ATextField from './ATextField.vue'
 export default {
+  /******************************************************************
+   * COMPONENTS
+   ******************************************************************/
+  components: { ATextField },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
-    dense: { type: Boolean, default: true, required: false },
-    label: { type: String, default: undefined, required: false },
-    outlined: { type: Boolean, default: true, required: false },
-    required: { type: Boolean, default: false, required: false },
-  },
-  /******************************************************************
-   * DATA
-   ******************************************************************/
-  data() {
-    return {
-      katakanaRule: (v) => /^([ァ-ンヴーｧ-ﾝﾞﾟ／：・]*)?$/.test(v),
-    }
+    label: { type: String, default: '略称カナ', required: false },
   },
 }
 </script>
 
 <template>
-  <air-text-field
+  <a-text-field
     v-bind="{ ...$props, ...$attrs }"
-    required-error="必須入力"
-    katakana-error="カタカナで入力"
-    :katakana-rule="katakanaRule"
+    input-type="katakana"
     v-on="$listeners"
   >
-    <template v-if="label" #label>
-      <span>{{ label }}</span>
-      <span v-if="required" class="red--text">*</span>
-    </template>
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"
@@ -44,7 +36,7 @@ export default {
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </air-text-field>
+  </a-text-field>
 </template>
 
 <style></style>

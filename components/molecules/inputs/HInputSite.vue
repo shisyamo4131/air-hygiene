@@ -1,25 +1,41 @@
 <script>
 /**
- * @create 2023-09-29
  * @author shisyamo4131
- * @update 2023-10-02 都道府県を文字列からオブジェクトに変更
  */
 import HTextFieldZipcode from '../../atoms/inputs/HTextFieldZipcode.vue'
-import HAutocompleteCustomer from './HAutocompleteCustomer.vue'
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import HAutocompleteCustomer from '../../atoms/inputs/HAutocompleteCustomer.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
+import HTextFieldSiteCode from '~/components/atoms/inputs/HTextFieldSiteCode.vue'
+import HTextFieldSiteName from '~/components/atoms/inputs/HTextFieldSiteName.vue'
+import HTextFieldSiteAbbr from '~/components/atoms/inputs/HTextFieldSiteAbbr.vue'
+import HTextFieldSiteAbbrKana from '~/components/atoms/inputs/HTextFieldSiteAbbrKana.vue'
+import HTextFieldAddress from '~/components/atoms/inputs/HTextFieldAddress.vue'
+import HTextFieldTel from '~/components/atoms/inputs/HTextFieldTel.vue'
+import HTextFieldUrl from '~/components/atoms/inputs/HTextFieldUrl.vue'
+import HTextFieldStaffName from '~/components/atoms/inputs/HTextFieldStaffName.vue'
+import HTextFieldEmail from '~/components/atoms/inputs/HTextFieldEmail.vue'
+import HRadioGroupSiteCondition from '~/components/atoms/inputs/HRadioGroupSiteCondition.vue'
+import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    ATextField,
     HTextFieldZipcode,
-    ASelect,
     ATextarea,
     HAutocompleteCustomer,
+    HTextFieldSiteCode,
+    HTextFieldSiteName,
+    HTextFieldSiteAbbr,
+    HTextFieldSiteAbbrKana,
+    HTextFieldAddress,
+    HTextFieldTel,
+    HTextFieldUrl,
+    HTextFieldStaffName,
+    HTextFieldEmail,
+    HRadioGroupSiteCondition,
+    HTextFieldDate,
   },
   /******************************************************************
    * MIXINS
@@ -42,6 +58,7 @@ export default {
     staffName: { type: String, default: '', required: false },
     staffEmail: { type: String, default: '', required: false },
     condition: { type: String, default: '', required: false },
+    dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
     customer: { type: Object, default: null, required: false },
   },
@@ -53,18 +70,13 @@ export default {
       if (newVal !== oldVal) this.$emit('update:abbr', newVal)
     },
   },
-  /******************************************************************
-   * METHODS
-   ******************************************************************/
-  methods: {},
 }
 </script>
 
 <template>
   <div>
-    <a-text-field
+    <h-text-field-site-code
       v-if="editMode !== 'REGIST'"
-      label="CODE"
       :value="code"
       readonly
     />
@@ -75,78 +87,74 @@ export default {
       return-object
       @input="$emit('update:customer', $event)"
     />
-    <a-text-field
-      label="排出場所名"
+    <h-text-field-site-name
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <a-text-field
-      label="略称"
+    <h-text-field-site-abbr
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"
     />
-    <a-text-field
-      label="略称カナ"
+    <h-text-field-site-abbr-kana
       :value="abbrKana"
       required
-      input-type="katakana"
       @input="$emit('update:abbrKana', $event)"
     />
     <h-text-field-zipcode
-      label="郵便番号"
       :value="zipcode"
       @input="$emit('update:zipcode', $event)"
       @loaded="$emit('update:address1', $event.full)"
     />
-    <a-text-field
+    <h-text-field-address
       label="住所1"
       :value="address1"
       required
       @input="$emit('update:address1', $event)"
     />
-    <a-text-field
+    <h-text-field-address
       label="住所2"
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
-    <a-text-field
-      label="電話番号"
-      :value="tel"
-      input-type="tel"
-      @input="$emit('update:tel', $event)"
-    />
-    <a-text-field
-      label="FAX番号"
-      :value="fax"
-      input-type="tel"
-      @input="$emit('update:fax', $event)"
-    />
-    <a-text-field
-      label="URL"
-      :value="url"
-      input-type="url"
-      @input="$emit('update:url', $event)"
-    />
-    <a-text-field
-      label="担当者名"
+    <v-row dense>
+      <v-col cols="12" sm="6">
+        <h-text-field-tel :value="tel" @input="$emit('update:tel', $event)" />
+      </v-col>
+      <v-col cols="12" sm="6">
+        <h-text-field-tel
+          label="FAX番号"
+          :value="fax"
+          @input="$emit('update:fax', $event)"
+        />
+      </v-col>
+    </v-row>
+    <h-text-field-url :value="url" @input="$emit('update:url', $event)" />
+    <h-text-field-staff-name
       :value="staffName"
       @input="$emit('update:staffName', $event)"
     />
-    <a-text-field
-      label="担当者メールアドレス"
+    <h-text-field-email
       :value="staffEmail"
-      input-type="email"
       @input="$emit('update:staffEmail', $event)"
     />
-    <a-select
-      label="状態"
+    <h-radio-group-site-condition
+      v-if="editMode !== 'REGIST'"
+      class="mt-0"
       :value="condition"
-      :items="$CUSTOMER_CONDITION_ARRAY"
-      required
-      @input="$emit('update:condition', $event)"
+      row
+      @change="$emit('update:condition', $event)"
     />
+    <v-expand-transition>
+      <h-text-field-date
+        v-show="condition === 'expired'"
+        label="契約満了日"
+        :value="dateExpired"
+        :required="condition === 'expired'"
+        @input="$emit('update:dateExpired', $event)"
+      />
+    </v-expand-transition>
     <a-textarea
       label="備考"
       :value="remarks"

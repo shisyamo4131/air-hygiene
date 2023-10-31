@@ -4,7 +4,7 @@
  */
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import HCardIndexSite from '~/components/molecules/cards/HCardIndexSite.vue'
-import HAutocompleteCustomer from '~/components/molecules/inputs/HAutocompleteCustomer.vue'
+import HAutocompleteCustomer from '~/components/atoms/inputs/HAutocompleteCustomer.vue'
 export default {
   /******************************************************************
    * COMPONENTS

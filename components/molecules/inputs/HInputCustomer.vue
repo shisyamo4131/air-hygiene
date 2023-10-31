@@ -105,7 +105,6 @@ export default {
       @input="$emit('update:abbrKana', $event)"
     />
     <h-text-field-zipcode
-      label="郵便番号"
       :value="zipcode"
       @input="$emit('update:zipcode', $event)"
       @loaded="$emit('update:address1', $event.full)"

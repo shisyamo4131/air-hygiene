@@ -17,6 +17,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
+    label: { type: String, default: '郵便番号', required: false },
     value: { type: String, default: undefined, required: false },
   },
   /******************************************************************
@@ -93,6 +94,7 @@ export default {
         attrs: {
           inputType: 'zipcode',
           appendOuterIcon: this.icon,
+          label: this.label,
           value: this.value,
           ...this.$attrs,
         },

@@ -1,4 +1,29 @@
 /**
+ * ### Site
+ *
+ * A data model of Site.
+ *
+ * #### PROPERTIES
+ *
+ * | name        | type   | default  | required | remarks                             |
+ * | ----------- | ------ | -------- | -------- | ----------------------------------- |
+ * | code        | string | ''       | true     | 8 digits and auto-numbering.        |
+ * | name        | string | ''       | true     |                                     |
+ * | abbr        | string | ''       | true     |                                     |
+ * | abbrKana    | string | ''       | true     |                                     |
+ * | zipcode     | string | ''       | false    |                                     |
+ * | address1    | string | ''       | true     |                                     |
+ * | address2    | string | ''       | false    |                                     |
+ * | tel         | string | ''       | false    |                                     |
+ * | fax         | string | ''       | false    |                                     |
+ * | url         | string | ''       | false    |                                     |
+ * | staffName   | string | ''       | false    |                                     |
+ * | staffEmail  | string | ''       | false    |                                     |
+ * | condition   | string | 'active' | true     | [ 'active', 'expired' ]             |
+ * | dateExpired | string | ''       | false    | Required if condition is 'expired'. |
+ * | remarks     | string | ''       | false    |                                     |
+ * | customer    | object | null     | true     | Customer object.                    |
+ *
  * @author shisyamo4131
  */
 import FireModel from './FireModel'
@@ -31,8 +56,23 @@ export default class Site extends FireModel {
     this.staffName = ''
     this.staffEmail = ''
     this.condition = 'active'
+    this.dateExpired = ''
     this.remarks = ''
     this.customer = null
     super.initialize(item)
+  }
+
+  beforeCreate() {
+    return new Promise((resolve) => {
+      if (!this.condition === 'active') this.dateExpired = ''
+      resolve()
+    })
+  }
+
+  beforeUpdate() {
+    return new Promise((resolve) => {
+      if (!this.condition === 'active') this.dateExpired = ''
+      resolve()
+    })
   }
 }

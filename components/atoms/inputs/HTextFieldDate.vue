@@ -72,6 +72,7 @@ export default {
     v-bind="$attrs"
     readonly
     :value="value"
+    :required="required"
     @click.stop="menu = true"
     v-on="$listeners"
   >
