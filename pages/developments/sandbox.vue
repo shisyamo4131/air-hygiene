@@ -1,13 +1,19 @@
 <template>
   <div>
-    <h-data-table-site-unit-price-details :items="items" />
+    <a-data-table
+      :items="items"
+      :headers="headers"
+      label="data table"
+      show-toolbar
+      @click:regist="test"
+    />
   </div>
 </template>
 
 <script>
-import HDataTableSiteUnitPriceDetails from '~/components/molecules/tables/HDataTableSiteUnitPriceDetails.vue'
+import ADataTable from '~/components/atoms/tables/ADataTable.vue'
 export default {
-  components: { HDataTableSiteUnitPriceDetails },
+  components: { ADataTable },
   data() {
     return {
       siteId: '0hDaxOWY8tcp1hRQlcGN',
@@ -15,6 +21,10 @@ export default {
       value: [],
       editModel: this.$CollectionResultDetail(),
       item: '',
+      headers: [
+        { text: 'collectItemId', value: 'collectItemId' },
+        { text: 'unitPrice', value: 'unitPrice' },
+      ],
       items: [
         {
           collectItemId: '4aODIZusF3GDXY6ijAFK',
@@ -30,6 +40,11 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    test() {
+      alert('OK')
+    },
   },
 }
 </script>
