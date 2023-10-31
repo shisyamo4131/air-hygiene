@@ -1,4 +1,11 @@
 <script>
+/**
+ * ### HDataTableCollectionResultDetails
+ *
+ * Data table component for displaying CollectionResultDetails.
+ *
+ * @author shisyamo4131
+ */
 import ADataTable from '~/components/atoms/tables/ADataTable.vue'
 export default {
   /******************************************************************
@@ -18,8 +25,9 @@ export default {
     return {
       headers: [
         { text: '回収品目', value: 'collectItem' },
-        { text: '数量', value: 'amount', align: 'right' },
-        { text: '金額', value: 'price', align: 'right' },
+        { text: '数量', value: 'amount', align: 'right', sortable: false },
+        { text: '単価', value: 'unitPrice', align: 'right', sortable: false },
+        { text: '金額', value: 'price', align: 'right', sortable: false },
       ],
     }
   },
@@ -30,17 +38,21 @@ export default {
     extendedItems() {
       return this.items
         .map((item) => {
+          const collectItem = this.$CollectItem()
+          collectItem.initialize(
+            this.$store.getters['masters/CollectItem'](item.collectItemId)
+          )
+          const unit = this.$Unit()
+          unit.initialize(this.$store.getters['masters/Unit'](item.unitId))
           return {
             ...item,
-            collectItem: this.$store.getters['masters/CollectItem'](
-              item.collectItemId
-            ),
-            unit: this.$store.getters['masters/Unit'](item.unitId),
+            collectItem: `[${collectItem.code}] ${collectItem.abbr}`,
+            unit,
           }
         })
         .sort((a, b) => {
-          if (a.item.key < b.item.key) return -1
-          if (a.item.key > b.item.key) return 1
+          if (a.id < b.id) return -1
+          if (a.id > b.id) return 1
           return 0
         })
     },
@@ -51,20 +63,18 @@ export default {
 <template>
   <a-data-table
     v-bind="$attrs"
-    item-key="id"
-    :items="extendedItems"
-    disable-sort
     :headers="headers"
+    :items="extendedItems"
     v-on="$listeners"
   >
-    <template #[`item.collectItem`]="{ item }">
-      {{ `[${item.collectItem.code}] ${item.collectItem.abbr}` }}
-    </template>
     <template #[`item.amount`]="{ item }">
-      {{ `${item.amount.toFixed(2)} ${item.unit.abbr}` }}
+      {{ `${(item?.amount || 0).toFixed(2)} ${item.unit.abbr}` }}
+    </template>
+    <template #[`item.unitPrice`]="{ item }">
+      {{ `${(item?.unitPrice || 0).toFixed(2)} 円` }}
     </template>
     <template #[`item.price`]="{ item }">
-      {{ `${(item?.price || 0).toFixed(2)} 円/${item.unit.name}` }}
+      {{ `${(item?.price || 0).toFixed(2)} 円/${item.unit.abbr}` }}
     </template>
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"

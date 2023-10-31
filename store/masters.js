@@ -23,13 +23,9 @@ const MODULE_NAME = '[Vuex masters.js]'
  * STATE
  ******************************************************************/
 export const state = () => ({
-  // Customers: [],
-  // Sites: [],
   CollectItems: [],
   Units: [],
   listeners: {
-    // Customers: null,
-    // Sites: null,
     CollectItems: null,
     Units: null,
   },
@@ -38,12 +34,6 @@ export const state = () => ({
  * GETTERS
  ******************************************************************/
 export const getters = {
-  // Customer: (state) => (payload) => {
-  //   return state.Customers.find(({ docId }) => docId === payload)
-  // },
-  // Site: (state) => (payload) => {
-  //   return state.Sites.find(({ docId }) => docId === payload)
-  // },
   CollectItem: (state) => (payload) => {
     return state.CollectItems.find(({ docId }) => docId === payload)
   },

@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HDataTableCollectionResultDetails from '../tables/HDataTableCollectionResultDetails.vue'
+import HDataTableCollectionResultDetails from '../../atoms/tables/HDataTableCollectionResultDetails.vue'
 import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {

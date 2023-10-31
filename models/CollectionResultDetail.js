@@ -56,8 +56,7 @@ export default class CollectionResultDetail {
         enumerable: false,
         get() {
           if (!this.collectItemId) return undefined
-          const store = this.#context.store
-          const result = store.getters['masters/CollectItem'](
+          const result = this.#context.store.getters['masters/CollectItem'](
             this.collectItemId
           )
           return result
@@ -68,8 +67,9 @@ export default class CollectionResultDetail {
         enumerable: false,
         get() {
           if (!this.unitId) return undefined
-          const store = this.#context.store
-          const result = store.getters['masters/Unit'](this.unitId)
+          const result = this.#context.store.getters['masters/Unit'](
+            this.unitId
+          )
           return result
         },
         set(v) {},
