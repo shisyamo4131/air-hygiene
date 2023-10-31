@@ -4,7 +4,7 @@
  * @author shisyamo4131
  * @update 2023-10-02 都道府県を文字列からオブジェクトに変更
  */
-import HTextFieldZipcode from './HTextFieldZipcode.vue'
+import HTextFieldZipcode from '../../atoms/inputs/HTextFieldZipcode.vue'
 import HAutocompleteCustomer from './HAutocompleteCustomer.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'

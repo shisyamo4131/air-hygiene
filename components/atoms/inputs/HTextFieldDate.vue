@@ -1,9 +1,8 @@
 <script>
 /**
  * ### HTextFieldDate
- * 日付選択入力用コンポーネント
- * #### NOTE
- * - 日付選択中のvalidationが煩わしいため、DatePickerが起動している間はprops.requiredを無視します。
+ *
+ * @author shisyamo4131
  */
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import ADatePicker from '~/components/atoms/pickers/ADatePicker.vue'
@@ -49,18 +48,7 @@ export default {
    ******************************************************************/
   watch: {
     menu(v) {
-      if (v) {
-        this.pickerDate = this.value
-        this.internalRequired = false
-      } else {
-        this.internalRequired = this.required
-      }
-    },
-    required: {
-      handler(v) {
-        this.internalRequired = v
-      },
-      immediate: true,
+      if (v) this.pickerDate = this.value
     },
   },
   /******************************************************************
@@ -84,7 +72,6 @@ export default {
     v-bind="$attrs"
     readonly
     :value="value"
-    :required="internalRequired"
     @click.stop="menu = true"
     v-on="$listeners"
   >

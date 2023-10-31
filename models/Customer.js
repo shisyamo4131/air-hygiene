@@ -1,5 +1,34 @@
 /**
  * ### Customer
+ *
+ * A data model of Customer.
+ *
+ * #### PROPERTIES
+ *
+ * | name         | type   | default  | required | remarks                                |
+ * | ------------ | ------ | -------- | -------- | -------------------------------------- |
+ * | code         | string | ''       | true     | 5 digits and auto-numbering.           |
+ * | name1        | string | ''       | true     |                                        |
+ * | name2        | string | ''       | false    |                                        |
+ * | abbr         | string | ''       | true     |                                        |
+ * | abbrKana     | string | ''       | true     |                                        |
+ * | zipcode      | string | ''       | false    |                                        |
+ * | address1     | string | ''       | true     |                                        |
+ * | address2     | string | ''       | false    |                                        |
+ * | tel          | string | ''       | false    |                                        |
+ * | fax          | string | ''       | false    |                                        |
+ * | url          | string | ''       | false    |                                        |
+ * | staffName    | string | ''       | false    |                                        |
+ * | staffEmail   | string | ''       | false    |                                        |
+ * | honor        | string | '御中'   | true     |                                        |
+ * | deadline     | string | '99'     | true     | [ '05', '10', '15', '20', '25', '99' ] |
+ * | depositMonth | number | 1        | true     |                                        |
+ * | depositDay   | string | '99'     | true     | [ '05', '10', '15', '20', '25', '99' ] |
+ * | rounding     | string | 'round'  | true     | [ 'floor', 'round', 'ceil' ]           |
+ * | condition    | string | 'active' | true     | [ 'active', 'expired' ]                |
+ * | dateExpired  | string | ''       | false    | Required if condition is 'expired'.    |
+ * | remarks      | string | ''       | false    |                                        |
+ *
  * @author shisyamo4131
  */
 import FireModel from './FireModel'
@@ -41,5 +70,19 @@ export default class Customer extends FireModel {
     this.dateExpired = ''
     this.remarks = ''
     super.initialize(item)
+  }
+
+  beforeCreate() {
+    return new Promise((resolve) => {
+      if (!this.condition === 'active') this.dateExpired = ''
+      resolve()
+    })
+  }
+
+  beforeUpdate() {
+    return new Promise((resolve) => {
+      if (!this.condition === 'active') this.dateExpired = ''
+      resolve()
+    })
   }
 }

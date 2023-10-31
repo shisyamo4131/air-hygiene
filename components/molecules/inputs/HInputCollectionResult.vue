@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTextFieldDate from './HTextFieldDate.vue'
+import HTextFieldDate from '../../atoms/inputs/HTextFieldDate.vue'
 import HInputCollectionResultDetails from './HInputCollectionResultDetails.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'

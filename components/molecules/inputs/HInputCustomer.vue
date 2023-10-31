@@ -1,26 +1,47 @@
 <script>
 /**
- * @create 2023-09-25
  * @author shisyamo4131
  */
-import HTextFieldZipcode from './HTextFieldZipcode.vue'
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import HTextFieldZipcode from '../../atoms/inputs/HTextFieldZipcode.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import ASelect from '~/components/atoms/inputs/ASelect.vue'
-import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
+import HTextFieldCustomerCode from '~/components/atoms/inputs/HTextFieldCustomerCode.vue'
+import HTextFieldCustomerName from '~/components/atoms/inputs/HTextFieldCustomerName.vue'
+import HTextFieldCustomerAbbr from '~/components/atoms/inputs/HTextFieldCustomerAbbr.vue'
+import HTextFieldCustomerAbbrKana from '~/components/atoms/inputs/HTextFieldCustomerAbbrKana.vue'
+import HTextFieldAddress from '~/components/atoms/inputs/HTextFieldAddress.vue'
+import HTextFieldTel from '~/components/atoms/inputs/HTextFieldTel.vue'
+import HTextFieldUrl from '~/components/atoms/inputs/HTextFieldUrl.vue'
+import HTextFieldStaffName from '~/components/atoms/inputs/HTextFieldStaffName.vue'
+import HTextFieldEmail from '~/components/atoms/inputs/HTextFieldEmail.vue'
+import HTextFieldHonor from '~/components/atoms/inputs/HTextFieldHonor.vue'
+import HSelectDeadline from '~/components/atoms/inputs/HSelectDeadline.vue'
+import HNumericDepositMonth from '~/components/atoms/inputs/HNumericDepositMonth.vue'
+import HSelectRounding from '~/components/atoms/inputs/HSelectRounding.vue'
+import HRadioGroupCustomerCondition from '~/components/atoms/inputs/HRadioGroupCustomerCondition.vue'
+import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    ATextField,
     HTextFieldZipcode,
-    ASelect,
-    ANumeric,
     ATextarea,
-    ARadioGroup,
+    HTextFieldCustomerCode,
+    HTextFieldCustomerName,
+    HTextFieldCustomerAbbr,
+    HTextFieldCustomerAbbrKana,
+    HTextFieldAddress,
+    HTextFieldTel,
+    HTextFieldUrl,
+    HTextFieldStaffName,
+    HTextFieldEmail,
+    HTextFieldHonor,
+    HSelectDeadline,
+    HNumericDepositMonth,
+    HSelectRounding,
+    HRadioGroupCustomerCondition,
+    HTextFieldDate,
   },
   /******************************************************************
    * MIXINS
@@ -52,47 +73,35 @@ export default {
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
   },
-  /******************************************************************
-   * WATCH
-   ******************************************************************/
-  watch: {
-    condition(v) {
-      if (v === 'active') this.$emit('update:dateExpired', '')
-    },
-  },
 }
 </script>
 
 <template>
   <div>
-    <a-text-field
+    <h-text-field-customer-code
       v-if="editMode !== 'REGIST'"
-      label="CODE"
       :value="code"
       readonly
     />
-    <a-text-field
+    <h-text-field-customer-name
       label="取引先名1"
       :value="name1"
       required
       @input="$emit('update:name1', $event)"
     />
-    <a-text-field
+    <h-text-field-customer-name
       label="取引先名2"
       :value="name2"
       @input="$emit('update:name2', $event)"
     />
-    <a-text-field
-      label="略称"
+    <h-text-field-customer-abbr
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"
     />
-    <a-text-field
-      label="略称カナ"
+    <h-text-field-customer-abbr-kana
       :value="abbrKana"
       required
-      input-type="katakana"
       @input="$emit('update:abbrKana', $event)"
     />
     <h-text-field-zipcode
@@ -101,73 +110,53 @@ export default {
       @input="$emit('update:zipcode', $event)"
       @loaded="$emit('update:address1', $event.full)"
     />
-    <a-text-field
+    <h-text-field-address
       label="住所1"
       :value="address1"
       required
       @input="$emit('update:address1', $event)"
     />
-    <a-text-field
+    <h-text-field-address
       label="住所2"
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <a-text-field
-          label="電話番号"
-          :value="tel"
-          input-type="tel"
-          @input="$emit('update:tel', $event)"
-        />
+        <h-text-field-tel :value="tel" @input="$emit('update:tel', $event)" />
       </v-col>
       <v-col cols="12" sm="6">
-        <a-text-field
+        <h-text-field-tel
           label="FAX番号"
           :value="fax"
-          input-type="tel"
           @input="$emit('update:fax', $event)"
         />
       </v-col>
     </v-row>
-    <a-text-field
-      label="URL"
-      :value="url"
-      input-type="url"
-      @input="$emit('update:url', $event)"
-    />
-    <a-text-field
-      label="担当者名"
+    <h-text-field-url :value="url" @input="$emit('update:url', $event)" />
+    <h-text-field-staff-name
       :value="staffName"
       @input="$emit('update:staffName', $event)"
     />
-    <a-text-field
-      label="担当者メールアドレス"
+    <h-text-field-email
       :value="staffEmail"
-      input-type="email"
       @input="$emit('update:staffEmail', $event)"
     />
-    <a-text-field
-      label="敬称"
+    <h-text-field-honor
       :value="honor"
       required
-      hint="請求書の宛名に印字されます。"
-      persistent-hint
       @input="$emit('update:honor', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6" md="3">
-        <a-select
-          label="締日"
+        <h-select-deadline
           :value="deadline"
-          :items="$DEADLINE_ARRAY"
           required
           @input="$emit('update:deadline', $event)"
         />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <a-numeric
-          label="入金日"
+        <h-numeric-deposit-month
           :value="depositMonth"
           required
           suffix="ヶ月後"
@@ -175,44 +164,34 @@ export default {
         />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <a-select
+        <h-select-deadline
           label="入金日"
           :value="depositDay"
-          :items="$DEADLINE_ARRAY"
           required
           @input="$emit('update:depositDay', $event)"
         />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <a-select
-          label="端数処理"
+        <h-select-rounding
           :value="rounding"
-          :items="$ROUNDING_ARRAY"
           required
           @input="$emit('update:rounding', $event)"
         />
       </v-col>
     </v-row>
-    <a-radio-group
+    <h-radio-group-customer-condition
+      v-if="editMode !== 'REGIST'"
       class="mt-0"
       :value="condition"
       row
       @change="$emit('update:condition', $event)"
-    >
-      <v-radio
-        v-for="(item, index) of $CUSTOMER_CONDITION_ARRAY"
-        :key="index"
-        :label="item.text"
-        :value="item.value"
-      />
-    </a-radio-group>
+    />
     <v-expand-transition>
-      <a-text-field
+      <h-text-field-date
         v-show="condition === 'expired'"
         label="契約満了日"
         :value="dateExpired"
         :required="condition === 'expired'"
-        input-type="date"
         @input="$emit('update:dateExpired', $event)"
       />
     </v-expand-transition>

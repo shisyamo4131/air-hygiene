@@ -1,6 +1,9 @@
 <script>
 /**
- * @create 2023-09-25
+ * ### HTextFieldZipcode
+ *
+ * A component for zipcode.
+ *
  * @author shisyamo4131
  */
 import adapter from 'axios-jsonp'

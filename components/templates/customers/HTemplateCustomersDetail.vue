@@ -2,7 +2,9 @@
 /**
  * @author shisyamo4131
  */
+import HSimpleTableCustomer from '~/components/atoms/tables/HSimpleTableCustomer.vue'
 export default {
+  components: { HSimpleTableCustomer },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -96,80 +98,7 @@ export default {
     <template #tab-1>
       <v-container>
         <v-card outlined>
-          <v-simple-table>
-            <tbody>
-              <tr>
-                <td>CODE</td>
-                <td>{{ model.code }}</td>
-              </tr>
-              <tr>
-                <td>取引先名1</td>
-                <td>{{ model.name1 }}</td>
-              </tr>
-              <tr>
-                <td>取引先名2</td>
-                <td>{{ model.name2 }}</td>
-              </tr>
-              <tr>
-                <td>略称</td>
-                <td>
-                  <div class="text-caption grey--text text--lighten-1">
-                    {{ model.abbrKana }}
-                  </div>
-                  <div>{{ model.abbr }}</div>
-                </td>
-              </tr>
-              <tr>
-                <td>住所</td>
-                <td>{{ `${model.address1} ${model.address2}` }}</td>
-              </tr>
-              <tr>
-                <td>TEL/FAX</td>
-                <td>{{ `${model.tel} / ${model.fax}` }}</td>
-              </tr>
-              <tr>
-                <td>URL</td>
-                <td>{{ model.url }}</td>
-              </tr>
-              <tr>
-                <td>担当者</td>
-                <td>
-                  {{ model.staffName }}
-                  <span v-if="model.staffEmail">({{ model.staffEmail }})</span>
-                </td>
-              </tr>
-              <tr>
-                <td>敬称</td>
-                <td>{{ model.honor }}</td>
-              </tr>
-              <tr>
-                <td>締日/入金サイト</td>
-                <td>
-                  {{
-                    `${$DEADLINE[model.deadline]}締め / ${
-                      model.depositMonth
-                    }ヶ月後${$DEADLINE[model.depositDay]}`
-                  }}
-                </td>
-              </tr>
-              <tr>
-                <td>端数処理</td>
-                <td>
-                  {{ $ROUNDING[model.rounding] }}
-                </td>
-              </tr>
-              <tr>
-                <td>状態</td>
-                <td>
-                  {{ $CUSTOMER_CONDITION[model.condition] }}
-                </td>
-              </tr>
-            </tbody>
-          </v-simple-table>
-          <v-divider v-if="model.remarks" />
-          <v-card-text v-if="model.remarks">
-            {{ model.remarks }}
-          </v-card-text>
+          <h-simple-table-customer v-bind="model" />
         </v-card>
       </v-container>
     </template>

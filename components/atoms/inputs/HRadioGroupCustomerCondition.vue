@@ -1,32 +1,29 @@
 <script>
 /**
+ * ### HRadioGroupCustomerCondition
+ *
  * @author shisyamo4131
  */
+import ARadioGroup from './ARadioGroup.vue'
 export default {
+  components: { ARadioGroup },
   /******************************************************************
    * MODEL
    ******************************************************************/
   model: { prop: 'value', event: 'change' },
   /******************************************************************
-   * PROPS
+   * DATA
    ******************************************************************/
-  props: {
-    items: { type: Array, default: () => [], required: false },
-    itemText: { type: String, default: 'text', required: false },
-    itemValue: { type: String, default: 'value', required: false },
+  data() {
+    return {
+      items: this.$CUSTOMER_CONDITION_ARRAY,
+    }
   },
 }
 </script>
 
 <template>
-  <v-radio-group v-bind="$attrs" v-on="$listeners">
-    <v-radio
-      v-for="(item, index) of items"
-      :key="index"
-      :label="item[itemText]"
-      :value="item[itemValue]"
-    />
-  </v-radio-group>
+  <a-radio-group v-bind="$attrs" :items="items" v-on="$listeners" />
 </template>
 
 <style></style>
