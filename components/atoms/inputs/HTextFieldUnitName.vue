@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldCollectItemNameKana
+ * ### HTextFieldUnitName
  *
- * A component for nameKana of CollectItem.
+ * A component for name of Unit.
  *
  * @author shisyamo4131
  */
@@ -16,17 +16,13 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '回収品目名カナ', required: false },
+    label: { type: String, default: '単位名', required: false },
   },
 }
 </script>
 
 <template>
-  <a-text-field
-    v-bind="{ ...$props, ...$attrs }"
-    input-type="katakana"
-    v-on="$listeners"
-  >
+  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"

@@ -1,6 +1,5 @@
 <script>
 /**
- * @create 2023-10-06
  * @author shisyamo4131
  */
 export default {

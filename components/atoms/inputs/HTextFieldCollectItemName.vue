@@ -16,7 +16,6 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    counter: { type: Boolean, default: true, required: false },
     label: { type: String, default: '回収品目名', required: false },
   },
 }

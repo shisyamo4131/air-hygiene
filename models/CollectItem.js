@@ -32,7 +32,7 @@ export default class CollectItem extends FireModel {
         collection: 'SiteUnitPrices',
         field: 'collectItemIds',
         condition: 'array-contains',
-        type: 'subcollection',
+        type: 'collection',
       },
       {
         collection: 'CollectionResults',

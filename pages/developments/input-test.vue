@@ -41,6 +41,7 @@
 <script>
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import HInputCollectItem from '~/components/molecules/inputs/HInputCollectItem.vue'
+import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
 import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
 import HInputMunicipalContract from '~/components/molecules/inputs/HInputMunicipalContract.vue'
@@ -55,6 +56,7 @@ export default {
    ******************************************************************/
   components: {
     HInputCollectItem,
+    HInputUnit,
     HInputCustomer,
     HInputSite,
     HInputMunicipalContract,
@@ -74,6 +76,7 @@ export default {
       model: {},
       models: [
         'CollectItem',
+        'Unit',
         'Customer',
         'Site',
         'Permission',

@@ -1,9 +1,10 @@
 <script>
 /**
- * @create 2023-10-06
  * @author shisyamo4131
  */
+import HSimpleTableUnit from '~/components/atoms/tables/HSimpleTableUnit.vue'
 export default {
+  components: { HSimpleTableUnit },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -15,21 +16,9 @@ export default {
    ******************************************************************/
   data() {
     return {
-      tabs: ['Dashboard', '登録情報'],
+      tabs: ['登録情報'],
     }
   },
-  /******************************************************************
-   * MOUNTED
-   ******************************************************************/
-  mounted() {},
-  /******************************************************************
-   * DESTROYED
-   ******************************************************************/
-  destroyed() {},
-  /******************************************************************
-   * METHODS
-   ******************************************************************/
-  methods: {},
 }
 </script>
 
@@ -45,36 +34,14 @@ export default {
       </v-btn>
     </template>
     <template #append-label>
-      <v-btn icon @click="$router.push(`/items/${model.docId}/edit`)">
+      <v-btn icon @click="$router.push(`/units/${model.docId}/edit`)">
         <v-icon>mdi-pencil</v-icon>
       </v-btn>
     </template>
     <template #tab-0>
       <v-container>
         <v-card outlined>
-          <v-card-title>現場情報？</v-card-title>
-        </v-card>
-      </v-container>
-    </template>
-    <template #tab-1>
-      <v-container>
-        <v-card outlined>
-          <v-simple-table>
-            <tbody>
-              <tr>
-                <td>CODE</td>
-                <td>{{ model.code }}</td>
-              </tr>
-              <tr>
-                <td>単位</td>
-                <td>{{ model.name }}</td>
-              </tr>
-              <tr>
-                <td>略称</td>
-                <td>{{ model.abbr }}</td>
-              </tr>
-            </tbody>
-          </v-simple-table>
+          <h-simple-table-unit v-bind="model" />
         </v-card>
       </v-container>
     </template>
