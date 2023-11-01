@@ -1,18 +1,23 @@
 <script>
+/**
+ * ### HInputCollectionResultDetail
+ *
+ * @author shisyamo4131
+ */
 import HAutocompleteCollectItem from '../../atoms/inputs/HAutocompleteCollectItem.vue'
 import HAutocompleteUnit from '../../atoms/inputs/HAutocompleteUnit.vue'
 import HNumericUnitPrice from '../../atoms/inputs/HNumericUnitPrice.vue'
-import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
+import HNumericAmount from '~/components/atoms/inputs/HNumericAmount.vue'
 export default {
   /***************************************************************************
    * COMPONENTS
    ***************************************************************************/
   components: {
     HAutocompleteCollectItem,
-    ANumeric,
     HAutocompleteUnit,
     HNumericUnitPrice,
+    HNumericAmount,
   },
   /***************************************************************************
    * MIXINS
@@ -38,14 +43,13 @@ export default {
       :value="collectItemId"
       required
       :disabled="editMode !== 'REGIST'"
+      @change="$emit('change:collectItemId', $event)"
       @input="$emit('update:collectItemId', $event)"
     />
-    <a-numeric
+    <h-numeric-amount
       label="数量"
-      class="right-input"
       :value="amount"
       required
-      :decimal-places="2"
       @input="$emit('update:amount', $event)"
     />
     <h-autocomplete-unit
@@ -53,6 +57,7 @@ export default {
       :value="unitId"
       required
       :disabled="editMode !== 'REGIST'"
+      @change="$emit('change:unitId', $event)"
       @input="$emit('update:unitId', $event)"
     />
     <h-numeric-unit-price

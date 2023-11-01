@@ -3,29 +3,21 @@
  *
  * A data-model of CollectionResultDetail.
  *
- * #### CONSTRUCTOR
+ * #### PROPERTIES
  *
- * | name     | type    | remarks       |
- * | :---     | :---    | :---          |
- * | context  | object  | nuxt.context  |
- *
- * #### PROPERTIES (read and write)
- *
- * | name           | type    | required | remarks            |
- * | :---           | :---    | :---:    | :---               |
- * | siteId         | string  |          |                    |
- * | date           | string  |          |                    |
- * | collectItemId  | string  | true     |                    |
- * | unitId         | string  | true     |                    |
- * | amount         | number  | true     |                    |
- * | unitPrice      | number  | true     |                    |
- * | price          | number  | true     | amount * unitPrice |
+ * | name          | type   | default | required | remarks |
+ * | :------------ | :----- | ------- | :------: | :------ |
+ * | collectItemId | string | ''      | true     |         |
+ * | unitId        | string | ''      | true     |         |
+ * | amount        | number | null    | true     |         |
+ * | unitPrice     | number | null    | true     |         |
  *
  * #### PROPERTIES (read-only)
  *
- * | name           | type    | remarks                     |
- * | :---           | :---    | :---                        |
- * | id             | string  | ${collectItemId}-${unitId}  |
+ * | name  | type   | default | required | remarks                      |
+ * | :---- | :----- | ------- | :------: | :--------------------------- |
+ * | id    | string | ''      | true     | `${collectItemId}-${unitId}` |
+ * | price | number | 0       | true     | amount * unitPrice           |
  *
  * @author shisyamo4131
  */
@@ -52,34 +44,10 @@ export default class CollectionResultDetail {
         },
         set(v) {},
       },
-      collectItem: {
-        enumerable: false,
-        get() {
-          if (!this.collectItemId) return undefined
-          const result = this.#context.store.getters['masters/CollectItem'](
-            this.collectItemId
-          )
-          return result
-        },
-        set(v) {},
-      },
-      unit: {
-        enumerable: false,
-        get() {
-          if (!this.unitId) return undefined
-          const result = this.#context.store.getters['masters/Unit'](
-            this.unitId
-          )
-          return result
-        },
-        set(v) {},
-      },
     })
   }
 
   initialize(item) {
-    this.siteId = ''
-    this.date = ''
     this.collectItemId = ''
     this.unitId = ''
     this.amount = null
@@ -96,33 +64,34 @@ export default class CollectionResultDetail {
    * Return false if unit-price was not gotten.
    * @returns boolean
    */
-  async setUnitPrice() {
+  async setUnitPrice(siteId, date) {
     /* eslint-disable */
     // Return false if siteId or date is missing.
-    if (!this.siteId || !this.date) {
-      console.warn(`[CollectionResult.js] The siteId or date is missing.`)
-      console.table({ siteId: this.siteId, date: this.date })
+    if (!siteId || !date) {
+      console.warn(`[CollectionResultDetail.js] The siteId or date is missing.`)
+      console.table({ siteId, date })
       return false
     }
     // Return false if collectItem or unit is missing.
-    if (!this.collectItem || !this.unit) {
+    if (!this.collectItemId || !this.unitId) {
       console.warn(
-        `[CollectionResult.js] The collectItem or unit could not be identified.`
+        `[CollectionResultDetail.js] The collectItem or unit could not be identified.`
       )
       console.table({ collectItemId: this.collectItemId, unitId: this.unitId })
       return false
     }
     // Get price from SiteUnitPrice model and set it to unitPrice property.
     const app = this.#context.app
-    const siteUnitPriceModel = app.$SiteUnitPrice(this.siteId)
+    const siteUnitPrice = app.$SiteUnitPrice()
     const id = `${this.collectItemId}-${this.unitId}`
     try {
-      const fetchedPrice = await siteUnitPriceModel.fetchUnitPrice(
-        this.date,
+      const fetchedUnitPrice = await siteUnitPrice.fetchUnitPrice(
+        siteId,
+        date,
         id
       )
-      this.unitPrice = fetchedPrice
-      if (!fetchedPrice && fetchedPrice !== 0) return false
+      this.unitPrice = fetchedUnitPrice || null
+      if (!fetchedUnitPrice && fetchedUnitPrice !== 0) return false
       return true
     } catch (err) {
       console.error(err)

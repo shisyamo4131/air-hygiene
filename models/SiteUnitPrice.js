@@ -94,4 +94,17 @@ export default class SiteUnitPrice extends FireModel {
     })
     return listener
   }
+
+  async fetchUnitPrice(siteId, date, id) {
+    try {
+      await this.fetchLatest(siteId, date)
+      if (!this.docId) return undefined
+      const result = this.details.find((detail) => detail.id === id)
+      return result?.unitPrice || undefined
+    } catch (err) {
+      // eslint-disable-next-line
+      console.error(err)
+      throw err
+    }
+  }
 }

@@ -47,9 +47,9 @@ import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
 import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
 import HInputSiteUnitPriceDetail from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
 import HInputSiteMunicipalContract from '~/components/molecules/inputs/HInputSiteMunicipalContract.vue'
+import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
 import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
-import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
 import HRadioGroupEditModel from '~/components/molecules/inputs/HRadioGroupEditModel.vue'
 export default {
   /******************************************************************
@@ -63,11 +63,11 @@ export default {
     HInputCustomer,
     HInputSite,
     HInputSiteMunicipalContract,
+    HInputCollectionResultDetail,
     HInputMunicipalPermission,
     ASelect,
     HRadioGroupEditModel,
     HInputCollectionResult,
-    HInputCollectionResultDetail,
   },
   /******************************************************************
    * DATA
@@ -84,10 +84,10 @@ export default {
         'SiteUnitPrice',
         'SiteUnitPriceDetail',
         'SiteMunicipalContract',
+        'CollectionResultDetail',
         'Permission',
         'HInputMunicipalContract',
         'CollectionResult',
-        'CollectionResultDetail',
       ],
       selectedModel: '',
     }

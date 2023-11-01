@@ -1,20 +1,21 @@
 <template>
   <div>
-    <h-input-site-unit-price-details
+    <h-input-collection-result-details
       v-model="items"
-      model="SiteUnitPriceDetail"
+      :site-id="siteId"
+      :date="date"
     />
     {{ items }}
   </div>
 </template>
 
 <script>
-import HInputSiteUnitPriceDetails from '~/components/molecules/inputs/HInputSiteUnitPriceDetails.vue'
+import HInputCollectionResultDetails from '~/components/molecules/inputs/HInputCollectionResultDetails.vue'
 export default {
-  components: { HInputSiteUnitPriceDetails },
+  components: { HInputCollectionResultDetails },
   data() {
     return {
-      siteId: '0hDaxOWY8tcp1hRQlcGN',
+      siteId: 'UVgfx4L1kWUXYytmApvs',
       date: '2023-10-01',
       value: null,
       editModel: this.$CollectionResultDetail(),
