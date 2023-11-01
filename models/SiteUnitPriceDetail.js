@@ -1,35 +1,22 @@
 /**
  * ### SiteUnitPriceDetail
  *
- * A data-model of SiteUnitPriceDetail.
+ * A data model of SiteUnitPriceDetail.
  *
- * #### CONSTRUCTOR
+ * #### PROPERTIES
  *
- * | name     | type    | remarks       |
- * | :---     | :---    | :---          |
- * | context  | object  | nuxt.context  |
- *
- * #### PROPERTIES (read and write)
- *
- * | name           | type    | required | remarks  |
- * | :---           | :---    | :---:    | :---     |
- * | collectItemId  | string  | true     |          |
- * | unitId         | string  | true     |          |
- * | unitPrice      | number  | true     |          |
- *
- * #### PROPERTIES (read-only)
- *
- * | name           | type    | remarks                     |
- * | :---           | :---    | :---                        |
- * | id             | string  | ${collectItemId}-${unitId}  |
+ * | name          | type   | required | remarks                      |
+ * | :------------ | :----- | :------: | :--------------------------- |
+ * | id            | string | true     | `${collectItemId}-${unitId}` |
+ * | collectItemId | string | true     |                              |
+ * | unitId        | string | true     |                              |
+ * | unitPrice     | number | true     |                              |
  *
  * @author shisyamo4131
  */
 
 export default class SiteUnitPriceDetail {
-  #context
   constructor(context) {
-    this.#context = context
     this.initialize()
     Object.defineProperties(this, {
       id: {

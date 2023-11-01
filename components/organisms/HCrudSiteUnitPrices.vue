@@ -14,7 +14,7 @@
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
 import HInputSiteUnitPrice from '../molecules/inputs/HInputSiteUnitPrice.vue'
-import HDataTableSiteUnitPriceDetails from '../molecules/tables/HDataTableSiteUnitPriceDetails.vue'
+import HDataTableSiteUnitPriceDetails from '../atoms/tables/HDataTableSiteUnitPriceDetails.vue'
 export default {
   /******************************************************************
    * COMPONENTS

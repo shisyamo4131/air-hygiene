@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HDataTableSiteUnitPriceDetails from '../molecules/tables/HDataTableSiteUnitPriceDetails.vue'
+import HDataTableSiteUnitPriceDetails from '../atoms/tables/HDataTableSiteUnitPriceDetails.vue'
 export default {
   /******************************************************************
    * COMPONENTS

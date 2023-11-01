@@ -23,7 +23,6 @@
  * | label             | string         | undefined                                                              | false    |         |
  * | registIcon        | string         | mdi-plus                                                               | false    |         |
  * | showActions       | boolean        | false                                                                  | false    |         |
- * | showToolbar       | boolean        | false                                                                  | false    |         |
  *
  * #### SLOTS
  *
@@ -71,7 +70,6 @@ export default {
     label: { type: String, default: undefined, required: false },
     registIcon: { type: String, default: 'mdi-plus', required: false },
     showActions: { type: Boolean, default: false, required: false },
-    showToolbar: { type: Boolean, default: false, required: false },
   },
   /******************************************************************
    * COMPUTED
@@ -91,8 +89,9 @@ export default {
       return this.height - this.toolbarHeight - this.footerHeight
     },
     toolbarHeight() {
-      if (!this.showToolbar) return 0
-      return this.$vuetify.breakpoint.smAndDown ? 56 : 64
+      if (!this.label) return 0
+      // return this.$vuetify.breakpoint.smAndDown ? 56 : 64
+      return 48
     },
   },
   /******************************************************************
@@ -103,77 +102,78 @@ export default {
       this.$emit('click:regist')
     },
     onClickEdit(item) {
-      const index = this.items.indexOf(item)
-      this.$emit('click:edit', index)
+      this.$emit('click:edit', item)
     },
     onClickDelete(item) {
-      const index = this.items.indexOf(item)
-      this.$emit('click:delete', index)
+      this.$emit('click:delete', item)
     },
   },
 }
 </script>
 
 <template>
-  <v-data-table
-    v-bind="$attrs"
-    :headers="internalHeaders"
-    :height="internalHeight"
-    :items="items"
-    v-on="$listeners"
-  >
-    <template #top>
-      <slot name="top">
-        <v-toolbar v-if="showToolbar" flat>
-          <v-toolbar-title>{{ label }}</v-toolbar-title>
-          <v-divider class="ml-4" vertical />
-          <v-spacer />
-          <!-- Provides regist-icon slot. -->
-          <slot
-            name="regist-icon"
-            :attrs="{ disabled: disableRegist, height: toolbarHeight }"
-            :on="{ click: () => onClickRegist() }"
-          >
-            <v-icon :disabled="disableRegist" icon @click="onClickRegist()">
-              {{ registIcon }}
-            </v-icon>
-          </slot>
-        </v-toolbar>
-      </slot>
-    </template>
-    <template v-if="showActions" #[`item.actions`]="{ item }">
-      <!-- Provides edit-icon slot. -->
+  <div>
+    <v-toolbar v-if="label" dense flat>
+      <v-toolbar-title class="text-subtitle-1">{{ label }}</v-toolbar-title>
+      <v-divider class="ml-4" vertical />
+      <v-spacer />
+      <!-- Provides regist-icon slot. -->
       <slot
-        name="edit-icon"
-        :attrs="{ disabled: disableEdit, class: { 'mr-2': true } }"
-        :on="{ click: () => onClickEdit(item) }"
+        v-if="showActions"
+        name="regist-icon"
+        :attrs="{ disabled: disableRegist, height: toolbarHeight }"
+        :on="{ click: () => onClickRegist() }"
       >
-        <v-icon :disabled="disableEdit" class="mr-2" @click="onClickEdit(item)">
-          {{ editIcon }}
+        <v-icon :disabled="disableRegist" icon @click="onClickRegist()">
+          {{ registIcon }}
         </v-icon>
       </slot>
-      <!-- Provides delete-icon slot. -->
-      <slot
-        name="delete-icon"
-        :attrs="{ disabled: disableDelete }"
-        :on="{ click: () => onClickDelete(item) }"
-      >
-        <v-icon :disabled="disableDelete" @click="onClickDelete(item)">
-          {{ deleteIcon }}
-        </v-icon>
-      </slot>
-    </template>
-    <!-- Provides other slots. -->
-    <template
-      v-for="(_, scopedSlotName) in $scopedSlots"
-      #[scopedSlotName]="slotData"
+    </v-toolbar>
+    <v-data-table
+      v-bind="$attrs"
+      :headers="internalHeaders"
+      :height="internalHeight"
+      :items="items"
+      v-on="$listeners"
     >
-      <slot :name="scopedSlotName" v-bind="slotData" />
-    </template>
-    <template v-for="(_, slotName) in $slots" #[slotName]>
-      <slot :name="slotName" />
-    </template>
-  </v-data-table>
+      <template v-if="showActions" #[`item.actions`]="{ item }">
+        <!-- Provides edit-icon slot. -->
+        <slot
+          name="edit-icon"
+          :attrs="{ disabled: disableEdit, class: { 'mr-2': true } }"
+          :on="{ click: () => onClickEdit(item) }"
+        >
+          <v-icon
+            :disabled="disableEdit"
+            class="mr-2"
+            @click="onClickEdit(item)"
+          >
+            {{ editIcon }}
+          </v-icon>
+        </slot>
+        <!-- Provides delete-icon slot. -->
+        <slot
+          name="delete-icon"
+          :attrs="{ disabled: disableDelete }"
+          :on="{ click: () => onClickDelete(item) }"
+        >
+          <v-icon :disabled="disableDelete" @click="onClickDelete(item)">
+            {{ deleteIcon }}
+          </v-icon>
+        </slot>
+      </template>
+      <!-- Provides other slots. -->
+      <template
+        v-for="(_, scopedSlotName) in $scopedSlots"
+        #[scopedSlotName]="slotData"
+      >
+        <slot :name="scopedSlotName" v-bind="slotData" />
+      </template>
+      <template v-for="(_, slotName) in $slots" #[slotName]>
+        <slot :name="slotName" />
+      </template>
+    </v-data-table>
+  </div>
 </template>
 
 <style></style>

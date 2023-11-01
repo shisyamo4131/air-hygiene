@@ -1,7 +1,7 @@
 <script>
-import HAutocompleteCollectItem from './HAutocompleteCollectItem.vue'
-import HAutocompleteUnit from './HAutocompleteUnit.vue'
-import HNumericUnitPrice from './HNumericUnitPrice.vue'
+import HAutocompleteCollectItem from '../../atoms/inputs/HAutocompleteCollectItem.vue'
+import HAutocompleteUnit from '../../atoms/inputs/HAutocompleteUnit.vue'
+import HNumericUnitPrice from '../../atoms/inputs/HNumericUnitPrice.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {

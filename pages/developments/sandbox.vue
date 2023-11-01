@@ -1,14 +1,17 @@
 <template>
   <div>
-    <h-text-field-collect-item-code v-model="value" required />
-    {{ value }}
+    <h-input-site-unit-price-details
+      v-model="items"
+      model="SiteUnitPriceDetail"
+    />
+    {{ items }}
   </div>
 </template>
 
 <script>
-import HTextFieldCollectItemCode from '~/components/atoms/inputs/HTextFieldCollectItemCode.vue'
+import HInputSiteUnitPriceDetails from '~/components/molecules/inputs/HInputSiteUnitPriceDetails.vue'
 export default {
-  components: { HTextFieldCollectItemCode },
+  components: { HInputSiteUnitPriceDetails },
   data() {
     return {
       siteId: '0hDaxOWY8tcp1hRQlcGN',
@@ -22,16 +25,16 @@ export default {
       ],
       items: [
         {
-          collectItemId: '4aODIZusF3GDXY6ijAFK',
-          unitId: '2ex58kaPmws7hZ9MW1BK',
-          id: '4aODIZusF3GDXY6ijAFK-2ex58kaPmws7hZ9MW1BK',
+          collectItemId: '1011',
+          unitId: '11',
+          id: '1011-11',
           amount: 30,
           unitPrice: 300,
         },
         {
-          collectItemId: '54GhKFHexnbdWN3TtSyF',
-          unitId: '3HkRjuhT1e1yCKdE2ZTq',
-          id: '54GhKFHexnbdWN3TtSyF-3HkRjuhT1e1yCKdE2ZTq',
+          collectItemId: '1015',
+          unitId: '11',
+          id: '1015-11',
           amount: 20,
           unitPrice: 30,
         },
