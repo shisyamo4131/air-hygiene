@@ -133,6 +133,7 @@ export default {
       v-bind="$attrs"
       :headers="internalHeaders"
       :height="internalHeight"
+      :hide-default-footer="hideDefaultFooter"
       :items="items"
       v-on="$listeners"
     >

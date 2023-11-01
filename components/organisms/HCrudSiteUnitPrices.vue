@@ -1,14 +1,13 @@
 <script>
 /**
  * ### HCrudSiteUnitPrices
- * 排出場所の回収単価を管理するためのコンポーネントです。
- * 時系列で把握できるようにtimelineコンポーネントを利用しています。
  *
  * #### PROPERTIES
- * | name           | type    | required  | remarks       |
- * | :---           | :---    | :---:     | :---          |
- * | siteId         | String  | true      |               |
- * | items          | Array   | false     |               |
+ *
+ * | name   | type   | default | required | remarks |
+ * | :----- | :----- | ------- | :------: | :------ |
+ * | siteId | string | -       | true     |         |
+ * | items  | array  | []      | false    |         |
  *
  * @author shisyamo4131
  */
@@ -106,8 +105,8 @@ export default {
       }
     },
     async onClickSubmit() {
-      if (this.isDelete) await this.submit('DELETE')
-      if (!this.isDelete) await this.submit(this.editMode)
+      const mode = this.isDelete ? 'DELETE' : this.editMode
+      await this.submit(mode)
     },
     onClickCancel() {
       this.editor = false
