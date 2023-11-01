@@ -1,28 +1,23 @@
 /**
  * ### SiteUnitPrice
  *
- * A data-model of SiteUnitPrice.
+ * A data model of SiteUnitPrice.
  *
- * #### CONSTRUCTOR
+ * #### PROPERTIES
  *
- * | name     | type    | remarks                   |
- * | :---     | :---    | :---                      |
- * | context  | object  | nuxt.context              |
+ * | name    | type   | default | required | remarks |
+ * | :------ | :----- | ------- | :------: | :------ |
+ * | siteId  | string | ''      | true     |         |
+ * | date    | string | ''      | true     |         |
+ * | details | array  | []      | true     |         |
  *
- * #### PROPERTIES (read and write)
+ * #### PROPERTIES(readonly)
  *
- * | name           | type    | required | remarks  |
- * | :---           | :---    | :---:    | :---     |
- * | siteId         | String  | true     |          |
- * | date           | String  | true     |          |
- * | details        | Array   | true     |          |
- *
- * #### PROPERTIES (read-only)
- *
- * | name           | type    | remarks   |
- * | :---           | :---    | :---      |
- * | collectItemIds | Array   |           |
- * | unitIds        | Array   |           |
+ * | name           | type  | default | required | remarks                      |
+ * | :------------- | :---- | ------- | :------: | :--------------------------- |
+ * | collectItemIds | array | []      | true     | Document ids of CollectItem. |
+ * | unitIds        | array | []      | true     | Document ids of Unit.        |
+ * | details        | array | []      | true     |                              |
  *
  * @author shisyamo4131
  */

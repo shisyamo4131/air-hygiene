@@ -1,17 +1,19 @@
 <script>
 /**
+ * ### HInputSiteUnitPrice
+ *
  * @author shisyamo4131
  */
 import HInputSiteUnitPriceDetails from './HInputSiteUnitPriceDetails.vue'
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
+import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    ATextField,
     HInputSiteUnitPriceDetails,
+    HTextFieldDate,
   },
   /******************************************************************
    * MIXINS
@@ -30,16 +32,14 @@ export default {
 
 <template>
   <div>
-    <a-text-field
+    <h-text-field-date
       label="開始日"
       :value="date"
       required
-      input-type="date"
       @input="$emit('update:date', $event)"
     />
     <h-input-site-unit-price-details
       :value="details"
-      :edit-mode="editMode"
       @input="$emit('update:details', $event)"
     />
   </div>

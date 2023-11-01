@@ -43,6 +43,7 @@ import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import HInputCollectItem from '~/components/molecules/inputs/HInputCollectItem.vue'
 import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
 import HInputSiteUnitPriceDetail from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
+import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
 import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
 import HInputMunicipalContract from '~/components/molecules/inputs/HInputMunicipalContract.vue'
@@ -58,6 +59,7 @@ export default {
     HInputCollectItem,
     HInputUnit,
     HInputSiteUnitPriceDetail,
+    HInputSiteUnitPrice,
     HInputCustomer,
     HInputSite,
     HInputMunicipalContract,
@@ -78,6 +80,7 @@ export default {
         'CollectItem',
         'Unit',
         'SiteUnitPriceDetail',
+        'SiteUnitPrice',
         'Customer',
         'Site',
         'Permission',

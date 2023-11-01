@@ -5,7 +5,6 @@ export default {
    ******************************************************************/
   props: {
     itemKey: { type: String, default: 'id', required: false },
-    model: { type: String, required: true },
     value: { type: Array, required: true },
   },
   /******************************************************************
@@ -14,7 +13,7 @@ export default {
   data() {
     return {
       editIndex: -1,
-      editModel: this[`$${this.model}`](),
+      editModel: null,
       editor: false,
     }
   },
