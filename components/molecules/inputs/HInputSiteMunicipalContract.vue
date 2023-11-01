@@ -1,18 +1,26 @@
 <script>
 /**
- * @create 2023-10-07
+ * ### HInputSiteMunicipalContract
+ *
  * @author shisyamo4131
  */
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
+import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
+import HNumericUnitPrice from '~/components/atoms/inputs/HNumericUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ATextField, ATextarea, ANumeric, ASelect },
+  components: {
+    ATextarea,
+    ANumeric,
+    ASelect,
+    HTextFieldDate,
+    HNumericUnitPrice,
+  },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -47,22 +55,18 @@ export default {
 
 <template>
   <div>
-    <a-text-field
+    <h-text-field-date
       label="契約日"
       :value="date"
       required
-      input-type="date"
       @input="$emit('update:date', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <a-numeric
+        <h-numeric-unit-price
           label="契約単価（税抜）"
           :value="unitPrice"
           required
-          suffix="円/kg"
-          decimal-places="2"
-          class="right-input"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>

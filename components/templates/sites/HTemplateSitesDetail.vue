@@ -11,21 +11,19 @@
  *
  * @author shisyamo4131
  */
+import HSimpleTableSite from '~/components/atoms/tables/HSimpleTableSite.vue'
+import HCrudSiteMunicipalContracts from '~/components/organisms/HCrudSiteMunicipalContracts.vue'
 import HCrudSiteUnitPrices from '~/components/organisms/HCrudSiteUnitPrices.vue'
 import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
-import HDetailSite from '~/components/organisms/HDetailSite.vue'
-import HTimelineSiteMunicipalContracts from '~/components/organisms/HTimelineSiteMunicipalContracts.vue'
-// import HTimelineSiteUnitPrices from '~/components/organisms/HTimelineSiteUnitPrices.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     HDashboardSite,
-    HDetailSite,
-    // HTimelineSiteUnitPrices,
-    HTimelineSiteMunicipalContracts,
     HCrudSiteUnitPrices,
+    HSimpleTableSite,
+    HCrudSiteMunicipalContracts,
   },
   /******************************************************************
    * PROPS
@@ -95,7 +93,7 @@ export default {
     <!-- TAB:1 SITE-INFORMATION -->
     <template #tab-1>
       <v-container fluid>
-        <h-detail-site :model="model" />
+        <h-simple-table-site v-bind="model" />
       </v-container>
     </template>
     <!-- TAB:2 -->
@@ -103,7 +101,10 @@ export default {
       <v-container fluid>
         <v-window v-model="wasteDivTab">
           <v-window-item>
-            <h-timeline-site-municipal-contracts :model="model" />
+            <h-crud-site-municipal-contracts
+              :site-id="model.docId"
+              :items="[]"
+            />
           </v-window-item>
           <v-window-item> aaa </v-window-item>
         </v-window>

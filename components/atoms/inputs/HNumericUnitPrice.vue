@@ -12,7 +12,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    unitId: { type: String, default: '', required: false },
+    unitId: { type: String, default: '11', required: false },
     disabled: { type: Boolean, default: false, required: false },
     loading: { type: Boolean, default: false, required: false },
   },

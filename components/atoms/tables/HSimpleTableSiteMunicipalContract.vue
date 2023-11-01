@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HSimpleTableMunicipalContract
+ * ### HSimpleTableSiteMunicipalContract
  * 一般廃棄物の契約情報（MunicipalContract）を表示するためのテーブルです。
  *
  * #### PROPS

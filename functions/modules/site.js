@@ -9,8 +9,8 @@ const {
 } = require('firebase-functions/v2/firestore')
 const { deleteCollections, syncData } = require('./firestore')
 
-/* Define subcollections */
-const subcollections = ['SiteUnitPrices']
+/* Define relations */
+const relations = ['SiteUnitPrices', 'SiteMunicipalContracts']
 
 exports.updated = onDocumentUpdated('Sites/{siteId}', async (event) => {
   const data = event.data.after.data()
@@ -19,7 +19,7 @@ exports.updated = onDocumentUpdated('Sites/{siteId}', async (event) => {
 })
 
 exports.deleted = onDocumentDeleted('Sites/{siteId}', async (event) => {
-  const siteId = event.params.siteId
-  const promises = [deleteCollections(subcollections, `Sites/${siteId}`)]
+  // const siteId = event.params.siteId
+  const promises = [deleteCollections(relations)]
   await Promise.all(promises)
 })

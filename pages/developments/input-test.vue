@@ -42,11 +42,11 @@
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import HInputCollectItem from '~/components/molecules/inputs/HInputCollectItem.vue'
 import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
-import HInputSiteUnitPriceDetail from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
-import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
 import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
-import HInputMunicipalContract from '~/components/molecules/inputs/HInputMunicipalContract.vue'
+import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
+import HInputSiteUnitPriceDetail from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
+import HInputSiteMunicipalContract from '~/components/molecules/inputs/HInputSiteMunicipalContract.vue'
 import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
 import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
@@ -62,7 +62,7 @@ export default {
     HInputSiteUnitPrice,
     HInputCustomer,
     HInputSite,
-    HInputMunicipalContract,
+    HInputSiteMunicipalContract,
     HInputMunicipalPermission,
     ASelect,
     HRadioGroupEditModel,
@@ -79,10 +79,11 @@ export default {
       models: [
         'CollectItem',
         'Unit',
-        'SiteUnitPriceDetail',
-        'SiteUnitPrice',
         'Customer',
         'Site',
+        'SiteUnitPrice',
+        'SiteUnitPriceDetail',
+        'SiteMunicipalContract',
         'Permission',
         'HInputMunicipalContract',
         'CollectionResult',
