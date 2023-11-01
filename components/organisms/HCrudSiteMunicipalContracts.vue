@@ -82,10 +82,6 @@ export default {
       this.isDelete = false
     },
     validate() {
-      if (!this.editModel.details.length) {
-        alert('少なくとも1つ以上の単価を登録してください。')
-        return false
-      }
       return true
     },
     async submit(mode) {
