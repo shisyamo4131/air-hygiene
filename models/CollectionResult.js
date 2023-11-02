@@ -3,36 +3,30 @@
  *
  * A data-model of CollectionResult.
  *
- * #### CONSTRUCTOR
+ * #### PROPERTIES
  *
- * | name     | type    | remarks       |
- * | :---     | :---    | :---          |
- * | context  | object  | nuxt.context  |
- *
- * #### PROPERTIES (read and write)
- *
- * | name             | type    | required | remarks            |
- * | :---             | :---    | :---:    | :---               |
- * | date             | string  | true     |                    |
- * | site             | object  | true     |                    |
- * | resultType       | string  | true     | 'root' or 'spot'   |
- * | rootId           | string  | *        | Required if 'root'.|
- * | details          | array   | true     |                    |
- * | municipalWeight  | number  | true     |                    |
- * | industrialWeight | number  | true     |                    |
- * | dateDeadline     | string  | true     |                    |
- * | remarks          | string  | false    |                    |
+ * | name             | type   | default | required | remarks                           |
+ * | :--------------- | :----- | ------- | :------: | :-------------------------------- |
+ * | date             | string | ''      | true     |                                   |
+ * | site             | object | null    | true     |                                   |
+ * | resultType       | string | ''      | true     | [ 'root', 'spot' ]                |
+ * | rootId           | string | ''      | *        | Required if resultType is 'root'. |
+ * | details          | array  | []      | true     |                                   |
+ * | municipalWeight  | number | null    | true     |                                   |
+ * | industrialWeight | number | null    | true     |                                   |
+ * | dateDeadline     | string | ''      | true     |                                   |
+ * | remarks          | string |         | false    |                                   |
  *
  * #### PROPERTIES (read-only)
  *
- * | name             | type    | remarks                                 |
- * | :---             | :---    | :---                                    |
- * | year             | string  | year of date.                           |
- * | month            | string  | month of date.                          |
- * | yearMonth        | string  | YYYY-MM of date.                        |
- * | sales            | number  | Total price of details                  |
- * | collectItemIds   | array   | An array of docId included in details.  |
- * | unitIds          | array   | An array of docId included in details.  |
+ * | name           | type   | remarks                                |
+ * | :------------- | :----- | :------------------------------------- |
+ * | year           | string | year of date.                          |
+ * | month          | string | month of date.                         |
+ * | yearMonth      | string | YYYY-MM of date.                       |
+ * | sales          | number | Total price of details                 |
+ * | collectItemIds | array  | An array of docId included in details. |
+ * | unitIds        | array  | An array of docId included in details. |
  *
  * @author shisyamo4131
  */

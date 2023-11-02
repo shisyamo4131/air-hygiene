@@ -39,24 +39,6 @@ export default {
     dateDeadline: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
   },
-  /******************************************************************
-   * DATA
-   ******************************************************************/
-  data() {
-    return {}
-  },
-  /******************************************************************
-   * COMPUTED
-   ******************************************************************/
-  computed: {},
-  /******************************************************************
-   * WATCH
-   ******************************************************************/
-  watch: {},
-  /******************************************************************
-   * METHODS
-   ******************************************************************/
-  methods: {},
 }
 </script>
 
@@ -66,7 +48,6 @@ export default {
       label="回収日"
       :value="date"
       required
-      input-type="date"
       @change="$emit('change:date', $event)"
       @input="$emit('update:date', $event)"
     />
@@ -87,8 +68,8 @@ export default {
     />
     <h-input-collection-result-details
       :value="details"
-      :site-id="site?.docId || undefined"
-      :date="date || undefined"
+      :site-id="site?.docId || ''"
+      :date="date || ''"
       :disabled="disabled"
       @input="$emit('update:details', $event)"
     />
@@ -114,7 +95,6 @@ export default {
       label="請求締日"
       :value="dateDeadline"
       required
-      input-type="date"
       @input="$emit('update:dateDeadline', $event)"
     />
     <a-textarea
