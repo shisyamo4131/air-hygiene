@@ -13,68 +13,51 @@ export default {
    ******************************************************************/
   components: { ADataTable },
   /******************************************************************
-   * PROPS
-   ******************************************************************/
-  props: {
-    items: { type: Array, default: () => [], required: false },
-  },
-  /******************************************************************
    * DATA
    ******************************************************************/
   data() {
     return {
       headers: [
-        { text: '回収品目', value: 'collectItem' },
+        { text: '回収品目', value: 'collectItemId' },
         { text: '数量', value: 'amount', align: 'right', sortable: false },
+        { text: '単位', value: 'unitId', align: 'center', sortable: false },
         { text: '単価', value: 'unitPrice', align: 'right', sortable: false },
         { text: '金額', value: 'price', align: 'right', sortable: false },
       ],
     }
   },
   /******************************************************************
-   * COMPUTED
+   * METHODS
    ******************************************************************/
-  computed: {
-    extendedItems() {
-      return this.items
-        .map((item) => {
-          const collectItem = this.$CollectItem()
-          collectItem.initialize(
-            this.$store.getters['masters/CollectItem'](item.collectItemId)
-          )
-          const unit = this.$Unit()
-          unit.initialize(this.$store.getters['masters/Unit'](item.unitId))
-          return {
-            ...item,
-            collectItem: `[${collectItem.code}] ${collectItem.abbr}`,
-            unit,
-          }
-        })
-        .sort((a, b) => {
-          if (a.id < b.id) return -1
-          if (a.id > b.id) return 1
-          return 0
-        })
+  methods: {
+    collectItem(id) {
+      const item = this.$store.getters['masters/CollectItem'](id)
+      return item
+    },
+    unit(id) {
+      const item = this.$store.getters['masters/Unit'](id)
+      return item
     },
   },
 }
 </script>
 
 <template>
-  <a-data-table
-    v-bind="$attrs"
-    :headers="headers"
-    :items="extendedItems"
-    v-on="$listeners"
-  >
+  <a-data-table v-bind="$attrs" :headers="headers" v-on="$listeners">
+    <template #[`item.collectItemId`]="{ item }">
+      {{ collectItem(item.collectItemId)?.abbr || 'undefined' }}
+    </template>
+    <template #[`item.unitId`]="{ item }">
+      {{ unit(item.unitId)?.abbr || 'undefined' }}
+    </template>
     <template #[`item.amount`]="{ item }">
-      {{ `${(item?.amount || 0).toFixed(2)} ${item.unit.abbr}` }}
+      {{ `${(item?.amount || 0).toFixed(2)}` }}
     </template>
     <template #[`item.unitPrice`]="{ item }">
       {{ `${(item?.unitPrice || 0).toFixed(2)} 円` }}
     </template>
     <template #[`item.price`]="{ item }">
-      {{ `${(item?.price || 0).toFixed(2)} 円/${item.unit.abbr}` }}
+      {{ `${(item?.price || 0).toFixed(2)} 円` }}
     </template>
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
