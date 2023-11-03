@@ -5,7 +5,6 @@
       :site-id="siteId"
       :date="date"
     />
-    {{ items }}
   </div>
 </template>
 
@@ -18,6 +17,7 @@ export default {
       siteId: 'UVgfx4L1kWUXYytmApvs',
       date: '2023-10-01',
       value: null,
+      editor: false,
       editModel: this.$CollectionResultDetail(),
       item: '',
       headers: [
@@ -41,11 +41,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    test() {
-      alert('OK')
-    },
   },
 }
 </script>

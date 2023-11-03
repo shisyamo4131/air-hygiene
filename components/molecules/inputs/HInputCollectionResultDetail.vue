@@ -27,11 +27,31 @@ export default {
    * PROPS
    ***************************************************************************/
   props: {
+    /* data-model */
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
     amount: { type: Number, default: null, required: false },
     unitPrice: { type: Number, default: null, required: false },
-    loadingUnitPrice: { type: Boolean, default: false, required: false },
+    /* for loading unit-price. */
+    siteId: { type: String, default: '', required: false },
+    date: { type: String, default: '', required: false },
+  },
+  /***************************************************************************
+   * METHODS
+   ***************************************************************************/
+  methods: {
+    async loadUnitPrice() {
+      if (!this.siteId || !this.date) return
+      if (!this.collectItemId || !this.unitId) return
+      const id = `${this.collectItemId}-${this.unitId}`
+      const siteUnitPrice = this.$SiteUnitPrice()
+      const fetchedPrice = await siteUnitPrice.fetchUnitPrice(
+        this.siteId,
+        this.date,
+        id
+      )
+      this.$emit('update:unitPrice', fetchedPrice)
+    },
   },
 }
 </script>
@@ -43,7 +63,7 @@ export default {
       :value="collectItemId"
       required
       :disabled="editMode !== 'REGIST'"
-      @change="$emit('change:collectItemId', $event)"
+      @change="loadUnitPrice"
       @input="$emit('update:collectItemId', $event)"
     />
     <h-numeric-amount
@@ -57,7 +77,7 @@ export default {
       :value="unitId"
       required
       :disabled="editMode !== 'REGIST'"
-      @change="$emit('change:unitId', $event)"
+      @change="loadUnitPrice"
       @input="$emit('update:unitId', $event)"
     />
     <h-numeric-unit-price
@@ -65,7 +85,6 @@ export default {
       :value="unitPrice"
       required
       :unit-id="unitId"
-      :loading="loadingUnitPrice"
       @input="$emit('update:unitPrice', $event)"
     />
   </div>

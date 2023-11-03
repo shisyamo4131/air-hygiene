@@ -113,7 +113,7 @@ export default {
 
 <template>
   <div>
-    <v-toolbar v-if="label" dense flat>
+    <v-toolbar v-if="showActions" dense flat>
       <v-toolbar-title class="text-subtitle-1">{{ label }}</v-toolbar-title>
       <v-divider class="ml-4" vertical />
       <v-spacer />

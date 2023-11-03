@@ -25,6 +25,7 @@ export default {
   props: {
     siteId: { type: String, required: true },
     date: { type: String, required: true },
+    value: { type: Array, default: () => [], required: false },
   },
   /******************************************************************
    * DATA
@@ -32,9 +33,6 @@ export default {
   data() {
     return {
       editModel: this.$CollectionResultDetail(),
-      loading: {
-        unitPrice: false,
-      },
     }
   },
   /******************************************************************
@@ -54,18 +52,6 @@ export default {
         resolve(true)
       })
     },
-    async setUnitPrice() {
-      try {
-        this.loading.unitPrice = true
-        await this.editModel.setUnitPrice(this.siteId, this.date)
-      } catch (err) {
-        // eslint-disable-next-line
-        console.error(err)
-        alert(err.message)
-      } finally {
-        this.loading.unitPrice = false
-      }
-    },
   },
 }
 </script>
@@ -83,9 +69,8 @@ export default {
           <h-input-collection-result-detail
             v-bind.sync="editModel"
             :edit-mode="editMode"
-            :loading-unit-price="loading.unitPrice"
-            @change:collectItemId="setUnitPrice()"
-            @change:unitId="setUnitPrice()"
+            :site-id="siteId"
+            :date="date"
           />
         </v-card-text>
       </air-card-form-input>
