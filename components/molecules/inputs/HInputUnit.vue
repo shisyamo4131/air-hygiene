@@ -3,7 +3,7 @@ import ATextField from '~/components/atoms/inputs/ATextField.vue'
 /**
  * @author shisyamo4131
  */
-import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
+import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS

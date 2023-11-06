@@ -1,17 +1,17 @@
 <script>
 /**
- * ### HInputSiteUnitPriceDetails
+ * ### MInputSiteUnitPriceDetails
  *
  * @author shisyamo4131
  */
 import ADataTableSiteUnitPriceDetails from '../../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
-import HInputSiteUnitPriceDetail from './HInputSiteUnitPriceDetail.vue'
+import MInputSiteUnitPriceDetail from './MInputSiteUnitPriceDetail.vue'
 import AMixinArrayInput from '~/components/atoms/mixins/AMixinArrayInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ADataTableSiteUnitPriceDetails, HInputSiteUnitPriceDetail },
+  components: { ADataTableSiteUnitPriceDetails, MInputSiteUnitPriceDetail },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -61,7 +61,7 @@ export default {
           @click:submit="onClickSubmit"
         >
           <v-card-text>
-            <h-input-site-unit-price-detail
+            <m-input-site-unit-price-detail
               v-bind.sync="editModel"
               :edit-mode="editMode"
             />

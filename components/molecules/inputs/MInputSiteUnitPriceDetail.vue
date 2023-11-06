@@ -1,10 +1,14 @@
 <script>
 /**
+ * ### MInputSiteUnitPriceDetail
+ *
+ * - A component for inputs of SiteUnitPriceDetail.
+ *
  * @author shisyamo4131
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
+import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /******************************************************************
@@ -23,9 +27,9 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    collectItemId: { type: String, default: '', required: false },
-    unitId: { type: String, default: '', required: false },
-    unitPrice: { type: Number, default: null, required: false },
+    collectItemId: { type: String, required: true },
+    unitId: { type: String, required: true },
+    unitPrice: { type: Number, required: true },
   },
 }
 </script>

@@ -6,7 +6,7 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
+import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /***************************************************************************

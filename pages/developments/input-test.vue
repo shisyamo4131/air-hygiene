@@ -45,7 +45,7 @@ import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
 import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
 import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
 import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
-import HInputSiteUnitPriceDetail from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
+import MInputSiteUnitPriceDetail from '~/components/molecules/inputs/MInputSiteUnitPriceDetail.vue'
 import HInputSiteMunicipalContract from '~/components/molecules/inputs/HInputSiteMunicipalContract.vue'
 import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
 import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
@@ -58,7 +58,7 @@ export default {
   components: {
     HInputCollectItem,
     HInputUnit,
-    HInputSiteUnitPriceDetail,
+    MInputSiteUnitPriceDetail,
     HInputSiteUnitPrice,
     HInputCustomer,
     HInputSite,
