@@ -3,7 +3,7 @@
  * @author shisyamo4131
  */
 import ATextFieldDate from '../../atoms/inputs/ATextFieldDate.vue'
-import HInputCollectionResultDetails from './HInputCollectionResultDetails.vue'
+import MInputCollectionResultDetails from './MInputCollectionResultDetails.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
@@ -19,7 +19,7 @@ export default {
     AAutocomplete,
     ATextFieldDate,
     ATextField,
-    HInputCollectionResultDetails,
+    MInputCollectionResultDetails,
   },
   /******************************************************************
    * MIXINS
@@ -66,7 +66,7 @@ export default {
       :disabled="resultType !== 'root'"
       @input="$emit('update:rootId', $event)"
     />
-    <h-input-collection-result-details
+    <m-input-collection-result-details
       :value="details"
       :site-id="site?.docId || ''"
       :date="date || ''"

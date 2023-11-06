@@ -14,14 +14,14 @@
  * @author shisyamo4131
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
-import HInputSiteUnitPrice from '../molecules/inputs/HInputSiteUnitPrice.vue'
+import MInputSiteUnitPrice from '../molecules/inputs/MInputSiteUnitPrice.vue'
 import MCardSiteUnitPrice from '../molecules/cards/MCardSiteUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputSiteUnitPrice,
+    MInputSiteUnitPrice,
     ASwitch,
     MCardSiteUnitPrice,
   },
@@ -141,7 +141,7 @@ export default {
               @click:submit="onClickSubmit"
             >
               <v-card-text>
-                <h-input-site-unit-price
+                <m-input-site-unit-price
                   v-bind.sync="editModel"
                   :edit-mode="editMode"
                 />

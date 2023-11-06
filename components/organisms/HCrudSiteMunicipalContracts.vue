@@ -13,13 +13,13 @@
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
 import ASimpleTableSiteMunicipalContract from '../atoms/tables/ASimpleTableSiteMunicipalContract.vue'
-import HInputSiteMunicipalContract from '../molecules/inputs/HInputSiteMunicipalContract.vue'
+import MInputSiteMunicipalContract from '../molecules/inputs/MInputSiteMunicipalContract.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputSiteMunicipalContract,
+    MInputSiteMunicipalContract,
     ASwitch,
     ASimpleTableSiteMunicipalContract,
   },
@@ -135,7 +135,7 @@ export default {
               @click:submit="onClickSubmit"
             >
               <v-card-text>
-                <h-input-site-municipal-contract
+                <m-input-site-municipal-contract
                   v-bind.sync="editModel"
                   :edit-mode="editMode"
                 />

@@ -3,13 +3,13 @@
  * @create 2023-10-02
  * @author shisyamo4131
  */
-import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
+import MInputMunicipalPermission from '~/components/molecules/inputs/MInputMunicipalPermission.vue'
 import Mixin from '~/components/templates/mixins/HTemplateMixinsEditor.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HInputMunicipalPermission },
+  components: { MInputMunicipalPermission },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -50,7 +50,7 @@ export default {
   >
     <template #default="{ editMode }">
       <v-card-text>
-        <h-input-municipal-permission
+        <m-input-municipal-permission
           v-bind.sync="editModel"
           :edit-mode="editMode"
         />

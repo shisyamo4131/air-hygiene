@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HInputMixin
+ * ### MInputMixin
  *
  * - A mixin for input-component.
  *

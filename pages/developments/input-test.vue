@@ -40,34 +40,34 @@
 
 <script>
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
-import HInputCollectItem from '~/components/molecules/inputs/HInputCollectItem.vue'
-import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
-import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
-import HInputSite from '~/components/molecules/inputs/HInputSite.vue'
-import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
+import MInputCollectItem from '~/components/molecules/inputs/MInputCollectItem.vue'
+import MInputUnit from '~/components/molecules/inputs/MInputUnit.vue'
+import MInputCustomer from '~/components/molecules/inputs/MInputCustomer.vue'
+import MInputSite from '~/components/molecules/inputs/MInputSite.vue'
+import MInputSiteUnitPrice from '~/components/molecules/inputs/MInputSiteUnitPrice.vue'
 import MInputSiteUnitPriceDetail from '~/components/molecules/inputs/MInputSiteUnitPriceDetail.vue'
-import HInputSiteMunicipalContract from '~/components/molecules/inputs/HInputSiteMunicipalContract.vue'
-import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
-import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
-import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
+import MInputSiteMunicipalContract from '~/components/molecules/inputs/MInputSiteMunicipalContract.vue'
+import MInputCollectionResultDetail from '~/components/molecules/inputs/MInputCollectionResultDetail.vue'
+import MInputMunicipalPermission from '~/components/molecules/inputs/MInputMunicipalPermission.vue'
+import MInputCollectionResult from '~/components/molecules/inputs/MInputCollectionResult.vue'
 import ARadioGroupEditModel from '~/components/atoms/inputs/ARadioGroupEditModel.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputCollectItem,
-    HInputUnit,
+    MInputCollectItem,
+    MInputUnit,
     MInputSiteUnitPriceDetail,
-    HInputSiteUnitPrice,
-    HInputCustomer,
-    HInputSite,
-    HInputSiteMunicipalContract,
-    HInputCollectionResultDetail,
-    HInputMunicipalPermission,
+    MInputSiteUnitPrice,
+    MInputCustomer,
+    MInputSite,
+    MInputSiteMunicipalContract,
+    MInputCollectionResultDetail,
+    MInputMunicipalPermission,
     ASelect,
     ARadioGroupEditModel,
-    HInputCollectionResult,
+    MInputCollectionResult,
   },
   /******************************************************************
    * DATA
@@ -86,7 +86,7 @@ export default {
         'SiteMunicipalContract',
         'CollectionResultDetail',
         'Permission',
-        'HInputMunicipalContract',
+        'MInputMunicipalContract',
         'CollectionResult',
       ],
       selectedModel: '',
@@ -97,7 +97,7 @@ export default {
    ******************************************************************/
   computed: {
     component() {
-      return `HInput${this.selectedModel}`
+      return `MInput${this.selectedModel}`
     },
     props() {
       return Object.keys(this.model)

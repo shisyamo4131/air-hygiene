@@ -82,11 +82,11 @@ export default {
      *
      * ##### NOTE
      * a-autocompleteはmultipleが設定されていない場合、既に読み込まれたデータ（items）から
-     * itemが選択されるとsearch-inputが一度初期化され、直後に選択されたitemの値に更新されます。
+     * itemが選択されるとsearcm-inputが一度初期化され、直後に選択されたitemの値に更新されます。
      * ※itemがobjectの場合、itemTextで指定されたプロパティ値に更新されます。
      * この動きにより、itemsからitemを選択した直後に再度、データの取得処理が実行されてしまいます。
      * 様々なケースに対応しなければならないため、この回避を行っていません。
-     * multipleが設定されている場合は、itemsからitemを選択した直後、search-inputは
+     * multipleが設定されている場合は、itemsからitemを選択した直後、searcm-inputは
      * 空文字列になります。
      * => 日本語入力の場合、入力した値の変換前（確定前）にitemを選択した場合に、
      *    入力した値が残ってしまうため、v-autocompleteの既定動作を上書きしています。
@@ -199,7 +199,7 @@ export default {
     item-value="docId"
     :loading="isSearching"
     :multiple="multiple"
-    :search-input.sync="search"
+    :searcm-input.sync="search"
     :value="value"
     v-on="$listeners"
   >

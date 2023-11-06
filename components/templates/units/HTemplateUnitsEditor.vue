@@ -2,14 +2,14 @@
 /**
  * @author shisyamo4131
  */
-import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
+import MInputUnit from '~/components/molecules/inputs/MInputUnit.vue'
 import Mixin from '~/components/templates/mixins/HTemplateMixinsEditor.vue'
 
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HInputUnit },
+  components: { MInputUnit },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -55,7 +55,7 @@ export default {
     <template #itembar-items> </template>
     <template #default="{ editMode }">
       <v-card-text>
-        <h-input-unit v-bind.sync="editModel" :edit-mode="editMode" />
+        <m-input-unit v-bind.sync="editModel" :edit-mode="editMode" />
         <air-dialog-confirm-delete
           v-if="editMode !== 'REGIST'"
           @click:delete="onClickDelete"

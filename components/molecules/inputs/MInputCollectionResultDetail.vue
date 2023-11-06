@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HInputCollectionResultDetail
+ * ### MInputCollectionResultDetail
  *
  * @author shisyamo4131
  */

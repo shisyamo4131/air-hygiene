@@ -3,14 +3,14 @@
  * @author shisyamo4131
  */
 import AAutocompleteSite from '~/components/atoms/inputs/AAutocompleteSite.vue'
-import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
+import MInputCollectionResult from '~/components/molecules/inputs/MInputCollectionResult.vue'
 import ADataTableCollectionResults from '~/components/atoms/tables/ADataTableCollectionResults.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputCollectionResult,
+    MInputCollectionResult,
     ADataTableCollectionResults,
     AAutocompleteSite,
   },
@@ -100,7 +100,7 @@ export default {
           @click:submit="onClickSubmit"
         >
           <v-card-text>
-            <h-input-collection-result
+            <m-input-collection-result
               v-bind.sync="editModel"
               :edit-mode="editMode"
               :disabled="loading"

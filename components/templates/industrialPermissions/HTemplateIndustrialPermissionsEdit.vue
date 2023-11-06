@@ -3,13 +3,13 @@
  * @create 2023-10-02
  * @author shisyamo4131
  */
-import HInputIndustrialPermission from '~/components/molecules/inputs/HInputIndustrialPermission.vue'
+import MInputIndustrialPermission from '~/components/molecules/inputs/MInputIndustrialPermission.vue'
 import Mixin from '~/components/templates/mixins/HTemplateMixinsEditor.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HInputIndustrialPermission },
+  components: { MInputIndustrialPermission },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -50,7 +50,7 @@ export default {
   >
     <template #default="{ editMode }">
       <v-card-text>
-        <h-input-industrial-permission
+        <m-input-industrial-permission
           v-bind.sync="editModel"
           :edit-mode="editMode"
         />

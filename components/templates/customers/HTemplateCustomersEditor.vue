@@ -2,14 +2,14 @@
 /**
  * @author shisyamo4131
  */
-import HInputCustomer from '~/components/molecules/inputs/HInputCustomer.vue'
+import MInputCustomer from '~/components/molecules/inputs/MInputCustomer.vue'
 import Mixin from '~/components/templates/mixins/HTemplateMixinsEditor.vue'
 
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HInputCustomer },
+  components: { MInputCustomer },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -55,7 +55,7 @@ export default {
     <template #itembar-items> </template>
     <template #default="{ editMode }">
       <v-card-text>
-        <h-input-customer v-bind.sync="editModel" :edit-mode="editMode" />
+        <m-input-customer v-bind.sync="editModel" :edit-mode="editMode" />
         <air-dialog-confirm-delete
           v-if="editMode !== 'REGIST'"
           @click:delete="onClickDelete"

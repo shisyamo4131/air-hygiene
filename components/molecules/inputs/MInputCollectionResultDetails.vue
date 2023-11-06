@@ -1,11 +1,11 @@
 <script>
 /**
- * ### HInputCollectionResultDetails
+ * ### MInputCollectionResultDetails
  *
  * @author shisyamo4131
  */
 import ADataTableCollectionResultDetails from '../../atoms/tables/ADataTableCollectionResultDetails.vue'
-import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
+import MInputCollectionResultDetail from './MInputCollectionResultDetail.vue'
 import MMixinArrayInput from '~/components/molecules/mixins/MMixinArrayInput.vue'
 export default {
   /******************************************************************
@@ -13,7 +13,7 @@ export default {
    ******************************************************************/
   components: {
     ADataTableCollectionResultDetails,
-    HInputCollectionResultDetail,
+    MInputCollectionResultDetail,
   },
   /******************************************************************
    * MIXINS
@@ -66,7 +66,7 @@ export default {
         @click:submit="onClickSubmit"
       >
         <v-card-text>
-          <h-input-collection-result-detail
+          <m-input-collection-result-detail
             v-bind.sync="editModel"
             :edit-mode="editMode"
             :site-id="siteId"

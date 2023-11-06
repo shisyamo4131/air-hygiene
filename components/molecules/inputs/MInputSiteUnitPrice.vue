@@ -1,10 +1,10 @@
 <script>
 /**
- * ### HInputSiteUnitPrice
+ * ### MInputSiteUnitPrice
  *
  * @author shisyamo4131
  */
-import HInputSiteUnitPriceDetails from './HInputSiteUnitPriceDetails.vue'
+import MInputSiteUnitPriceDetails from './MInputSiteUnitPriceDetails.vue'
 import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 export default {
@@ -12,7 +12,7 @@ export default {
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputSiteUnitPriceDetails,
+    MInputSiteUnitPriceDetails,
     ATextFieldDate,
   },
   /******************************************************************
@@ -38,7 +38,7 @@ export default {
       required
       @input="$emit('update:date', $event)"
     />
-    <h-input-site-unit-price-details
+    <m-input-site-unit-price-details
       :value="details"
       @input="$emit('update:details', $event)"
     />
