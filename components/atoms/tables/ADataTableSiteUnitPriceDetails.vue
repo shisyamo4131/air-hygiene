@@ -17,8 +17,8 @@ export default {
     return {
       headers: [
         { text: '回収品目', value: 'collectItemId' },
-        { text: '単位', value: 'unitId' },
-        { text: '単価', value: 'unitPrice', align: 'right' },
+        { text: '単位', value: 'unitId', align: 'center', sortable: false },
+        { text: '単価', value: 'unitPrice', align: 'right', sortable: false },
       ],
     }
   },
@@ -43,8 +43,11 @@ export default {
     <template #[`item.collectItemId`]="{ item }">
       {{ collectItem(item.collectItemId)?.abbr || 'undefined' }}
     </template>
-    <template #[`item.unitPrice`]="{ item }">
+    <template #[`item.unitId`]="{ item }">
       {{ unit(item.unitId)?.abbr || 'undefined' }}
+    </template>
+    <template #[`item.unitPrice`]="{ item }">
+      {{ `${$airNumericToSeparatedString(item.unitPrice)} 円` }}
     </template>
   </a-data-table>
 </template>
