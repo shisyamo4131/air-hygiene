@@ -5,7 +5,7 @@
  */
 import AAutocompletePrefecture from '../../atoms/inputs/AAutocompletePrefecture.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
-import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
+import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
 export default {

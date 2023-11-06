@@ -4,7 +4,7 @@
  */
 import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
 import AAutocompleteCustomer from '../../atoms/inputs/AAutocompleteCustomer.vue'
-import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
+import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'

@@ -4,7 +4,7 @@
  *
  * @author shisyamo4131
  */
-import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
+import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'

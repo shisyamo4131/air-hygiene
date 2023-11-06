@@ -6,7 +6,7 @@
  */
 import ADataTableCollectionResultDetails from '../../atoms/tables/ADataTableCollectionResultDetails.vue'
 import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
-import AMixinArrayInput from '~/components/atoms/mixins/AMixinArrayInput.vue'
+import MMixinArrayInput from '~/components/molecules/mixins/MMixinArrayInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -18,7 +18,7 @@ export default {
   /******************************************************************
    * MIXINS
    ******************************************************************/
-  mixins: [AMixinArrayInput],
+  mixins: [MMixinArrayInput],
   /******************************************************************
    * PROPS
    ******************************************************************/

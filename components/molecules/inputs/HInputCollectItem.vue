@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
+import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {

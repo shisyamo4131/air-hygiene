@@ -8,7 +8,7 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import Mixin from '~/components/molecules/mixins/HMixinInput.vue'
+import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /******************************************************************
@@ -27,9 +27,9 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    collectItemId: { type: String, required: true },
-    unitId: { type: String, required: true },
-    unitPrice: { type: Number, required: true },
+    collectItemId: { type: String, default: '', required: true },
+    unitId: { type: String, default: '', required: true },
+    unitPrice: { type: Number, default: null, required: true },
   },
 }
 </script>

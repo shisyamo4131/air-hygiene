@@ -6,7 +6,7 @@
  */
 import ADataTableSiteUnitPriceDetails from '../../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
 import MInputSiteUnitPriceDetail from './MInputSiteUnitPriceDetail.vue'
-import AMixinArrayInput from '~/components/atoms/mixins/AMixinArrayInput.vue'
+import MMixinArrayInput from '~/components/molecules/mixins/MMixinArrayInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -15,7 +15,7 @@ export default {
   /******************************************************************
    * MIXINS
    ******************************************************************/
-  mixins: [AMixinArrayInput],
+  mixins: [MMixinArrayInput],
   /******************************************************************
    * DATA
    ******************************************************************/
