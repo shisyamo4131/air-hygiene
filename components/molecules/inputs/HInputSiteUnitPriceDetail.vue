@@ -4,8 +4,8 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import ANumericUnitPrice from '../../atoms/inputs/ANumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
+import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -13,7 +13,7 @@ export default {
   components: {
     AAutocompleteCollectItem,
     AAutocompleteUnit,
-    ANumericUnitPrice,
+    ANumeric,
   },
   /******************************************************************
    * MIXINS
@@ -50,11 +50,12 @@ export default {
         />
       </v-col>
       <v-col cols="12" sm="6">
-        <a-numeric-unit-price
+        <a-numeric
           label="単価（税抜）"
+          class="right-input"
           :value="unitPrice"
           required
-          :unit-id="unitId"
+          suffix="円"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>

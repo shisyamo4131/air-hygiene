@@ -6,17 +6,9 @@ import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
 import AAutocompleteCustomer from '../../atoms/inputs/AAutocompleteCustomer.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import ATextFieldSiteCode from '~/components/atoms/inputs/ATextFieldSiteCode.vue'
-import ATextFieldSiteName from '~/components/atoms/inputs/ATextFieldSiteName.vue'
-import ATextFieldSiteAbbr from '~/components/atoms/inputs/ATextFieldSiteAbbr.vue'
-import ATextFieldSiteAbbrKana from '~/components/atoms/inputs/ATextFieldSiteAbbrKana.vue'
-import ATextFieldAddress from '~/components/atoms/inputs/ATextFieldAddress.vue'
-import ATextFieldTel from '~/components/atoms/inputs/ATextFieldTel.vue'
-import ATextFieldUrl from '~/components/atoms/inputs/ATextFieldUrl.vue'
-import ATextFieldStaffName from '~/components/atoms/inputs/ATextFieldStaffName.vue'
-import ATextFieldEmail from '~/components/atoms/inputs/ATextFieldEmail.vue'
-import ARadioGroupSiteCondition from '~/components/atoms/inputs/ARadioGroupSiteCondition.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -25,17 +17,9 @@ export default {
     ATextFieldZipcode,
     ATextarea,
     AAutocompleteCustomer,
-    ATextFieldSiteCode,
-    ATextFieldSiteName,
-    ATextFieldSiteAbbr,
-    ATextFieldSiteAbbrKana,
-    ATextFieldAddress,
-    ATextFieldTel,
-    ATextFieldUrl,
-    ATextFieldStaffName,
-    ATextFieldEmail,
-    ARadioGroupSiteCondition,
     ATextFieldDate,
+    ATextField,
+    ARadioGroup,
   },
   /******************************************************************
    * MIXINS
@@ -75,8 +59,9 @@ export default {
 
 <template>
   <div>
-    <a-text-field-site-code
+    <a-text-field
       v-if="editMode !== 'REGIST'"
+      label="CODE"
       :value="code"
       readonly
     />
@@ -87,19 +72,23 @@ export default {
       return-object
       @input="$emit('update:customer', $event)"
     />
-    <a-text-field-site-name
+    <a-text-field
+      label="排出場所名"
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <a-text-field-site-abbr
+    <a-text-field
+      label="略称"
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"
     />
-    <a-text-field-site-abbr-kana
+    <a-text-field
+      label="略称カナ"
       :value="abbrKana"
       required
+      input-type="katakana"
       @input="$emit('update:abbrKana', $event)"
     />
     <a-text-field-zipcode
@@ -107,42 +96,57 @@ export default {
       @input="$emit('update:zipcode', $event)"
       @loaded="$emit('update:address1', $event.full)"
     />
-    <a-text-field-address
+    <a-text-field
       label="住所1"
       :value="address1"
       required
       @input="$emit('update:address1', $event)"
     />
-    <a-text-field-address
+    <a-text-field
       label="住所2"
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <a-text-field-tel :value="tel" @input="$emit('update:tel', $event)" />
+        <a-text-field
+          label="電話番号"
+          :value="tel"
+          input-type="tel"
+          @input="$emit('update:tel', $event)"
+        />
       </v-col>
       <v-col cols="12" sm="6">
-        <a-text-field-tel
+        <a-text-field
           label="FAX番号"
           :value="fax"
+          input-type="tel"
           @input="$emit('update:fax', $event)"
         />
       </v-col>
     </v-row>
-    <a-text-field-url :value="url" @input="$emit('update:url', $event)" />
-    <a-text-field-staff-name
+    <a-text-field
+      label="URL"
+      :value="url"
+      input-type="url"
+      @input="$emit('update:url', $event)"
+    />
+    <a-text-field
+      label="担当者名"
       :value="staffName"
       @input="$emit('update:staffName', $event)"
     />
-    <a-text-field-email
+    <a-text-field
+      label="e-mail"
       :value="staffEmail"
+      input-type="email"
       @input="$emit('update:staffEmail', $event)"
     />
-    <a-radio-group-site-condition
+    <a-radio-group
       v-if="editMode !== 'REGIST'"
       class="mt-0"
       :value="condition"
+      :items="$SITE_CONDITION_ARRAY"
       row
       @change="$emit('update:condition', $event)"
     />

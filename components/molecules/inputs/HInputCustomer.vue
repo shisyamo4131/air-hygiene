@@ -5,21 +5,9 @@
 import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import ATextFieldCustomerCode from '~/components/atoms/inputs/ATextFieldCustomerCode.vue'
-import ATextFieldCustomerName from '~/components/atoms/inputs/ATextFieldCustomerName.vue'
-import ATextFieldCustomerAbbr from '~/components/atoms/inputs/ATextFieldCustomerAbbr.vue'
-import ATextFieldCustomerAbbrKana from '~/components/atoms/inputs/ATextFieldCustomerAbbrKana.vue'
-import ATextFieldAddress from '~/components/atoms/inputs/ATextFieldAddress.vue'
-import ATextFieldTel from '~/components/atoms/inputs/ATextFieldTel.vue'
-import ATextFieldUrl from '~/components/atoms/inputs/ATextFieldUrl.vue'
-import ATextFieldStaffName from '~/components/atoms/inputs/ATextFieldStaffName.vue'
-import ATextFieldEmail from '~/components/atoms/inputs/ATextFieldEmail.vue'
-import ATextFieldHonor from '~/components/atoms/inputs/ATextFieldHonor.vue'
-import ASelectDeadline from '~/components/atoms/inputs/ASelectDeadline.vue'
-import ANumericDepositMonth from '~/components/atoms/inputs/ANumericDepositMonth.vue'
-import ASelectRounding from '~/components/atoms/inputs/ASelectRounding.vue'
-import ARadioGroupCustomerCondition from '~/components/atoms/inputs/ARadioGroupCustomerCondition.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
+import ASelect from '~/components/atoms/inputs/ASelect.vue'
+import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -27,21 +15,9 @@ export default {
   components: {
     ATextFieldZipcode,
     ATextarea,
-    ATextFieldCustomerCode,
-    ATextFieldCustomerName,
-    ATextFieldCustomerAbbr,
-    ATextFieldCustomerAbbrKana,
-    ATextFieldAddress,
-    ATextFieldTel,
-    ATextFieldUrl,
-    ATextFieldStaffName,
-    ATextFieldEmail,
-    ATextFieldHonor,
-    ASelectDeadline,
-    ANumericDepositMonth,
-    ASelectRounding,
-    ARadioGroupCustomerCondition,
     ATextFieldDate,
+    ASelect,
+    ARadioGroup,
   },
   /******************************************************************
    * MIXINS
@@ -78,30 +54,34 @@ export default {
 
 <template>
   <div>
-    <a-text-field-customer-code
+    <a-text-field
       v-if="editMode !== 'REGIST'"
+      label="CODE"
       :value="code"
       readonly
     />
-    <a-text-field-customer-name
+    <a-text-field
       label="取引先名1"
       :value="name1"
       required
       @input="$emit('update:name1', $event)"
     />
-    <a-text-field-customer-name
+    <a-text-field
       label="取引先名2"
       :value="name2"
       @input="$emit('update:name2', $event)"
     />
-    <a-text-field-customer-abbr
+    <a-text-field
+      label="略称"
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"
     />
-    <a-text-field-customer-abbr-kana
+    <a-text-field
+      label="略称カナ"
       :value="abbrKana"
       required
+      input-type="katakana"
       @input="$emit('update:abbrKana', $event)"
     />
     <a-text-field-zipcode
@@ -109,53 +89,73 @@ export default {
       @input="$emit('update:zipcode', $event)"
       @loaded="$emit('update:address1', $event.full)"
     />
-    <a-text-field-address
+    <a-text-field
       label="住所1"
       :value="address1"
       required
       @input="$emit('update:address1', $event)"
     />
-    <a-text-field-address
+    <a-text-field
       label="住所2"
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <a-text-field-tel :value="tel" @input="$emit('update:tel', $event)" />
+        <a-text-field
+          :value="tel"
+          input-type="tel"
+          @input="$emit('update:tel', $event)"
+        />
       </v-col>
       <v-col cols="12" sm="6">
-        <a-text-field-tel
+        <a-text-field
           label="FAX番号"
           :value="fax"
+          input-type="tel"
           @input="$emit('update:fax', $event)"
         />
       </v-col>
     </v-row>
-    <a-text-field-url :value="url" @input="$emit('update:url', $event)" />
-    <a-text-field-staff-name
+    <a-text-field
+      label="URL"
+      :value="url"
+      input-type="url"
+      @input="$emit('update:url', $event)"
+    />
+    <a-text-field
+      label="担当者名"
       :value="staffName"
       @input="$emit('update:staffName', $event)"
     />
-    <a-text-field-email
+    <a-text-field
+      label="e-mail"
       :value="staffEmail"
+      input-type="email"
       @input="$emit('update:staffEmail', $event)"
     />
-    <a-text-field-honor
+    <a-text-field
+      label="敬称"
       :value="honor"
       required
+      hint="請求書の宛名に印字されます。"
+      persistent-hint
       @input="$emit('update:honor', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6" md="3">
-        <a-select-deadline
+        <a-select
+          label="締日"
           :value="deadline"
           required
+          :items="$DEADLINE_ARRAY"
           @input="$emit('update:deadline', $event)"
         />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <a-numeric-deposit-month
+        <a-numeric
+          label="入金月"
+          class="right-input"
           :value="depositMonth"
           required
           suffix="ヶ月後"
@@ -163,25 +163,29 @@ export default {
         />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <a-select-deadline
+        <a-select
           label="入金日"
           :value="depositDay"
           required
+          :items="$DEADLINE_ARRAY"
           @input="$emit('update:depositDay', $event)"
         />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <a-select-rounding
+        <a-select
+          label="端数処理"
+          :items="$ROUNDING_ARRAY"
           :value="rounding"
           required
           @input="$emit('update:rounding', $event)"
         />
       </v-col>
     </v-row>
-    <a-radio-group-customer-condition
+    <a-radio-group
       v-if="editMode !== 'REGIST'"
       class="mt-0"
       :value="condition"
+      :items="$CUSTOMER_CONDITION_ARRAY"
       row
       @change="$emit('update:condition', $event)"
     />

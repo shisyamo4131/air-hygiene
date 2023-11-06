@@ -1,19 +1,15 @@
 <script>
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
 /**
  * @author shisyamo4131
  */
-import ATextFieldUnitAbbr from '~/components/atoms/inputs/ATextFieldUnitAbbr.vue'
-import ATextFieldUnitCode from '~/components/atoms/inputs/ATextFieldUnitCode.vue'
-import ATextFieldUnitName from '~/components/atoms/inputs/ATextFieldUnitName.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    ATextFieldUnitCode,
-    ATextFieldUnitName,
-    ATextFieldUnitAbbr,
+    ATextField,
   },
   /******************************************************************
    * MIXINS
@@ -33,20 +29,30 @@ export default {
 
 <template>
   <div>
-    <a-text-field-unit-code
+    <a-text-field
+      label="CODE"
       :value="code"
       required
+      counter
       :disabled="editMode === 'UPDATE' && !deletable"
+      hint="2桁で入力"
+      max-length="2"
+      :rules="[(v) => !v || v.length === 2 || '2桁で入力してください。']"
       @input="$emit('update:code', $event)"
     />
-    <a-text-field-unit-name
+    <a-text-field
+      label="単位名"
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <a-text-field-unit-abbr
+    <a-text-field
+      label="略称"
       :value="abbr"
       required
+      counter
+      hint="4文字以内"
+      max-length="4"
       @input="$emit('update:abbr', $event)"
     />
   </div>

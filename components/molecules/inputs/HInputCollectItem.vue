@@ -4,22 +4,14 @@
  */
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import ATextFieldCollectItemCode from '~/components/atoms/inputs/ATextFieldCollectItemCode.vue'
-import ATextFieldCollectItemName from '~/components/atoms/inputs/ATextFieldCollectItemName.vue'
-import ATextFieldCollectItemNameKana from '~/components/atoms/inputs/ATextFieldCollectItemNameKana.vue'
-import ATextFieldCollectItemAbbr from '~/components/atoms/inputs/ATextFieldCollectItemAbbr.vue'
-import AAutocompleteWasteDiv from '~/components/atoms/inputs/AAutocompleteWasteDiv.vue'
+import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     ATextarea,
-    ATextFieldCollectItemCode,
-    ATextFieldCollectItemName,
-    ATextFieldCollectItemNameKana,
-    ATextFieldCollectItemAbbr,
-    AAutocompleteWasteDiv,
+    AAutocomplete,
   },
   /******************************************************************
    * MIXINS
@@ -42,28 +34,42 @@ export default {
 
 <template>
   <div>
-    <a-text-field-collect-item-code
+    <a-text-field
+      label="CODE"
       :value="code"
       required
       :disabled="editMode === 'UPDATE' && !deletable"
+      counter
+      hint="4桁で入力"
+      max-length="4"
+      :rules="[(v) => !v || v.length === 4 || '4桁で入力してください。']"
       @input="$emit('update:code', $event)"
     />
-    <a-text-field-collect-item-name
+    <a-text-field
+      label="回収品目名"
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <a-text-field-collect-item-name-kana
+    <a-text-field
+      label="回収品目名カナ"
       :value="nameKana"
       required
+      input-type="katakana"
       @input="$emit('update:nameKana', $event)"
     />
-    <a-text-field-collect-item-abbr
+    <a-text-field
+      label="略称"
       :value="abbr"
       required
+      hint="4文字以内"
+      max-length="4"
       @input="$emit('update:abbr', $event)"
     />
-    <a-autocomplete-waste-div
+    <a-autocomplete
+      label="廃棄物区分"
+      auto-select-fiest
+      :items="$WASTE_DIV_ARRAY"
       :value="wasteDiv"
       required
       :disabled="editMode === 'UPDATE' && !deletable"

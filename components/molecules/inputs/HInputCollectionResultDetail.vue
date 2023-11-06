@@ -6,9 +6,8 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import ANumericUnitPrice from '../../atoms/inputs/ANumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import ANumericAmount from '~/components/atoms/inputs/ANumericAmount.vue'
+import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /***************************************************************************
    * COMPONENTS
@@ -16,8 +15,7 @@ export default {
   components: {
     AAutocompleteCollectItem,
     AAutocompleteUnit,
-    ANumericUnitPrice,
-    ANumericAmount,
+    ANumeric,
   },
   /***************************************************************************
    * MIXINS
@@ -66,10 +64,11 @@ export default {
       @change="loadUnitPrice"
       @input="$emit('update:collectItemId', $event)"
     />
-    <a-numeric-amount
+    <a-numeric
       label="数量"
       :value="amount"
       required
+      decimal-places="2"
       @input="$emit('update:amount', $event)"
     />
     <a-autocomplete-unit
@@ -80,11 +79,12 @@ export default {
       @change="loadUnitPrice"
       @input="$emit('update:unitId', $event)"
     />
-    <a-numeric-unit-price
+    <a-numeric
       label="単価（税抜）"
+      class="right-input"
       :value="unitPrice"
       required
-      :unit-id="unitId"
+      suffix="円"
       @input="$emit('update:unitPrice', $event)"
     />
   </div>

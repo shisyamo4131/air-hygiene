@@ -9,7 +9,6 @@ import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
-import ANumericUnitPrice from '~/components/atoms/inputs/ANumericUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -19,7 +18,6 @@ export default {
     ANumeric,
     ASelect,
     ATextFieldDate,
-    ANumericUnitPrice,
   },
   /******************************************************************
    * MIXINS
@@ -63,10 +61,12 @@ export default {
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <a-numeric-unit-price
+        <a-numeric
           label="契約単価（税抜）"
+          class="right-input"
           :value="unitPrice"
           required
+          suffix="円"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>
