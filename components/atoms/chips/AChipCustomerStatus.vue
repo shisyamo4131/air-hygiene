@@ -1,6 +1,9 @@
 <script>
 /**
- * @create 2023-09-27
+ * ### AChipCustomerStatus
+ *
+ * Chip in the status of the customer.
+ *
  * @author shisyamo4131
  */
 export default {
@@ -19,7 +22,7 @@ export default {
    ******************************************************************/
   computed: {
     label() {
-      return this.$CUSTOMER_CONDITION[this.value]
+      return this.$CUSTOMER_STATUS[this.value]
     },
     color() {
       return this.value === 'active' ? 'primary' : 'grey darken-2'

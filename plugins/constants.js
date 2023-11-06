@@ -26,12 +26,12 @@ const COLLECTION_RESULT_TYPE_ARRAY = [
 ]
 
 /* 取引先状態 */
-const CUSTOMER_CONDITION = {
+const CUSTOMER_STATUS = {
   active: '契約中',
   expired: '契約満了',
 }
 
-const CUSTOMER_CONDITION_ARRAY = [
+const CUSTOMER_STATUS_ARRAY = [
   { value: 'active', text: '契約中' },
   { value: 'expired', text: '契約満了' },
 ]
@@ -197,8 +197,8 @@ export default (context, inject) => {
   inject('CITY', CITY)
   inject('COLLECTION_RESULT_TYPE', COLLECTION_RESULT_TYPE)
   inject('COLLECTION_RESULT_TYPE_ARRAY', COLLECTION_RESULT_TYPE_ARRAY)
-  inject('CUSTOMER_CONDITION', CUSTOMER_CONDITION)
-  inject('CUSTOMER_CONDITION_ARRAY', CUSTOMER_CONDITION_ARRAY)
+  inject('CUSTOMER_STATUS', CUSTOMER_STATUS)
+  inject('CUSTOMER_STATUS_ARRAY', CUSTOMER_STATUS_ARRAY)
   inject('DEADLINE', DEADLINE)
   inject('DEADLINE_ARRAY', DEADLINE_ARRAY)
   inject('EDIT_MODE', EDIT_MODE)

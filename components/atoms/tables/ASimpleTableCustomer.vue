@@ -27,7 +27,7 @@ export default {
     depositMonth: { type: Number, default: null, required: false },
     depositDay: { type: String, default: '', required: false },
     rounding: { type: String, default: '', required: false },
-    condition: { type: String, default: '', required: false },
+    status: { type: String, default: '', required: false },
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
   },
@@ -98,7 +98,7 @@ export default {
       <tr>
         <td>状態</td>
         <td>
-          {{ $CUSTOMER_CONDITION[condition] }}
+          {{ $CUSTOMER_STATUS[status] }}
         </td>
       </tr>
       <tr>

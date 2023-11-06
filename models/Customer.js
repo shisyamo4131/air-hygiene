@@ -25,8 +25,8 @@
  * | depositMonth | number | 1        | true     |                                        |
  * | depositDay   | string | '99'     | true     | [ '05', '10', '15', '20', '25', '99' ] |
  * | rounding     | string | 'round'  | true     | [ 'floor', 'round', 'ceil' ]           |
- * | condition    | string | 'active' | true     | [ 'active', 'expired' ]                |
- * | dateExpired  | string | ''       | false    | Required if condition is 'expired'.    |
+ * | status       | string | 'active' | true     | [ 'active', 'expired' ]                |
+ * | dateExpired  | string | ''       | false    | Required if status is 'expired'.       |
  * | remarks      | string | ''       | false    |                                        |
  *
  * @author shisyamo4131
@@ -66,7 +66,7 @@ export default class Customer extends FireModel {
     this.depositMonth = 1
     this.depositDay = '99'
     this.rounding = 'round'
-    this.condition = 'active'
+    this.status = 'active'
     this.dateExpired = ''
     this.remarks = ''
     super.initialize(item)
@@ -74,14 +74,14 @@ export default class Customer extends FireModel {
 
   beforeCreate() {
     return new Promise((resolve) => {
-      if (!this.condition === 'active') this.dateExpired = ''
+      if (!this.status === 'active') this.dateExpired = ''
       resolve()
     })
   }
 
   beforeUpdate() {
     return new Promise((resolve) => {
-      if (!this.condition === 'active') this.dateExpired = ''
+      if (!this.status === 'active') this.dateExpired = ''
       resolve()
     })
   }

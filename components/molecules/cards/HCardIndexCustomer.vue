@@ -2,13 +2,13 @@
 /**
  * @author shisyamo4131
  */
-import HChipCustomerCondition from '../chips/HChipCustomerCondition.vue'
+import AChipCustomerStatus from '../../atoms/chips/AChipCustomerStatus.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HChipCustomerCondition,
+    AChipCustomerStatus,
   },
   /******************************************************************
    * PROPS
@@ -18,7 +18,7 @@ export default {
     abbr: { type: String, default: '', required: false },
     abbrKana: { type: String, default: '', required: false },
     address1: { type: String, default: '', required: false },
-    condition: {
+    status: {
       type: String,
       default: 'active',
       validator: (v) => ['active', 'expired'].includes(v),
@@ -43,7 +43,7 @@ export default {
         </div>
       </div>
       <div class="d-flex flex-grow-1 justify-end">
-        <h-chip-customer-condition :value="condition" small />
+        <a-chip-customer-status :value="status" small />
       </div>
     </div>
   </v-card>

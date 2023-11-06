@@ -8,6 +8,8 @@ import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -18,6 +20,8 @@ export default {
     ATextFieldDate,
     ASelect,
     ARadioGroup,
+    ATextField,
+    ANumeric,
   },
   /******************************************************************
    * MIXINS
@@ -45,7 +49,7 @@ export default {
     depositMonth: { type: Number, default: null, required: false },
     depositDay: { type: String, default: '', required: false },
     rounding: { type: String, default: '', required: false },
-    condition: { type: String, default: '', required: false },
+    status: { type: String, default: '', required: false },
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
   },
@@ -103,6 +107,7 @@ export default {
     <v-row dense>
       <v-col cols="12" sm="6">
         <a-text-field
+          label="電話番号"
           :value="tel"
           input-type="tel"
           @input="$emit('update:tel', $event)"
@@ -184,17 +189,17 @@ export default {
     <a-radio-group
       v-if="editMode !== 'REGIST'"
       class="mt-0"
-      :value="condition"
-      :items="$CUSTOMER_CONDITION_ARRAY"
+      :value="status"
+      :items="$CUSTOMER_STATUS_ARRAY"
       row
-      @change="$emit('update:condition', $event)"
+      @change="$emit('update:status', $event)"
     />
     <v-expand-transition>
       <a-text-field-date
-        v-show="condition === 'expired'"
+        v-show="status === 'expired'"
         label="契約満了日"
         :value="dateExpired"
-        :required="condition === 'expired'"
+        :required="status === 'expired'"
         @input="$emit('update:dateExpired', $event)"
       />
     </v-expand-transition>
