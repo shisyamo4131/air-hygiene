@@ -3,7 +3,7 @@
  * @create 2023-10-02
  * @author shisyamo4131
  */
-import HAutocompletePrefecture from './HAutocompletePrefecture.vue'
+import AAutocompletePrefecture from '../../atoms/inputs/AAutocompletePrefecture.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
@@ -16,7 +16,7 @@ export default {
     ATextField,
     ASwitch,
     ARadioGroup,
-    HAutocompletePrefecture,
+    AAutocompletePrefecture,
   },
   /******************************************************************
    * MIXINS
@@ -51,7 +51,7 @@ export default {
 <template>
   <div>
     <v-subheader>許可エリア</v-subheader>
-    <h-autocomplete-prefecture
+    <a-autocomplete-prefecture
       label="都道府県"
       :value="prefecture"
       required

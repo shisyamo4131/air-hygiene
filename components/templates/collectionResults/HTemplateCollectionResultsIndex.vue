@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HAutocompleteSite from '~/components/molecules/inputs/HAutocompleteSite.vue'
+import AAutocompleteSite from '~/components/atoms/inputs/AAutocompleteSite.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
 import ADataTableCollectionResults from '~/components/atoms/tables/ADataTableCollectionResults.vue'
 export default {
@@ -12,7 +12,7 @@ export default {
   components: {
     HInputCollectionResult,
     ADataTableCollectionResults,
-    HAutocompleteSite,
+    AAutocompleteSite,
   },
   /******************************************************************
    * DATA
@@ -79,7 +79,7 @@ export default {
 <template>
   <air-template-default label="回収実績管理" show-itembar>
     <template #itembar-items>
-      <h-autocomplete-site
+      <a-autocomplete-site
         v-model="editModel.site"
         class="mr-4"
         label="排出場所"

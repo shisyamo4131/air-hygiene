@@ -2,8 +2,8 @@
 /**
  * @author shisyamo4131
  */
-import HAutocompleteCollectItem from '../../atoms/inputs/HAutocompleteCollectItem.vue'
-import HAutocompleteUnit from '../../atoms/inputs/HAutocompleteUnit.vue'
+import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
+import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
 import HNumericUnitPrice from '../../atoms/inputs/HNumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
@@ -11,8 +11,8 @@ export default {
    * COMPONENTS
    ******************************************************************/
   components: {
-    HAutocompleteCollectItem,
-    HAutocompleteUnit,
+    AAutocompleteCollectItem,
+    AAutocompleteUnit,
     HNumericUnitPrice,
   },
   /******************************************************************
@@ -32,7 +32,7 @@ export default {
 
 <template>
   <div>
-    <h-autocomplete-collect-item
+    <a-autocomplete-collect-item
       label="回収品目"
       :value="collectItemId"
       required
@@ -41,7 +41,7 @@ export default {
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <h-autocomplete-unit
+        <a-autocomplete-unit
           label="単位"
           :value="unitId"
           required

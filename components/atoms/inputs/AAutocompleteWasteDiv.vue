@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HAutocompleteWasteDiv
+ * ### AAutocompleteWasteDiv
  *
  * A component for wasteDiv.
  *

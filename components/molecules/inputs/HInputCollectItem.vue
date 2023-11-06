@@ -8,7 +8,7 @@ import HTextFieldCollectItemCode from '~/components/atoms/inputs/HTextFieldColle
 import HTextFieldCollectItemName from '~/components/atoms/inputs/HTextFieldCollectItemName.vue'
 import HTextFieldCollectItemNameKana from '~/components/atoms/inputs/HTextFieldCollectItemNameKana.vue'
 import HTextFieldCollectItemAbbr from '~/components/atoms/inputs/HTextFieldCollectItemAbbr.vue'
-import HAutocompleteWasteDiv from '~/components/atoms/inputs/HAutocompleteWasteDiv.vue'
+import AAutocompleteWasteDiv from '~/components/atoms/inputs/AAutocompleteWasteDiv.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -19,7 +19,7 @@ export default {
     HTextFieldCollectItemName,
     HTextFieldCollectItemNameKana,
     HTextFieldCollectItemAbbr,
-    HAutocompleteWasteDiv,
+    AAutocompleteWasteDiv,
   },
   /******************************************************************
    * MIXINS
@@ -63,7 +63,7 @@ export default {
       required
       @input="$emit('update:abbr', $event)"
     />
-    <h-autocomplete-waste-div
+    <a-autocomplete-waste-div
       :value="wasteDiv"
       required
       :disabled="editMode === 'UPDATE' && !deletable"

@@ -3,7 +3,7 @@
  * @author shisyamo4131
  */
 import HTextFieldZipcode from '../../atoms/inputs/HTextFieldZipcode.vue'
-import HAutocompleteCustomer from '../../atoms/inputs/HAutocompleteCustomer.vue'
+import AAutocompleteCustomer from '../../atoms/inputs/AAutocompleteCustomer.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import HTextFieldSiteCode from '~/components/atoms/inputs/HTextFieldSiteCode.vue'
@@ -24,7 +24,7 @@ export default {
   components: {
     HTextFieldZipcode,
     ATextarea,
-    HAutocompleteCustomer,
+    AAutocompleteCustomer,
     HTextFieldSiteCode,
     HTextFieldSiteName,
     HTextFieldSiteAbbr,
@@ -80,7 +80,7 @@ export default {
       :value="code"
       readonly
     />
-    <h-autocomplete-customer
+    <a-autocomplete-customer
       label="取引先"
       :value="customer"
       required

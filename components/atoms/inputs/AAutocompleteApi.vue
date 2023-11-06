@@ -1,6 +1,6 @@
 <script>
 /**
- * HAutocompleteFirestoreApi
+ * AAutocompleteApi
  *
  * Firestoreの脆弱な検索機能を補うため、Airプロジェクトで使用するFireModelは
  * tokenMapをドキュメントに含める機能を実装しています。

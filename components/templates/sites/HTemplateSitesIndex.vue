@@ -4,12 +4,12 @@
  */
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import HCardIndexSite from '~/components/molecules/cards/HCardIndexSite.vue'
-import HAutocompleteCustomer from '~/components/atoms/inputs/HAutocompleteCustomer.vue'
+import AAutocompleteCustomer from '~/components/atoms/inputs/AAutocompleteCustomer.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HCardIndexSite, ASwitch, HAutocompleteCustomer },
+  components: { HCardIndexSite, ASwitch, AAutocompleteCustomer },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -80,7 +80,7 @@ export default {
       </v-btn>
     </template>
     <template #itembar-items>
-      <h-autocomplete-customer
+      <a-autocomplete-customer
         v-model="selectedCustomer"
         label="取引先"
         hide-details

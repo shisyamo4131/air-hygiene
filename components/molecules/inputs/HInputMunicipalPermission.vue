@@ -3,8 +3,8 @@
  * @create 2023-10-02
  * @author shisyamo4131
  */
-import HAutocompletePrefecture from './HAutocompletePrefecture.vue'
-import HAutocompleteCity from './HAutocompleteCity.vue'
+import AAutocompleteCity from '../../atoms/inputs/AAutocompleteCity.vue'
+import AAutocompletePrefecture from '../../atoms/inputs/AAutocompletePrefecture.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
@@ -17,8 +17,8 @@ export default {
     ATextField,
     ASwitch,
     ARadioGroup,
-    HAutocompletePrefecture,
-    HAutocompleteCity,
+    AAutocompletePrefecture,
+    AAutocompleteCity,
   },
   /******************************************************************
    * MIXINS
@@ -53,13 +53,13 @@ export default {
 <template>
   <div>
     <v-subheader>許可エリア</v-subheader>
-    <h-autocomplete-prefecture
+    <a-autocomplete-prefecture
       label="都道府県"
       :value="prefCode"
       required
       @input="$emit('update:prefCode', $event)"
     />
-    <h-autocomplete-city
+    <a-autocomplete-city
       label="市区町村"
       :value="city"
       :pref-code="prefCode"
