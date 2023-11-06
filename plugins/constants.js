@@ -169,12 +169,12 @@ const ROUNDING_ARRAY = [
 ]
 
 /* 排出場所状態 */
-const SITE_CONDITION = {
+const SITE_STATUS = {
   active: '契約中',
   expired: '契約満了',
 }
 
-const SITE_CONDITION_ARRAY = [
+const SITE_STATUS_ARRAY = [
   { value: 'active', text: '契約中' },
   { value: 'expired', text: '契約満了' },
 ]
@@ -211,8 +211,8 @@ export default (context, inject) => {
   inject('PROCESSING_DIV_ARRAY', PROCESSING_DIV_ARRAY)
   inject('ROUNDING', ROUNDING)
   inject('ROUNDING_ARRAY', ROUNDING_ARRAY)
-  inject('SITE_CONDITION', SITE_CONDITION)
-  inject('SITE_CONDITION_ARRAY', SITE_CONDITION_ARRAY)
+  inject('SITE_STATUS', SITE_STATUS)
+  inject('SITE_STATUS_ARRAY', SITE_STATUS_ARRAY)
   inject('WASTE_DIV', WASTE_DIV)
   inject('WASTE_DIV_ARRAY', WASTE_DIV_ARRAY)
 }

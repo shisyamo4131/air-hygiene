@@ -41,7 +41,7 @@ export default {
     url: { type: String, default: '', required: false },
     staffName: { type: String, default: '', required: false },
     staffEmail: { type: String, default: '', required: false },
-    condition: { type: String, default: '', required: false },
+    status: { type: String, default: '', required: false },
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
     customer: { type: Object, default: null, required: false },
@@ -145,17 +145,17 @@ export default {
     <a-radio-group
       v-if="editMode !== 'REGIST'"
       class="mt-0"
-      :value="condition"
+      :value="status"
       :items="$SITE_CONDITION_ARRAY"
       row
-      @change="$emit('update:condition', $event)"
+      @change="$emit('update:status', $event)"
     />
     <v-expand-transition>
       <a-text-field-date
-        v-show="condition === 'expired'"
+        v-show="status === 'expired'"
         label="契約満了日"
         :value="dateExpired"
-        :required="condition === 'expired'"
+        :required="status === 'expired'"
         @input="$emit('update:dateExpired', $event)"
       />
     </v-expand-transition>

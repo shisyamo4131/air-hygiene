@@ -21,7 +21,7 @@ export default {
     url: { type: String, default: '', required: false },
     staffName: { type: String, default: '', required: false },
     staffEmail: { type: String, default: '', required: false },
-    condition: { type: String, default: '', required: false },
+    status: { type: String, default: '', required: false },
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
     customer: { type: Object, default: null, required: false },
@@ -71,7 +71,7 @@ export default {
       <tr>
         <td>状態</td>
         <td>
-          {{ $SITE_CONDITION[condition] }}
+          {{ $SITE_STATUS[status] }}
         </td>
       </tr>
       <tr>

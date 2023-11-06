@@ -19,8 +19,8 @@
  * | url         | string | ''       | false    |                                     |
  * | staffName   | string | ''       | false    |                                     |
  * | staffEmail  | string | ''       | false    |                                     |
- * | condition   | string | 'active' | true     | [ 'active', 'expired' ]             |
- * | dateExpired | string | ''       | false    | Required if condition is 'expired'. |
+ * | status      | string | 'active' | true     | [ 'active', 'expired' ]             |
+ * | dateExpired | string | ''       | false    | Required if status is 'expired'.    |
  * | remarks     | string | ''       | false    |                                     |
  * | customer    | object | null     | true     | Customer object.                    |
  *
@@ -55,7 +55,7 @@ export default class Site extends FireModel {
     this.url = ''
     this.staffName = ''
     this.staffEmail = ''
-    this.condition = 'active'
+    this.status = 'active'
     this.dateExpired = ''
     this.remarks = ''
     this.customer = null
@@ -64,14 +64,14 @@ export default class Site extends FireModel {
 
   beforeCreate() {
     return new Promise((resolve) => {
-      if (!this.condition === 'active') this.dateExpired = ''
+      if (!this.status === 'active') this.dateExpired = ''
       resolve()
     })
   }
 
   beforeUpdate() {
     return new Promise((resolve) => {
-      if (!this.condition === 'active') this.dateExpired = ''
+      if (!this.status === 'active') this.dateExpired = ''
       resolve()
     })
   }
