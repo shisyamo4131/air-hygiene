@@ -2,40 +2,40 @@
 /**
  * @author shisyamo4131
  */
-import HTextFieldZipcode from '../../atoms/inputs/HTextFieldZipcode.vue'
+import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
 import AAutocompleteCustomer from '../../atoms/inputs/AAutocompleteCustomer.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import HTextFieldSiteCode from '~/components/atoms/inputs/HTextFieldSiteCode.vue'
-import HTextFieldSiteName from '~/components/atoms/inputs/HTextFieldSiteName.vue'
-import HTextFieldSiteAbbr from '~/components/atoms/inputs/HTextFieldSiteAbbr.vue'
-import HTextFieldSiteAbbrKana from '~/components/atoms/inputs/HTextFieldSiteAbbrKana.vue'
-import HTextFieldAddress from '~/components/atoms/inputs/HTextFieldAddress.vue'
-import HTextFieldTel from '~/components/atoms/inputs/HTextFieldTel.vue'
-import HTextFieldUrl from '~/components/atoms/inputs/HTextFieldUrl.vue'
-import HTextFieldStaffName from '~/components/atoms/inputs/HTextFieldStaffName.vue'
-import HTextFieldEmail from '~/components/atoms/inputs/HTextFieldEmail.vue'
-import HRadioGroupSiteCondition from '~/components/atoms/inputs/HRadioGroupSiteCondition.vue'
-import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
+import ATextFieldSiteCode from '~/components/atoms/inputs/ATextFieldSiteCode.vue'
+import ATextFieldSiteName from '~/components/atoms/inputs/ATextFieldSiteName.vue'
+import ATextFieldSiteAbbr from '~/components/atoms/inputs/ATextFieldSiteAbbr.vue'
+import ATextFieldSiteAbbrKana from '~/components/atoms/inputs/ATextFieldSiteAbbrKana.vue'
+import ATextFieldAddress from '~/components/atoms/inputs/ATextFieldAddress.vue'
+import ATextFieldTel from '~/components/atoms/inputs/ATextFieldTel.vue'
+import ATextFieldUrl from '~/components/atoms/inputs/ATextFieldUrl.vue'
+import ATextFieldStaffName from '~/components/atoms/inputs/ATextFieldStaffName.vue'
+import ATextFieldEmail from '~/components/atoms/inputs/ATextFieldEmail.vue'
+import ARadioGroupSiteCondition from '~/components/atoms/inputs/ARadioGroupSiteCondition.vue'
+import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HTextFieldZipcode,
+    ATextFieldZipcode,
     ATextarea,
     AAutocompleteCustomer,
-    HTextFieldSiteCode,
-    HTextFieldSiteName,
-    HTextFieldSiteAbbr,
-    HTextFieldSiteAbbrKana,
-    HTextFieldAddress,
-    HTextFieldTel,
-    HTextFieldUrl,
-    HTextFieldStaffName,
-    HTextFieldEmail,
-    HRadioGroupSiteCondition,
-    HTextFieldDate,
+    ATextFieldSiteCode,
+    ATextFieldSiteName,
+    ATextFieldSiteAbbr,
+    ATextFieldSiteAbbrKana,
+    ATextFieldAddress,
+    ATextFieldTel,
+    ATextFieldUrl,
+    ATextFieldStaffName,
+    ATextFieldEmail,
+    ARadioGroupSiteCondition,
+    ATextFieldDate,
   },
   /******************************************************************
    * MIXINS
@@ -75,7 +75,7 @@ export default {
 
 <template>
   <div>
-    <h-text-field-site-code
+    <a-text-field-site-code
       v-if="editMode !== 'REGIST'"
       :value="code"
       readonly
@@ -87,59 +87,59 @@ export default {
       return-object
       @input="$emit('update:customer', $event)"
     />
-    <h-text-field-site-name
+    <a-text-field-site-name
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <h-text-field-site-abbr
+    <a-text-field-site-abbr
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"
     />
-    <h-text-field-site-abbr-kana
+    <a-text-field-site-abbr-kana
       :value="abbrKana"
       required
       @input="$emit('update:abbrKana', $event)"
     />
-    <h-text-field-zipcode
+    <a-text-field-zipcode
       :value="zipcode"
       @input="$emit('update:zipcode', $event)"
       @loaded="$emit('update:address1', $event.full)"
     />
-    <h-text-field-address
+    <a-text-field-address
       label="住所1"
       :value="address1"
       required
       @input="$emit('update:address1', $event)"
     />
-    <h-text-field-address
+    <a-text-field-address
       label="住所2"
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <h-text-field-tel :value="tel" @input="$emit('update:tel', $event)" />
+        <a-text-field-tel :value="tel" @input="$emit('update:tel', $event)" />
       </v-col>
       <v-col cols="12" sm="6">
-        <h-text-field-tel
+        <a-text-field-tel
           label="FAX番号"
           :value="fax"
           @input="$emit('update:fax', $event)"
         />
       </v-col>
     </v-row>
-    <h-text-field-url :value="url" @input="$emit('update:url', $event)" />
-    <h-text-field-staff-name
+    <a-text-field-url :value="url" @input="$emit('update:url', $event)" />
+    <a-text-field-staff-name
       :value="staffName"
       @input="$emit('update:staffName', $event)"
     />
-    <h-text-field-email
+    <a-text-field-email
       :value="staffEmail"
       @input="$emit('update:staffEmail', $event)"
     />
-    <h-radio-group-site-condition
+    <a-radio-group-site-condition
       v-if="editMode !== 'REGIST'"
       class="mt-0"
       :value="condition"
@@ -147,7 +147,7 @@ export default {
       @change="$emit('update:condition', $event)"
     />
     <v-expand-transition>
-      <h-text-field-date
+      <a-text-field-date
         v-show="condition === 'expired'"
         label="契約満了日"
         :value="dateExpired"

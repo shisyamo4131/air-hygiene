@@ -2,18 +2,18 @@
 /**
  * @author shisyamo4131
  */
-import HTextFieldUnitAbbr from '~/components/atoms/inputs/HTextFieldUnitAbbr.vue'
-import HTextFieldUnitCode from '~/components/atoms/inputs/HTextFieldUnitCode.vue'
-import HTextFieldUnitName from '~/components/atoms/inputs/HTextFieldUnitName.vue'
+import ATextFieldUnitAbbr from '~/components/atoms/inputs/ATextFieldUnitAbbr.vue'
+import ATextFieldUnitCode from '~/components/atoms/inputs/ATextFieldUnitCode.vue'
+import ATextFieldUnitName from '~/components/atoms/inputs/ATextFieldUnitName.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HTextFieldUnitCode,
-    HTextFieldUnitName,
-    HTextFieldUnitAbbr,
+    ATextFieldUnitCode,
+    ATextFieldUnitName,
+    ATextFieldUnitAbbr,
   },
   /******************************************************************
    * MIXINS
@@ -33,18 +33,18 @@ export default {
 
 <template>
   <div>
-    <h-text-field-unit-code
+    <a-text-field-unit-code
       :value="code"
       required
       :disabled="editMode === 'UPDATE' && !deletable"
       @input="$emit('update:code', $event)"
     />
-    <h-text-field-unit-name
+    <a-text-field-unit-name
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <h-text-field-unit-abbr
+    <a-text-field-unit-abbr
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"

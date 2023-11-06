@@ -4,10 +4,10 @@
  */
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import HTextFieldCollectItemCode from '~/components/atoms/inputs/HTextFieldCollectItemCode.vue'
-import HTextFieldCollectItemName from '~/components/atoms/inputs/HTextFieldCollectItemName.vue'
-import HTextFieldCollectItemNameKana from '~/components/atoms/inputs/HTextFieldCollectItemNameKana.vue'
-import HTextFieldCollectItemAbbr from '~/components/atoms/inputs/HTextFieldCollectItemAbbr.vue'
+import ATextFieldCollectItemCode from '~/components/atoms/inputs/ATextFieldCollectItemCode.vue'
+import ATextFieldCollectItemName from '~/components/atoms/inputs/ATextFieldCollectItemName.vue'
+import ATextFieldCollectItemNameKana from '~/components/atoms/inputs/ATextFieldCollectItemNameKana.vue'
+import ATextFieldCollectItemAbbr from '~/components/atoms/inputs/ATextFieldCollectItemAbbr.vue'
 import AAutocompleteWasteDiv from '~/components/atoms/inputs/AAutocompleteWasteDiv.vue'
 export default {
   /******************************************************************
@@ -15,10 +15,10 @@ export default {
    ******************************************************************/
   components: {
     ATextarea,
-    HTextFieldCollectItemCode,
-    HTextFieldCollectItemName,
-    HTextFieldCollectItemNameKana,
-    HTextFieldCollectItemAbbr,
+    ATextFieldCollectItemCode,
+    ATextFieldCollectItemName,
+    ATextFieldCollectItemNameKana,
+    ATextFieldCollectItemAbbr,
     AAutocompleteWasteDiv,
   },
   /******************************************************************
@@ -42,23 +42,23 @@ export default {
 
 <template>
   <div>
-    <h-text-field-collect-item-code
+    <a-text-field-collect-item-code
       :value="code"
       required
       :disabled="editMode === 'UPDATE' && !deletable"
       @input="$emit('update:code', $event)"
     />
-    <h-text-field-collect-item-name
+    <a-text-field-collect-item-name
       :value="name"
       required
       @input="$emit('update:name', $event)"
     />
-    <h-text-field-collect-item-name-kana
+    <a-text-field-collect-item-name-kana
       :value="nameKana"
       required
       @input="$emit('update:nameKana', $event)"
     />
-    <h-text-field-collect-item-abbr
+    <a-text-field-collect-item-abbr
       :value="abbr"
       required
       @input="$emit('update:abbr', $event)"

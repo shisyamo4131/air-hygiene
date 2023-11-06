@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldHonor
+ * ### ATextFieldCollectItemNameKana
  *
- * A component for honor.
+ * A component for nameKana of CollectItem.
  *
  * @author shisyamo4131
  */
@@ -16,19 +16,17 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    hint: {
-      type: String,
-      default: '請求書の宛名に印字されます。',
-      required: false,
-    },
-    label: { type: String, default: '敬称', required: false },
-    persistentHing: { type: Boolean, default: true, required: false },
+    label: { type: String, default: '回収品目名カナ', required: false },
   },
 }
 </script>
 
 <template>
-  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
+  <a-text-field
+    v-bind="{ ...$props, ...$attrs }"
+    input-type="katakana"
+    v-on="$listeners"
+  >
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"

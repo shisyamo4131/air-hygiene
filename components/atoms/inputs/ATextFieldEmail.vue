@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldCollectItemNameKana
+ * ### ATextFieldEmail
  *
- * A component for nameKana of CollectItem.
+ * A component for e-mail.
  *
  * @author shisyamo4131
  */
@@ -16,7 +16,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '回収品目名カナ', required: false },
+    label: { type: String, default: 'メールアドレス', required: false },
   },
 }
 </script>
@@ -24,7 +24,7 @@ export default {
 <template>
   <a-text-field
     v-bind="{ ...$props, ...$attrs }"
-    input-type="katakana"
+    input-type="email"
     v-on="$listeners"
   >
     <template

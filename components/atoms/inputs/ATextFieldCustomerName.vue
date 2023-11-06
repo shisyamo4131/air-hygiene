@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldUrl
+ * ### ATextFieldCustomerName
  *
- * A component for url.
+ * A component for name of Customer.
  *
  * @author shisyamo4131
  */
@@ -16,17 +16,13 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: 'URL', required: false },
+    label: { type: String, default: '取引先名', required: false },
   },
 }
 </script>
 
 <template>
-  <a-text-field
-    v-bind="{ ...$props, ...$attrs }"
-    input-type="url"
-    v-on="$listeners"
-  >
+  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"

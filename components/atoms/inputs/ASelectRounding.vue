@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HSelectDeadline
+ * ### ASelectRounding
  *
- * A component for deadline.
+ * A component for rounding.
  *
  * @author shisyamo4131
  */
@@ -16,11 +16,14 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '締日', required: false },
+    label: { type: String, default: '端数処理', required: false },
   },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
   data() {
     return {
-      items: this.$DEADLINE_ARRAY,
+      items: this.$ROUNDING_ARRAY,
     }
   },
 }

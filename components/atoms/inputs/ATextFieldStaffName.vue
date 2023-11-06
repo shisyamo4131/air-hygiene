@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldAddress
+ * ### ATextFieldStaffName
  *
- * A component for address.
+ * A component for staff-name.
  *
  * @author shisyamo4131
  */
@@ -16,7 +16,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '住所', required: false },
+    label: { type: String, default: '担当者名', required: false },
   },
 }
 </script>

@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HTextFieldZipcode
+ * ### ATextFieldZipcode
  *
  * A component for zipcode.
  *

@@ -4,7 +4,7 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import HNumericUnitPrice from '../../atoms/inputs/HNumericUnitPrice.vue'
+import ANumericUnitPrice from '../../atoms/inputs/ANumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 export default {
   /******************************************************************
@@ -13,7 +13,7 @@ export default {
   components: {
     AAutocompleteCollectItem,
     AAutocompleteUnit,
-    HNumericUnitPrice,
+    ANumericUnitPrice,
   },
   /******************************************************************
    * MIXINS
@@ -50,7 +50,7 @@ export default {
         />
       </v-col>
       <v-col cols="12" sm="6">
-        <h-numeric-unit-price
+        <a-numeric-unit-price
           label="単価（税抜）"
           :value="unitPrice"
           required

@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldSiteAbbr
+ * ### ATextFieldUrl
  *
- * A component for abbreviation of Site.
+ * A component for url.
  *
  * @author shisyamo4131
  */
@@ -16,13 +16,17 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '略称', required: false },
+    label: { type: String, default: 'URL', required: false },
   },
 }
 </script>
 
 <template>
-  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
+  <a-text-field
+    v-bind="{ ...$props, ...$attrs }"
+    input-type="url"
+    v-on="$listeners"
+  >
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"

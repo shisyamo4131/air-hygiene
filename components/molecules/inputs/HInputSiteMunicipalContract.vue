@@ -8,8 +8,8 @@ import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
-import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
-import HNumericUnitPrice from '~/components/atoms/inputs/HNumericUnitPrice.vue'
+import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
+import ANumericUnitPrice from '~/components/atoms/inputs/ANumericUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -18,8 +18,8 @@ export default {
     ATextarea,
     ANumeric,
     ASelect,
-    HTextFieldDate,
-    HNumericUnitPrice,
+    ATextFieldDate,
+    ANumericUnitPrice,
   },
   /******************************************************************
    * MIXINS
@@ -55,7 +55,7 @@ export default {
 
 <template>
   <div>
-    <h-text-field-date
+    <a-text-field-date
       label="契約日"
       :value="date"
       required
@@ -63,7 +63,7 @@ export default {
     />
     <v-row dense>
       <v-col cols="12" sm="6">
-        <h-numeric-unit-price
+        <a-numeric-unit-price
           label="契約単価（税抜）"
           :value="unitPrice"
           required

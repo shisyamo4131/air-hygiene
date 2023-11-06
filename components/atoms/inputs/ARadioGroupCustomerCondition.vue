@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HRadioGroupCustomerCondition
+ * ### ARadioGroupCustomerCondition
  *
  * @author shisyamo4131
  */

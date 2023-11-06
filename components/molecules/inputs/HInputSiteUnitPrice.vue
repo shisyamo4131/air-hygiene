@@ -6,14 +6,14 @@
  */
 import HInputSiteUnitPriceDetails from './HInputSiteUnitPriceDetails.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import HTextFieldDate from '~/components/atoms/inputs/HTextFieldDate.vue'
+import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     HInputSiteUnitPriceDetails,
-    HTextFieldDate,
+    ATextFieldDate,
   },
   /******************************************************************
    * MIXINS
@@ -32,7 +32,7 @@ export default {
 
 <template>
   <div>
-    <h-text-field-date
+    <a-text-field-date
       label="開始日"
       :value="date"
       required

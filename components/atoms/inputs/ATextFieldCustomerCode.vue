@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldUnitCode
+ * ### ATextFieldCustomerCode
  *
- * A component for code of Unit.
+ * A component for code of Customer.
  *
  * @author shisyamo4131
  */
@@ -17,9 +17,9 @@ export default {
    ******************************************************************/
   props: {
     counter: { type: Boolean, default: true, required: false },
-    hint: { type: String, default: '2桁で入力', required: false },
+    hint: { type: String, default: '5桁で入力', required: false },
     label: { type: String, default: 'CODE', required: false },
-    maxLength: { type: [Number, String], default: 2, required: false },
+    maxLength: { type: [Number, String], default: 5, required: false },
     rules: { type: Array, default: () => [], required: false },
   },
   /******************************************************************
@@ -27,7 +27,7 @@ export default {
    ******************************************************************/
   data() {
     return {
-      lengthRule: (v) => !v || v.length === 2 || '2桁で入力してください。',
+      lengthRule: (v) => !v || v.length === 5 || '5桁で入力してください。',
     }
   },
   /******************************************************************

@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HTextFieldCustomerAbbr
+ * ### ATextFieldCustomerAbbr
  *
  * A component for abbreviation of Customer.
  *

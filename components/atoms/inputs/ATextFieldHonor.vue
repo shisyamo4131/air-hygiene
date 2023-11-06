@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldCustomerName
+ * ### ATextFieldHonor
  *
- * A component for name of Customer.
+ * A component for honor.
  *
  * @author shisyamo4131
  */
@@ -16,7 +16,13 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '取引先名', required: false },
+    hint: {
+      type: String,
+      default: '請求書の宛名に印字されます。',
+      required: false,
+    },
+    label: { type: String, default: '敬称', required: false },
+    persistentHing: { type: Boolean, default: true, required: false },
   },
 }
 </script>

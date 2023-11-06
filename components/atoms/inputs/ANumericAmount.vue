@@ -1,31 +1,32 @@
 <script>
 /**
- * ### HTextFieldCollectItemAbbr
+ * ### ANumericAmount
  *
- * A component for abbreviation of CollectItem.
+ * A component for amount.
  *
  * @author shisyamo4131
  */
-import ATextField from './ATextField.vue'
+import ANumeric from './ANumeric.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ATextField },
+  components: { ANumeric },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
-    counter: { type: Boolean, default: true, required: false },
-    hint: { type: String, default: '4文字以内', required: false },
-    label: { type: String, default: '略称', required: false },
-    maxLength: { type: [Number, String], default: 4, required: false },
+    label: { type: String, default: '数量', required: false },
   },
 }
 </script>
 
 <template>
-  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
+  <a-numeric
+    v-bind="{ ...$props, ...$attrs }"
+    class="right-input"
+    v-on="$listeners"
+  >
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"
@@ -35,7 +36,7 @@ export default {
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </a-text-field>
+  </a-numeric>
 </template>
 
 <style></style>

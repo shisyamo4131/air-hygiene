@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HRadioGroupSiteCondition
+ * ### ARadioGroupSiteCondition
  *
  * @author shisyamo4131
  */

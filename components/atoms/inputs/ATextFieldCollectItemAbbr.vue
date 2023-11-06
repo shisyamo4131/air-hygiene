@@ -1,36 +1,31 @@
 <script>
 /**
- * ### HSelectRounding
+ * ### ATextFieldCollectItemAbbr
  *
- * A component for rounding.
+ * A component for abbreviation of CollectItem.
  *
  * @author shisyamo4131
  */
-import ASelect from './ASelect.vue'
+import ATextField from './ATextField.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ASelect },
+  components: { ATextField },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '端数処理', required: false },
-  },
-  /******************************************************************
-   * DATA
-   ******************************************************************/
-  data() {
-    return {
-      items: this.$ROUNDING_ARRAY,
-    }
+    counter: { type: Boolean, default: true, required: false },
+    hint: { type: String, default: '4文字以内', required: false },
+    label: { type: String, default: '略称', required: false },
+    maxLength: { type: [Number, String], default: 4, required: false },
   },
 }
 </script>
 
 <template>
-  <a-select v-bind="{ ...$props, ...$attrs }" :items="items" v-on="$listeners">
+  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"
@@ -40,7 +35,7 @@ export default {
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </a-select>
+  </a-text-field>
 </template>
 
 <style></style>

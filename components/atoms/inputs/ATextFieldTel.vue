@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HTextFieldTel
+ * ### ATextFieldTel
  *
  * A component for tel.
  *

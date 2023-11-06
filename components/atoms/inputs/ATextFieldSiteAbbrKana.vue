@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldSiteName
+ * ### ATextFieldSiteAbbrKana
  *
- * A component for name of Site.
+ * A component for abbreviation-kana of Site.
  *
  * @author shisyamo4131
  */
@@ -16,13 +16,17 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '排出場所名', required: false },
+    label: { type: String, default: '略称カナ', required: false },
   },
 }
 </script>
 
 <template>
-  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
+  <a-text-field
+    v-bind="{ ...$props, ...$attrs }"
+    input-type="katakana"
+    v-on="$listeners"
+  >
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"

@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HTextFieldCollectItemCode
+ * ### ATextFieldCollectItemCode
  *
  * A component for code of CollectItem.
  *

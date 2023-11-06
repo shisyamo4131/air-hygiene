@@ -8,7 +8,7 @@
         hide-details
         class="mr-4"
       />
-      <h-radio-group-edit-model v-model="editMode" row hide-details />
+      <a-radio-group-edit-model v-model="editMode" row hide-details />
     </v-toolbar>
     <v-card-text
       :style="`height: calc(100% - ${toolbarHeight}px)`"
@@ -50,7 +50,7 @@ import HInputSiteMunicipalContract from '~/components/molecules/inputs/HInputSit
 import HInputCollectionResultDetail from '~/components/molecules/inputs/HInputCollectionResultDetail.vue'
 import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
-import HRadioGroupEditModel from '~/components/molecules/inputs/HRadioGroupEditModel.vue'
+import ARadioGroupEditModel from '~/components/atoms/inputs/ARadioGroupEditModel.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -66,7 +66,7 @@ export default {
     HInputCollectionResultDetail,
     HInputMunicipalPermission,
     ASelect,
-    HRadioGroupEditModel,
+    ARadioGroupEditModel,
     HInputCollectionResult,
   },
   /******************************************************************

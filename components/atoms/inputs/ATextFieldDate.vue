@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HTextFieldDate
+ * ### ATextFieldDate
  *
  * @author shisyamo4131
  */

@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HNumericAmount
+ * ### ANumericDepositMonth
  *
- * A component for amount.
+ * A component for deadline.
  *
  * @author shisyamo4131
  */
@@ -16,7 +16,8 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '数量', required: false },
+    label: { type: String, default: '入金月', required: false },
+    suffix: { type: String, default: 'ヶ月後', required: false },
   },
 }
 </script>

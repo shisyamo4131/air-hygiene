@@ -1,32 +1,33 @@
 <script>
 /**
- * ### HTextFieldEmail
+ * ### ASelectDeadline
  *
- * A component for e-mail.
+ * A component for deadline.
  *
  * @author shisyamo4131
  */
-import ATextField from './ATextField.vue'
+import ASelect from './ASelect.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ATextField },
+  components: { ASelect },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: 'メールアドレス', required: false },
+    label: { type: String, default: '締日', required: false },
+  },
+  data() {
+    return {
+      items: this.$DEADLINE_ARRAY,
+    }
   },
 }
 </script>
 
 <template>
-  <a-text-field
-    v-bind="{ ...$props, ...$attrs }"
-    input-type="email"
-    v-on="$listeners"
-  >
+  <a-select v-bind="{ ...$props, ...$attrs }" :items="items" v-on="$listeners">
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"
@@ -36,7 +37,7 @@ export default {
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </a-text-field>
+  </a-select>
 </template>
 
 <style></style>

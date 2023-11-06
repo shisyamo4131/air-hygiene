@@ -1,33 +1,31 @@
 <script>
 /**
- * ### HNumericDepositMonth
+ * ### ATextFieldUnitAbbr
  *
- * A component for deadline.
+ * A component for abbreviation of Unit.
  *
  * @author shisyamo4131
  */
-import ANumeric from './ANumeric.vue'
+import ATextField from './ATextField.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ANumeric },
+  components: { ATextField },
   /******************************************************************
    * PROPS
    ******************************************************************/
   props: {
-    label: { type: String, default: '入金月', required: false },
-    suffix: { type: String, default: 'ヶ月後', required: false },
+    counter: { type: Boolean, default: true, required: false },
+    hint: { type: String, default: '4文字以内', required: false },
+    label: { type: String, default: '略称', required: false },
+    maxLength: { type: [Number, String], default: 4, required: false },
   },
 }
 </script>
 
 <template>
-  <a-numeric
-    v-bind="{ ...$props, ...$attrs }"
-    class="right-input"
-    v-on="$listeners"
-  >
+  <a-text-field v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
     <template
       v-for="(_, scopedSlotName) in $scopedSlots"
       #[scopedSlotName]="slotData"
@@ -37,7 +35,7 @@ export default {
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </a-numeric>
+  </a-text-field>
 </template>
 
 <style></style>

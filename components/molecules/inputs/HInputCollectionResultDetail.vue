@@ -6,9 +6,9 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
-import HNumericUnitPrice from '../../atoms/inputs/HNumericUnitPrice.vue'
+import ANumericUnitPrice from '../../atoms/inputs/ANumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
-import HNumericAmount from '~/components/atoms/inputs/HNumericAmount.vue'
+import ANumericAmount from '~/components/atoms/inputs/ANumericAmount.vue'
 export default {
   /***************************************************************************
    * COMPONENTS
@@ -16,8 +16,8 @@ export default {
   components: {
     AAutocompleteCollectItem,
     AAutocompleteUnit,
-    HNumericUnitPrice,
-    HNumericAmount,
+    ANumericUnitPrice,
+    ANumericAmount,
   },
   /***************************************************************************
    * MIXINS
@@ -66,7 +66,7 @@ export default {
       @change="loadUnitPrice"
       @input="$emit('update:collectItemId', $event)"
     />
-    <h-numeric-amount
+    <a-numeric-amount
       label="数量"
       :value="amount"
       required
@@ -80,7 +80,7 @@ export default {
       @change="loadUnitPrice"
       @input="$emit('update:unitId', $event)"
     />
-    <h-numeric-unit-price
+    <a-numeric-unit-price
       label="単価（税抜）"
       :value="unitPrice"
       required

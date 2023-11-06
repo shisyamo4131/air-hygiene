@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTextFieldDate from '../../atoms/inputs/HTextFieldDate.vue'
+import ATextFieldDate from '../../atoms/inputs/ATextFieldDate.vue'
 import HInputCollectionResultDetails from './HInputCollectionResultDetails.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/inputs/HInputMixin.vue'
@@ -17,7 +17,7 @@ export default {
     ATextarea,
     ANumeric,
     AAutocomplete,
-    HTextFieldDate,
+    ATextFieldDate,
     ATextField,
     HInputCollectionResultDetails,
   },
@@ -44,7 +44,7 @@ export default {
 
 <template>
   <div>
-    <h-text-field-date
+    <a-text-field-date
       label="回収日"
       :value="date"
       required
@@ -91,7 +91,7 @@ export default {
       suffix="kg"
       @input="$emit('update:industrialWeight', $event)"
     />
-    <h-text-field-date
+    <a-text-field-date
       label="請求締日"
       :value="dateDeadline"
       required

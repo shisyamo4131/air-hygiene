@@ -1,8 +1,8 @@
 <script>
 /**
- * ### HTextFieldUnitAbbr
+ * ### ATextFieldAddress
  *
- * A component for abbreviation of Unit.
+ * A component for address.
  *
  * @author shisyamo4131
  */
@@ -16,10 +16,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    counter: { type: Boolean, default: true, required: false },
-    hint: { type: String, default: '4文字以内', required: false },
-    label: { type: String, default: '略称', required: false },
-    maxLength: { type: [Number, String], default: 4, required: false },
+    label: { type: String, default: '住所', required: false },
   },
 }
 </script>
