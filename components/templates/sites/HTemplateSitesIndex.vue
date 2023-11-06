@@ -29,7 +29,7 @@ export default {
           })
           .filter((item) => {
             if (this.includeExpired) return true
-            return item.condition === 'active'
+            return item.status === 'active'
           })
           .filter((item) => {
             if (!search) return true

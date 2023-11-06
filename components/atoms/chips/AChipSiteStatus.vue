@@ -1,5 +1,9 @@
 <script>
 /**
+ * ### AChipSiteStatus
+ *
+ * Chip in the status of the site.
+ *
  * @author shisyamo4131
  */
 export default {
