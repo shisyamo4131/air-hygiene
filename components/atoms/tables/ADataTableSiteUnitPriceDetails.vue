@@ -18,7 +18,7 @@ export default {
       headers: [
         { text: '回収品目', value: 'collectItemId' },
         { text: '単位', value: 'unitId' },
-        { text: '金額', value: 'unitPrice', align: 'right' },
+        { text: '単価', value: 'unitPrice', align: 'right' },
       ],
     }
   },

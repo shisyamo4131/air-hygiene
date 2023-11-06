@@ -2,6 +2,8 @@
 /**
  * ### HCrudSiteUnitPrices
  *
+ * - For create, update, delete and display SiteUnitPrices.
+ *
  * #### PROPERTIES
  *
  * | name   | type   | default | required | remarks |
@@ -13,15 +15,15 @@
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
 import HInputSiteUnitPrice from '../molecules/inputs/HInputSiteUnitPrice.vue'
-import ADataTableSiteUnitPriceDetails from '../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
+import MCardSiteUnitPrice from '../molecules/cards/MCardSiteUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     HInputSiteUnitPrice,
-    ADataTableSiteUnitPriceDetails,
     ASwitch,
+    MCardSiteUnitPrice,
   },
   /******************************************************************
    * PROPS
@@ -155,25 +157,12 @@ export default {
       </v-card>
     </v-timeline-item>
     <v-timeline-item v-for="(item, index) of internalItems" :key="index">
-      <v-card outlined>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>
-              {{ $dayjs(item.date).format('YYYY年MM月DD日') }}
-            </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <a-data-table-site-unit-price-details
-          :items="item.details"
-          hide-default-footer
-          :items-per-page="-1"
-        />
-        <v-card-actions>
-          <v-btn block color="primary" text @click="onClickEdit(item)">
-            回収単価を編集する
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+      <m-card-site-unit-price
+        outlined
+        :site-id="siteId"
+        :date="item.date"
+        :details="item.details"
+      />
     </v-timeline-item>
   </v-timeline>
 </template>

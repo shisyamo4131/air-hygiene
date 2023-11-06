@@ -1,19 +1,14 @@
 <template>
   <div>
-    <a-data-table-collection-results
-      :height="500"
-      hide-default-footer
-      show-actions
-      :items="items.collectionResults"
-    />
+    <m-card-site-unit-price :site-id="siteId" :date="date" :details="[]" />
   </div>
 </template>
 
 <script>
-import ADataTableCollectionResults from '~/components/atoms/tables/ADataTableCollectionResults.vue'
 import TestDataCollectionResults from '~/assets/TestDataCollectionResult.json'
+import MCardSiteUnitPrice from '~/components/molecules/cards/MCardSiteUnitPrice.vue'
 export default {
-  components: { ADataTableCollectionResults },
+  components: { MCardSiteUnitPrice },
   data() {
     return {
       siteId: 'UVgfx4L1kWUXYytmApvs',
