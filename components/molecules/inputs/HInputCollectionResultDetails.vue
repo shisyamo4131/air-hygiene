@@ -4,7 +4,7 @@
  *
  * @author shisyamo4131
  */
-import HDataTableCollectionResultDetails from '../../atoms/tables/HDataTableCollectionResultDetails.vue'
+import ADataTableCollectionResultDetails from '../../atoms/tables/ADataTableCollectionResultDetails.vue'
 import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
 import AMixinArrayInput from '~/components/atoms/mixins/AMixinArrayInput.vue'
 export default {
@@ -12,7 +12,7 @@ export default {
    * COMPONENTS
    ******************************************************************/
   components: {
-    HDataTableCollectionResultDetails,
+    ADataTableCollectionResultDetails,
     HInputCollectionResultDetail,
   },
   /******************************************************************
@@ -75,7 +75,7 @@ export default {
         </v-card-text>
       </air-card-form-input>
     </v-dialog>
-    <h-data-table-collection-result-details
+    <a-data-table-collection-result-details
       :items="value"
       hide-default-footer
       :items-per-page="-1"
@@ -85,7 +85,7 @@ export default {
       @click:edit="onClickEdit($event)"
       @click:delete="onClickDelete($event)"
     >
-    </h-data-table-collection-result-details>
+    </a-data-table-collection-result-details>
   </div>
 </template>
 

@@ -2,9 +2,9 @@
 /**
  * @author shisyamo4131
  */
-import HSimpleTableUnit from '~/components/atoms/tables/HSimpleTableUnit.vue'
+import ASimpleTableUnit from '~/components/atoms/tables/ASimpleTableUnit.vue'
 export default {
-  components: { HSimpleTableUnit },
+  components: { ASimpleTableUnit },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -41,7 +41,7 @@ export default {
     <template #tab-0>
       <v-container>
         <v-card outlined>
-          <h-simple-table-unit v-bind="model" />
+          <a-simple-table-unit v-bind="model" />
         </v-card>
       </v-container>
     </template>

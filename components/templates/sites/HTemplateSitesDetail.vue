@@ -11,7 +11,7 @@
  *
  * @author shisyamo4131
  */
-import HSimpleTableSite from '~/components/atoms/tables/HSimpleTableSite.vue'
+import ASimpleTableSite from '~/components/atoms/tables/ASimpleTableSite.vue'
 import HCrudSiteMunicipalContracts from '~/components/organisms/HCrudSiteMunicipalContracts.vue'
 import HCrudSiteUnitPrices from '~/components/organisms/HCrudSiteUnitPrices.vue'
 import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
@@ -22,7 +22,7 @@ export default {
   components: {
     HDashboardSite,
     HCrudSiteUnitPrices,
-    HSimpleTableSite,
+    ASimpleTableSite,
     HCrudSiteMunicipalContracts,
   },
   /******************************************************************
@@ -93,7 +93,7 @@ export default {
     <!-- TAB:1 SITE-INFORMATION -->
     <template #tab-1>
       <v-container fluid>
-        <h-simple-table-site v-bind="model" />
+        <a-simple-table-site v-bind="model" />
       </v-container>
     </template>
     <!-- TAB:2 -->

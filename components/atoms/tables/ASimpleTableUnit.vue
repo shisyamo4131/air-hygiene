@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HSimpleTableCollectItem
+ * ### ASimpleTableCollectItem
  *
  * @author shisyamo4131
  */

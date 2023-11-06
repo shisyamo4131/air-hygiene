@@ -1,13 +1,19 @@
 <template>
   <div>
-    <h-input-collection-result-details v-model="items" />
+    <a-data-table-collection-results
+      :height="500"
+      hide-default-footer
+      show-actions
+      :items="items.collectionResults"
+    />
   </div>
 </template>
 
 <script>
-import HInputCollectionResultDetails from '~/components/molecules/inputs/HInputCollectionResultDetails.vue'
+import ADataTableCollectionResults from '~/components/atoms/tables/ADataTableCollectionResults.vue'
+import TestDataCollectionResults from '~/assets/TestDataCollectionResult.json'
 export default {
-  components: { HInputCollectionResultDetails },
+  components: { ADataTableCollectionResults },
   data() {
     return {
       siteId: 'UVgfx4L1kWUXYytmApvs',
@@ -20,22 +26,9 @@ export default {
         { text: 'collectItemId', value: 'collectItemId' },
         { text: 'unitPrice', value: 'unitPrice' },
       ],
-      items: [
-        {
-          collectItemId: '1011',
-          unitId: '11',
-          id: '1011-11',
-          amount: 30,
-          unitPrice: 300,
-        },
-        {
-          collectItemId: '1015',
-          unitId: '11',
-          id: '1015-11',
-          amount: 20,
-          unitPrice: 30,
-        },
-      ],
+      items: {
+        collectionResults: TestDataCollectionResults,
+      },
     }
   },
 }

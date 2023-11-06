@@ -2,12 +2,12 @@
 /**
  * @author shisyamo4131
  */
-import HDataTableSiteUnitPriceDetails from '../atoms/tables/HDataTableSiteUnitPriceDetails.vue'
+import ADataTableSiteUnitPriceDetails from '../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HDataTableSiteUnitPriceDetails },
+  components: { ADataTableSiteUnitPriceDetails },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -73,7 +73,7 @@ export default {
               </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
-          <h-data-table-site-unit-price-details
+          <a-data-table-site-unit-price-details
             :items="unitPrice?.details || []"
             hide-default-footer
             :items-per-page="-1"

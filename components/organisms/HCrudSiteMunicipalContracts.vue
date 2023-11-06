@@ -12,7 +12,7 @@
  * @author shisyamo4131
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
-import HSimpleTableSiteMunicipalContract from '../atoms/tables/HSimpleTableSiteMunicipalContract.vue'
+import ASimpleTableSiteMunicipalContract from '../atoms/tables/ASimpleTableSiteMunicipalContract.vue'
 import HInputSiteMunicipalContract from '../molecules/inputs/HInputSiteMunicipalContract.vue'
 export default {
   /******************************************************************
@@ -21,7 +21,7 @@ export default {
   components: {
     HInputSiteMunicipalContract,
     ASwitch,
-    HSimpleTableSiteMunicipalContract,
+    ASimpleTableSiteMunicipalContract,
   },
   /******************************************************************
    * PROPS
@@ -159,7 +159,7 @@ export default {
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <h-simple-table-site-municipal-contract v-bind="item" />
+        <a-simple-table-site-municipal-contract v-bind="item" />
         <v-card-actions>
           <v-btn block color="primary" text @click="onClickEdit(item)">
             契約を編集する

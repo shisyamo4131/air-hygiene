@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HSimpleTableCustomer
+ * ### ASimpleTableCustomer
  *
  * @author shisyamo4131
  */

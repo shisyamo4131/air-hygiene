@@ -4,14 +4,14 @@
  *
  * @author shisyamo4131
  */
-import HDataTableSiteUnitPriceDetails from '../../atoms/tables/HDataTableSiteUnitPriceDetails.vue'
+import ADataTableSiteUnitPriceDetails from '../../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
 import HInputSiteUnitPriceDetail from './HInputSiteUnitPriceDetail.vue'
 import AMixinArrayInput from '~/components/atoms/mixins/AMixinArrayInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HDataTableSiteUnitPriceDetails, HInputSiteUnitPriceDetail },
+  components: { ADataTableSiteUnitPriceDetails, HInputSiteUnitPriceDetail },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -62,7 +62,7 @@ export default {
         </v-card-text>
       </air-card-form-input>
     </v-dialog>
-    <h-data-table-site-unit-price-details
+    <a-data-table-site-unit-price-details
       :items="value"
       hide-default-footer
       :items-per-page="-1"
@@ -72,7 +72,7 @@ export default {
       @click:edit="onClickEdit($event)"
       @click:delete="onClickDelete($event)"
     >
-    </h-data-table-site-unit-price-details>
+    </a-data-table-site-unit-price-details>
   </div>
 </template>
 

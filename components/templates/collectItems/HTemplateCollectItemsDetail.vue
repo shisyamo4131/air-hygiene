@@ -1,10 +1,10 @@
 <script>
-import HSimpleTableCollectItem from '~/components/atoms/tables/HSimpleTableCollectItem.vue'
+import ASimpleTableCollectItem from '~/components/atoms/tables/ASimpleTableCollectItem.vue'
 /**
  * @author shisyamo4131
  */
 export default {
-  components: { HSimpleTableCollectItem },
+  components: { ASimpleTableCollectItem },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -53,7 +53,7 @@ export default {
     <template #tab-0>
       <v-container>
         <v-card outlined>
-          <h-simple-table-collect-item v-bind="model" />
+          <a-simple-table-collect-item v-bind="model" />
         </v-card>
       </v-container>
     </template>

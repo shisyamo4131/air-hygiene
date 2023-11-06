@@ -13,14 +13,14 @@
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
 import HInputSiteUnitPrice from '../molecules/inputs/HInputSiteUnitPrice.vue'
-import HDataTableSiteUnitPriceDetails from '../atoms/tables/HDataTableSiteUnitPriceDetails.vue'
+import ADataTableSiteUnitPriceDetails from '../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     HInputSiteUnitPrice,
-    HDataTableSiteUnitPriceDetails,
+    ADataTableSiteUnitPriceDetails,
     ASwitch,
   },
   /******************************************************************
@@ -163,7 +163,7 @@ export default {
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <h-data-table-site-unit-price-details
+        <a-data-table-site-unit-price-details
           :items="item.details"
           hide-default-footer
           :items-per-page="-1"

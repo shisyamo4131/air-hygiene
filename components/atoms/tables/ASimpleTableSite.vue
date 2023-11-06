@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HSimpleTableSite
+ * ### ASimpleTableSite
  *
  * @author shisyamo4131
  */

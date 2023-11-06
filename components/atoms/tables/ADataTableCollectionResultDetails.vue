@@ -2,8 +2,6 @@
 /**
  * ### HDataTableCollectionResultDetails
  *
- * Data table component for displaying CollectionResultDetails.
- *
  * @author shisyamo4131
  */
 import ADataTable from '~/components/atoms/tables/ADataTable.vue'
@@ -47,26 +45,17 @@ export default {
     <template #[`item.collectItemId`]="{ item }">
       {{ collectItem(item.collectItemId)?.abbr || 'undefined' }}
     </template>
+    <template #[`item.amount`]="{ item }">
+      {{ `${$airNumericToSeparatedString(item.amount, 2)}` }}
+    </template>
     <template #[`item.unitId`]="{ item }">
       {{ unit(item.unitId)?.abbr || 'undefined' }}
     </template>
-    <template #[`item.amount`]="{ item }">
-      {{ `${(item?.amount || 0).toFixed(2)}` }}
-    </template>
     <template #[`item.unitPrice`]="{ item }">
-      {{ `${(item?.unitPrice || 0).toFixed(2)} 円` }}
+      {{ `${$airNumericToSeparatedString(item.unitPrice, 2)} 円` }}
     </template>
     <template #[`item.price`]="{ item }">
-      {{ `${(item?.price || 0).toFixed(2)} 円` }}
-    </template>
-    <template
-      v-for="(_, scopedSlotName) in $scopedSlots"
-      #[scopedSlotName]="slotData"
-    >
-      <slot :name="scopedSlotName" v-bind="slotData" />
-    </template>
-    <template v-for="(_, slotName) in $slots" #[slotName]>
-      <slot :name="slotName" />
+      {{ `${$airNumericToSeparatedString(item.price, 2)} 円` }}
     </template>
   </a-data-table>
 </template>

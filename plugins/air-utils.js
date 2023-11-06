@@ -2,6 +2,21 @@ import { onChildAdded, onChildChanged, onChildRemoved } from 'firebase/database'
 import { collection, onSnapshot, query, where } from 'firebase/firestore'
 
 /**
+ * Converts a numeric value to a string with every 3 digits separated by commas.
+ * Can also specify the number of decimal places.
+ * @param {*} val
+ * @param {*} decimal
+ * @returns
+ */
+const airNumericToSeparatedString = (val, decimal = 0) => {
+  const fixed = (val || 0).toFixed(decimal)
+  return Number(fixed).toLocaleString(undefined, {
+    minimumFractionDigits: decimal,
+    maximumFracionDigits: decimal,
+  })
+}
+
+/**
  * Ensure that date is validate.
  * @param {*} context
  * @param {*} date
@@ -124,6 +139,9 @@ const airSubscribeFirestoreByTokenMap = (firestore, search, colName) => {
 }
 
 export default (context, inject) => {
+  inject('airNumericToSeparatedString', (val, decimal) =>
+    airNumericToSeparatedString(val, decimal)
+  )
   inject('airIsDate', (date) => airIsDate(context, date))
   inject('airCalcDeadlineDate', (date, deadline) =>
     airCalcDeadlineDate(context, date, deadline)

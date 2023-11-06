@@ -2,9 +2,9 @@
 /**
  * @author shisyamo4131
  */
-import HSimpleTableCustomer from '~/components/atoms/tables/HSimpleTableCustomer.vue'
+import ASimpleTableCustomer from '~/components/atoms/tables/ASimpleTableCustomer.vue'
 export default {
-  components: { HSimpleTableCustomer },
+  components: { ASimpleTableCustomer },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -98,7 +98,7 @@ export default {
     <template #tab-1>
       <v-container>
         <v-card outlined>
-          <h-simple-table-customer v-bind="model" />
+          <a-simple-table-customer v-bind="model" />
         </v-card>
       </v-container>
     </template>

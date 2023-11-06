@@ -4,14 +4,14 @@
  */
 import HAutocompleteSite from '~/components/molecules/inputs/HAutocompleteSite.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
-import HDataTableCollectionResults from '~/components/atoms/tables/HDataTableCollectionResults.vue'
+import ADataTableCollectionResults from '~/components/atoms/tables/ADataTableCollectionResults.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     HInputCollectionResult,
-    HDataTableCollectionResults,
+    ADataTableCollectionResults,
     HAutocompleteSite,
   },
   /******************************************************************
@@ -110,7 +110,7 @@ export default {
       </v-dialog>
     </template>
     <template #default="{ height }">
-      <h-data-table-collection-results
+      <a-data-table-collection-results
         :site-id="editModel.site?.docId || undefined"
         :height="height"
         show-actions

@@ -1,0 +1,24 @@
+[
+  {
+    "siteId": "UVgfx4L1kWUXYytmApvs",
+    "date": "2023-10-01",
+    "resultType": "root",
+    "rootId": "rootId",
+    "details": [],
+    "municipalWeight": 10,
+    "industrialWeight": 0,
+    "sales": 340,
+    "dateDeadline": "2023-10-31"
+  },
+  {
+    "siteId": "UVgfx4L1kWUXYytmApvs",
+    "date": "2023-10-02",
+    "resultType": "spot",
+    "rootId": "",
+    "details": [],
+    "municipalWeight": 0,
+    "industrialWeight": 100,
+    "sales": 7000,
+    "dateDeadline": "2023-10-31"
+  }
+]
