@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h-input-collection-result-details
-      v-model="items"
-      :site-id="siteId"
-      :date="date"
-    />
+    <h-input-collection-result-details v-model="items" />
   </div>
 </template>
 

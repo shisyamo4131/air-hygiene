@@ -1,7 +1,7 @@
 <script>
 import { collection, onSnapshot, query, where } from 'firebase/firestore'
-import HTextFieldYearMonth from '../inputs/HTextFieldYearMonth.vue'
-import HAutocompleteCollectItem from '../../atoms/inputs/HAutocompleteCollectItem.vue'
+import HTextFieldYearMonth from '../../molecules/inputs/HTextFieldYearMonth.vue'
+import HAutocompleteCollectItem from '../inputs/HAutocompleteCollectItem.vue'
 export default {
   /******************************************************************
    * COMPONENTS

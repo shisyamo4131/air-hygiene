@@ -4,7 +4,7 @@
  */
 import HAutocompleteSite from '~/components/molecules/inputs/HAutocompleteSite.vue'
 import HInputCollectionResult from '~/components/molecules/inputs/HInputCollectionResult.vue'
-import HDataTableCollectionResults from '~/components/molecules/tables/HDataTableCollectionResults.vue'
+import HDataTableCollectionResults from '~/components/atoms/tables/HDataTableCollectionResults.vue'
 export default {
   /******************************************************************
    * COMPONENTS
