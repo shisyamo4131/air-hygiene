@@ -3,13 +3,13 @@
  * @author shisyamo4131
  */
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
-import HCardIndexSite from '~/components/molecules/cards/HCardIndexSite.vue'
+import MCardSiteOutline from '~/components/molecules/cards/MCardSiteOutline.vue'
 import AAutocompleteCustomer from '~/components/atoms/inputs/AAutocompleteCustomer.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HCardIndexSite, ASwitch, AAutocompleteCustomer },
+  components: { MCardSiteOutline, ASwitch, AAutocompleteCustomer },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -101,7 +101,7 @@ export default {
             :key="index"
             v-bind="cols"
           >
-            <h-card-index-site
+            <m-card-site-outline
               outlined
               v-bind="item"
               :to="`/sites/${item.docId}`"

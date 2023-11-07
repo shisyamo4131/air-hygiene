@@ -1,5 +1,19 @@
 <script>
 /**
+ * ### ACardSiteOutline
+ *
+ * A card component for displaying site outline.
+ *
+ * #### PROPERTIES
+ *
+ * | name     | type   | default | required | description             |
+ * | -------- | ------ | ------- | -------- | ----------------------- |
+ * | code     | string |         | true     |                         |
+ * | abbr     | string |         | true     |                         |
+ * | abbrKana | string |         | true     |                         |
+ * | address1 | string |         | true     |                         |
+ * | status   | string |         | true     | [ 'active', 'expired' ] |
+ *
  * @author shisyamo4131
  */
 import AChipSiteStatus from '../../atoms/chips/AChipSiteStatus.vue'
@@ -14,15 +28,14 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    code: { type: String, default: '', required: false },
-    abbr: { type: String, default: '', required: false },
-    abbrKana: { type: String, default: '', required: false },
-    address1: { type: String, default: '', required: false },
+    code: { type: String, required: true },
+    abbr: { type: String, required: true },
+    abbrKana: { type: String, required: true },
+    address1: { type: String, required: true },
     status: {
       type: String,
-      default: 'active',
       validator: (v) => ['active', 'expired'].includes(v),
-      required: false,
+      required: true,
     },
   },
 }

@@ -3,12 +3,12 @@
  * @author shisyamo4131
  */
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
-import HCardIndexCustomer from '~/components/molecules/cards/HCardIndexCustomer.vue'
+import MCardCustomerOutline from '~/components/molecules/cards/MCardCustomerOutline.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HCardIndexCustomer, ASwitch },
+  components: { MCardCustomerOutline, ASwitch },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -88,7 +88,7 @@ export default {
             :key="index"
             v-bind="cols"
           >
-            <h-card-index-customer
+            <m-card-customer-outline
               outlined
               v-bind="item"
               :to="`/customers/${item.docId}`"
