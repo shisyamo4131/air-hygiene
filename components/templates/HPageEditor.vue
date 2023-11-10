@@ -46,6 +46,7 @@ export default {
       required: false,
     },
     collection: { type: String, required: true },
+    defaultItem: { type: Object, default: undefined, required: false },
     docId: { type: String, default: undefined, required: false },
     editMode: {
       type: String,
@@ -89,16 +90,24 @@ export default {
    * COMPUTED
    ******************************************************************/
   computed: {
+    component() {
+      if (!this.collection) return undefined
+      return this.collections[this.collection]?.component || undefined
+    },
+    deletable() {
+      if (this.editMode === 'REGIST') return false
+      if (!this.editItem) return false
+      if ('deletable' in this.editItem) {
+        return this.editItem.deletable
+      }
+      return true
+    },
     label() {
       if (!this.collection) return undefined
-      const label = this.collections[this.collection].label || 'undefined'
+      const label = this.collections[this.collection]?.label || 'undefined'
       if (this.editMode === 'REGIST') return `${label}登録`
       if (this.editMode === 'UPDATE') return `${label}編集`
       return `${label}削除`
-    },
-    component() {
-      if (!this.collection) return undefined
-      return this.collections[this.collection].component || undefined
     },
   },
   /******************************************************************
@@ -117,7 +126,9 @@ export default {
    ******************************************************************/
   mounted() {
     if (this.editMode === 'REGIST' || !this.docId) return
-    this.editItem.fetch(this.docId)
+    // this.editItem.fetch(this.docId)
+    if (!this.editItem) return
+    this.editItem.initialize(this.defaultItem)
   },
   /******************************************************************
    * METHODS
@@ -181,9 +192,13 @@ export default {
     <template #default>
       <v-container fluid>
         <v-form ref="form" :disabled="loading">
-          <component :is="component" v-bind.sync="editItem" />
+          <component
+            :is="component"
+            v-bind.sync="editItem"
+            :edit-mode="editMode"
+          />
           <v-switch
-            v-if="editMode !== 'REGIST'"
+            v-if="deletable"
             v-model="isDelete"
             label="削除する"
             color="error"

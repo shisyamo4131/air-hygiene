@@ -29,7 +29,7 @@ export default {
   <h-page-detail
     collection="Units"
     :item="item"
-    @click:back="$router.go(-1)"
+    @click:back="$router.push(`/units`)"
     @click:edit="$router.push(`/units/${docId}/edit`)"
   />
 </template>

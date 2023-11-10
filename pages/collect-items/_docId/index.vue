@@ -28,7 +28,7 @@ export default {
   <h-page-detail
     collection="CollectItems"
     :item="item"
-    @click:back="$router.go(-1)"
+    @click:back="$router.push(`/collect-items`)"
     @click:edit="$router.push(`/collect-items/${docId}/edit`)"
   />
 </template>

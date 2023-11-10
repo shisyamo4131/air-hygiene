@@ -28,7 +28,7 @@ export default {
   <h-page-detail
     collection="MunicipalPermissions"
     :item="item"
-    @click:back="$router.go(-1)"
+    @click:back="$router.push(`/municipal-permissions`)"
     @click:edit="$router.push(`/municipal-permissions/${docId}/edit`)"
   />
 </template>

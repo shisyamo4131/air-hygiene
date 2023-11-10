@@ -146,7 +146,7 @@ export default {
       v-if="editMode !== 'REGIST'"
       class="mt-0"
       :value="status"
-      :items="$SITE_CONDITION_ARRAY"
+      :items="$SITE_STATUS_ARRAY"
       row
       @change="$emit('update:status', $event)"
     />

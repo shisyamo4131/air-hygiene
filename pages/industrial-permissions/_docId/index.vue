@@ -28,7 +28,7 @@ export default {
   <h-page-detail
     collection="IndustrialPermissions"
     :item="item"
-    @click:back="$router.go(-1)"
+    @click:back="$router.push(`/industrial-permissions`)"
     @click:edit="$router.push(`/industrial-permissions/${docId}/edit`)"
   />
 </template>

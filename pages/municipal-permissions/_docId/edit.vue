@@ -15,9 +15,11 @@ export default {
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  asyncData({ route }) {
+  async asyncData({ app, route }) {
     const docId = route.params.docId
-    return { docId }
+    const model = app.$MunicipalPermission()
+    await model.fetch(docId)
+    return { docId, model }
   },
   /******************************************************************
    * METHODS
@@ -37,6 +39,7 @@ export default {
 <template>
   <h-page-editor
     collection="MunicipalPermissions"
+    :default-item="model"
     :doc-id="docId"
     edit-mode="UPDATE"
     @click:cancel="$router.go(-1)"
