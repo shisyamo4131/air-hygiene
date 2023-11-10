@@ -5,6 +5,7 @@
 import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -12,6 +13,7 @@ export default {
   components: {
     ATextarea,
     AAutocomplete,
+    ATextField,
   },
   /******************************************************************
    * MIXINS

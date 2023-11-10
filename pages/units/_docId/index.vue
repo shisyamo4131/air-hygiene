@@ -3,8 +3,7 @@
  * @create 2023-10-06
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateUnitsDetail from '~/components/templates/units/HTemplateUnitsDetail.vue'
+import HPageDetail from '~/components/templates/HPageDetail.vue'
 export default {
   /******************************************************************
    * NAME
@@ -13,23 +12,26 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateUnitsDetail },
+  components: { HPageDetail },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `Units/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$CollectItem()
-    model.initialize(snapshot.data())
-    return { model }
+    const item = app.$Unit()
+    await item.fetch(docId)
+    return { docId, item }
   },
 }
 </script>
 
 <template>
-  <h-template-units-detail :model="model" />
+  <h-page-detail
+    collection="Units"
+    :item="item"
+    @click:back="$router.go(-1)"
+    @click:edit="$router.push(`/units/${docId}/edit`)"
+  />
 </template>
 
 <style></style>

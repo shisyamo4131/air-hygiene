@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateUnitsEditor from '~/components/templates/units/HTemplateUnitsEditor.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,21 +11,37 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateUnitsEditor },
+  components: { HPageEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  async asyncData({ app, route }) {
+  asyncData({ route }) {
     const docId = route.params.docId
-    const model = app.$Unit()
-    await model.fetch(docId)
-    return { docId, model }
+    return { docId }
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    onSubmitted({ editMode, docId }) {
+      if (editMode === 'DELETE') {
+        this.$router.replace(`/units`)
+      } else {
+        this.$router.replace(`/units/${docId}`)
+      }
+    },
   },
 }
 </script>
 
 <template>
-  <h-template-units-editor edit-mode="UPDATE" :model="model" />
+  <h-page-editor
+    collection="Units"
+    :doc-id="docId"
+    edit-mode="UPDATE"
+    @click:cancel="$router.go(-1)"
+    @submitted="onSubmitted"
+  />
 </template>
 
 <style></style>

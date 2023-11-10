@@ -31,7 +31,7 @@ export default {
   computed: {
     footerHeight() {
       const hideDefaultFooter = this.$attrs?.hideDefaultFooter
-      if (!hideDefaultFooter) return 0
+      if (hideDefaultFooter) return 0
       return 59
     },
     internalHeaders() {
@@ -52,12 +52,33 @@ export default {
       return height - this.footerHeight
     },
   },
+  /******************************************************************
+   * WATCH
+   ******************************************************************/
+  watch: {
+    '$attrs.page'() {
+      this.scrollToTop()
+    },
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    scrollToTop() {
+      const wrapper = this.$el.querySelector('div.v-data-table__wrapper')
+      this.$vuetify.goTo(this, { container: wrapper })
+    },
+  },
 }
 </script>
 
 <template>
   <v-data-table
-    v-bind="{ ...$attrs, height: internalHeight, headers: internalHeaders }"
+    v-bind="{
+      ...$attrs,
+      height: internalHeight,
+      headers: internalHeaders,
+    }"
     v-on="$listeners"
   >
     <template

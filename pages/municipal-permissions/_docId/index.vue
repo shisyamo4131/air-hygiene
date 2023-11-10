@@ -1,35 +1,36 @@
 <script>
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateMunicipalPermissionsDetail from '~/components/templates/municipalPermissions/HTemplateMunicipalPermissionsDetail.vue'
+import HPageDetail from '~/components/templates/HPageDetail.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'PermissionsDetail',
+  name: 'MunicipalPermissionsDetail',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateMunicipalPermissionsDetail },
+  components: { HPageDetail },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `MunicipalPermissions/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$MunicipalPermission()
-    model.initialize(snapshot.data())
-    return { model }
+    const item = app.$MunicipalPermission()
+    await item.fetch(docId)
+    return { docId, item }
   },
 }
 </script>
 
 <template>
-  <h-template-municipal-permissions-detail :model="model" />
+  <h-page-detail
+    collection="MunicipalPermissions"
+    :item="item"
+    @click:back="$router.go(-1)"
+    @click:edit="$router.push(`/municipal-permissions/${docId}/edit`)"
+  />
 </template>
 
 <style></style>

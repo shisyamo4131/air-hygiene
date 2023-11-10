@@ -1,30 +1,25 @@
 <template>
   <div>
-    <m-card-site-unit-price :site-id="siteId" :date="date" :details="[]" />
+    <a-autocomplete-customer v-model="value" />
   </div>
 </template>
 
 <script>
-import TestDataCollectionResults from '~/assets/TestDataCollectionResult.json'
-import MCardSiteUnitPrice from '~/components/molecules/cards/MCardSiteUnitPrice.vue'
+import TestData from '~/assets/defaultCustomers.json'
+import AAutocompleteCustomer from '~/components/atoms/inputs/AAutocompleteCustomer.vue'
 export default {
-  components: { MCardSiteUnitPrice },
+  components: { AAutocompleteCustomer },
   data() {
     return {
-      siteId: 'UVgfx4L1kWUXYytmApvs',
-      date: '2023-10-01',
+      search: null,
+      items: TestData,
       value: null,
-      editor: false,
-      editModel: this.$CollectionResultDetail(),
-      item: '',
-      headers: [
-        { text: 'collectItemId', value: 'collectItemId' },
-        { text: 'unitPrice', value: 'unitPrice' },
-      ],
-      items: {
-        collectionResults: TestDataCollectionResults,
-      },
     }
+  },
+  methods: {
+    test() {
+      console.log('OK')
+    },
   },
 }
 </script>

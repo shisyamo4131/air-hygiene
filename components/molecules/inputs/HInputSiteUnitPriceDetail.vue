@@ -1,6 +1,6 @@
 <script>
 /**
- * ### MInputSiteUnitPriceDetail
+ * ### HInputSiteUnitPriceDetail
  *
  * - A component for inputs of SiteUnitPriceDetail.
  *

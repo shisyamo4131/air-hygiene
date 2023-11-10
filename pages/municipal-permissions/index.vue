@@ -1,10 +1,9 @@
 <script>
-import { ref } from 'firebase/database'
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import HTemplateMunicipalPermissionsIndex from '~/components/templates/municipalPermissions/HTemplateMunicipalPermissionsIndex.vue'
+import { collection, onSnapshot } from 'firebase/firestore'
+import HPageIndex from '~/components/templates/HPageIndex.vue'
 export default {
   /******************************************************************
    * NAME
@@ -13,26 +12,40 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateMunicipalPermissionsIndex },
+  components: { HPageIndex },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   asyncData({ app }) {
-    const dbRef = ref(app.$database, `IndexPages/MunicipalPermissions`)
-    const subscribe = app.$airSubscribeDatabase(dbRef)
-    return { items: subscribe.items, unsubscribe: subscribe.unsubscribe }
+    const items = []
+    const colRef = collection(app.$firestore, 'MunicipalPermissions')
+    const listener = onSnapshot(colRef, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        const item = change.doc.data()
+        const index = items.findIndex(({ docId }) => docId === item.docId)
+        if (change.type === 'added') items.push(item)
+        if (change.type === 'modified') items.splice(index, 1, item)
+        if (change.type === 'removed') items.splice(index, 1)
+      })
+    })
+    return { items, listener }
   },
   /******************************************************************
    * DESTROYED
    ******************************************************************/
   destroyed() {
-    this.unsubscribe()
+    if (this.listener) this.listener()
   },
 }
 </script>
 
 <template>
-  <h-template-municipal-permissions-index :items="items" />
+  <h-page-index
+    :items="items"
+    collection="MunicipalPermissions"
+    @click:regist="$router.push('/municipal-permissions/regist')"
+    @click:row="$router.push(`/municipal-permissions/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

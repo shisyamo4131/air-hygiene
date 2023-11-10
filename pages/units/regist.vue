@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateUnitsEditor from '~/components/templates/units/HTemplateUnitsEditor.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,7 +11,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateUnitsEditor },
+  components: { HPageEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -24,7 +24,12 @@ export default {
 </script>
 
 <template>
-  <h-template-units-editor edit-mode="REGIST" :model="model" />
+  <h-page-editor
+    collection="Units"
+    edit-mode="REGIST"
+    @click:cancel="$router.go(-1)"
+    @submitted="$router.push(`/units/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

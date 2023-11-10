@@ -3,7 +3,7 @@
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
-import HTemplateCustomersIndex from '~/components/templates/customers/HTemplateCustomersIndex.vue'
+import HPageIndex from '~/components/templates/HPageIndex.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,7 +12,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCustomersIndex },
+  components: { HPageIndex },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -40,9 +40,12 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h-template-customers-index :items="items" />
-  </div>
+  <h-page-index
+    :items="items"
+    collection="Customers"
+    @click:regist="$router.push('/customers/regist')"
+    @click:row="$router.push(`/customers/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

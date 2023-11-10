@@ -1,10 +1,9 @@
 <script>
-import { ref } from 'firebase/database'
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import HTemplateIndustrialPermissionsIndex from '~/components/templates/industrialPermissions/HTemplateIndustrialPermissionsIndex.vue'
+import { collection, onSnapshot } from 'firebase/firestore'
+import HPageIndex from '~/components/templates/HPageIndex.vue'
 export default {
   /******************************************************************
    * NAME
@@ -13,26 +12,40 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateIndustrialPermissionsIndex },
+  components: { HPageIndex },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   asyncData({ app }) {
-    const dbRef = ref(app.$database, `IndexPages/IndustrialPermissions`)
-    const subscribe = app.$airSubscribeDatabase(dbRef)
-    return { items: subscribe.items, unsubscribe: subscribe.unsubscribe }
+    const items = []
+    const colRef = collection(app.$firestore, 'IndustrialPermissions')
+    const listener = onSnapshot(colRef, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        const item = change.doc.data()
+        const index = items.findIndex(({ docId }) => docId === item.docId)
+        if (change.type === 'added') items.push(item)
+        if (change.type === 'modified') items.splice(index, 1, item)
+        if (change.type === 'removed') items.splice(index, 1)
+      })
+    })
+    return { items, listener }
   },
   /******************************************************************
    * DESTROYED
    ******************************************************************/
   destroyed() {
-    this.unsubscribe()
+    if (this.listener) this.listener()
   },
 }
 </script>
 
 <template>
-  <h-template-industrial-permissions-index :items="items" />
+  <h-page-index
+    :items="items"
+    collection="IndustrialPermissions"
+    @click:regist="$router.push('/industrial-permissions/regist')"
+    @click:row="$router.push(`/industrial-permissions/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

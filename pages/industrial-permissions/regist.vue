@@ -1,23 +1,27 @@
 <script>
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import HTemplateIndustrialPermissionsRegist from '~/components/templates/industrialPermissions/HTemplateIndustrialPermissionsRegist.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'PermissionsRegist',
+  name: 'IndustrialPermissionsRegist',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateIndustrialPermissionsRegist },
+  components: { HPageEditor },
 }
 </script>
 
 <template>
-  <h-template-industrial-permissions-regist edit-mode="REGIST" />
+  <h-page-editor
+    collection="IndustrialPermissions"
+    edit-mode="REGIST"
+    @click:cancel="$router.go(-1)"
+    @submitted="$router.push(`/industrial-permissions/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

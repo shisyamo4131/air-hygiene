@@ -1,35 +1,36 @@
 <script>
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateIndustrialPermissionsDetail from '~/components/templates/industrialPermissions/HTemplateIndustrialPermissionsDetail.vue'
+import HPageDetail from '~/components/templates/HPageDetail.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'PermissionsDetail',
+  name: 'IndustrialPermissionsDetail',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateIndustrialPermissionsDetail },
+  components: { HPageDetail },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `IndustrialPermissions/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$IndustrialPermission()
-    model.initialize(snapshot.data())
-    return { model }
+    const item = app.$IndustrialPermission()
+    await item.fetch(docId)
+    return { docId, item }
   },
 }
 </script>
 
 <template>
-  <h-template-industrial-permissions-detail :model="model" />
+  <h-page-detail
+    collection="IndustrialPermissions"
+    :item="item"
+    @click:back="$router.go(-1)"
+    @click:edit="$router.push(`/industrial-permissions/${docId}/edit`)"
+  />
 </template>
 
 <style></style>

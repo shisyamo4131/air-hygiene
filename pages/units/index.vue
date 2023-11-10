@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateUnitsIndex from '~/components/templates/units/HTemplateUnitsIndex.vue'
+import HPageIndex from '~/components/templates/HPageIndex.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,7 +11,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateUnitsIndex },
+  components: { HPageIndex },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -23,7 +23,12 @@ export default {
 </script>
 
 <template>
-  <h-template-units-index :items="items" />
+  <h-page-index
+    :items="items"
+    collection="Units"
+    @click:regist="$router.push('/units/regist')"
+    @click:row="$router.push(`/units/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

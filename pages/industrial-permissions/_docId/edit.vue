@@ -1,35 +1,47 @@
 <script>
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateIndustrialPermissionsEdit from '~/components/templates/industrialPermissions/HTemplateIndustrialPermissionsEdit.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'PermissionsEdit',
+  name: 'IndustrialPermissionsEdit',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateIndustrialPermissionsEdit },
+  components: { HPageEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  async asyncData({ app, route }) {
+  asyncData({ route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `IndustrialPermissions/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$IndustrialPermission()
-    model.initialize(snapshot.data())
-    return { model }
+    return { docId }
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    onSubmitted({ editMode, docId }) {
+      if (editMode === 'DELETE') {
+        this.$router.replace(`/industrial-permissions`)
+      } else {
+        this.$router.replace(`/industrial-permissions/${docId}`)
+      }
+    },
   },
 }
 </script>
 
 <template>
-  <h-template-industrial-permissions-edit :model="model" />
+  <h-page-editor
+    collection="IndustrialPermissions"
+    :doc-id="docId"
+    edit-mode="UPDATE"
+    @click:cancel="$router.go(-1)"
+    @submitted="onSubmitted"
+  />
 </template>
 
 <style></style>

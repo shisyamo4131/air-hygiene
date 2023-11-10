@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateCollectItemsIndex from '~/components/templates/collectItems/HTemplateCollectItemsIndex.vue'
+import HPageIndex from '~/components/templates/HPageIndex.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,7 +11,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCollectItemsIndex },
+  components: { HPageIndex },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -23,7 +23,12 @@ export default {
 </script>
 
 <template>
-  <h-template-collect-items-index :items="items" />
+  <h-page-index
+    :items="items"
+    collection="CollectItems"
+    @click:regist="$router.push('/collect-items/regist')"
+    @click:row="$router.push(`/collect-items/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

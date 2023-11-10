@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateCustomersEditor from '~/components/templates/customers/HTemplateCustomersEditor.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,21 +11,37 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCustomersEditor },
+  components: { HPageEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  async asyncData({ app, route }) {
+  asyncData({ route }) {
     const docId = route.params.docId
-    const model = app.$Customer()
-    await model.fetch(docId)
-    return { docId, model }
+    return { docId }
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    onSubmitted({ editMode, docId }) {
+      if (editMode === 'DELETE') {
+        this.$router.replace(`/customers`)
+      } else {
+        this.$router.replace(`/customers/${docId}`)
+      }
+    },
   },
 }
 </script>
 
 <template>
-  <h-template-customers-editor edit-mode="UPDATE" :model="model" />
+  <h-page-editor
+    collection="Customers"
+    :doc-id="docId"
+    edit-mode="UPDATE"
+    @click:cancel="$router.go(-1)"
+    @submitted="onSubmitted"
+  />
 </template>
 
 <style></style>

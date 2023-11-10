@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateCustomersDetail from '~/components/templates/customers/HTemplateCustomersDetail.vue'
+import HPageDetail from '~/components/templates/HPageDetail.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,21 +11,26 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCustomersDetail },
+  components: { HPageDetail },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const model = app.$Customer()
-    await model.fetch(docId)
-    return { docId, model }
+    const item = app.$Customer()
+    await item.fetch(docId)
+    return { docId, item }
   },
 }
 </script>
 
 <template>
-  <h-template-customers-detail :model="model" />
+  <h-page-detail
+    collection="Customers"
+    :item="item"
+    @click:back="$router.go(-1)"
+    @click:edit="$router.push(`/customers/${docId}/edit`)"
+  />
 </template>
 
 <style></style>

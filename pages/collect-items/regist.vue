@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateCollectItemsEditor from '~/components/templates/collectItems/HTemplateCollectItemsEditor.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,20 +11,17 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCollectItemsEditor },
-  /******************************************************************
-   * ASYNCDATA
-   ******************************************************************/
-  asyncData({ app, route }) {
-    const docId = route.params.docId
-    const model = app.$CollectItem()
-    return { docId, model }
-  },
+  components: { HPageEditor },
 }
 </script>
 
 <template>
-  <h-template-collect-items-editor edit-mode="REGIST" />
+  <h-page-editor
+    collection="CollectItems"
+    edit-mode="REGIST"
+    @click:cancel="$router.go(-1)"
+    @submitted="$router.push(`/collect-items/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

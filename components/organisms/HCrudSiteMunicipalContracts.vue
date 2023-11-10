@@ -13,13 +13,13 @@
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
 import ASimpleTableSiteMunicipalContract from '../atoms/tables/ASimpleTableSiteMunicipalContract.vue'
-import MInputSiteMunicipalContract from '../molecules/inputs/MInputSiteMunicipalContract.vue'
+import HInputSiteMunicipalContract from '../molecules/inputs/HInputSiteMunicipalContract.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    MInputSiteMunicipalContract,
+    HInputSiteMunicipalContract,
     ASwitch,
     ASimpleTableSiteMunicipalContract,
   },

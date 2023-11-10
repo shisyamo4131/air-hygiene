@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateCollectItemsEditor from '~/components/templates/collectItems/HTemplateCollectItemsEditor.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,21 +11,37 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCollectItemsEditor },
+  components: { HPageEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  async asyncData({ app, route }) {
+  asyncData({ route }) {
     const docId = route.params.docId
-    const model = app.$CollectItem()
-    await model.fetch(docId)
-    return { docId, model }
+    return { docId }
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    onSubmitted({ editMode, docId }) {
+      if (editMode === 'DELETE') {
+        this.$router.replace(`/collect-items`)
+      } else {
+        this.$router.replace(`/collect-items/${docId}`)
+      }
+    },
   },
 }
 </script>
 
 <template>
-  <h-template-collect-items-editor edit-mode="UPDATE" :model="model" />
+  <h-page-editor
+    collection="collectItems"
+    :doc-id="docId"
+    edit-mode="UPDATE"
+    @click:cancel="$router.go(-1)"
+    @submitted="onSubmitted"
+  />
 </template>
 
 <style></style>

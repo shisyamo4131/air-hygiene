@@ -1,8 +1,8 @@
 <script>
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
 /**
  * @author shisyamo4131
  */
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
 export default {
   /******************************************************************

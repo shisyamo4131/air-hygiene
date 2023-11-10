@@ -1,27 +1,38 @@
 <script>
 /**
- * ### MInputSiteUnitPriceDetails
+ * ### HInputCollectionResultDetails
  *
  * @author shisyamo4131
  */
-import ADataTableSiteUnitPriceDetails from '../../atoms/tables/ADataTableSiteUnitPriceDetails.vue'
-import MInputSiteUnitPriceDetail from './MInputSiteUnitPriceDetail.vue'
+import ADataTableCollectionResultDetails from '../../atoms/tables/ADataTableCollectionResultDetails.vue'
+import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
 import MMixinArrayInput from '~/components/molecules/mixins/MMixinArrayInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ADataTableSiteUnitPriceDetails, MInputSiteUnitPriceDetail },
+  components: {
+    ADataTableCollectionResultDetails,
+    HInputCollectionResultDetail,
+  },
   /******************************************************************
    * MIXINS
    ******************************************************************/
   mixins: [MMixinArrayInput],
   /******************************************************************
+   * PROPS
+   ******************************************************************/
+  props: {
+    siteId: { type: String, required: true },
+    date: { type: String, required: true },
+    value: { type: Array, default: () => [], required: false },
+  },
+  /******************************************************************
    * DATA
    ******************************************************************/
   data() {
     return {
-      editModel: this.$SiteUnitPriceDetail(),
+      editModel: this.$CollectionResultDetail(),
     }
   },
   /******************************************************************
@@ -47,38 +58,34 @@ export default {
 
 <template>
   <div>
-    <v-toolbar dense flat>
-      <v-toolbar-title class="text-subtitle-1">品目別回収単価</v-toolbar-title>
-      <v-spacer />
-      <v-dialog v-model="editor" persistent max-width="360">
-        <template #activator="{ attrs, on }">
-          <v-btn v-bind="attrs" icon v-on="on"><v-icon>mdi-plus</v-icon></v-btn>
-        </template>
-        <air-card-form-input
-          ref="form"
-          outlined
-          @click:cancel="editor = false"
-          @click:submit="onClickSubmit"
-        >
-          <v-card-text>
-            <m-input-site-unit-price-detail
-              v-bind.sync="editModel"
-              :edit-mode="editMode"
-            />
-          </v-card-text>
-        </air-card-form-input>
-      </v-dialog>
-    </v-toolbar>
-    <a-data-table-site-unit-price-details
+    <v-dialog v-model="editor" persistent max-width="360">
+      <air-card-form-input
+        ref="form"
+        outlined
+        @click:cancel="editor = false"
+        @click:submit="onClickSubmit"
+      >
+        <v-card-text>
+          <h-input-collection-result-detail
+            v-bind.sync="editModel"
+            :edit-mode="editMode"
+            :site-id="siteId"
+            :date="date"
+          />
+        </v-card-text>
+      </air-card-form-input>
+    </v-dialog>
+    <a-data-table-collection-result-details
       :items="value"
       hide-default-footer
       :items-per-page="-1"
-      label="品目別回収単価"
+      label="回収実績明細"
       show-actions
+      @click:regist="onClickRegist()"
       @click:edit="onClickEdit($event)"
       @click:delete="onClickDelete($event)"
     >
-    </a-data-table-site-unit-price-details>
+    </a-data-table-collection-result-details>
   </div>
 </template>
 

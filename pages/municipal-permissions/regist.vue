@@ -1,23 +1,27 @@
 <script>
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import HTemplateMunicipalPermissionsRegist from '~/components/templates/municipalPermissions/HTemplateMunicipalPermissionsRegist.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'PermissionsRegist',
+  name: 'MunicipalPermissionsRegist',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateMunicipalPermissionsRegist },
+  components: { HPageEditor },
 }
 </script>
 
 <template>
-  <h-template-municipal-permissions-regist edit-mode="REGIST" />
+  <h-page-editor
+    collection="MunicipalPermissions"
+    edit-mode="REGIST"
+    @click:cancel="$router.go(-1)"
+    @submitted="$router.push(`/municipal-permissions/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

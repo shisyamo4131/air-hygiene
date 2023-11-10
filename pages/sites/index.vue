@@ -3,7 +3,7 @@
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
-import HTemplateSitesIndex from '~/components/templates/sites/HTemplateSitesIndex.vue'
+import HPageIndex from '~/components/templates/HPageIndex.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,7 +12,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateSitesIndex },
+  components: { HPageIndex },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -40,9 +40,12 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h-template-sites-index :items="items" />
-  </div>
+  <h-page-index
+    :items="items"
+    collection="Sites"
+    @click:regist="$router.push('/sites/regist')"
+    @click:row="$router.push(`/sites/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

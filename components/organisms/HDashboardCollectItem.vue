@@ -1,7 +1,7 @@
 <template>
   <v-card outlined>
     <v-card-title>{{ name }}</v-card-title>
-    <v-card-text>This is Site's dashboard.</v-card-text>
+    <v-card-text>This is CollectItem's dashboard.</v-card-text>
   </v-card>
 </template>
 

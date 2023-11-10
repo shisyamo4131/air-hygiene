@@ -2,8 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateCollectItemsDetail from '~/components/templates/collectItems/HTemplateCollectItemsDetail.vue'
+import HPageDetail from '~/components/templates/HPageDetail.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,23 +11,26 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateCollectItemsDetail },
+  components: { HPageDetail },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `CollectItems/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$CollectItem()
-    model.initialize(snapshot.data())
-    return { model }
+    const item = app.$CollectItem()
+    await item.fetch(docId)
+    return { docId, item }
   },
 }
 </script>
 
 <template>
-  <h-template-collect-items-detail :model="model" />
+  <h-page-detail
+    collection="CollectItems"
+    :item="item"
+    @click:back="$router.go(-1)"
+    @click:edit="$router.push(`/collect-items/${docId}/edit`)"
+  />
 </template>
 
 <style></style>

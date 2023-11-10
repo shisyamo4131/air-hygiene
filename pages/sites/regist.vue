@@ -2,7 +2,7 @@
 /**
  * @author shisyamo4131
  */
-import HTemplateSitesEditor from '~/components/templates/sites/HTemplateSitesEditor.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,20 +11,17 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateSitesEditor },
-  /******************************************************************
-   * ASYNCDATA
-   ******************************************************************/
-  asyncData({ app, route }) {
-    const docId = route.params.docId
-    const model = app.$Site()
-    return { docId, model }
-  },
+  components: { HPageEditor },
 }
 </script>
 
 <template>
-  <h-template-sites-editor edit-mode="REGIST" :model="model" />
+  <h-page-editor
+    collection="Sites"
+    edit-mode="REGIST"
+    @click:cancel="$router.go(-1)"
+    @submitted="$router.push(`/sites/${$event.docId}`)"
+  />
 </template>
 
 <style></style>

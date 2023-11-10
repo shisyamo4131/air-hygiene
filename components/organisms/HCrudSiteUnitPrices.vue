@@ -14,14 +14,14 @@
  * @author shisyamo4131
  */
 import ASwitch from '../atoms/inputs/ASwitch.vue'
-import MInputSiteUnitPrice from '../molecules/inputs/MInputSiteUnitPrice.vue'
+import HInputSiteUnitPrice from '../molecules/inputs/HInputSiteUnitPrice.vue'
 import MCardSiteUnitPrice from '../molecules/cards/MCardSiteUnitPrice.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    MInputSiteUnitPrice,
+    HInputSiteUnitPrice,
     ASwitch,
     MCardSiteUnitPrice,
   },

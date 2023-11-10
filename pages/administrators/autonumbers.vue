@@ -4,11 +4,11 @@
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
-import MInputAutonumber from '~/components/molecules/inputs/MInputAutonumber.vue'
+import HInputAutonumber from '~/components/molecules/inputs/HInputAutonumber.vue'
 import ABtnSubmit from '~/components/atoms/btns/ABtnSubmit.vue'
 import ABtnCancel from '~/components/atoms/btns/ABtnCancel.vue'
 export default {
-  components: { MInputAutonumber, ABtnSubmit, ABtnCancel },
+  components: { HInputAutonumber, ABtnSubmit, ABtnCancel },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -118,7 +118,7 @@ export default {
           <v-card-title>{{ editModel.collectionName }}</v-card-title>
           <v-card-text class="pt-5">
             <v-form ref="form" :disabled="loading || editMode === 'DELETE'">
-              <m-input-autonumber
+              <h-input-autonumber
                 v-bind.sync="editModel"
                 :edit-mode="editMode"
               />

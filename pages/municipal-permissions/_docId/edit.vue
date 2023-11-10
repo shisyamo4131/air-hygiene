@@ -1,35 +1,47 @@
 <script>
 /**
- * @create 2023-10-02
  * @author shisyamo4131
  */
-import { doc, getDoc } from 'firebase/firestore'
-import HTemplateMunicipalPermissionsEdit from '~/components/templates/municipalPermissions/HTemplateMunicipalPermissionsEdit.vue'
+import HPageEditor from '~/components/templates/HPageEditor.vue'
 export default {
   /******************************************************************
    * NAME
    ******************************************************************/
-  name: 'PermissionsEdit',
+  name: 'MunicipalPermissionsEdit',
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateMunicipalPermissionsEdit },
+  components: { HPageEditor },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  async asyncData({ app, route }) {
+  asyncData({ route }) {
     const docId = route.params.docId
-    const docRef = doc(app.$firestore, `MunicipalPermissions/${docId}`)
-    const snapshot = await getDoc(docRef)
-    const model = app.$MunicipalPermission()
-    model.initialize(snapshot.data())
-    return { model }
+    return { docId }
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    onSubmitted({ editMode, docId }) {
+      if (editMode === 'DELETE') {
+        this.$router.replace(`/municipal-permissions`)
+      } else {
+        this.$router.replace(`/municipal-permissions/${docId}`)
+      }
+    },
   },
 }
 </script>
 
 <template>
-  <h-template-municipal-permissions-edit :model="model" />
+  <h-page-editor
+    collection="MunicipalPermissions"
+    :doc-id="docId"
+    edit-mode="UPDATE"
+    @click:cancel="$router.go(-1)"
+    @submitted="onSubmitted"
+  />
 </template>
 
 <style></style>
