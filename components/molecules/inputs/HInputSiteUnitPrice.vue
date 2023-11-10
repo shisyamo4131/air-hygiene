@@ -5,7 +5,7 @@
  * @author shisyamo4131
  */
 import HInputSiteUnitPriceDetails from './HInputSiteUnitPriceDetails.vue'
-import Mixin from '~/components/molecules/mixins/MMixinInput.vue'
+import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 export default {
   /******************************************************************
