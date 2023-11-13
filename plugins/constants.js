@@ -152,7 +152,7 @@ const PROCESSING_DIV = {
 
 const PROCESSING_DIV_ARRAY = [
   { value: 'delivery', text: '収集運搬' },
-  { value: 'diposal', text: '処分' },
+  { value: 'disposal', text: '処分' },
 ]
 
 /* 端数処理 */

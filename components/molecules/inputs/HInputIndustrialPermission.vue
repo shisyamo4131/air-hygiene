@@ -1,13 +1,14 @@
 <script>
 /**
- * @create 2023-10-02
+ * ### HInputIndustrialPermission
+ *
  * @author shisyamo4131
  */
-import AAutocompletePrefecture from '../../atoms/inputs/AAutocompletePrefecture.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
+import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -16,7 +17,7 @@ export default {
     ATextField,
     ASwitch,
     ARadioGroup,
-    AAutocompletePrefecture,
+    AAutocomplete,
   },
   /******************************************************************
    * MIXINS
@@ -26,7 +27,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    prefecture: { type: Object, default: null, required: false },
+    prefCode: { type: String, default: '', required: false },
     permitNumber: { type: String, default: '', required: false },
     processingDiv: { type: String, default: '', required: false },
     includeSpeciallyControled: {
@@ -51,12 +52,12 @@ export default {
 <template>
   <div>
     <v-subheader>許可エリア</v-subheader>
-    <a-autocomplete-prefecture
+    <a-autocomplete
       label="都道府県"
-      :value="prefecture"
+      :value="prefCode"
+      :items="$PREFECTURE_ARRAY"
       required
-      return-object
-      @input="$emit('update:prefecture', $event)"
+      @input="$emit('update:prefCode', $event)"
     />
     <a-text-field
       label="許可番号"
@@ -67,15 +68,10 @@ export default {
     <v-subheader>処理区分</v-subheader>
     <a-radio-group
       :value="processingDiv"
+      :items="$PROCESSING_DIV_ARRAY"
       row
       @input="$emit('update:processingDiv', $event)"
     >
-      <v-radio
-        v-for="(item, index) of $PROCESSING_DIV_ARRAY"
-        :key="index"
-        :label="item.text"
-        :value="item.value"
-      />
     </a-radio-group>
     <a-switch
       label="特別管理を含む"
