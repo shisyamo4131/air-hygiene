@@ -55,7 +55,7 @@ export default {
 <template>
   <h-template-editor
     ref="template"
-    label="廃棄物処理業許可編集"
+    label="産業廃棄物処理業許可編集"
     edit-mode="UPDATE"
     :loading="loading"
     @click:cancel="$router.push(`/industrial-permissions/${docId}`)"

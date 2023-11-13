@@ -1,9 +1,9 @@
 <script>
 /**
- * @create 2023-10-02
+ * ### HInputMunicipalPermission
+ *
  * @author shisyamo4131
  */
-import AAutocompleteCity from '../../atoms/inputs/AAutocompleteCity.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
@@ -17,7 +17,6 @@ export default {
     ATextField,
     ASwitch,
     ARadioGroup,
-    AAutocompleteCity,
     AAutocomplete,
   },
   /******************************************************************
@@ -29,7 +28,8 @@ export default {
    ******************************************************************/
   props: {
     prefCode: { type: String, default: '', required: false },
-    city: { type: Object, default: null, required: false },
+    cityCode: { type: String, default: '', required: false },
+    permitNumber: { type: String, default: '', required: false },
     processingDiv: { type: String, default: '', required: false },
     includeSpeciallyControled: {
       type: Boolean,
@@ -55,33 +55,38 @@ export default {
     <v-subheader>許可エリア</v-subheader>
     <a-autocomplete
       label="都道府県"
-      :value="prefecture"
+      :value="prefCode"
       :items="$PREFECTURE_ARRAY"
       required
-      @input="$emit('update:prefecture', $event)"
+      @change="$emit('update:cityCode', '')"
+      @input="$emit('update:prefCode', $event)"
     />
-    <a-autocomplete-city
+    <a-autocomplete
       label="市区町村"
-      :value="city"
-      :pref-code="prefCode"
+      :value="cityCode"
+      :items="$CITY_ARRAY(prefCode)"
       required
-      return-object
-      @input="$emit('update:city', $event)"
+      item-text="name"
+      item-value="code"
+      @input="$emit('update:cityCode', $event)"
+    />
+    <a-text-field
+      label="許可番号"
+      :value="permitNumber"
+      required
+      @input="$emit('update:permitNumber', $event)"
     />
     <v-subheader>処理区分</v-subheader>
     <a-radio-group
+      class="mt-0"
       :value="processingDiv"
       row
+      :items="$PROCESSING_DIV_ARRAY"
       @input="$emit('update:processingDiv', $event)"
     >
-      <v-radio
-        v-for="(item, index) of $PROCESSING_DIV_ARRAY"
-        :key="index"
-        :label="item.text"
-        :value="item.value"
-      />
     </a-radio-group>
     <a-switch
+      class="mt-0"
       label="特別管理を含む"
       :input-value="includeSpeciallyControled"
       @change="$emit('update:includeSpeciallyControled', $event)"

@@ -22,7 +22,8 @@ export default class MunicipalPermission extends FireModel {
 
   initialize(item) {
     this.prefCode = ''
-    this.city = null
+    this.cityCode = ''
+    this.permitNumber = ''
     this.processingDiv = 'delivery'
     this.includeSpeciallyControled = false
     this.dateOfPermission = ''

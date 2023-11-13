@@ -2,7 +2,8 @@
 /**
  * @author shisyamo4131
  */
-import HPageEditor from '~/components/templates/HPageEditor.vue'
+import HInputMunicipalPermission from '~/components/molecules/inputs/HInputMunicipalPermission.vue'
+import HTemplateEditor from '~/components/templates/HTemplateEditor.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,25 +12,40 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HPageEditor },
+  components: { HTemplateEditor, HInputMunicipalPermission },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
   async asyncData({ app, route }) {
     const docId = route.params.docId
-    const model = app.$MunicipalPermission()
-    await model.fetch(docId)
-    return { docId, model }
+    const editItem = app.$MunicipalPermission()
+    await editItem.fetch(docId)
+    return { docId, editItem }
+  },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
+  data() {
+    return {
+      loading: false,
+    }
   },
   /******************************************************************
    * METHODS
    ******************************************************************/
   methods: {
-    onSubmitted({ editMode, docId }) {
-      if (editMode === 'DELETE') {
-        this.$router.replace(`/municipal-permissions`)
-      } else {
-        this.$router.replace(`/municipal-permissions/${docId}`)
+    async onClickSubmit() {
+      if (!this.$refs.template.validate()) return
+      try {
+        this.loading = true
+        await this.editItem.update()
+        this.$router.push(`/municipal-permissions/${this.docId}`)
+      } catch (err) {
+        // eslint-disable-next-line
+        console.error(err)
+        alert(err.message)
+      } finally {
+        this.loading = false
       }
     },
   },
@@ -37,14 +53,22 @@ export default {
 </script>
 
 <template>
-  <h-page-editor
-    collection="MunicipalPermissions"
-    :default-item="model"
-    :doc-id="docId"
+  <h-template-editor
+    ref="template"
+    label="一般廃棄物処理業許可編集"
     edit-mode="UPDATE"
-    @click:cancel="$router.go(-1)"
-    @submitted="onSubmitted"
-  />
+    :loading="loading"
+    @click:cancel="$router.push(`/municipal-permissions/${docId}`)"
+    @click:submit="onClickSubmit"
+  >
+    <template #default="props">
+      <h-input-municipal-permission
+        v-bind.sync="editItem"
+        :edit-mode="props.editMode"
+        :loading="props.loading"
+      />
+    </template>
+  </h-template-editor>
 </template>
 
 <style></style>

@@ -3,7 +3,9 @@
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
-import HPageIndex from '~/components/templates/HPageIndex.vue'
+import HTemplateDefault from '~/components/templates/HTemplateDefault.vue'
+import HDataTableMunicipalPermissions from '~/components/molecules/tables/HDataTableMunicipalPermissions.vue'
+import HBtnRegist from '~/components/molecules/btns/HBtnRegist.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,7 +14,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HPageIndex },
+  components: { HTemplateDefault, HDataTableMunicipalPermissions, HBtnRegist },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -40,12 +42,21 @@ export default {
 </script>
 
 <template>
-  <h-page-index
-    :items="items"
-    collection="MunicipalPermissions"
-    @click:regist="$router.push('/municipal-permissions/regist')"
-    @click:row="$router.push(`/municipal-permissions/${$event.docId}`)"
-  />
+  <h-template-default label="一般廃棄物処理業許可管理">
+    <template #append-toolbar>
+      <h-btn-regist
+        icon
+        @click="$router.push(`/municipal-permissions/regist`)"
+      />
+    </template>
+    <template #default="{ height }">
+      <h-data-table-municipal-permissions
+        :height="height"
+        :items="items"
+        @click:row="$router.push(`/municipal-permissions/${$event.docId}`)"
+      />
+    </template>
+  </h-template-default>
 </template>
 
 <style></style>
