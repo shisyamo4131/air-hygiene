@@ -164,7 +164,7 @@ export default {
     >
       <!-- ### DEFAULT ### -->
       <slot name="default" v-bind="{ height: containerHeight }">
-        <v-container>
+        <v-container fluid>
           <v-card outlined>
             <v-card-title>Default slot</v-card-title>
             <v-card-text>

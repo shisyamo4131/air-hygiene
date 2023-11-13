@@ -2,8 +2,10 @@
 /**
  * @author shisyamo4131
  */
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import HBtnBack from '~/components/molecules/btns/HBtnBack.vue'
 import HBtnEdit from '~/components/molecules/btns/HBtnEdit.vue'
+import HDataTableSites from '~/components/molecules/tables/HDataTableSites.vue'
 import HSimpleTableCustomer from '~/components/molecules/tables/HSimpleTableCustomer.vue'
 import HTemplateTabs from '~/components/templates/HTemplateTabs.vue'
 export default {
@@ -14,7 +16,13 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateTabs, HBtnEdit, HSimpleTableCustomer, HBtnBack },
+  components: {
+    HTemplateTabs,
+    HBtnEdit,
+    HSimpleTableCustomer,
+    HBtnBack,
+    HDataTableSites,
+  },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -22,7 +30,14 @@ export default {
     const docId = route.params.docId
     const item = app.$Customer()
     await item.fetch(docId)
-    return { docId, item }
+    const getSites = async () => {
+      const colRef = collection(app.$firestore, 'Sites')
+      const q = query(colRef, where('customer.docId', '==', docId))
+      const snapshot = await getDocs(q)
+      return snapshot.docs.map((doc) => doc.data())
+    }
+    const sites = await getSites()
+    return { docId, item, sites }
   },
   /******************************************************************
    * DATA
@@ -30,9 +45,12 @@ export default {
   data() {
     return {
       loading: false,
-      tabs: ['Dashboard', '登録情報', '設定'],
+      tabs: ['Dashboard', '登録情報', '排出場所', '設定'],
     }
   },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
   methods: {
     async onClickDelete() {
       try {
@@ -64,29 +82,36 @@ export default {
       />
     </template>
     <template #tab-0>
-      <v-card outlined>
-        <v-card-title>{{ item.abbr }}</v-card-title>
-      </v-card>
+      <v-container fluid>
+        <v-card outlined>
+          <v-card-title>{{ item.abbr }}</v-card-title>
+        </v-card>
+      </v-container>
     </template>
     <template #tab-1>
       <h-simple-table-customer v-bind="item" />
     </template>
-    <template #tab-2>
-      <air-dialog-confirm-delete @click:delete="onClickDelete">
-        <template #activator="{ attrs, on }">
-          <v-btn
-            block
-            color="error"
-            dense
-            :disabled="loading"
-            :loading="loading"
-            v-bind="attrs"
-            v-on="on"
-          >
-            この取引先を削除する
-          </v-btn>
-        </template>
-      </air-dialog-confirm-delete>
+    <template #tab-2="{ height }">
+      <h-data-table-sites :height="height" :items="sites" />
+    </template>
+    <template #tab-3>
+      <v-container fluid>
+        <air-dialog-confirm-delete @click:delete="onClickDelete">
+          <template #activator="{ attrs, on }">
+            <v-btn
+              block
+              color="error"
+              dense
+              :disabled="loading"
+              :loading="loading"
+              v-bind="attrs"
+              v-on="on"
+            >
+              この取引先を削除する
+            </v-btn>
+          </template>
+        </air-dialog-confirm-delete>
+      </v-container>
     </template>
   </h-template-tabs>
 </template>

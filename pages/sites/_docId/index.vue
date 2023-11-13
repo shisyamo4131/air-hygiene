@@ -64,29 +64,33 @@ export default {
       />
     </template>
     <template #tab-0>
-      <v-card outlined>
-        <v-card-title>{{ item.abbr }}</v-card-title>
-      </v-card>
+      <v-container fluid>
+        <v-card outlined>
+          <v-card-title>{{ item.abbr }}</v-card-title>
+        </v-card>
+      </v-container>
     </template>
     <template #tab-1>
       <h-simple-table-site v-bind="item" />
     </template>
     <template #tab-2>
-      <air-dialog-confirm-delete @click:delete="onClickDelete">
-        <template #activator="{ attrs, on }">
-          <v-btn
-            block
-            color="error"
-            dense
-            :disabled="loading"
-            :loading="loading"
-            v-bind="attrs"
-            v-on="on"
-          >
-            この排出場所を削除する
-          </v-btn>
-        </template>
-      </air-dialog-confirm-delete>
+      <v-container fluid>
+        <air-dialog-confirm-delete @click:delete="onClickDelete">
+          <template #activator="{ attrs, on }">
+            <v-btn
+              block
+              color="error"
+              dense
+              :disabled="loading"
+              :loading="loading"
+              v-bind="attrs"
+              v-on="on"
+            >
+              この排出場所を削除する
+            </v-btn>
+          </template>
+        </air-dialog-confirm-delete>
+      </v-container>
     </template>
   </h-template-tabs>
 </template>
