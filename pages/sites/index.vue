@@ -3,7 +3,9 @@
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
-import HPageIndex from '~/components/templates/HPageIndex.vue'
+import HTemplateDefault from '~/components/templates/HTemplateDefault.vue'
+import HDataTableSites from '~/components/molecules/tables/HDataTableSites.vue'
+import HBtnRegist from '~/components/molecules/btns/HBtnRegist.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,7 +14,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HPageIndex },
+  components: { HTemplateDefault, HDataTableSites, HBtnRegist },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -40,12 +42,18 @@ export default {
 </script>
 
 <template>
-  <h-page-index
-    :items="items"
-    collection="Sites"
-    @click:regist="$router.push('/sites/regist')"
-    @click:row="$router.push(`/sites/${$event.docId}`)"
-  />
+  <h-template-default label="排出場所管理">
+    <template #append-toolbar>
+      <h-btn-regist icon @click="$router.push(`/sites/regist`)" />
+    </template>
+    <template #default="{ height }">
+      <h-data-table-sites
+        :height="height"
+        :items="items"
+        @click:row="$router.push(`/sites/${$event.docId}`)"
+      />
+    </template>
+  </h-template-default>
 </template>
 
 <style></style>
