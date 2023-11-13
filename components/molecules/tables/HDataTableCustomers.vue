@@ -58,6 +58,8 @@ export default {
     :custom-filter="customFilter"
     :headers="headers"
     :items="internalItems"
+    sort-by="code"
+    sort-desc
     v-on="$listeners"
   >
     <template #append-search>

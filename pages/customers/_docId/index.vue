@@ -1,4 +1,5 @@
 <script>
+import HBtnBack from '~/components/molecules/btns/HBtnBack.vue'
 /**
  * @author shisyamo4131
  */
@@ -13,7 +14,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateTabs, HBtnEdit, HSimpleTableCustomer },
+  components: { HTemplateTabs, HBtnEdit, HSimpleTableCustomer, HBtnBack },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -36,8 +37,15 @@ export default {
 
 <template>
   <h-template-tabs label="取引先詳細" :tabs="tabs">
+    <template #prepend-toolbar>
+      <h-btn-back icon @click="$router.push(`/customers/`)" />
+    </template>
     <template #append-toolbar="{ tab }">
-      <h-btn-edit v-show="tab === 1" icon />
+      <h-btn-edit
+        v-show="tab === 1"
+        icon
+        @click="$router.push(`/customers/${docId}/edit`)"
+      />
     </template>
     <template #tab-0>
       <v-container>
