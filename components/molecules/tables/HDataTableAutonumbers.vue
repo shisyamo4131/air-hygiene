@@ -1,6 +1,6 @@
 <script>
 /**
- * ### HDataTableCollectItems
+ * ### HDataTableAutonumbers
  *
  * @author shisyamo4131
  */
@@ -16,16 +16,15 @@ export default {
   data() {
     return {
       customFilter: (value, search, item) => {
-        if (item.code.includes(search)) return true
-        if (item.name.includes(search)) return true
-        if (item.nameKana.includes(search)) return true
-        if (item.abbr.includes(search)) return true
+        if (item.collectionName.includes(search)) return true
         return false
       },
       headers: [
-        { text: 'CODE', value: 'code' },
-        { text: '回収品目名', value: 'name' },
-        { text: '区分', value: 'wasteDiv' },
+        { text: 'COLLECTION', value: 'collectionName' },
+        { text: 'CURRENT', value: 'current' },
+        { text: 'LENGTH', value: 'length' },
+        { text: 'FIELD', value: 'field' },
+        { text: 'CONDITION', value: 'condition' },
       ],
     }
   },
@@ -37,12 +36,9 @@ export default {
     v-bind="$attrs"
     :custom-filter="customFilter"
     :headers="headers"
-    sort-by="code"
+    sort-by="collectionName"
     v-on="$listeners"
   >
-    <template #[`item.wasteDiv`]="{ item }">
-      {{ $WASTE_DIV[item.wasteDiv] }}
-    </template>
   </h-data-table>
 </template>
 

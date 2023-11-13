@@ -31,6 +31,20 @@ export default {
     remarks: { type: String, default: '', required: false },
     deletable: { type: Boolean, default: true, required: false },
   },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
+  data() {
+    return {
+      rules: {
+        length: (v) => /^\d{4}$/.test(v) || '半角数字4桁で入力',
+        duplicated: (v) =>
+          this.editMode !== 'REGIST' ||
+          !this.duplicated ||
+          '既に使わているCODEです。',
+      },
+    }
+  },
 }
 </script>
 
@@ -40,11 +54,11 @@ export default {
       label="CODE"
       :value="code"
       required
-      :disabled="editMode === 'UPDATE' && !deletable"
+      :disabled="editMode !== 'REGIST'"
       counter
       hint="4桁で入力"
       max-length="4"
-      :rules="[(v) => !v || v.length === 4 || '4桁で入力してください。']"
+      :rules="[rules.length, rules.duplicated]"
       @input="$emit('update:code', $event)"
     />
     <a-text-field
@@ -74,7 +88,7 @@ export default {
       :items="$WASTE_DIV_ARRAY"
       :value="wasteDiv"
       required
-      :disabled="editMode === 'UPDATE' && !deletable"
+      :disabled="!deletable"
       @input="$emit('update:wasteDiv', $event)"
     />
     <a-textarea

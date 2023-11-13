@@ -4,12 +4,19 @@
  *
  * @author shisyamo4131
  */
-import ADataTable from '../../atoms/tables/ADataTable.vue'
+import HDataTable from './HDataTable.vue'
+import ASwitch from '~/components/atoms/inputs/ASwitch.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ADataTable },
+  components: { ASwitch, HDataTable },
+  /******************************************************************
+   * PROPS
+   ******************************************************************/
+  props: {
+    items: { type: Array, default: () => [], required: false },
+  },
   /******************************************************************
    * DATA
    ******************************************************************/
@@ -18,6 +25,9 @@ export default {
       customFilter: (value, search, item) => {
         if (item.code.includes(search)) return true
         if (item.name1.includes(search)) return true
+        if (item.abbr.includes(search)) return true
+        if (item.abbrKana.includes(search)) return true
+        return false
       },
       headers: [
         { text: 'CODE', value: 'code' },
@@ -25,18 +35,39 @@ export default {
         { text: '住所', value: 'address1' },
         { text: 'TEL/FAX', value: 'tel' },
       ],
+      includeExpired: false,
     }
+  },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
+  computed: {
+    internalItems() {
+      return this.items.filter(({ status }) => {
+        if (this.includeExpired) return true
+        return status === 'active'
+      })
+    },
   },
 }
 </script>
 
 <template>
-  <a-data-table
+  <h-data-table
     v-bind="$attrs"
     :custom-filter="customFilter"
     :headers="headers"
+    :items="internalItems"
     v-on="$listeners"
   >
+    <template #append-search>
+      <a-switch
+        v-model="includeExpired"
+        class="ml-4"
+        hide-details
+        label="契約満了を含める"
+      />
+    </template>
     <template #[`item.name1`]="{ item }">
       <div>{{ item.name1 }}</div>
       <div class="text-caption grey--text">{{ item.name2 }}</div>
@@ -49,7 +80,7 @@ export default {
       <div>{{ item.tel }}</div>
       <div>{{ item.fax }}</div>
     </template>
-  </a-data-table>
+  </h-data-table>
 </template>
 
 <style></style>

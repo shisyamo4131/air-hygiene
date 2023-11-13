@@ -5,28 +5,20 @@
  * @author shisyamo4131
  */
 import HTemplateDefault from './HTemplateDefault.vue'
-import HDashboardCollectItem from '~/components/organisms/HDashboardCollectItem.vue'
 import HDashboardCustomer from '~/components/organisms/HDashboardCustomer.vue'
 import HDashboardSite from '~/components/organisms/HDashboardSite.vue'
-import HDashboardUnit from '~/components/organisms/HDashboardUnit.vue'
-import HSimpleTableCollectItem from '~/components/molecules/tables/HSimpleTableCollectItem.vue'
 import HSimpleTableCustomer from '~/components/molecules/tables/HSimpleTableCustomer.vue'
 import HSimpleTableSite from '~/components/molecules/tables/HSimpleTableSite.vue'
-import HSimpleTableUnit from '~/components/molecules/tables/HSimpleTableUnit.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
     HTemplateDefault,
-    HDashboardCollectItem,
     HDashboardCustomer,
     HDashboardSite,
-    HDashboardUnit,
-    HSimpleTableCollectItem,
     HSimpleTableCustomer,
     HSimpleTableSite,
-    HSimpleTableUnit,
   },
   /******************************************************************
    * PROPS
@@ -41,13 +33,6 @@ export default {
   data() {
     return {
       collections: {
-        CollectItems: {
-          label: '回収品目詳細',
-          tabs: [
-            { text: 'Dashboard', component: 'HDashboardCollectItem' },
-            { text: '登録情報', component: 'HSimpleTableCollectItem' },
-          ],
-        },
         Customers: {
           label: '取引先詳細',
           tabs: [
@@ -62,13 +47,6 @@ export default {
           tabs: [
             { text: 'Dashboard', component: 'HDashboardSite' },
             { text: '登録情報', component: 'HSimpleTableSite' },
-          ],
-        },
-        Units: {
-          label: '単位詳細',
-          tabs: [
-            { text: 'Dashboard', component: 'HDashboardUnit' },
-            { text: '登録情報', component: 'HSimpleTableUnit' },
           ],
         },
       },

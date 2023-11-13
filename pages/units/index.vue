@@ -2,7 +2,11 @@
 /**
  * @author shisyamo4131
  */
-import HPageIndex from '~/components/templates/HPageIndex.vue'
+import HBtnRegist from '~/components/molecules/btns/HBtnRegist.vue'
+import HCardFormInput from '~/components/molecules/cards/HCardFormInput.vue'
+import HInputUnit from '~/components/molecules/inputs/HInputUnit.vue'
+import HDataTableUnits from '~/components/molecules/tables/HDataTableUnits.vue'
+import HTemplateDefault from '~/components/templates/HTemplateDefault.vue'
 export default {
   /******************************************************************
    * NAME
@@ -11,7 +15,13 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HPageIndex },
+  components: {
+    HTemplateDefault,
+    HDataTableUnits,
+    HBtnRegist,
+    HCardFormInput,
+    HInputUnit,
+  },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -19,16 +29,93 @@ export default {
     const items = store.state.masters.Units
     return { items }
   },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
+  data() {
+    return {
+      editMode: 'REGIST',
+      editor: false,
+      editItem: this.$Unit(),
+      loading: false,
+    }
+  },
+  /******************************************************************
+   * WATCH
+   ******************************************************************/
+  watch: {
+    editor(v) {
+      v || this.initialize()
+    },
+  },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    initialize() {
+      this.editMode = 'REGIST'
+      this.editItem.initialize()
+      this.$refs.form.initialize()
+    },
+    async onClickSubmit(mode) {
+      if (mode !== 'DELETE' && !this.$refs.form.validate()) return
+      try {
+        this.loading = true
+        if (mode === 'REGIST') await this.editItem.create()
+        if (mode === 'UPDATE') await this.editItem.update()
+        if (mode === 'DELETE') await this.editItem.delete()
+        this.editor = false
+      } catch (err) {
+        // eslint-disable-next-line
+        console.error(err)
+        alert(err.message)
+      } finally {
+        this.loading = false
+      }
+    },
+    onClickRow(item) {
+      this.editMode = 'UPDATE'
+      this.editItem.initialize(item)
+      this.editor = true
+    },
+  },
 }
 </script>
 
 <template>
-  <h-page-index
-    :items="items"
-    collection="Units"
-    @click:regist="$router.push('/units/regist')"
-    @click:row="$router.push(`/units/${$event.docId}`)"
-  />
+  <h-template-default label="単位管理">
+    <template #append-toolbar>
+      <v-dialog v-model="editor" max-width="360" persistent>
+        <template #activator="{ attrs, on }">
+          <h-btn-regist v-bind="attrs" icon v-on="on" />
+        </template>
+        <h-card-form-input
+          ref="form"
+          :disable-delete="!editItem.deletable"
+          :edit-mode="editMode"
+          :label="`単位${editMode === 'REGIST' ? '登録' : '編集'}`"
+          :loading="loading"
+          @click:cancel="editor = false"
+          @click:submit="onClickSubmit"
+        >
+          <template #default="props">
+            <h-input-unit
+              v-bind.sync="editItem"
+              :edit-mode="props.editMode"
+              :loading="props.loading"
+            />
+          </template>
+        </h-card-form-input>
+      </v-dialog>
+    </template>
+    <template #default="{ height }">
+      <h-data-table-units
+        :height="height"
+        :items="items"
+        @click:row="onClickRow($event)"
+      />
+    </template>
+  </h-template-default>
 </template>
 
 <style></style>

@@ -6,9 +6,9 @@
  *
  * #### PROPERTIES
  *
- * | name             | type    | required | remarks            |
- * | :---             | :---    | :---:    | :---               |
- * | editMode         | string  | false    |                    |
+ * | name     | type   | required | description |
+ * | :------- | :----- | :------: | :---------- |
+ * | editMode | string | true     |             |
  *
  * @author shisyamo4131
  */
@@ -19,10 +19,10 @@ export default {
   props: {
     editMode: {
       type: String,
-      default: 'REGIST',
       validator: (v) => ['REGIST', 'UPDATE', 'DELETE'].includes(v),
-      required: false,
+      required: true,
     },
+    loading: { type: Boolean, default: false, required: false },
   },
 }
 </script>

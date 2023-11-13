@@ -4,12 +4,12 @@
  *
  * @author shisyamo4131
  */
-import ADataTable from '../../atoms/tables/ADataTable.vue'
+import HDataTable from './HDataTable.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ADataTable },
+  components: { HDataTable },
   /******************************************************************
    * DATA
    ******************************************************************/
@@ -18,6 +18,8 @@ export default {
       customFilter: (value, search, item) => {
         if (item.code.includes(search)) return true
         if (item.name.includes(search)) return true
+        if (item.abbr.includes(search)) return true
+        return false
       },
       headers: [
         { text: 'CODE', value: 'code' },
@@ -29,13 +31,14 @@ export default {
 </script>
 
 <template>
-  <a-data-table
+  <h-data-table
     v-bind="$attrs"
     :custom-filter="customFilter"
     :headers="headers"
+    sort-by="code"
     v-on="$listeners"
   >
-  </a-data-table>
+  </h-data-table>
 </template>
 
 <style></style>

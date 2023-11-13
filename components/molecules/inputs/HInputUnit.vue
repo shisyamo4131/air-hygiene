@@ -8,9 +8,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: {
-    ATextField,
-  },
+  components: { ATextField },
   /******************************************************************
    * MIXINS
    ******************************************************************/
@@ -24,6 +22,30 @@ export default {
     abbr: { type: String, default: '', required: false },
     deletable: { type: Boolean, default: true, required: false },
   },
+  /******************************************************************
+   * DATA
+   ******************************************************************/
+  data() {
+    return {
+      rules: {
+        length: (v) => /^\d{2}$/.test(v) || '半角数字2桁で入力',
+        duplicated: (v) =>
+          this.editMode !== 'REGIST' ||
+          !this.duplicated ||
+          '既に使わているCODEです。',
+      },
+    }
+  },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
+  computed: {
+    duplicated() {
+      return this.$store.state.masters.Units.some(
+        ({ code }) => code === this.code
+      )
+    },
+  },
 }
 </script>
 
@@ -34,10 +56,10 @@ export default {
       :value="code"
       required
       counter
-      :disabled="editMode === 'UPDATE' && !deletable"
+      :disabled="editMode !== 'REGIST'"
       hint="2桁で入力"
       max-length="2"
-      :rules="[(v) => !v || v.length === 2 || '2桁で入力してください。']"
+      :rules="[rules.length, rules.duplicated]"
       @input="$emit('update:code', $event)"
     />
     <a-text-field
