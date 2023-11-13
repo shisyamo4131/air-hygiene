@@ -24,7 +24,7 @@ export default {
         { text: 'CURRENT', value: 'current' },
         { text: 'LENGTH', value: 'length' },
         { text: 'FIELD', value: 'field' },
-        { text: 'CONDITION', value: 'condition' },
+        { text: 'STATUS', value: 'status' },
       ],
     }
   },

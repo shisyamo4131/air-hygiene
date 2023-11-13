@@ -305,7 +305,7 @@ export default class FireModel {
           `Autonumbers/${this.#collection}`
         )
         const autonumDoc = await transaction.get(autonumRef)
-        if (autonumDoc.exists() && autonumDoc.data().condition) {
+        if (autonumDoc.exists() && autonumDoc.data().status) {
           const num = autonumDoc.data().current + 1
           const length = autonumDoc.data().length
           const newCode = (Array(length).join('0') + num).slice(-length)

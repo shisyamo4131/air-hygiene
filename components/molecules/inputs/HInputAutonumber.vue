@@ -1,6 +1,7 @@
 <script>
 /**
- * @create 2023-09-29
+ * ### HInputAutonumber
+ *
  * @author shisyamo4131
  */
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
@@ -24,7 +25,7 @@ export default {
     current: { type: Number, default: 0, required: false },
     length: { type: Number, default: 1, required: false },
     field: { type: String, default: '', required: false },
-    condition: { type: Boolean, default: true, required: false },
+    status: { type: Boolean, default: true, required: false },
   },
 }
 </script>
@@ -57,9 +58,9 @@ export default {
     />
     <a-switch
       v-if="editMode !== 'REGIST'"
-      label="condition"
-      :input-value="condition"
-      @change="$emit('update:condition', $event)"
+      label="status"
+      :input-value="status"
+      @change="$emit('update:status', $event)"
     />
   </div>
 </template>

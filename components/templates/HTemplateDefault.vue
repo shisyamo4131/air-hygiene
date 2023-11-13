@@ -3,8 +3,7 @@
  * ### HTemplateDefault
  *
  * A default template component.
- * It consists of a toolbar, an itembar, and a main container.
- * The toolbar and itembar can be replaced by their own slot.
+ * It consists of a toolbar, a header, a main container and a footer.
  * The main container is scrollable and contains default slot.
  *
  * #### PROPERTIES
@@ -12,11 +11,11 @@
  * | name             | type               | default   | description                       |
  * | :--------------- | :----------------- | :-------: | --------------------------------- |
  * | decrease         | [ string, number ] | undefined | Decrease main-container's height. |
+ * | footerHeight     | number             | undefined | footer's height                   |
+ * | headerHeight     | number             | undefined | header's height                   |
  * | label            | string             | undefined | Toolbar's label.                  |
  * | layout-x-padding | [ string, number ] | 24        | *                                 |
  * | overflow         | string             | 'auto'    | *                                 |
- * | showItembar      | boolean            | false     | Displays item-bar.                |
- * | showSearchbar    | boolean            | false     | Displays search-bar.              |
  *
  * ##### layout-x-padding
  *
@@ -44,22 +43,6 @@
  *
  * Slot for the footer.
  * Must be specified 'decrease' property for adjust the height of main-container.
- *
- * ##### itembar
- *
- * Slot to replace the itembar.
- *
- * | name   | description          |
- * | ------ | -------------------- |
- * | height | A height of itembar. |
- *
- * ##### searchbar
- *
- * Slot to replace the searchbar.
- *
- * | name   | description            |
- * | ------ | ---------------------- |
- * | height | A height of searchbar. |
  *
  * ##### toolbar
  *
@@ -103,7 +86,8 @@ export default {
    ******************************************************************/
   props: {
     decrease: { type: [String, Number], default: undefined, required: false },
-    itembarDense: { type: Boolean, default: false, required: false },
+    footerHeight: { type: Number, default: undefined, required: false },
+    headerHeight: { type: Number, default: undefined, required: false },
     label: { type: String, default: undefined, required: false },
     layoutYPadding: { type: [String, Number], default: 24, required: false },
     overflow: {
@@ -112,8 +96,6 @@ export default {
       validator: (v) => ['auto', 'scroll'].includes(v),
       required: false,
     },
-    showItembar: { type: Boolean, default: false, required: false },
-    showSearchbar: { type: Boolean, default: false, required: false },
   },
   /******************************************************************
    * COMPUTED
@@ -121,24 +103,15 @@ export default {
   computed: {
     containerHeight() {
       const decrease = this.decrease ? parseInt(this.decrease) : 0
+      const footerHeight = this.footerHeight || 0
+      const headerHeight = this.headerHeight || 0
       const result =
         this.templateHeight -
         this.toolbarHeight -
-        this.itembarHeight -
-        this.searchbarHeight -
+        headerHeight -
+        footerHeight -
         decrease
       return result
-    },
-    itembarHeight() {
-      if (!this.showItembar) return 0
-      if (this.itembarDense) return 48
-      if (this.$vuetify.breakpoint.smAndDown) return 56
-      return 64
-    },
-    searchbarHeight() {
-      if (!this.showSearchbar) return 0
-      if (this.$vuetify.breakpoint.smAndDown) return 56
-      return 64
     },
     templateHeight() {
       const app = {
@@ -182,18 +155,7 @@ export default {
         <slot name="append-toolbar" />
       </slot>
     </v-toolbar>
-    <!-- ### SEARCHBAR ### -->
-    <v-expand-transition>
-      <v-toolbar v-show="showSearchbar" flat>
-        <slot name="searchbar" v-bind="{ height: searchbarHeight }"></slot>
-      </v-toolbar>
-    </v-expand-transition>
-    <!-- ### ITEMBAR ### -->
-    <v-expand-transition>
-      <v-toolbar v-show="showItembar" :dense="itembarDense" flat>
-        <slot name="itembar" v-bind="{ height: itembarHeight }"></slot>
-      </v-toolbar>
-    </v-expand-transition>
+    <slot name="header" v-bind="{ height: headerHeight }" />
     <!-- ### MAIN-CONTAINER ### -->
     <div
       :id="`main-container-${_uid}`"
@@ -213,7 +175,7 @@ export default {
       </slot>
     </div>
     <!-- ### FOOTER ### -->
-    <slot name="footer" />
+    <slot name="footer" v-bind="{ height: footerHeight }" />
   </div>
 </template>
 

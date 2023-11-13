@@ -90,11 +90,11 @@ export default {
       try {
         this.loading = true
         if (!this.selectedItem) return
-        if (this.selectedItem.autonumber.condition) {
-          await this.toggleAutonumberCondition(this.selectedItem.name, false)
+        if (this.selectedItem.autonumber.status) {
+          await this.toggleAutonumberStatus(this.selectedItem.name, false)
         }
         await this[`init${this.selectedItem.name}`]()
-        if (this.selectedItem.autonumber.condition) {
+        if (this.selectedItem.autonumber.status) {
           await this.updateAutonumber(
             this.selectedItem.name,
             this.selectedItem.autonumber.field
@@ -105,8 +105,8 @@ export default {
         console.error(err)
         alert(err.message)
       } finally {
-        if (this.selectedItem.autonumber.condition) {
-          await this.toggleAutonumberCondition(this.selectedItem.name, true)
+        if (this.selectedItem.autonumber.status) {
+          await this.toggleAutonumberStatus(this.selectedItem.name, true)
         }
         this.loading = false
       }
@@ -315,9 +315,9 @@ export default {
         this.progress.value = this.progress.value + 1
       }
     },
-    async toggleAutonumberCondition(colName, condition) {
+    async toggleAutonumberStatus(colName, status) {
       const docRef = doc(this.$firestore, `Autonumbers/${colName}`)
-      await updateDoc(docRef, { condition })
+      await updateDoc(docRef, { status })
     },
     async updateAutonumber(colName, field) {
       const colRef = collection(this.$firestore, colName)

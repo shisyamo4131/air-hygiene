@@ -1,14 +1,28 @@
 <script>
 /**
- * @create 2023-09-29
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
+import HBtnRegist from '~/components/molecules/btns/HBtnRegist.vue'
+import HCardFormInput from '~/components/molecules/cards/HCardFormInput.vue'
 import HInputAutonumber from '~/components/molecules/inputs/HInputAutonumber.vue'
-import ABtnSubmit from '~/components/atoms/btns/ABtnSubmit.vue'
-import ABtnCancel from '~/components/atoms/btns/ABtnCancel.vue'
+import HDataTableAutonumbers from '~/components/molecules/tables/HDataTableAutonumbers.vue'
+import HTemplateDefault from '~/components/templates/HTemplateDefault.vue'
 export default {
-  components: { HInputAutonumber, ABtnSubmit, ABtnCancel },
+  /******************************************************************
+   * NAME
+   ******************************************************************/
+  name: 'AutonumbersIndex',
+  /******************************************************************
+   * COMPONENTS
+   ******************************************************************/
+  components: {
+    HTemplateDefault,
+    HDataTableAutonumbers,
+    HBtnRegist,
+    HCardFormInput,
+    HInputAutonumber,
+  },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -33,16 +47,8 @@ export default {
   data() {
     return {
       editMode: 'REGIST',
-      editModel: this.$Autonumber(),
       editor: false,
-      headers: [
-        { text: 'Collection', value: 'collectionName' },
-        { text: 'Current', value: 'current' },
-        { text: 'Length', value: 'length' },
-        { text: 'Field', value: 'field' },
-        { text: 'Condition', value: 'condition' },
-        { text: 'Action', value: 'action', sortable: false },
-      ],
+      editItem: this.$Autonumber(),
       loading: false,
     }
   },
@@ -51,11 +57,7 @@ export default {
    ******************************************************************/
   watch: {
     editor(v) {
-      if (!v) {
-        this.editModel.initialize()
-        this.editMode = 'REGIST'
-        this.$refs.form.resetValidation()
-      }
+      v || this.initialize()
     },
   },
   /******************************************************************
@@ -70,16 +72,18 @@ export default {
    * METHODS
    ******************************************************************/
   methods: {
-    async onClickSubmit() {
-      if (!this.$refs.form.validate()) {
-        alert('入力に不備があります。')
-        return
-      }
+    initialize() {
+      this.editMode = 'REGIST'
+      this.editItem.initialize()
+      this.$refs.form.initialize()
+    },
+    async onClickSubmit(mode) {
+      if (mode !== 'DELETE' && !this.$refs.form.validate()) return
       try {
         this.loading = true
-        if (this.editMode === 'REGIST') await this.editModel.create()
-        if (this.editMode === 'UPDATE') await this.editModel.update()
-        if (this.editMode === 'DELETE') await this.editModel.delete()
+        if (mode === 'REGIST') await this.editItem.create()
+        if (mode === 'UPDATE') await this.editItem.update()
+        if (mode === 'DELETE') await this.editItem.delete()
         this.editor = false
       } catch (err) {
         // eslint-disable-next-line
@@ -89,14 +93,9 @@ export default {
         this.loading = false
       }
     },
-    onClickEdit(item) {
+    onClickRow(item) {
       this.editMode = 'UPDATE'
-      this.editModel.initialize(item)
-      this.editor = true
-    },
-    onClickDelete(item) {
-      this.editMode = 'DELETE'
-      this.editModel.initialize(item)
+      this.editItem.initialize(item)
       this.editor = true
     },
   },
@@ -104,42 +103,38 @@ export default {
 </script>
 
 <template>
-  <air-template-data-table
-    label="自動採番管理"
-    :headers="headers"
-    :items="items"
-  >
-    <template #append-label>
-      <v-dialog v-model="editor" max-width="480">
+  <h-template-default label="自動採番管理">
+    <template #append-toolbar>
+      <v-dialog v-model="editor" max-width="360" persistent>
         <template #activator="{ attrs, on }">
-          <v-btn v-bind="attrs" icon v-on="on"><v-icon>mdi-plus</v-icon></v-btn>
+          <h-btn-regist v-bind="attrs" icon v-on="on" />
         </template>
-        <v-card outlined>
-          <v-card-title>{{ editModel.collectionName }}</v-card-title>
-          <v-card-text class="pt-5">
-            <v-form ref="form" :disabled="loading || editMode === 'DELETE'">
-              <h-input-autonumber
-                v-bind.sync="editModel"
-                :edit-mode="editMode"
-              />
-            </v-form>
-          </v-card-text>
-          <v-card-actions class="justify-space-between">
-            <a-btn-cancel :disabled="loading" @click="editor = false" />
-            <a-btn-submit
-              :disabled="loading"
-              :loading="loading"
-              @click="onClickSubmit"
+        <h-card-form-input
+          ref="form"
+          :edit-mode="editMode"
+          :label="`自動採番${editMode === 'REGIST' ? '登録' : '編集'}`"
+          :loading="loading"
+          @click:cancel="editor = false"
+          @click:submit="onClickSubmit"
+        >
+          <template #default="props">
+            <h-input-autonumber
+              v-bind.sync="editItem"
+              :edit-mode="props.editMode"
+              :loading="props.loading"
             />
-          </v-card-actions>
-        </v-card>
+          </template>
+        </h-card-form-input>
       </v-dialog>
     </template>
-    <template #[`item.action`]="{ item }">
-      <v-icon class="mr-2" @click="onClickEdit(item)">mdi-pencil</v-icon>
-      <v-icon @click="onClickDelete(item)">mdi-trash-can</v-icon>
+    <template #default="{ height }">
+      <h-data-table-autonumbers
+        :height="height"
+        :items="items"
+        @click:row="onClickRow($event)"
+      />
     </template>
-  </air-template-data-table>
+  </h-template-default>
 </template>
 
 <style></style>

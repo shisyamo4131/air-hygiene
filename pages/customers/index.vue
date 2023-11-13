@@ -3,7 +3,9 @@
  * @author shisyamo4131
  */
 import { collection, onSnapshot } from 'firebase/firestore'
-import HPageIndex from '~/components/templates/HPageIndex.vue'
+import HTemplateDefault from '~/components/templates/HTemplateDefault.vue'
+import HDataTableCustomers from '~/components/molecules/tables/HDataTableCustomers.vue'
+import HBtnRegist from '~/components/molecules/btns/HBtnRegist.vue'
 export default {
   /******************************************************************
    * NAME
@@ -12,7 +14,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HPageIndex },
+  components: { HTemplateDefault, HDataTableCustomers, HBtnRegist },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -40,12 +42,18 @@ export default {
 </script>
 
 <template>
-  <h-page-index
-    :items="items"
-    collection="Customers"
-    @click:regist="$router.push('/customers/regist')"
-    @click:row="$router.push(`/customers/${$event.docId}`)"
-  />
+  <h-template-default label="取引先管理">
+    <template #append-toolbar>
+      <h-btn-regist icon @click="$router.push(`/customers/regist`)" />
+    </template>
+    <template #default="{ height }">
+      <h-data-table-customers
+        :height="height"
+        :items="items"
+        @click:row="$router.push(`/customers/${$event.docId}`)"
+      />
+    </template>
+  </h-template-default>
 </template>
 
 <style></style>

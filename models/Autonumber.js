@@ -15,7 +15,7 @@ export default class Autonumber extends FireModel {
     this.current = 0
     this.length = 1
     this.field = ''
-    this.condition = true
+    this.status = true
     super.initialize(item)
   }
 
