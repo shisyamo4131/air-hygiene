@@ -27,9 +27,9 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    collectItemId: { type: String, default: '', required: true },
-    unitId: { type: String, default: '', required: true },
-    unitPrice: { type: Number, default: null, required: true },
+    collectItemId: { type: String, default: '', required: false },
+    unitId: { type: String, default: '', required: false },
+    unitPrice: { type: Number, default: null, required: false },
   },
 }
 </script>
