@@ -5,6 +5,7 @@
 import HBtnBack from '~/components/molecules/btns/HBtnBack.vue'
 import HBtnEdit from '~/components/molecules/btns/HBtnEdit.vue'
 import HSimpleTableSite from '~/components/molecules/tables/HSimpleTableSite.vue'
+import HTimelineSiteUnitPrices from '~/components/organisms/HTimelineSiteUnitPrices.vue'
 import HTemplateTabs from '~/components/templates/HTemplateTabs.vue'
 export default {
   /******************************************************************
@@ -14,7 +15,13 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HTemplateTabs, HBtnEdit, HSimpleTableSite, HBtnBack },
+  components: {
+    HTemplateTabs,
+    HBtnEdit,
+    HSimpleTableSite,
+    HBtnBack,
+    HTimelineSiteUnitPrices,
+  },
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
@@ -30,9 +37,12 @@ export default {
   data() {
     return {
       loading: false,
-      tabs: ['Dashboard', '登録情報', '設定'],
+      tabs: ['Dashboard', '登録情報', '請求単価', '設定'],
     }
   },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
   methods: {
     async onClickDelete() {
       try {
@@ -74,6 +84,11 @@ export default {
       <h-simple-table-site v-bind="item" />
     </template>
     <template #tab-2>
+      <v-container fluid>
+        <h-timeline-site-unit-prices :site-id="docId" />
+      </v-container>
+    </template>
+    <template #tab-3>
       <v-container fluid>
         <air-dialog-confirm-delete @click:delete="onClickDelete">
           <template #activator="{ attrs, on }">

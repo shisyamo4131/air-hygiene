@@ -16,8 +16,9 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
-    height: { type: Number, default: undefined, required: false },
+    height: { type: [String, Number], default: undefined, required: false },
     hideToolbar: { type: Boolean, default: false, required: false },
+    hidePagination: { type: Boolean, default: false, required: false },
     itemsPerPage: { type: Number, default: 10, required: false },
     itemsPerPages: {
       type: Array,
@@ -50,7 +51,7 @@ export default {
   computed: {
     internalHeight() {
       if (!this.height) return undefined
-      return this.height - this.toolbarHeight - 48
+      return parseInt(this.height) - this.toolbarHeight - this.paginationHeight
     },
     internalItemsPerPage: {
       get() {
@@ -60,6 +61,10 @@ export default {
         this.lazyItemsPerPage = v
         this.$emit('update:itemsPerPage', v)
       },
+    },
+    paginationHeight() {
+      if (this.hidePagination) return 0
+      return 48
     },
     toolbarHeight() {
       if (this.hideToolbar) return 0
@@ -129,7 +134,11 @@ export default {
         <slot :name="slotName" />
       </template>
     </a-data-table>
-    <div class="d-flex justify-center align-center" style="height: 48px">
+    <div
+      v-if="!hidePagination"
+      class="d-flex justify-center align-center"
+      style="height: 48px"
+    >
       <v-pagination v-model="page" color="primary" :length="pageCount" />
     </div>
   </div>

@@ -1,30 +1,18 @@
 <template>
   <div>
-    <h-template-array-input
-      v-model="items"
-      model="SiteUnitPriceDetail"
-      :dialog-props="{ maxWidth: 480 }"
-    >
-      <template #default="{ attrs, on }">
-        <h-input v-bind="attrs" v-on="on" />
-      </template>
-      <template #data-table="{ attrs, on }">
-        <h-data-table v-bind="attrs" v-on="on" />
-      </template>
-    </h-template-array-input>
+    <h-input-site-unit-price v-bind.sync="item" edit-mode="REGIST" />
   </div>
 </template>
 
 <script>
-import TestData from '~/assets/TestDataSiteUnitPriceDetails.json'
-import HInput from '~/components/molecules/inputs/HInputSiteUnitPriceDetail.vue'
-import HDataTable from '~/components/molecules/tables/HDataTableSiteUnitPriceDetails.vue'
-import HTemplateArrayInput from '~/components/templates/HTemplateArrayInput.vue'
+import TestData from '~/assets/TestDataSiteUnitPrices.json'
+import HInputSiteUnitPrice from '~/components/molecules/inputs/HInputSiteUnitPrice.vue'
 export default {
-  components: { HTemplateArrayInput, HDataTable, HInput },
+  components: { HInputSiteUnitPrice },
   data() {
     return {
       items: TestData,
+      item: TestData[0],
     }
   },
   methods: {},

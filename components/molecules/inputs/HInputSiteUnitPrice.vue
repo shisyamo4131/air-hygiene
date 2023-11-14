@@ -4,16 +4,20 @@
  *
  * @author shisyamo4131
  */
-import HInputSiteUnitPriceDetails from './HInputSiteUnitPriceDetails.vue'
+import HDataTableSiteUnitPriceDetails from '../tables/HDataTableSiteUnitPriceDetails.vue'
+import HInputSiteUnitPriceDetail from './HInputSiteUnitPriceDetail.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
-import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
+import HTemplateArrayInput from '~/components/templates/HTemplateArrayInput.vue'
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
   components: {
-    HInputSiteUnitPriceDetails,
-    ATextFieldDate,
+    HTemplateArrayInput,
+    HInputSiteUnitPriceDetail,
+    HDataTableSiteUnitPriceDetails,
+    ATextField,
   },
   /******************************************************************
    * MIXINS
@@ -32,16 +36,32 @@ export default {
 
 <template>
   <div>
-    <a-text-field-date
+    <a-text-field
       label="開始日"
       :value="date"
       required
+      input-type="date"
       @input="$emit('update:date', $event)"
     />
-    <h-input-site-unit-price-details
+    <h-template-array-input
       :value="details"
+      :dialog-props="{ maxWidth: 360 }"
+      model="SiteUnitPriceDetail"
       @input="$emit('update:details', $event)"
-    />
+    >
+      <template #default="{ attrs, on }">
+        <h-input-site-unit-price-detail v-bind="attrs" v-on="on" />
+      </template>
+      <template #data-table="{ attrs, on }">
+        <h-data-table-site-unit-price-details
+          v-bind="attrs"
+          height="360"
+          hide-pagination
+          :items-per-page="-1"
+          v-on="on"
+        />
+      </template>
+    </h-template-array-input>
   </div>
 </template>
 
