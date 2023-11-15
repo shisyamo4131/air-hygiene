@@ -8,8 +8,8 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
+import HNumericUnitPrice from './HNumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
-import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -17,7 +17,7 @@ export default {
   components: {
     AAutocompleteCollectItem,
     AAutocompleteUnit,
-    ANumeric,
+    HNumericUnitPrice,
   },
   /******************************************************************
    * MIXINS
@@ -30,6 +30,9 @@ export default {
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
     unitPrice: { type: Number, default: null, required: false },
+    /* for fetch unitPrice */
+    siteId: { type: String, required: true },
+    date: { type: String, required: true },
   },
 }
 </script>
@@ -54,12 +57,10 @@ export default {
         />
       </v-col>
       <v-col cols="12" sm="6">
-        <a-numeric
+        <h-numeric-unit-price
           label="単価（税抜）"
-          class="right-input"
           :value="unitPrice"
           required
-          suffix="円"
           @input="$emit('update:unitPrice', $event)"
         />
       </v-col>

@@ -6,6 +6,7 @@
  */
 import AAutocompleteCollectItem from '../../atoms/inputs/AAutocompleteCollectItem.vue'
 import AAutocompleteUnit from '../../atoms/inputs/AAutocompleteUnit.vue'
+import HNumericUnitPrice from './HNumericUnitPrice.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
@@ -16,6 +17,7 @@ export default {
     AAutocompleteCollectItem,
     AAutocompleteUnit,
     ANumeric,
+    HNumericUnitPrice,
   },
   /***************************************************************************
    * MIXINS
@@ -38,17 +40,14 @@ export default {
    * METHODS
    ***************************************************************************/
   methods: {
-    async loadUnitPrice() {
-      if (!this.siteId || !this.date) return
+    async fetchUnitPrice() {
       if (!this.collectItemId || !this.unitId) return
-      const id = `${this.collectItemId}-${this.unitId}`
-      const siteUnitPrice = this.$SiteUnitPrice()
-      const fetchedPrice = await siteUnitPrice.fetchUnitPrice(
+      if (!this.siteId || !this.date) return
+      await this.$refs['unit-price'].fetch(
         this.siteId,
         this.date,
-        id
+        `${this.collectItemId}-${this.unitId}`
       )
-      this.$emit('update:unitPrice', fetchedPrice)
     },
   },
 }
@@ -61,12 +60,13 @@ export default {
       :value="collectItemId"
       required
       :disabled="editMode !== 'REGIST'"
-      @change="loadUnitPrice"
+      @change="fetchUnitPrice"
       @input="$emit('update:collectItemId', $event)"
     />
     <a-numeric
       label="数量"
       :value="amount"
+      class="right-input"
       required
       decimal-places="2"
       @input="$emit('update:amount', $event)"
@@ -76,15 +76,14 @@ export default {
       :value="unitId"
       required
       :disabled="editMode !== 'REGIST'"
-      @change="loadUnitPrice"
+      @change="fetchUnitPrice"
       @input="$emit('update:unitId', $event)"
     />
-    <a-numeric
+    <h-numeric-unit-price
+      ref="unit-price"
       label="単価（税抜）"
-      class="right-input"
       :value="unitPrice"
       required
-      suffix="円"
       @input="$emit('update:unitPrice', $event)"
     />
   </div>

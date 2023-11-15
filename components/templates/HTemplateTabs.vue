@@ -60,7 +60,7 @@ export default {
     </template>
     <template #default="{ height }">
       <v-tabs-items v-model="tab">
-        <v-tab-item v-for="(item, index) of tabs" :key="index">
+        <v-tab-item v-for="(item, index) of tabs" :key="index" eager>
           <slot :name="`tab-${index}`" v-bind="{ height, tab }">
             {{ `this is tab-${index}` }}
           </slot>

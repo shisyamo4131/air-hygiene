@@ -8,7 +8,7 @@ import HDataTableSiteUnitPriceDetails from '../tables/HDataTableSiteUnitPriceDet
 import HInputSiteUnitPriceDetail from './HInputSiteUnitPriceDetail.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import HTemplateArrayInput from '~/components/templates/HTemplateArrayInput.vue'
-import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import ADate from '~/components/atoms/inputs/ADate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -17,7 +17,7 @@ export default {
     HTemplateArrayInput,
     HInputSiteUnitPriceDetail,
     HDataTableSiteUnitPriceDetails,
-    ATextField,
+    ADate,
   },
   /******************************************************************
    * MIXINS
@@ -36,11 +36,10 @@ export default {
 
 <template>
   <div>
-    <a-text-field
+    <a-date
       label="開始日"
       :value="date"
       required
-      input-type="date"
       @input="$emit('update:date', $event)"
     />
     <h-template-array-input

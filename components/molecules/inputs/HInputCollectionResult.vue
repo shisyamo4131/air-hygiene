@@ -119,7 +119,12 @@ export default {
         @input="$emit('update:details', $event)"
       >
         <template #default="{ attrs, on }">
-          <h-input-collection-result-detail v-bind="attrs" v-on="on" />
+          <h-input-collection-result-detail
+            v-bind="attrs"
+            :site-id="site?.docId || undefined"
+            :date="date"
+            v-on="on"
+          />
         </template>
         <template #data-table="{ attrs, on }">
           <v-card outlined>
