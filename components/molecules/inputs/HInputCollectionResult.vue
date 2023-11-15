@@ -147,6 +147,7 @@ export default {
       <a-textarea
         label="備考"
         :value="remarks"
+        hide-details
         @input="$emit('update:remarks', $event)"
       />
     </v-col>
