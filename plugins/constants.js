@@ -142,6 +142,17 @@ const PREFECTURE_ARRAY = () => {
   })
 }
 
+/* 回収ルート状態 */
+const ROOT_STATUS = {
+  active: '稼働中',
+  expired: '稼働終了',
+}
+
+const ROOT_STATUS_ARRAY = [
+  { value: 'active', text: '稼働中' },
+  { value: 'expired', text: '稼働終了' },
+]
+
 /* 処理区分 */
 const PROCESSING_DIV = {
   delivery: '収集運搬',
@@ -207,6 +218,8 @@ export default (context, inject) => {
   inject('PREFECTURE_ARRAY', PREFECTURE_ARRAY())
   inject('PROCESSING_DIV', PROCESSING_DIV)
   inject('PROCESSING_DIV_ARRAY', PROCESSING_DIV_ARRAY)
+  inject('ROOT_STATUS', ROOT_STATUS)
+  inject('ROOT_STATUS_ARRAY', ROOT_STATUS_ARRAY)
   inject('ROUNDING', ROUNDING)
   inject('ROUNDING_ARRAY', ROUNDING_ARRAY)
   inject('SITE_STATUS', SITE_STATUS)

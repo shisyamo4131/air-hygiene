@@ -11,6 +11,7 @@
     "lists": [
       { "name": "取引先", "to": "/customers", "icon": "mdi-domain" },
       { "name": "排出場所", "to": "/sites", "icon": "mdi-domain" },
+      { "name": "回収ルート", "to": "/roots", "icon": "mdi-domain" },
       { "name": "回収品目", "to": "/collect-items", "icon": "mdi-domain" },
       { "name": "単位", "to": "/units", "icon": "mdi-domain" }
     ]

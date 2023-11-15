@@ -25,6 +25,7 @@ export default {
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
     customer: { type: Object, default: null, required: false },
+    collectDays: { type: Array, default: () => [], required: false },
   },
 }
 </script>
@@ -60,6 +61,13 @@ export default {
       <tr>
         <td>URL</td>
         <td>{{ url }}</td>
+      </tr>
+      <tr>
+        <td>担当者</td>
+        <td>
+          {{ staffName }}
+          <span v-if="staffEmail">({{ staffEmail }})</span>
+        </td>
       </tr>
       <tr>
         <td>担当者</td>

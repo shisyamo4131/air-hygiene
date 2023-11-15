@@ -4,6 +4,7 @@
  */
 import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
 import AAutocompleteCustomer from '../../atoms/inputs/AAutocompleteCustomer.vue'
+import HItemGroupDays from '../itemGroups/HItemGroupDays.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
@@ -20,6 +21,7 @@ export default {
     ATextFieldDate,
     ATextField,
     ARadioGroup,
+    HItemGroupDays,
   },
   /******************************************************************
    * MIXINS
@@ -45,6 +47,7 @@ export default {
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
     customer: { type: Object, default: null, required: false },
+    collectDays: { type: Array, default: () => [], required: false },
   },
   /******************************************************************
    * WATCH
@@ -141,6 +144,11 @@ export default {
       :value="staffEmail"
       input-type="email"
       @input="$emit('update:staffEmail', $event)"
+    />
+    <h-item-group-days
+      :value="collectDays"
+      multiple
+      @change="$emit('update:collectDays', $event)"
     />
     <a-radio-group
       v-if="editMode !== 'REGIST'"

@@ -5,24 +5,25 @@
  *
  * #### PROPERTIES
  *
- * | name        | type   | default  | required | remarks                             |
- * | ----------- | ------ | -------- | -------- | ----------------------------------- |
- * | code        | string | ''       | true     | 8 digits and auto-numbering.        |
- * | name        | string | ''       | true     |                                     |
- * | abbr        | string | ''       | true     |                                     |
- * | abbrKana    | string | ''       | true     |                                     |
- * | zipcode     | string | ''       | false    |                                     |
- * | address1    | string | ''       | true     |                                     |
- * | address2    | string | ''       | false    |                                     |
- * | tel         | string | ''       | false    |                                     |
- * | fax         | string | ''       | false    |                                     |
- * | url         | string | ''       | false    |                                     |
- * | staffName   | string | ''       | false    |                                     |
- * | staffEmail  | string | ''       | false    |                                     |
- * | status      | string | 'active' | true     | [ 'active', 'expired' ]             |
- * | dateExpired | string | ''       | false    | Required if status is 'expired'.    |
- * | remarks     | string | ''       | false    |                                     |
- * | customer    | object | null     | true     | Customer object.                    |
+ * | name        | type   | default  | required | remarks                          |
+ * | ----------- | ------ | -------- | -------- | -------------------------------- |
+ * | code        | string | ''       | true     | 8 digits and auto-numbering.     |
+ * | name        | string | ''       | true     |                                  |
+ * | abbr        | string | ''       | true     |                                  |
+ * | abbrKana    | string | ''       | true     |                                  |
+ * | zipcode     | string | ''       | false    |                                  |
+ * | address1    | string | ''       | true     |                                  |
+ * | address2    | string | ''       | false    |                                  |
+ * | tel         | string | ''       | false    |                                  |
+ * | fax         | string | ''       | false    |                                  |
+ * | url         | string | ''       | false    |                                  |
+ * | staffName   | string | ''       | false    |                                  |
+ * | staffEmail  | string | ''       | false    |                                  |
+ * | status      | string | 'active' | true     | [ 'active', 'expired' ]          |
+ * | dateExpired | string | ''       | false    | Required if status is 'expired'. |
+ * | remarks     | string | ''       | false    |                                  |
+ * | customer    | object | null     | true     | Customer object.                 |
+ * | collectDays | array  | []       | true     |                                  |
  *
  * @author shisyamo4131
  */
@@ -40,6 +41,57 @@ export default class Site extends FireModel {
         type: 'collection',
       },
     ]
+    Object.defineProperties(this, {
+      sun: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('sun')
+        },
+        set(v) {},
+      },
+      mon: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('mon')
+        },
+        set(v) {},
+      },
+      tue: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('tue')
+        },
+        set(v) {},
+      },
+      wed: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('wed')
+        },
+        set(v) {},
+      },
+      thu: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('thu')
+        },
+        set(v) {},
+      },
+      fri: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('fri')
+        },
+        set(v) {},
+      },
+      sat: {
+        enumerable: true,
+        get() {
+          return this.collectDays.includes('sat')
+        },
+        set(v) {},
+      },
+    })
   }
 
   initialize(item) {
@@ -59,6 +111,7 @@ export default class Site extends FireModel {
     this.dateExpired = ''
     this.remarks = ''
     this.customer = null
+    this.collectDays = []
     super.initialize(item)
   }
 
