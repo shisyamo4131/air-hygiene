@@ -114,6 +114,7 @@ export default {
               dense
               hide-details
               :items="itemsPerPages"
+              :outlined="false"
               solo-inverted
             />
           </div>
