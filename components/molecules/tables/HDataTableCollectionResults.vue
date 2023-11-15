@@ -4,24 +4,26 @@
  *
  * @author shisyamo4131
  */
+import HTextFieldYearMonth from '../inputs/HTextFieldYearMonth.vue'
 import HDataTable from './HDataTable.vue'
+import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { HDataTable },
+  components: { HDataTable, HTextFieldYearMonth, AAutocomplete },
+  /******************************************************************
+   * PROPS
+   ******************************************************************/
+  props: {
+    items: { type: Array, default: () => [], required: false },
+    yearMonth: { type: String, default: '', required: false },
+  },
   /******************************************************************
    * DATA
    ******************************************************************/
   data() {
     return {
-      // customFilter: (value, search, item) => {
-      //   if (item.code.includes(search)) return true
-      //   if (item.name.includes(search)) return true
-      //   if (item.nameKana.includes(search)) return true
-      //   if (item.abbr.includes(search)) return true
-      //   return false
-      // },
       headers: [
         { text: '回収日', value: 'date' },
         { text: '実績区分', value: 'resultType' },
@@ -41,13 +43,52 @@ export default {
         { text: '売上金額', value: 'sales', align: 'right', sortable: false },
         { text: '請求締日', value: 'dateDeadline' },
       ],
+      resultType: undefined,
     }
+  },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
+  computed: {
+    internalItems() {
+      return this.items.filter((item) => {
+        if (!this.resultType) return true
+        return item.resultType === this.resultType
+      })
+    },
   },
 }
 </script>
 
 <template>
-  <h-data-table v-bind="$attrs" :headers="headers" v-on="$listeners">
+  <h-data-table
+    v-bind="$attrs"
+    :headers="headers"
+    :items="internalItems"
+    v-on="$listeners"
+  >
+    <template #search>
+      <h-text-field-year-month
+        :value="yearMonth"
+        hide-details
+        :outlined="false"
+        solo-inverted
+        @input="$emit('update:yearMonth', $event)"
+      />
+      <v-spacer />
+      <div style="max-width: 240px">
+        <a-autocomplete
+          v-model="resultType"
+          placeholder="実績区分"
+          :items="$COLLECTION_RESULT_TYPE_ARRAY"
+          hide-details
+          clearable
+          prepend-inner-icon="mdi-magnify"
+          :outlined="false"
+          solo-inverted
+        />
+      </div>
+    </template>
     <template #[`item.resultType`]="{ item }">
       {{ $COLLECTION_RESULT_TYPE[item.resultType] }}
     </template>

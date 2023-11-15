@@ -35,6 +35,7 @@ export default {
       listener: null,
       loading: false,
       site: null,
+      yearMonth: this.$dayjs().format('YYYY-MM'),
     }
   },
   /******************************************************************
@@ -46,15 +47,14 @@ export default {
     },
     site: {
       handler(v) {
-        if (v) {
-          this.editItem.site = v
-          this.subscribe()
-        } else {
-          this.unsubscribe()
-        }
+        this.editItem.site = v
+        this.subscribe()
       },
       immediate: true,
       deep: true,
+    },
+    yearMonth(v) {
+      this.subscribe()
     },
   },
   /******************************************************************
@@ -68,7 +68,7 @@ export default {
    ******************************************************************/
   methods: {
     initialize() {
-      this.editItem.initialize()
+      this.editItem.initialize({ site: this.site })
       this.editMode = 'REGIST'
       this.$refs.form.initialize()
     },
@@ -77,10 +77,17 @@ export default {
     },
     unsubscribe() {
       if (this.listener) this.listener()
+      this.items.splice(0)
     },
     subscribe() {
+      this.unsubscribe()
+      if (!this.site) return
       const colRef = collection(this.$firestore, 'CollectionResults')
-      const q = query(colRef, where('site.docId', '==', this.site.docId))
+      const q = query(
+        colRef,
+        where('site.docId', '==', this.site.docId),
+        where('yearMonth', '==', this.yearMonth)
+      )
       this.listener = onSnapshot(q, (snapshot) => {
         snapshot.docChanges().forEach((change) => {
           const item = change.doc.data()
@@ -143,8 +150,9 @@ export default {
         :height="height"
         :items="items"
         show-regist-btn
-        sort-by="date"
-        sort-desc
+        :sort-by="['date', 'resultType']"
+        :sort-desc="[true, false]"
+        :year-month.sync="yearMonth"
         @click:regist="editor = true"
         @click:row="onClickEdit"
       />

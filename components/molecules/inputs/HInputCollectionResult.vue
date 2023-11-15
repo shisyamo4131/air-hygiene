@@ -1,5 +1,7 @@
 <script>
 /**
+ * ### HInputCollectionResult
+ *
  * @author shisyamo4131
  */
 import HDataTableCollectionResultDetails from '../tables/HDataTableCollectionResultDetails.vue'
@@ -11,6 +13,7 @@ import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import HTemplateArrayInput from '~/components/templates/HTemplateArrayInput.vue'
+import ADate from '~/components/atoms/inputs/ADate.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -24,6 +27,7 @@ export default {
     HInputCollectionResultDetail,
     HDataTableCollectionResultDetails,
     HBtnRegist,
+    ADate,
   },
   /******************************************************************
    * MIXINS
@@ -43,18 +47,28 @@ export default {
     dateDeadline: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
   },
+  /******************************************************************
+   * METHODS
+   ******************************************************************/
+  methods: {
+    updateDateDeadline() {
+      if (!this.site || !this.date) return
+      const deadline = this.site.customer.deadline
+      const result = this.$airCalcDeadlineDate(this.date, deadline)
+      this.$emit('update:dateDeadline', result)
+    },
+  },
 }
 </script>
 
 <template>
   <v-row>
     <v-col cols="4" md="4">
-      <a-text-field
+      <a-date
         label="回収日"
         :value="date"
         required
-        input-type="date"
-        @change="$emit('change:date', $event)"
+        @change="updateDateDeadline"
         @input="$emit('update:date', $event)"
       />
       <a-autocomplete
@@ -90,11 +104,10 @@ export default {
         suffix="kg"
         @input="$emit('update:industrialWeight', $event)"
       />
-      <a-text-field
+      <a-date
         label="請求締日"
         :value="dateDeadline"
         required
-        input-type="date"
         @input="$emit('update:dateDeadline', $event)"
       />
     </v-col>

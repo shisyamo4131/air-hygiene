@@ -1,10 +1,16 @@
 <script>
+/**
+ * ### HTextFieldYearMonth
+ *
+ * @author shisyamo4131
+ */
+import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import ADatePicker from '~/components/atoms/pickers/ADatePicker.vue'
 export default {
   /******************************************************************
    * COMPUTED
    ******************************************************************/
-  components: { ADatePicker },
+  components: { ADatePicker, ATextField },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -14,11 +20,12 @@ export default {
     prevIcon: { type: String, default: 'mdi-chevron-left', required: false },
     todayIcon: { type: String, default: 'mdi-circle-medium', required: false },
     todayLabel: { type: String, default: '今月', required: false },
-    width: { type: [String, Number], default: '120', required: false },
+    width: { type: [String, Number], default: '140', required: false },
     value: {
       type: String,
       default: '',
       validator: (v) => {
+        if (!v) return true
         const date = new Date(`${v}-01`)
         const [year, month] = v.split('-')
         return (
@@ -35,15 +42,36 @@ export default {
   data() {
     return {
       dialog: false,
+      lazyValue: this.$dayjs().format('YYYY-MM'),
       pickerDate: '',
     }
+  },
+  computed: {
+    internalValue: {
+      get() {
+        return this.lazyValue
+      },
+      set(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          this.lazyValue = newVal
+          this.$emit('input', newVal)
+        }
+      },
+    },
   },
   /******************************************************************
    * WATCH
    ******************************************************************/
   watch: {
     dialog(v) {
-      if (v) this.pickerDate = this.value
+      if (v) this.pickerDate = this.internalValue
+    },
+    value: {
+      handler(v) {
+        if (!v) return
+        this.lazyValue = v
+      },
+      immediate: true,
     },
   },
   /******************************************************************
@@ -51,22 +79,30 @@ export default {
    ******************************************************************/
   methods: {
     prev() {
-      this.$emit(
-        'input',
-        this.$dayjs(this.value).subtract(1, 'month').format('YYYY-MM')
-      )
+      this.internalValue = this.$dayjs(this.internalValue)
+        .subtract(1, 'month')
+        .format('YYYY-MM')
+      // this.$emit(
+      //   'input',
+      //   this.$dayjs(this.value).subtract(1, 'month').format('YYYY-MM')
+      // )
     },
     current() {
-      this.$emit('input', this.$dayjs().format('YYYY-MM'))
+      this.internalValue = this.$dayjs().format('YYYY-MM')
+      // this.$emit('input', this.$dayjs().format('YYYY-MM'))
     },
     next() {
-      this.$emit(
-        'input',
-        this.$dayjs(this.value).add(1, 'month').format('YYYY-MM')
-      )
+      this.internalValue = this.$dayjs(this.internalValue)
+        .add(1, 'month')
+        .format('YYYY-MM')
+      // this.$emit(
+      //   'input',
+      //   this.$dayjs(this.value).add(1, 'month').format('YYYY-MM')
+      // )
     },
     onClickSubmit() {
-      this.$emit('input', this.pickerDate)
+      this.internalValue = this.pickerDate
+      // this.$emit('input', this.pickerDate)
       this.dialog = false
     },
   },
@@ -76,12 +112,13 @@ export default {
 <template>
   <div class="d-flex align-center">
     <div :style="{ width: `${parseInt(width)}px` }">
-      <air-text-field
+      <a-text-field
         class="center-input mr-2"
         v-bind="$attrs"
         readonly
-        :value="value"
+        :value="internalValue"
         @click.stop="dialog = true"
+        @input="internalValue = $event"
         v-on="$listeners"
       >
         <template #prepend>
@@ -106,7 +143,7 @@ export default {
             </a-date-picker>
           </v-dialog>
         </template>
-      </air-text-field>
+      </a-text-field>
     </div>
     <v-btn icon class="mr-2" @click="prev">
       <v-icon>{{ prevIcon }}</v-icon>

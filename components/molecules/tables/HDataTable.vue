@@ -104,7 +104,9 @@ export default {
       <template v-if="!hideToolbar" #top>
         <v-toolbar flat>
           <slot name="prepend-search" />
-          <a-text-field-search v-model="search" />
+          <slot name="search" v-bind="{ search }">
+            <a-text-field-search v-model="search" />
+          </slot>
           <slot name="append-search" />
           <div class="ml-4" style="width: 120px">
             <a-select
