@@ -2,13 +2,15 @@
 /**
  * @author shisyamo4131
  */
-import ATextFieldDate from '../../atoms/inputs/ATextFieldDate.vue'
-import HInputCollectionResultDetails from './HInputCollectionResultDetails.vue'
+import HDataTableCollectionResultDetails from '../tables/HDataTableCollectionResultDetails.vue'
+import HBtnRegist from '../btns/HBtnRegist.vue'
+import HInputCollectionResultDetail from './HInputCollectionResultDetail.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
+import HTemplateArrayInput from '~/components/templates/HTemplateArrayInput.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -17,9 +19,11 @@ export default {
     ATextarea,
     ANumeric,
     AAutocomplete,
-    ATextFieldDate,
     ATextField,
-    HInputCollectionResultDetails,
+    HTemplateArrayInput,
+    HInputCollectionResultDetail,
+    HDataTableCollectionResultDetails,
+    HBtnRegist,
   },
   /******************************************************************
    * MIXINS
@@ -43,66 +47,92 @@ export default {
 </script>
 
 <template>
-  <div>
-    <a-text-field-date
-      label="回収日"
-      :value="date"
-      required
-      @change="$emit('change:date', $event)"
-      @input="$emit('update:date', $event)"
-    />
-    <a-autocomplete
-      label="実績区分"
-      auto-select-first
-      :value="resultType"
-      :items="$COLLECTION_RESULT_TYPE_ARRAY"
-      required
-      @input="$emit('update:resultType', $event)"
-    />
-    <a-text-field
-      label="回収ルート"
-      :value="rootId"
-      :required="resultType === 'root'"
-      :disabled="resultType !== 'root'"
-      @input="$emit('update:rootId', $event)"
-    />
-    <h-input-collection-result-details
-      :value="details"
-      :site-id="site?.docId || ''"
-      :date="date || ''"
-      :disabled="disabled"
-      @input="$emit('update:details', $event)"
-    />
-    <a-numeric
-      label="一廃重量"
-      class="right-input"
-      :value="municipalWeight"
-      required
-      :decimal-places="2"
-      suffix="kg"
-      @input="$emit('update:municipalWeight', $event)"
-    />
-    <a-numeric
-      label="産廃重量"
-      class="right-input"
-      :value="industrialWeight"
-      required
-      :decimal-places="2"
-      suffix="kg"
-      @input="$emit('update:industrialWeight', $event)"
-    />
-    <a-text-field-date
-      label="請求締日"
-      :value="dateDeadline"
-      required
-      @input="$emit('update:dateDeadline', $event)"
-    />
-    <a-textarea
-      label="備考"
-      :value="remarks"
-      @input="$emit('update:remarks', $event)"
-    />
-  </div>
+  <v-row>
+    <v-col cols="4" md="4">
+      <a-text-field
+        label="回収日"
+        :value="date"
+        required
+        input-type="date"
+        @change="$emit('change:date', $event)"
+        @input="$emit('update:date', $event)"
+      />
+      <a-autocomplete
+        label="実績区分"
+        auto-select-first
+        :value="resultType"
+        :items="$COLLECTION_RESULT_TYPE_ARRAY"
+        required
+        @input="$emit('update:resultType', $event)"
+      />
+      <a-text-field
+        label="回収ルート"
+        :value="rootId"
+        :required="resultType === 'root'"
+        :disabled="resultType !== 'root'"
+        @input="$emit('update:rootId', $event)"
+      />
+      <a-numeric
+        label="一廃重量"
+        class="right-input"
+        :value="municipalWeight"
+        required
+        :decimal-places="2"
+        suffix="kg"
+        @input="$emit('update:municipalWeight', $event)"
+      />
+      <a-numeric
+        label="産廃重量"
+        class="right-input"
+        :value="industrialWeight"
+        required
+        :decimal-places="2"
+        suffix="kg"
+        @input="$emit('update:industrialWeight', $event)"
+      />
+      <a-text-field
+        label="請求締日"
+        :value="dateDeadline"
+        required
+        input-type="date"
+        @input="$emit('update:dateDeadline', $event)"
+      />
+    </v-col>
+    <v-col cols="8" md="8">
+      <h-template-array-input
+        :value="details"
+        :dialog-props="{ maxWidth: 360 }"
+        model="CollectionResultDetail"
+        @input="$emit('update:details', $event)"
+      >
+        <template #default="{ attrs, on }">
+          <h-input-collection-result-detail v-bind="attrs" v-on="on" />
+        </template>
+        <template #data-table="{ attrs, on }">
+          <v-card outlined>
+            <h-data-table-collection-result-details
+              v-bind="attrs"
+              height="352"
+              hide-pagination
+              hide-toolbar
+              :items-per-page="-1"
+              v-on="on"
+            />
+            <v-card-actions class="justify-end">
+              <h-btn-regist color="primary" small @click="on['click:regist']" />
+            </v-card-actions>
+          </v-card>
+        </template>
+      </h-template-array-input>
+    </v-col>
+    <v-col cols="12">
+      <a-textarea
+        label="備考"
+        :value="remarks"
+        @input="$emit('update:remarks', $event)"
+      />
+    </v-col>
+  </v-row>
 </template>
 
 <style></style>

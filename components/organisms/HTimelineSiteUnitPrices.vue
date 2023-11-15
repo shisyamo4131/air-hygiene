@@ -61,8 +61,12 @@ export default {
     },
     siteId: {
       handler(v) {
-        this.editItem.siteId = v
-        this.subscribe()
+        if (v) {
+          this.editItem.siteId = v
+          this.subscribe()
+        } else {
+          this.unsubscribe()
+        }
       },
       immediate: true,
     },
@@ -80,7 +84,6 @@ export default {
     initialize() {
       this.editItem.initialize({ siteId: this.siteId })
       this.editMode = 'REGIST'
-      this.editor = false
       this.$refs.form.initialize()
     },
     validate() {
@@ -136,7 +139,7 @@ export default {
 
 <template>
   <v-timeline v-bind="$attrs" v-on="$listeners">
-    <v-timeline-item>
+    <v-timeline-item small>
       <v-card outlined>
         <v-card-text>
           <v-dialog v-model="editor" persistent max-width="480">
@@ -164,7 +167,7 @@ export default {
         </v-card-text>
       </v-card>
     </v-timeline-item>
-    <v-timeline-item v-for="(item, index) of internalItems" :key="index">
+    <v-timeline-item v-for="(item, index) of internalItems" :key="index" small>
       <v-card outlined>
         <v-toolbar dense flat>
           {{ item.date }}

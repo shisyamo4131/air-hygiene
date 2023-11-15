@@ -16,13 +16,11 @@ const CITY = cities.reduce((acc, city) => {
 const COLLECTION_RESULT_TYPE = {
   root: '1: ルート',
   spot: '2: スポット',
-  monthly: '9: 月極',
 }
 
 const COLLECTION_RESULT_TYPE_ARRAY = [
   { value: 'root', text: '1: ルート' },
   { value: 'spot', text: '2: スポット' },
-  { value: 'monthly', text: '9: 月極' },
 ]
 
 /* 取引先状態 */

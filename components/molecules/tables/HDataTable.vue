@@ -16,6 +16,7 @@ export default {
    * PROPS
    ******************************************************************/
   props: {
+    disableRegist: { type: Boolean, default: false, required: false },
     height: { type: [String, Number], default: undefined, required: false },
     hideToolbar: { type: Boolean, default: false, required: false },
     hidePagination: { type: Boolean, default: false, required: false },
@@ -117,6 +118,7 @@ export default {
           <v-btn
             v-if="showRegistBtn"
             class="ml-4"
+            :disabled="disableRegist"
             icon
             @click="$emit('click:regist')"
           >
