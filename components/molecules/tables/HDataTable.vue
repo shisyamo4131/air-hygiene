@@ -4,6 +4,7 @@
  *
  * @author shisyamo4131
  */
+import HBtnRegist from '../btns/HBtnRegist.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
 import ATextFieldSearch from '~/components/atoms/inputs/ATextFieldSearch.vue'
 import ADataTable from '~/components/atoms/tables/ADataTable.vue'
@@ -11,7 +12,7 @@ export default {
   /******************************************************************
    * COMPONENTS
    ******************************************************************/
-  components: { ADataTable, ATextFieldSearch, ASelect },
+  components: { ADataTable, ATextFieldSearch, ASelect, HBtnRegist },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -118,15 +119,13 @@ export default {
               solo-inverted
             />
           </div>
-          <v-btn
+          <h-btn-regist
             v-if="showRegistBtn"
             class="ml-4"
             :disabled="disableRegist"
             icon
             @click="$emit('click:regist')"
-          >
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
+          />
         </v-toolbar>
       </template>
       <template
