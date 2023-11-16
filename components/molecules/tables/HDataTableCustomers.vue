@@ -34,6 +34,7 @@ export default {
         { text: '取引先名', value: 'name1' },
         { text: '住所', value: 'address1' },
         { text: 'TEL/FAX', value: 'tel' },
+        { text: '状態', value: 'status' },
       ],
       includeExpired: false,
     }
@@ -81,6 +82,12 @@ export default {
     <template #[`item.tel`]="{ item }">
       <div>{{ item.tel }}</div>
       <div>{{ item.fax }}</div>
+    </template>
+    <template #[`item.status`]="{ item }">
+      <v-chip v-if="item.status === 'active'" small>{{
+        $CUSTOMER_STATUS[item.status]
+      }}</v-chip>
+      <v-chip v-else small>{{ $CUSTOMER_STATUS[item.status] }}</v-chip>
     </template>
   </h-data-table>
 </template>

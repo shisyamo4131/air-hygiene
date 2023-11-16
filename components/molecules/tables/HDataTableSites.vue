@@ -24,13 +24,14 @@ export default {
     return {
       customFilter: (value, search, item) => {
         if (item.code.includes(search)) return true
-        if (item.name1.includes(search)) return true
+        if (item.name.includes(search)) return true
         if (item.abbr.includes(search)) return true
         if (item.abbrKana.includes(search)) return true
         return false
       },
       headers: [
         { text: 'CODE', value: 'code' },
+        { text: '取引先', value: 'customerId' },
         { text: '排出場所名', value: 'name' },
         { text: '住所', value: 'address1' },
         { text: 'TEL/FAX', value: 'tel' },
@@ -67,6 +68,11 @@ export default {
         hide-details
         label="契約満了を含める"
       />
+    </template>
+    <template #[`item.customerId`]="{ item }">
+      {{
+        $store.getters['masters/Customer'](item.customerId)?.abbr || 'undefined'
+      }}
     </template>
     <template #[`item.address1`]="{ item }">
       <div>{{ item.address1 }}</div>

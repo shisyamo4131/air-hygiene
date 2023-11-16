@@ -1,4 +1,5 @@
 /**
+ * 【未使用】
  * ### 同期先
  * - CollectionResults
  * @author shisyamo4131

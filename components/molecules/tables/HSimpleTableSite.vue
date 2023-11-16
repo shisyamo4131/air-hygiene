@@ -26,7 +26,7 @@ export default {
     status: { type: String, default: '', required: false },
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
-    customer: { type: Object, default: null, required: false },
+    customerId: { type: String, default: '', required: false },
     collectDays: { type: Array, default: () => [], required: false },
   },
 }
@@ -38,6 +38,14 @@ export default {
       <tr>
         <td>CODE</td>
         <td>{{ code }}</td>
+      </tr>
+      <tr>
+        <td>取引先</td>
+        <td>
+          {{
+            $store.getters['masters/Customer'](customerId)?.abbr || 'undefined'
+          }}
+        </td>
       </tr>
       <tr>
         <td>排出場所名</td>

@@ -5,9 +5,7 @@
 import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 import ASelect from '~/components/atoms/inputs/ASelect.vue'
-import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
 import ANumeric from '~/components/atoms/inputs/ANumeric.vue'
 export default {
@@ -17,9 +15,7 @@ export default {
   components: {
     ATextFieldZipcode,
     ATextarea,
-    ATextFieldDate,
     ASelect,
-    ARadioGroup,
     ATextField,
     ANumeric,
   },
@@ -62,7 +58,7 @@ export default {
       v-if="editMode !== 'REGIST'"
       label="CODE"
       :value="code"
-      readonly
+      disabled
     />
     <a-text-field
       label="取引先名1"
@@ -104,24 +100,18 @@ export default {
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
-    <v-row dense>
-      <v-col cols="12" sm="6">
-        <a-text-field
-          label="電話番号"
-          :value="tel"
-          input-type="tel"
-          @input="$emit('update:tel', $event)"
-        />
-      </v-col>
-      <v-col cols="12" sm="6">
-        <a-text-field
-          label="FAX番号"
-          :value="fax"
-          input-type="tel"
-          @input="$emit('update:fax', $event)"
-        />
-      </v-col>
-    </v-row>
+    <a-text-field
+      label="電話番号"
+      :value="tel"
+      input-type="tel"
+      @input="$emit('update:tel', $event)"
+    />
+    <a-text-field
+      label="FAX番号"
+      :value="fax"
+      input-type="tel"
+      @input="$emit('update:fax', $event)"
+    />
     <a-text-field
       label="URL"
       :value="url"
@@ -186,25 +176,10 @@ export default {
         />
       </v-col>
     </v-row>
-    <a-radio-group
-      v-if="editMode !== 'REGIST'"
-      :value="status"
-      :items="$CUSTOMER_STATUS_ARRAY"
-      row
-      @change="$emit('update:status', $event)"
-    />
-    <v-expand-transition>
-      <a-text-field-date
-        v-show="status === 'expired'"
-        label="契約満了日"
-        :value="dateExpired"
-        :required="status === 'expired'"
-        @input="$emit('update:dateExpired', $event)"
-      />
-    </v-expand-transition>
     <a-textarea
       label="備考"
       :value="remarks"
+      hide-details
       @input="$emit('update:remarks', $event)"
     />
   </div>

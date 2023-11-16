@@ -25,11 +25,9 @@ export default {
   /******************************************************************
    * ASYNCDATA
    ******************************************************************/
-  async asyncData({ app, route }) {
+  asyncData({ route }) {
     const docId = route.params.docId
-    const item = app.$Site()
-    await item.fetch(docId)
-    return { docId, item }
+    return { docId }
   },
   /******************************************************************
    * DATA
@@ -39,6 +37,16 @@ export default {
       loading: false,
       tabs: ['Dashboard', '登録情報', '請求単価', '設定'],
     }
+  },
+  /******************************************************************
+   * COMPUTED
+   ******************************************************************/
+  computed: {
+    item() {
+      const result = this.$Site()
+      result.initialize(this.$store.getters['masters/Site'](this.docId))
+      return result
+    },
   },
   /******************************************************************
    * METHODS

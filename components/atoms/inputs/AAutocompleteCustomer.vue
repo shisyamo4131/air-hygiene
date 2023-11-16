@@ -2,12 +2,12 @@
 /**
  * @author shisyamo4131
  */
-import AAutocompleteApi from '~/components/atoms/inputs/AAutocompleteApi.vue'
+import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
   /***************************************************************************
    * COMPONENTS
    ***************************************************************************/
-  components: { AAutocompleteApi },
+  components: { AAutocomplete },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -28,10 +28,10 @@ export default {
 </script>
 
 <template>
-  <a-autocomplete-api
+  <a-autocomplete
     v-bind="{ ...$props, ...$attrs }"
-    collection="Customers"
     item-text="abbr"
+    item-value="docId"
     v-on="$listeners"
   >
     <template #item="{ item, attrs, on }">
@@ -44,7 +44,7 @@ export default {
         </v-list-item-content>
       </v-list-item>
     </template>
-  </a-autocomplete-api>
+  </a-autocomplete>
 </template>
 
 <style></style>

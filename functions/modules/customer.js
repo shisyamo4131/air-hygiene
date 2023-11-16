@@ -1,4 +1,5 @@
 /**
+ * 【未使用】
  * ### 同期先
  * - Sites
  * @author shisyamo4131

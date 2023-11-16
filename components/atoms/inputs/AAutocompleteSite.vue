@@ -2,16 +2,17 @@
 /**
  * @author shisyamo4131
  */
-import AAutocompleteApi from '~/components/atoms/inputs/AAutocompleteApi.vue'
+import AAutocomplete from '~/components/atoms/inputs/AAutocomplete.vue'
 export default {
   /***************************************************************************
    * COMPONENTS
    ***************************************************************************/
-  components: { AAutocompleteApi },
+  components: { AAutocomplete },
   /***************************************************************************
    * PROPS
    ***************************************************************************/
   props: {
+    label: { type: String, default: '排出場所', required: false },
     filter: {
       type: Function,
       default: (item, queryText, itemText) => {
@@ -27,11 +28,10 @@ export default {
 </script>
 
 <template>
-  <a-autocomplete-api
-    v-bind="$attrs"
-    collection="Sites"
-    :filter="filter"
+  <a-autocomplete
+    v-bind="{ ...$props, ...$attrs }"
     item-text="abbr"
+    :items="$store.state.masters.Sites"
     v-on="$listeners"
   >
     <template #item="{ item, attrs, on }">
@@ -42,7 +42,7 @@ export default {
         </v-list-item-content>
       </v-list-item>
     </template>
-  </a-autocomplete-api>
+  </a-autocomplete>
 </template>
 
 <style></style>

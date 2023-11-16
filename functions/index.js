@@ -24,5 +24,5 @@ initializeApp()
 setGlobalOptions({ region: 'asia-northeast1' })
 
 exports.role = require('./modules/role')
-exports.customer = require('./modules/customer')
-exports.site = require('./modules/site')
+// exports.customer = require('./modules/customer')
+// exports.site = require('./modules/site')

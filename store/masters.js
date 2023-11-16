@@ -24,11 +24,15 @@ const MODULE_NAME = '[Vuex masters.js]'
  ******************************************************************/
 export const state = () => ({
   CollectItems: [],
+  Customers: [],
   Roots: [],
+  Sites: [],
   Units: [],
   listeners: {
     CollectItems: null,
+    Customers: null,
     Roots: null,
+    Sites: null,
     Units: null,
   },
 })
@@ -39,8 +43,14 @@ export const getters = {
   CollectItem: (state) => (payload) => {
     return state.CollectItems.find(({ docId }) => docId === payload)
   },
+  Customer: (state) => (payload) => {
+    return state.Customers.find(({ docId }) => docId === payload)
+  },
   Root: (state) => (payload) => {
     return state.Roots.find(({ docId }) => docId === payload)
+  },
+  Site: (state) => (payload) => {
+    return state.Sites.find(({ docId }) => docId === payload)
   },
   Unit: (state) => (payload) => {
     return state.Units.find(({ docId }) => docId === payload)

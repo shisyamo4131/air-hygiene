@@ -39,12 +39,11 @@ export default class Customer extends FireModel {
     this.hasMany = [
       {
         collection: 'Sites',
-        field: 'customer.docId',
+        field: 'customerId',
         condition: '==',
         type: 'collection',
       },
     ]
-    this.tokenFields = ['code', 'abbr', 'abbrKana']
   }
 
   initialize(item) {

@@ -32,7 +32,6 @@ import FireModel from './FireModel'
 export default class Site extends FireModel {
   constructor(context) {
     super(context.app.$firestore, `Sites`, context.app.$auth)
-    this.tokenFields = ['abbr', 'abbrKana']
     this.hasMany = [
       {
         collection: 'CollectionResults',
@@ -110,7 +109,7 @@ export default class Site extends FireModel {
     this.status = 'active'
     this.dateExpired = ''
     this.remarks = ''
-    this.customer = null
+    this.customerId = ''
     this.collectDays = []
     super.initialize(item)
   }

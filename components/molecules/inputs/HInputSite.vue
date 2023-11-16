@@ -1,5 +1,7 @@
 <script>
 /**
+ * ### HInputSite
+ *
  * @author shisyamo4131
  */
 import ATextFieldZipcode from '../../atoms/inputs/ATextFieldZipcode.vue'
@@ -7,9 +9,7 @@ import AAutocompleteCustomer from '../../atoms/inputs/AAutocompleteCustomer.vue'
 import HItemGroupDays from '../itemGroups/HItemGroupDays.vue'
 import Mixin from '~/components/molecules/inputs/HMixinInput.vue'
 import ATextarea from '~/components/atoms/inputs/ATextarea.vue'
-import ATextFieldDate from '~/components/atoms/inputs/ATextFieldDate.vue'
 import ATextField from '~/components/atoms/inputs/ATextField.vue'
-import ARadioGroup from '~/components/atoms/inputs/ARadioGroup.vue'
 export default {
   /******************************************************************
    * COMPONENTS
@@ -18,9 +18,7 @@ export default {
     ATextFieldZipcode,
     ATextarea,
     AAutocompleteCustomer,
-    ATextFieldDate,
     ATextField,
-    ARadioGroup,
     HItemGroupDays,
   },
   /******************************************************************
@@ -46,7 +44,7 @@ export default {
     status: { type: String, default: '', required: false },
     dateExpired: { type: String, default: '', required: false },
     remarks: { type: String, default: '', required: false },
-    customer: { type: Object, default: null, required: false },
+    customerId: { type: String, default: '', required: false },
     collectDays: { type: Array, default: () => [], required: false },
   },
   /******************************************************************
@@ -70,10 +68,10 @@ export default {
     />
     <a-autocomplete-customer
       label="取引先"
-      :value="customer"
+      :value="customerId"
+      :items="$store.state.masters.Customers"
       required
-      return-object
-      @input="$emit('update:customer', $event)"
+      @input="$emit('update:customerId', $event)"
     />
     <a-text-field
       label="排出場所名"
@@ -110,24 +108,18 @@ export default {
       :value="address2"
       @input="$emit('update:address2', $event)"
     />
-    <v-row dense>
-      <v-col cols="12" sm="6">
-        <a-text-field
-          label="電話番号"
-          :value="tel"
-          input-type="tel"
-          @input="$emit('update:tel', $event)"
-        />
-      </v-col>
-      <v-col cols="12" sm="6">
-        <a-text-field
-          label="FAX番号"
-          :value="fax"
-          input-type="tel"
-          @input="$emit('update:fax', $event)"
-        />
-      </v-col>
-    </v-row>
+    <a-text-field
+      label="電話番号"
+      :value="tel"
+      input-type="tel"
+      @input="$emit('update:tel', $event)"
+    />
+    <a-text-field
+      label="FAX番号"
+      :value="fax"
+      input-type="tel"
+      @input="$emit('update:fax', $event)"
+    />
     <a-text-field
       label="URL"
       :value="url"
@@ -150,25 +142,10 @@ export default {
       multiple
       @change="$emit('update:collectDays', $event)"
     />
-    <a-radio-group
-      v-if="editMode !== 'REGIST'"
-      :value="status"
-      :items="$SITE_STATUS_ARRAY"
-      row
-      @change="$emit('update:status', $event)"
-    />
-    <v-expand-transition>
-      <a-text-field-date
-        v-show="status === 'expired'"
-        label="契約満了日"
-        :value="dateExpired"
-        :required="status === 'expired'"
-        @input="$emit('update:dateExpired', $event)"
-      />
-    </v-expand-transition>
     <a-textarea
       label="備考"
       :value="remarks"
+      hide-details
       @input="$emit('update:remarks', $event)"
     />
   </div>

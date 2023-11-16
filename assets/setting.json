@@ -1,8 +1,28 @@
 {
   "collections": [
     {
+      "name": "CollectionResults",
+      "autonumber": { "condition": false }
+    },
+    {
+      "name": "CollectItems",
+      "autonumber": { "condition": false }
+    },
+    {
       "name": "Customers",
       "autonumber": { "condition": true, "field": "code", "length": 5 }
+    },
+    {
+      "name": "MunicipalPermissions",
+      "autonumber": { "condition": false }
+    },
+    {
+      "name": "IndustrialPermissions",
+      "autonumber": { "condition": false }
+    },
+    {
+      "name": "Roots",
+      "autonumber": { "condition": false }
     },
     {
       "name": "Sites",
@@ -13,15 +33,7 @@
       "autonumber": { "condition": false }
     },
     {
-      "name": "CollectItems",
-      "autonumber": { "condition": false }
-    },
-    {
       "name": "Units",
-      "autonumber": { "condition": false }
-    },
-    {
-      "name": "CollectionResults",
       "autonumber": { "condition": false }
     }
   ],
