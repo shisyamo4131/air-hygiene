@@ -1,10 +1,12 @@
 <script>
+import HItemGroupDays from '../itemGroups/HItemGroupDays.vue'
 /**
  * ### HSimpleTableSite
  *
  * @author shisyamo4131
  */
 export default {
+  components: { HItemGroupDays },
   /******************************************************************
    * PROPS
    ******************************************************************/
@@ -74,6 +76,12 @@ export default {
         <td>
           {{ staffName }}
           <span v-if="staffEmail">({{ staffEmail }})</span>
+        </td>
+      </tr>
+      <tr>
+        <td>回収日</td>
+        <td>
+          <h-item-group-days :value="collectDays" multiple disabled />
         </td>
       </tr>
       <tr>

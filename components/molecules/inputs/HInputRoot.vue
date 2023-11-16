@@ -73,7 +73,6 @@ export default {
     />
     <a-radio-group
       v-if="editMode !== 'REGIST'"
-      class="mt-0"
       :value="status"
       :items="$ROOT_STATUS_ARRAY"
       row

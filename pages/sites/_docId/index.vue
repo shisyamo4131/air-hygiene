@@ -81,7 +81,9 @@ export default {
       </v-container>
     </template>
     <template #tab-1>
-      <h-simple-table-site v-bind="item" />
+      <v-container fluid>
+        <h-simple-table-site v-bind="item" />
+      </v-container>
     </template>
     <template #tab-2>
       <v-container fluid>

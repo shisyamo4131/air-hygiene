@@ -67,7 +67,6 @@ export default {
     />
     <v-subheader>処理区分</v-subheader>
     <a-radio-group
-      class="mt-0"
       :value="processingDiv"
       :items="$PROCESSING_DIV_ARRAY"
       row
@@ -75,7 +74,6 @@ export default {
     >
     </a-radio-group>
     <a-switch
-      class="mt-0"
       label="特別管理を含む"
       :input-value="includeSpeciallyControled"
       @change="$emit('update:includeSpeciallyControled', $event)"

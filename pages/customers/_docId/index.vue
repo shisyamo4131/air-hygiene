@@ -89,10 +89,14 @@ export default {
       </v-container>
     </template>
     <template #tab-1>
-      <h-simple-table-customer v-bind="item" />
+      <v-container fluid>
+        <h-simple-table-customer v-bind="item" />
+      </v-container>
     </template>
     <template #tab-2="{ height }">
-      <h-data-table-sites :height="height" :items="sites" />
+      <v-container fluid>
+        <h-data-table-sites :height="height" :items="sites" />
+      </v-container>
     </template>
     <template #tab-3>
       <v-container fluid>

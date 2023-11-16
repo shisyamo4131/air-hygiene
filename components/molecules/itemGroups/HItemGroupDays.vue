@@ -10,6 +10,12 @@ export default {
    ******************************************************************/
   model: { prop: 'value', event: 'change' },
   /******************************************************************
+   * PROPS
+   ******************************************************************/
+  props: {
+    disabled: { type: Boolean, default: false, required: false },
+  },
+  /******************************************************************
    * DATA
    ******************************************************************/
   data() {
@@ -32,7 +38,11 @@ export default {
   <v-item-group v-bind="$attrs" v-on="$listeners">
     <v-row>
       <v-col v-for="day in dayList" :key="day.value" class="flex-grow-0">
-        <v-item v-slot="{ active, toggle }" :value="day.value">
+        <v-item
+          v-slot="{ active, toggle }"
+          :value="day.value"
+          :disabled="disabled"
+        >
           <v-checkbox
             :input-value="active"
             :label="day.text"

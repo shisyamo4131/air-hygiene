@@ -188,7 +188,6 @@ export default {
     </v-row>
     <a-radio-group
       v-if="editMode !== 'REGIST'"
-      class="mt-0"
       :value="status"
       :items="$CUSTOMER_STATUS_ARRAY"
       row

@@ -91,7 +91,9 @@ export default {
       </v-container>
     </template>
     <template #tab-1>
-      <h-simple-table-root v-bind="item" />
+      <v-container fluid>
+        <h-simple-table-root v-bind="item" />
+      </v-container>
     </template>
     <template #tab-2>
       <h-timeline-root-orders :root-id="docId" />
