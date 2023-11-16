@@ -30,9 +30,6 @@ export default {
     collectItemId: { type: String, default: '', required: false },
     unitId: { type: String, default: '', required: false },
     unitPrice: { type: Number, default: null, required: false },
-    /* for fetch unitPrice */
-    siteId: { type: String, required: true },
-    date: { type: String, required: true },
   },
 }
 </script>
