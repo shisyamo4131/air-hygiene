@@ -87,7 +87,7 @@ export default {
     async initAutonumbers() {
       const promises = []
       this.collections.forEach((collection) => {
-        if (collection.autonumber.condition) {
+        if (collection.autonumber.status) {
           const model = this.$Autonumber()
           model.initialize({
             ...collection.autonumber,
