@@ -66,7 +66,7 @@ export default {
     },
     paginationHeight() {
       if (this.hidePagination) return 0
-      return 48
+      return 100
     },
     toolbarHeight() {
       if (this.hideToolbar) return 0
@@ -138,13 +138,17 @@ export default {
         <slot :name="slotName" />
       </template>
     </a-data-table>
-    <div
-      v-if="!hidePagination"
-      class="d-flex justify-center align-center"
-      style="height: 48px"
-    >
-      <v-pagination v-model="page" color="primary" :length="pageCount" />
-    </div>
+    <v-container>
+      <v-row justify="center" dense>
+        <v-col cols="11">
+          <v-pagination
+            v-model="page"
+            class="my-4"
+            :length="pageCount"
+          ></v-pagination>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 

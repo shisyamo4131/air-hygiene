@@ -15,7 +15,7 @@
  * | headerHeight     | number             | undefined | header's height                   |
  * | label            | string             | undefined | Toolbar's label.                  |
  * | layout-x-padding | [ string, number ] | 24        | *                                 |
- * | overflow         | string             | 'auto'    | *                                 |
+ * | overflow         | string             | 'auto'    | ['auto', 'scroll']                |
  *
  * ##### layout-x-padding
  *
@@ -123,8 +123,6 @@ export default {
       return app.height - app.top - app.bottom - app.padding
     },
     toolbarHeight() {
-      // if (this.$vuetify.breakpoint.smAndDown) return 56
-      // return 64
       return 48
     },
   },

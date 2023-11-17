@@ -9,13 +9,18 @@
  * | :------ | :----- | ------- | :------: | :------ |
  * | rootId  | string | ''      | true     |         |
  * | date    | string | ''      | true     |         |
- * | orders  | array  | []      | true     |         |
+ * | sun     | array  | []      | true     |         |
+ * | mon     | array  | []      | true     |         |
+ * | tue     | array  | []      | true     |         |
+ * | wed     | array  | []      | true     |         |
+ * | thu     | array  | []      | true     |         |
+ * | fri     | array  | []      | true     |         |
+ * | sat     | array  | []      | true     |         |
  *
  * #### PROPERTIES(readonly)
  *
  * | name           | type  | default | required | remarks                      |
  * | :------------- | :---- | ------- | :------: | :--------------------------- |
- * | siteIds        | array | []      | true     | Document ids of site.        |
  *
  * @author shisyamo4131
  */
@@ -36,21 +41,18 @@ export default class RootOrder extends FireModel {
     const firestore = context.app.$firestore
     const auth = context.app.$auth
     super(firestore, 'RootOrders', auth)
-    Object.defineProperties(this, {
-      siteIds: {
-        enumerable: true,
-        get() {
-          return this.orders.map(({ siteId }) => siteId)
-        },
-        set(v) {},
-      },
-    })
   }
 
   initialize(item) {
     this.rootId = ''
     this.date = ''
-    this.orders = []
+    this.sun = []
+    this.mon = []
+    this.tue = []
+    this.wed = []
+    this.thu = []
+    this.fri = []
+    this.sat = []
     super.initialize(item)
   }
 
