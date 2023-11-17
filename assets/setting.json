@@ -2,39 +2,39 @@
   "collections": [
     {
       "name": "CollectionResults",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     },
     {
       "name": "CollectItems",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     },
     {
       "name": "Customers",
-      "autonumber": { "condition": true, "field": "code", "length": 5 }
+      "autonumber": { "status": true, "field": "code", "length": 5 }
     },
     {
       "name": "MunicipalPermissions",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     },
     {
       "name": "IndustrialPermissions",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     },
     {
       "name": "Roots",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     },
     {
       "name": "Sites",
-      "autonumber": { "condition": true, "field": "code", "length": 8 }
+      "autonumber": { "status": true, "field": "code", "length": 8 }
     },
     {
       "name": "SiteUnitPrices",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     },
     {
       "name": "Units",
-      "autonumber": { "condition": false }
+      "autonumber": { "status": false }
     }
   ],
   "systemCollections": ["Autonumbers", "admin_users", "developper_users"]

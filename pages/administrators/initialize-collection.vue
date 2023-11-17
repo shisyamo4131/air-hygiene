@@ -66,8 +66,8 @@ export default {
   data() {
     return {
       cache: {
-        Customers: [],
-        Sites: [],
+        Customers: this.$store.state.masters.Customers,
+        Sites: this.$store.state.masters.Sites,
       },
       formVerified: false,
       items: setting.collections,
@@ -112,57 +112,45 @@ export default {
       }
     },
     async initCustomers() {
-      this.cache.Customers.splice(0)
-      const colRef = collection(this.$firestore, 'Customers')
-      const snapshot = await getDocs(colRef)
-      if (!snapshot.empty) {
-        snapshot.docs.forEach((doc) => {
-          this.cache.Customers.push(doc.data())
-        })
-      }
       this.progress.value = 0
       this.progress.max = defaultCustomers.length
+      const cache = this.cache.Customers
+      const promises = []
       for (const item of defaultCustomers) {
         const model = this.$Customer()
-        const exist = await this.getCustomer(item.code)
-        if (!exist) {
-          model.initialize(item)
-          await model.create()
-        } else {
-          model.initialize({ ...exist, ...item })
-          await model.update()
-        }
+        const exist = cache.find(({ code }) => code === item.code)
+        model.initialize({ ...exist, ...item })
+        promises.push(exist ? model.update() : model.create())
         this.progress.value = this.progress.value + 1
       }
+      await Promise.all(promises)
     },
     async initSites() {
+      // convert site.customer to customerId.
+      const items = defaultSites
+        // .filter((_, index) => index < 10)
+        .map((site) => {
+          const customer = this.cache.Customers.find(
+            ({ code }) => code === site.customer
+          )
+          return { ...site, customerId: customer?.docId || '' }
+        })
+      const customersNotExist = items.filter(({ customerId }) => !customerId)
+      if (customersNotExist.length) {
+        // eslint-disable-next-line
+        console.log(customersNotExist)
+        throw new Error(
+          'There are some sites where the customers are not registered.'
+        )
+      }
       this.progress.value = 0
       this.progress.max = defaultSites.length
-      const items = defaultSites
-        .map((item) => {
-          return { ...item }
-        })
-        .filter((_, index) => index < 10)
       for (const item of items) {
         const model = this.$Site()
-        const [customer, site] = await Promise.all([
-          this.getCustomer(item.customer),
-          this.getSite(item.code),
-        ])
-        if (!customer) {
-          // eslint-disable-next-line
-          console.log(item)
-          throw new Error('Customer is not exist specified by Site.')
-        }
-        item.customer = customer
-        if (!site) {
-          model.initialize(item)
-          await model.create()
-        } else {
-          model.initialize({ ...site, ...item })
-          await model.update()
-        }
-        await this.initSiteUnitPrices(model)
+        const exist = this.cache.Sites.find(({ code }) => code === item.code)
+        model.initialize({ ...exist, ...item })
+        exist ? await model.update() : await model.create()
+        // await this.initSiteUnitPrices(model)
         this.progress.value = this.progress.value + 1
       }
     },

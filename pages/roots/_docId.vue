@@ -96,7 +96,7 @@ export default {
       </v-container>
     </template>
     <template #tab-2>
-      <h-timeline-root-orders :root-id="docId" />
+      <h-timeline-root-orders dense :root-id="docId" />
     </template>
     <template #tab-3>
       <v-container fluid>

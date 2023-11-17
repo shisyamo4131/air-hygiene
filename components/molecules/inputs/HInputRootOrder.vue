@@ -29,7 +29,12 @@ export default {
   /******************************************************************
    * COMPUTED
    ******************************************************************/
-  computed: {},
+  computed: {
+    notIncluded() {
+      const result = this.$store.state.masters.Sites.map(({ docId }) => docId)
+      return result
+    },
+  },
 }
 </script>
 
@@ -50,7 +55,7 @@ export default {
         </v-list-item>
       </v-col>
       <v-col>
-        <v-list-item v-for="siteId of orders" :key="siteId">
+        <v-list-item v-for="siteId of notIncluded" :key="siteId">
           <v-list-item-content>
             <v-list-item-title>{{ siteId }}</v-list-item-title>
           </v-list-item-content>
